@@ -1,0 +1,325 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, Bot, Palette, Rocket, Shield, Award, Zap } from "lucide-react";
+
+/**
+ * Machina‑style landing page
+ * — One file, production‑ready React component
+ * — TailwindCSS for styling
+ * — Framer Motion for tasteful motion
+ * — Lucide icons
+ *
+ * Intent: capture the vibe (bold gradient, kinetic typography, playful interactions)
+ * without copying proprietary content. Replace placeholders with your content.
+ */
+
+// ------- Helpers & Mock Data -------
+const awards = [
+  "Emmy",
+  "Webby",
+  "Cannes Lions",
+  "FWA SOTD",
+  "D&AD",
+  "SXSW",
+];
+
+const work = [
+  {
+    title: "Lightsaber Escape",
+    tag: "Second‑screen WebGL",
+    year: "2016",
+  },
+  {
+    title: "1984: Audible x Twitch",
+    tag: "Interactive Stream",
+    year: "2020",
+  },
+  {
+    title: "Backbone & Brains",
+    tag: "IBM Research",
+    year: "2019",
+  },
+  {
+    title: "The Lion's Den",
+    tag: "Game Launch",
+    year: "2021",
+  },
+];
+
+const features = [
+  {
+    icon: <Bot className="h-5 w-5" aria-hidden />,
+    title: "Human‑Machine Interfaces",
+    desc: "We craft expressive HMIs for physical and digital products.",
+  },
+  {
+    icon: <Palette className="h-5 w-5" aria-hidden />,
+    title: "Immersive Design",
+    desc: "3D, WebGL and motion that serve the story, not the other way around.",
+  },
+  {
+    icon: <Rocket className="h-5 w-5" aria-hidden />,
+    title: "Creative Tech",
+    desc: "Rapid prototypes to bullet‑proof builds across web & installations.",
+  },
+  {
+    icon: <Shield className="h-5 w-5" aria-hidden />,
+    title: "Quality & Perf",
+    desc: "Accessible, fast, and resilient experiences by default.",
+  },
+];
+
+// ------- Small building blocks -------
+const Container = ({ children }) => (
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+);
+
+const SectionTitle = ({ eyebrow, title, kicker }) => (
+  <div className="mb-8 md:mb-12">
+    {eyebrow && (
+      <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-white/80 backdrop-blur">
+        <Sparkles className="h-3.5 w-3.5" aria-hidden />
+        {eyebrow}
+      </div>
+    )}
+    <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-white md:text-5xl">
+      {title}
+    </h2>
+    {kicker && (
+      <p className="mt-3 max-w-2xl text-pretty text-white/70 md:text-lg">{kicker}</p>
+    )}
+  </div>
+);
+
+// ------- Main Component -------
+export default function MachinaInspiredLanding() {
+  return (
+    <div className="relative min-h-screen overflow-x-clip bg-black text-white">
+      {/* Animated gradient background */}
+      <div className="pointer-events-none fixed inset-0 -z-10 opacity-80">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_20%,rgba(255,68,0,0.5),transparent_60%),radial-gradient(50%_50%_at_80%_10%,rgba(244,63,94,0.45),transparent_55%),radial-gradient(40%_40%_at_50%_90%,rgba(234,88,12,0.4),transparent_60%)] animate-[pulseGlow_10s_ease-in-out_infinite]" />
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.35),rgba(0,0,0,0.35))]" />
+      </div>
+
+      {/* Top nav */}
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-black/40 backdrop-blur-md">
+        <Container>
+          <nav className="flex h-16 items-center justify-between">
+            <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-rose-600">
+                <Zap className="h-4 w-4" aria-hidden />
+              </span>
+              <span className="text-white/90">Your&nbsp;Studio</span>
+            </a>
+            <ul className="hidden items-center gap-6 text-sm text-white/80 md:flex">
+              <li><a className="hover:text-white" href="#work">Work</a></li>
+              <li><a className="hover:text-white" href="#approach">Approach</a></li>
+              <li><a className="hover:text-white" href="#team">Team</a></li>
+              <li><a className="hover:text-white" href="#awards">Awards</a></li>
+              <li><a className="hover:text-white" href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-2xl bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40">
+              Start a project
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </a>
+          </nav>
+        </Container>
+      </header>
+
+      {/* Hero */}
+      <section id="top" className="relative">
+        <Container>
+          <div className="grid min-h-[72vh] place-items-center py-20 md:py-28">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center"
+            >
+              <h1 className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+                Human‑Machine <span className="bg-gradient-to-r from-orange-400 via-rose-500 to-fuchsia-500 bg-clip-text text-transparent">Experiences</span>
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-pretty text-white/70 md:text-lg">
+                We are a creative‑tech studio crafting award‑winning interactive products, installations, and HMIs.
+              </p>
+              <div className="mt-8 flex items-center justify-center gap-3">
+                <a href="#work" className="group inline-flex items-center gap-2 rounded-2xl bg-white text-black px-5 py-3 text-sm font-semibold transition active:scale-[0.99]">
+                  See our work
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                </a>
+                <a href="#contact" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+                  Get in touch
+                </a>
+              </div>
+
+              {/* Awards marquee */}
+              <div id="awards" className="mt-14 overflow-hidden">
+                <div className="[mask-image:linear-gradient(to_right,transparent,black_12rem,black_calc(100%-12rem),transparent)]">
+                  <ul className="animate-[marquee_28s_linear_infinite] flex min-w-max items-center gap-8 whitespace-nowrap text-sm text-white/60 [--gap:2rem] hover:[animation-play-state:paused]">
+                    {awards.concat(awards).map((a, i) => (
+                      <li key={i} className="inline-flex items-center gap-2">
+                        <Award className="h-4 w-4" aria-hidden />
+                        <span>{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Work grid */}
+      <section id="work" className="relative border-t border-white/10 py-16 md:py-24">
+        <Container>
+          <SectionTitle
+            eyebrow="Selected projects"
+            title="Bold, playful and engineered to perform"
+            kicker="A quick sampler — swap with your actual case studies, images and links."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {work.map((item, idx) => (
+              <motion.a
+                key={idx}
+                href="#"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20%" }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 backdrop-blur transition hover:bg-white/10"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                  {/* Placeholder visual */}
+                  <div className="h-full w-full bg-[radial-gradient(100%_100%_at_0%_0%,#fb923c_0%,transparent_50%),radial-gradient(100%_100%_at_100%_0%,#f43f5e_0%,transparent_50%),radial-gradient(100%_100%_at_100%_100%,#a855f7_0%,transparent_55%)] transition-transform duration-300 group-hover:scale-105" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 40%)" }} />
+                </div>
+                <div className="mt-3 flex items-center justify-between gap-3">
+                  <div>
+                    <h3 className="text-base font-semibold text-white/95">{item.title}</h3>
+                    <p className="text-sm text-white/60">{item.tag}</p>
+                  </div>
+                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70">{item.year}</span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Approach */}
+      <section id="approach" className="relative border-t border-white/10 py-16 md:py-24">
+        <Container>
+          <SectionTitle
+            eyebrow="How we build"
+            title="Design that feels alive, tech that never gets in the way"
+            kicker="From paper to production, we keep the loop tight and the outcome measurable."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((f, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20%" }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur hover:bg-white/10"
+              >
+                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
+                  {f.icon}
+                </div>
+                <h3 className="text-white/95">{f.title}</h3>
+                <p className="mt-1 text-sm text-white/70">{f.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Team (placeholders) */}
+      <section id="team" className="relative border-t border-white/10 py-16 md:py-24">
+        <Container>
+          <SectionTitle
+            eyebrow="People"
+            title="Small, senior, hands‑on"
+            kicker="Direct access to the team doing the work. No layers, no fuss."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { name: "Maciej Z.", role: "CEO / Tech" },
+              { name: "Karol G.", role: "CCO / Design" },
+              { name: "You?", role: "Creative Technologist" },
+            ].map((p, i) => (
+              <div key={i} className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4">
+                <div className="h-14 w-14 shrink-0 rounded-2xl bg-gradient-to-br from-orange-500 to-rose-600" />
+                <div>
+                  <p className="font-medium text-white/90">{p.name}</p>
+                  <p className="text-sm text-white/60">{p.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Contact CTA */}
+      <section id="contact" className="relative border-t border-white/10 py-20">
+        <Container>
+          <div className="grid items-center gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.06] p-8 backdrop-blur md:grid-cols-2">
+            <div>
+              <h3 className="text-2xl font-semibold text-white md:text-3xl">Let’s make something people talk about.</h3>
+              <p className="mt-2 text-white/70">Tell us about your product, your audience, and what success looks like.</p>
+              <ul className="mt-4 grid gap-2 text-sm text-white/70">
+                <li className="flex items-center gap-2"><span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-white/10"><Sparkles className="h-3.5 w-3.5" /></span> Concept to launch</li>
+                <li className="flex items-center gap-2"><span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-white/10"><Rocket className="h-3.5 w-3.5" /></span> Web, HMI, installations</li>
+                <li className="flex items-center gap-2"><span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-white/10"><Shield className="h-3.5 w-3.5" /></span> Security & accessibility baked in</li>
+              </ul>
+            </div>
+            <form onSubmit={(e)=>e.preventDefault()} className="grid gap-3">
+              <div>
+                <label htmlFor="name" className="text-sm text-white/80">Name</label>
+                <input id="name" name="name" required className="mt-1 w-full rounded-xl border border-white/15 bg-black/40 px-3 py-2 text-white placeholder-white/40 outline-none ring-0 focus:border-white/30" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label htmlFor="email" className="text-sm text-white/80">Email</label>
+                <input id="email" name="email" type="email" required className="mt-1 w-full rounded-xl border border-white/15 bg-black/40 px-3 py-2 text-white placeholder-white/40 outline-none focus:border-white/30" placeholder="jane@company.com" />
+              </div>
+              <div>
+                <label htmlFor="message" className="text-sm text-white/80">Project</label>
+                <textarea id="message" name="message" rows={4} className="mt-1 w-full resize-none rounded-xl border border-white/15 bg-black/40 px-3 py-2 text-white placeholder-white/40 outline-none focus:border-white/30" placeholder="A short brief…" />
+              </div>
+              <button className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-black transition active:scale-[0.99]">
+                Send
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </button>
+            </form>
+          </div>
+        </Container>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-10 text-sm text-white/60">
+        <Container>
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p>© {new Date().getFullYear()} Your Studio — All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <a className="hover:text-white" href="#">Privacy</a>
+              <a className="hover:text-white" href="#">Imprint</a>
+            </div>
+          </div>
+        </Container>
+      </footer>
+
+      {/* Motion & marquee keyframes (scoped) */}
+      <style>{`
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes pulseGlow { 0%, 100% { filter: blur(40px) saturate(1); } 50% { filter: blur(60px) saturate(1.2); } }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-[marquee_28s_linear_infinite] { animation: none !important; }
+          .animate-[pulseGlow_10s_ease-in-out_infinite] { animation: none !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
