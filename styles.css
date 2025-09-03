@@ -1,31 +1,30 @@
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
+h1,h2,h3{font-family:"Montserrat","Inter",sans-serif;font-weight:200;}
+
 :root{
-  /* Тёмные зелёные для hero/карточек */
   --ink-900:#071e1a; --ink-800:#082620; --ink-700:#0c3a33;
   --deep:#0c2a24; --deeper:#0a201b;
 
-  /* Светлая палитра страницы */
-  --light-1:#eef5f2;   /* фон секций */
-  --light-2:#f6faf8;   /* общий фон тела */
+  --light-1:#eef5f2;
+  --light-2:#f6faf8;
   --card-light:#ffffff;
 
-  /* Тексты для светлого фона */
   --text-dark:#0e2d27;
   --muted-200:#6a8a83; --muted-300:#7b9690; --muted-400:#8aa8a3; --muted-500:#a6b7b3;
 
-  /* Акцент */
+  /* новый основной цвет CTA */
+  --cta:#9FE29E;
+
   --primary:#6cdfa6; --primary-600:#4fcf95; --ring:rgba(108,223,166,.25);
 
-  /* Бордеры */
   --border-dark:rgba(255,255,255,.08);
   --border-light:rgba(6,34,29,.08);
 }
 
-/* БАЗА: страница светлая */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color:var(--text-dark);
   background:
     radial-gradient(900px 700px at 80% -10%, rgba(108,223,166,.08), transparent 55%),
@@ -33,7 +32,7 @@ body{
   line-height:1.6;
 }
 
-/* Помощники */
+/* helpers */
 .bg-deeper{background:var(--deeper)}
 .bg-section{background:var(--light-1)}
 .text-mute-200{color:var(--muted-200)!important}
@@ -50,101 +49,72 @@ body{
 .divider{height:1px;background:var(--border-light)}
 .btn-sm{--bs-btn-padding-y:.3rem;--bs-btn-padding-x:.6rem}
 
-/* Навбар поверх hero: фиксируем и центрируем «капсулу» */
+/* Навбар поверх hero: фиксированная «капсула» */
 .nav-glass{
-  position: fixed;            /* было sticky */
-  top: 16px;
-  left: 0;
-  right: 0;
-  z-index: 1040;
-  width: min(1240px, calc(100% - 32px));  /* зазор слева/справа */
-  margin: 0 auto;            /* центрируем */
+  position: fixed;
+  top: 16px; left: 0; right: 0; z-index: 1040;
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
   background: rgba(8, 38, 32, .55);
   backdrop-filter: saturate(160%) blur(16px);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
   border: 1px solid rgba(255,255,255,.12);
-  border-radius: 28px;       /* более округлые рамки */
+  border-radius: 28px;
   box-shadow: 0 8px 30px -18px rgba(0,0,0,.45), inset 0 1px rgba(255,255,255,.08);
 }
-
-/* Внутренние отступы бара и цвета ссылок */
 .nav-glass .container{ padding-top: 10px; padding-bottom: 10px; }
 .nav-glass .nav-link{ color: rgba(255,255,255,.9)!important; }
 .nav-glass .nav-link:hover{ color: #fff!important; }
-
-/* Кнопки-капсулы как на скрине */
 .nav-glass .btn-ghost{
-  background: rgba(255,255,255,.08);
-  color: #fff; border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px; padding: .6rem 1rem; font-weight: 600;
-}
-.nav-glass .btn-primary-gy{
-  background: linear-gradient(180deg,#6cdfa6,#4fcf95);
-  color:#0a1a16; border:0; border-radius: 999px; padding:.6rem 1rem;
-  box-shadow: 0 12px 28px -14px rgba(108,223,166,.35);
-}
-
-/* Чтобы контент hero не прятался под фикс. навбаром */
-.hero-hero{ padding-top: 120px; }  /* подстройте под фактическую высоту бара */
-
-/* Мобильные корректировки */
-@media (max-width: 992px){
-  .nav-glass{
-    top: 10px;
-    width: calc(100% - 20px);
-    border-radius: 22px;
-  }
-  .hero-hero{ padding-top: 100px; }
-}
-
-/* CTA справа как капсула */
-.btn-primary-gy{
-  background: linear-gradient(180deg,#6cdfa6,#4fcf95);
-  color:#0a1a16; border:0; border-radius: 999px;
-  padding:.6rem 1rem; font-weight:700;
-  box-shadow: 0 12px 28px -14px rgba(108,223,166,.35);
-}
-.btn-ghost{
   background: rgba(255,255,255,.08);
   color:#fff; border:1px solid rgba(255,255,255,.12);
   border-radius: 999px; padding:.6rem 1rem; font-weight:600;
 }
 
-/* убираем «осветление» навбара вне hero (если было) */
-.navbar .nav-link{ color:inherit; }
+/* CTA — только основной, цвет #9FE29E */
+.btn-primary-gy{
+  background: var(--cta);
+  color:#0a1a16; border:0; border-radius: 999px;
+  padding:.6rem 1rem; font-weight:700;
+  box-shadow: 0 12px 28px -14px rgba(159,226,158,.45);
+}
+.btn-primary-gy:hover{filter:brightness(1.03)}
 
-/* HERO: глубокий зелёный */
+/* HERO */
 .hero-hero{
   position:relative;
   color:#fff;
+  min-height: 80vh;
+  width: 100%;
+  display:flex; align-items:center;
   background:
     radial-gradient(900px 700px at 50% -20%, rgba(108,223,166,.10), transparent 60%),
     linear-gradient(180deg, #0f3a33, #0b2e28 60%, #0a231d);
+  padding-top: 120px; /* под высоту бара */
 }
+.hero-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  opacity:.8; pointer-events:none; z-index:0;
+}
+.hero-hero > .container{ position:relative; z-index:1; }
 .hero-bg-shape{
   position:absolute; inset:0;
   background:radial-gradient(600px 420px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
-  pointer-events:none;
+  pointer-events:none; z-index:1;
+}
+@media (max-width: 992px){
+  .nav-glass{ top:10px; width:calc(100% - 20px); border-radius:22px; }
+  .hero-hero{ padding-top: 100px; }
 }
 
-/* Кнопки в общем стиле */
-.btn-primary-gy{
-  background:linear-gradient(180deg,var(--primary),var(--primary-600));
-  border:0;color:#0a1a16;font-weight:700;border-radius:.8rem;
-  padding:.625rem .9rem; box-shadow:0 10px 28px -12px var(--ring);
-}
-.btn-primary-gy:hover{filter:brightness(1.03); box-shadow:0 16px 36px -14px var(--ring)}
-.btn-ghost{
-  background:rgba(255,255,255,.06); color:#fff;
-  border:1px solid var(--border-dark); border-radius:.8rem; padding:.625rem .9rem; font-weight:600;
-}
-.hero-hero .text-muted{color:rgba(255,255,255,.75)!important}
-
-/* СЕКЦИИ: светлый фон, тёмный текст */
+/* Секции светлые */
 section:not(.hero-hero){color:var(--text-dark)}
 .bg-section{background:var(--light-1)}
 
-/* Карточки на светлом фоне */
+/* Карточки и удвоенные внутренние отступы */
+.pad-2x{ padding: 2.5rem !important; } /* x2 примерно от p-3/p-4 */
 .glass, .glass-xl{
   background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
   border:1px solid var(--border-light);
@@ -152,18 +122,16 @@ section:not(.hero-hero){color:var(--text-dark)}
   box-shadow:0 20px 40px -30px rgba(6,34,29,.25), inset 0 1px rgba(255,255,255,.6);
 }
 .glass-xl{background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.8))}
-
-/* Глубокая карточка (алгоритм) как на макете — тёмная на светлом фоне */
 .glass-deep{
   background:linear-gradient(180deg, rgba(7,30,26,.92), rgba(7,30,26,.82));
   border:1px solid var(--ink-700);
   color:#eaf5f3;
 }
 
-/* Шаги */
+/* Карточки шагов — тоже удвоенный padding */
 .step-card{
   background:#fff; border:1px solid var(--border-light);
-  border-radius:.9rem; padding:1rem; color:var(--text-dark);
+  border-radius:.9rem; color:var(--text-dark);
 }
 .step-head{
   display:inline-block; background:#e6f3ee; color:#2b5c53;
@@ -171,54 +139,31 @@ section:not(.hero-hero){color:var(--text-dark)}
   margin-bottom:.5rem; font-size:.8rem;
 }
 
-/* Визуальные заглушки */
+/* Слоты изображений */
+.media-slot{ background:#fff; border:1px dashed var(--border-light); display:grid; place-items:center; min-height:120px; }
+.img-slot{ max-width:100%; height:auto; display:block; }
+.img-fallback{ color:var(--muted-400); font-size:.9rem; padding:1rem; }
+
+/* Визуальные заглушки (если решите не использовать изображения) */
 .shadow-inset{box-shadow:inset 0 1px rgba(255,255,255,.7), 0 24px 60px -40px rgba(6,34,29,.25)}
-.mock-tile{height:180px;background:linear-gradient(180deg,#f6faf8,#eef5f2)}
-.mock-progress{height:120px;background:#eef5f2; position:relative}
-.mock-progress::after{content:""; position:absolute; left:10%; right:10%; top:50%;
-  height:10px; background:#d8ebe5; border-radius:999px;}
-.mini-widget{height:74px;background:#f6faf8}
-.mini-chart{height:74px;background:linear-gradient(180deg, rgba(108,223,166,.18), #ffffff)}
-.mini-stats{padding:.5rem;background:#ffffff;border:1px solid var(--border-light);border-radius:.75rem}
-.mock-pattern{height:180px;background:linear-gradient(180deg,#f6faf8,#eef5f2)}
-.mock-logos{height:180px;background:#ffffff;border:1px solid var(--border-light)}
 .grid-logos{grid-template-columns:repeat(3,1fr);gap:.5rem}
 
-/* Прайс/FAQ элементы на светлом */
-.price-card, .feature, .faq details, .step{
-  background:#ffffff; border:1px solid var(--border-light); color:var(--text-dark);
-}
-.price{ font-size:1.75rem; font-weight:800; color:var(--text-dark) }
-
-/* FOOTER — тёмный */
+/* Footer */
 footer{background:var(--deeper); color:#cfe3df; border-top:1px solid var(--ink-700)}
 footer .list-unstyled a{color:#cfe3df}
 footer .list-unstyled a:hover{color:#fff}
 
-/* Адаптив */
-@media (max-width: 992px){
-  .navbar.sticky-top{border-bottom:1px solid rgba(255,255,255,.18)}
-  .grid-logos{grid-template-columns:repeat(2,1fr)}
+/* Карточки в блоке "Алгоритм вычисления" — цвет #013D3D */
+#algo .step-card{
+  background: #013D3D;
+  border-color: #0A5959;
+  box-shadow: 0 10px 30px -18px rgba(1,61,61,.45), inset 0 1px rgba(255,255,255,.06);
+  color: #D8EAE9; /* базовый цвет текста внутри */
 }
-/* Делает навбар светлым, когда выходим из hero на светлые секции */
-@media (prefers-reduced-motion:no-preference){
-  body:has(#hero:in-view) .navbar .nav-link{color:rgba(255,255,255,.85)}
-  body:has(#hero:in-view) .navbar .nav-link:hover{color:#fff}
-}
-
-/* Hero: 80% высоты экрана и 100% ширины */
-.hero-hero{
-  min-height: 80vh;   /* занимает 80% экрана по высоте */
-  width: 100%;        /* 100% по ширине */
-  display: flex;
-  align-items: center; /* вертикально центрируем контент */
-}
-
-/* Если шапка фиксированная — учтём её высоту,
-   чтобы заголовок не прятался под навбаром */
-@media (min-width: 993px){
-  .hero-hero{ padding-top: 120px; }  /* подправьте значение при необходимости */
-}
-@media (max-width: 992px){
-  .hero-hero{ padding-top: 100px; }
+#algo .step-card h3{ color:#F0FBFA; }
+#algo .step-card p{ color:#BFD7D5; }
+#algo .step-card .step-head{
+  background:#0E5F5F;
+  border-color:#0A5959;
+  color:#EAF7F6;
 }
