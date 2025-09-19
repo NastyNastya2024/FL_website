@@ -1,5 +1,5 @@
 body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
-h1,h2,h3{font-family:"Montserrat","Inter",sans-serif;font-weight:200;}
+h1,h2,h3,h4,h5,h6{font-family:"Montserrat","Inter",sans-serif;font-weight:400;font-size:1.25rem;}
 
 :root{
   --ink-900:#071e1a; --ink-800:#082620; --ink-700:#0c3a33;
@@ -88,6 +88,44 @@ body{
   color: #9FE29E !important;
   transform: scale(1.05);
 }
+
+/* Убираем точки у навигационных ссылок */
+.navbar-nav li::before {
+  display: none;
+}
+
+/* Кнопки "Узнать подробнее" в стиле второй картинки */
+.btn-learn-more {
+  color: #5a9b8a;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.btn-learn-more:hover {
+  color: #4a8b7a;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+/* Темно-зеленый CTA блок в стиле второй картинки */
+.cta-dark {
+  background: #0c2a24;
+  border: 1px solid #1a4d3a;
+  color: #ffffff;
+}
+
+.cta-dark h2 {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.cta-dark p {
+  color: #e8f5f3;
+}
 .nav-glass .btn-ghost{
   background: rgba(255,255,255,.08);
   color:#fff; border:1px solid rgba(255,255,255,.12);
@@ -99,7 +137,7 @@ body{
   background: linear-gradient(135deg, #9FE29E 0%, #7DD87D 50%, #6BCF6B 100%);
   color:#0a1a16; border:0; border-radius: 999px;
   padding:.6rem 1rem; font-weight:700;
-  box-shadow: 0 12px 28px -14px rgba(159,226,158,.45);
+  box-shadow: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -107,11 +145,11 @@ body{
 .btn-primary-gy:hover{
   background: linear-gradient(135deg, #A8E5A8 0%, #8DD88D 50%, #7DD87D 100%);
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -12px rgba(159,226,158,.6);
+  box-shadow: none;
 }
 .btn-primary-gy:active{
   transform: translateY(0);
-  box-shadow: 0 8px 16px -8px rgba(159,226,158,.4);
+  box-shadow: none;
 }
 
 /* Эффект блеска для кнопки */
@@ -175,13 +213,14 @@ section:not(.hero-hero){color:var(--text-dark)}
   background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
   border:1px solid var(--border-light);
   border-radius:1rem; color:var(--text-dark);
-  box-shadow:0 20px 40px -30px rgba(6,34,29,.25), inset 0 1px rgba(255,255,255,.6);
+  box-shadow: none;
 }
 .glass-xl{background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.8))}
 .glass-deep{
-  background:linear-gradient(180deg, rgba(7,30,26,.92), rgba(7,30,26,.82));
-  border:1px solid var(--ink-700);
-  color:#eaf5f3;
+  background: #0c2a24;
+  border: 1px solid #1a4d3a;
+  color: #ffffff;
+  border-radius: 16px;
 }
 
 /* Карточки шагов — тоже удвоенный padding */
@@ -197,11 +236,91 @@ section:not(.hero-hero){color:var(--text-dark)}
 
 /* Слоты изображений */
 .media-slot{ background:#fff; border:1px dashed var(--border-light); display:grid; place-items:center; min-height:120px; }
-.img-slot{ max-width:100%; height:auto; display:block; }
+.img-slot{ 
+  max-width:100%; 
+  height:auto; 
+  display:block; 
+  border-radius: 12px;
+  object-fit: cover;
+}
 .img-fallback{ color:var(--muted-400); font-size:.9rem; padding:1rem; }
 
+/* Закругленные углы для всех изображений */
+img {
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+
+/* Специальные стили для аватаров */
+img[alt*="avatar"], img[alt*="CEO"] {
+  border-radius: 50%;
+}
+
+/* Стили для изображений в карточках */
+.glass img, .glass-xl img {
+  border-radius: 8px;
+}
+
+/* Стили для изображений в hero секции */
+.hero-video {
+  border-radius: 16px;
+}
+
+/* Дополнительные стили для изображений */
+.media-slot img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.media-slot img:hover {
+  transform: scale(1.02);
+}
+
+/* Стили для изображений в новостях */
+#news img, #news .media-slot img {
+  border-radius: 8px;
+}
+
+/* Стили для изображений в команде */
+#team img {
+  border-radius: 50%;
+}
+
+/* Стили для изображений в партнерстве */
+#partners img {
+  border-radius: 8px;
+}
+
+/* Стили для буллетов */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul li::before {
+  content: "•";
+  color: var(--cta);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Стили для буллетов в стеклянных карточках */
+.glass ul li::before,
+.glass-xl ul li::before {
+  color: var(--primary);
+}
+
 /* Визуальные заглушки (если решите не использовать изображения) */
-.shadow-inset{box-shadow:inset 0 1px rgba(255,255,255,.7), 0 24px 60px -40px rgba(6,34,29,.25)}
+.shadow-inset{box-shadow: none}
 .grid-logos{grid-template-columns:repeat(3,1fr);gap:.5rem}
 
 /* Footer */
@@ -209,19 +328,33 @@ footer{background:var(--deeper); color:#cfe3df; border-top:1px solid var(--ink-7
 footer .list-unstyled a{color:#cfe3df}
 footer .list-unstyled a:hover{color:#fff}
 
-/* Карточки в блоке "Алгоритм вычисления" — цвет #013D3D */
+/* Карточки в блоке "Алгоритм вычисления" — темно-зеленый стиль */
 #algo .step-card{
-  background: #013D3D;
-  border-color: #0A5959;
-  box-shadow: 0 10px 30px -18px rgba(1,61,61,.45), inset 0 1px rgba(255,255,255,.06);
-  color: #D8EAE9; /* базовый цвет текста внутри */
+  background: #1a4d3a;
+  border: 1px solid #2d6b4f;
+  box-shadow: none;
+  color: #ffffff;
+  border-radius: 12px;
 }
-#algo .step-card h3{ color:#F0FBFA; }
-#algo .step-card p{ color:#BFD7D5; }
+#algo .step-card h3{ 
+  color: #ffffff;
+  font-weight: 400;
+}
+#algo .step-card p{ 
+  color: #e8f5f3;
+}
 #algo .step-card .step-head{
-  background:#0E5F5F;
-  border-color:#0A5959;
-  color:#EAF7F6;
+  background: #2d6b4f;
+  border: 1px solid #3d7a5f;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Заголовок блока алгоритма */
+#algo h2 {
+  color: #ffffff;
+  font-weight: 400;
 }
 
 /* Таблица плана партнерства */
@@ -277,7 +410,7 @@ footer .list-unstyled a:hover{color:#fff}
   text-decoration: none;
   display: inline-block;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px -8px rgba(159, 226, 158, 0.4);
+  box-shadow: none;
 }
 
 .btn-light:hover {
@@ -285,7 +418,7 @@ footer .list-unstyled a:hover{color:#fff}
   color: var(--text-dark);
   text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px -8px rgba(159, 226, 158, 0.5);
+  box-shadow: none;
 }
 
 /* 3. Темная кнопка (Go to newsroom) - темно-зеленый фон с иконкой */
@@ -301,7 +434,7 @@ footer .list-unstyled a:hover{color:#fff}
   align-items: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px -8px rgba(1, 61, 61, 0.4);
+  box-shadow: none;
 }
 
 .btn-dark:hover {
@@ -309,7 +442,7 @@ footer .list-unstyled a:hover{color:#fff}
   color: white;
   text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px -8px rgba(1, 61, 61, 0.5);
+  box-shadow: none;
 }
 
 .btn-dark .btn-icon {
@@ -332,5 +465,22 @@ footer .list-unstyled a:hover{color:#fff}
   
   .btn-text {
     font-size: 0.9rem;
+  }
+  
+  /* Адаптивные закругления для мобильных */
+  img {
+    border-radius: 8px;
+  }
+  
+  .img-slot {
+    border-radius: 8px;
+  }
+  
+  .media-slot img {
+    border-radius: 8px;
+  }
+  
+  .hero-video {
+    border-radius: 12px;
   }
 }
