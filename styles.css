@@ -184,6 +184,64 @@ body{
   border-radius: 12px;
 }
 
+/* Стили для FAQ аккордеона */
+.accordion-button {
+  background: #ffffff;
+  color: #0a1a16;
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
+  color: #0a1a16;
+  border-color: #6BCF6B;
+}
+
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
+  color: #0a1a16;
+  box-shadow: none;
+  border-color: #6BCF6B;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(107, 207, 107, 0.25);
+  border-color: #6BCF6B;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a1a16'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-item:first-of-type {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.accordion-item:last-of-type {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.accordion-item:not(:first-of-type) {
+  border-top: none;
+}
+
+/* Стили для изумрудной плашки цитаты */
+.quote-plaque-emerald {
+  background: #1a4d3a;
+  border: 1px solid #2d6b4f;
+  color: #ffffff;
+}
+
 /* Кнопки новостей в стиле третьей картинки */
 .btn-news-link {
   color: #5C5C70;
