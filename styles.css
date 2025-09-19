@@ -5,8 +5,8 @@ h1,h2,h3{font-family:"Montserrat","Inter",sans-serif;font-weight:200;}
   --ink-900:#071e1a; --ink-800:#082620; --ink-700:#0c3a33;
   --deep:#0c2a24; --deeper:#0a201b;
 
-  --light-1:#eef5f2;
-  --light-2:#f6faf8;
+  --light-1:#ffffff;
+  --light-2:#ffffff;
   --card-light:#ffffff;
 
   --text-dark:#0e2d27;
@@ -26,9 +26,7 @@ html,body{height:100%}
 body{
   margin:0;
   color:var(--text-dark);
-  background:
-    radial-gradient(900px 700px at 80% -10%, rgba(108,223,166,.08), transparent 55%),
-    var(--light-2);
+  background: var(--light-2);
   line-height:1.6;
 }
 
@@ -87,9 +85,7 @@ body{
   min-height: 80vh;
   width: 100%;
   display:flex; align-items:center;
-  background:
-    radial-gradient(900px 700px at 50% -20%, rgba(108,223,166,.10), transparent 60%),
-    linear-gradient(180deg, #0f3a33, #0b2e28 60%, #0a231d);
+  background: linear-gradient(180deg, #0f3a33, #0b2e28 60%, #0a231d);
   padding-top: 120px; /* под высоту бара */
 }
 .hero-video{
@@ -134,8 +130,8 @@ section:not(.hero-hero){color:var(--text-dark)}
   border-radius:.9rem; color:var(--text-dark);
 }
 .step-head{
-  display:inline-block; background:#e6f3ee; color:#2b5c53;
-  border:1px solid #cde6df; border-radius:.6rem; padding:.2rem .5rem;
+  display:inline-block; background:#f8f9fa; color:#495057;
+  border:1px solid #dee2e6; border-radius:.6rem; padding:.2rem .5rem;
   margin-bottom:.5rem; font-size:.8rem;
 }
 
@@ -166,4 +162,28 @@ footer .list-unstyled a:hover{color:#fff}
   background:#0E5F5F;
   border-color:#0A5959;
   color:#EAF7F6;
+}
+
+/* Таблица плана партнерства */
+.table th {
+  border-bottom: 2px solid var(--border-light);
+  padding: 1rem 0.5rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.table td {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+.table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.badge.rounded-circle {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
