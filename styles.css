@@ -187,3 +187,90 @@ footer .list-unstyled a:hover{color:#fff}
   justify-content: center;
   font-size: 12px;
 }
+
+/* Три типа кнопок */
+
+/* 1. Текстовая кнопка (Sign In) - без фона */
+.btn-text {
+  background: transparent;
+  color: var(--text-dark);
+  border: none;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-text:hover {
+  color: var(--ink-700);
+  text-decoration: none;
+}
+
+/* 2. Светлая кнопка (Get Started) - светло-зеленый фон */
+.btn-light {
+  background: #9FE29E;
+  color: var(--text-dark);
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px -8px rgba(159, 226, 158, 0.4);
+}
+
+.btn-light:hover {
+  background: #8DD88D;
+  color: var(--text-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -8px rgba(159, 226, 158, 0.5);
+}
+
+/* 3. Темная кнопка (Go to newsroom) - темно-зеленый фон с иконкой */
+.btn-dark {
+  background: #013D3D;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px -8px rgba(1, 61, 61, 0.4);
+}
+
+.btn-dark:hover {
+  background: #015555;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -8px rgba(1, 61, 61, 0.5);
+}
+
+.btn-dark .btn-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.btn-dark:hover .btn-icon {
+  transform: translateX(2px);
+}
+
+/* Адаптивность для кнопок */
+@media (max-width: 576px) {
+  .btn-light,
+  .btn-dark {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-text {
+    font-size: 0.9rem;
+  }
+}
