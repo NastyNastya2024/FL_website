@@ -142,16 +142,47 @@ body{
 .cta-dark {
   background: #0c2a24;
   border: 1px solid #1a4d3a;
-  color: #ffffff;
+  color: #ffffff !important;
+  padding: 4rem 3rem !important;
+  margin: 0 -2rem;
 }
 
 .cta-dark h2 {
-  color: #020827 !important;
+  color: #ffffff !important;
   font-weight: 400;
+  margin-bottom: 1.5rem !important;
 }
 
 .cta-dark p {
-  color: #e8f5f3;
+  color: #ffffff !important;
+  margin-bottom: 2rem !important;
+}
+
+.cta-dark * {
+  color: #ffffff !important;
+}
+
+/* Дополнительные стили для блока партнерства */
+.cta-dark .row {
+  margin: 0;
+}
+
+.cta-dark .col-12,
+.cta-dark .col-lg-6 {
+  padding: 0 1rem;
+}
+
+.cta-dark .d-flex {
+  gap: 1.5rem;
+}
+
+.cta-dark .d-flex p {
+  margin-bottom: 1rem !important;
+}
+
+.cta-dark .small {
+  color: #ffffff !important;
+  opacity: 0.9;
 }
 
 /* Кастомная пагинация - убираем точки и делаем салатовый цвет */
@@ -378,17 +409,21 @@ body{
 .btn-primary-gy{
   background: linear-gradient(135deg, #9FE29E 0%, #7DD87D 50%, #6BCF6B 100%);
   color:#0a1a16; border:0; border-radius: 999px;
-  padding:.6rem 1rem; font-weight:700;
+  padding:.6rem 1rem; font-weight:500;
   box-shadow: none;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  font-stretch: condensed;
+  letter-spacing: -0.02em;
 }
 .btn-primary-gy:hover{
   background: linear-gradient(135deg, #A8E5A8 0%, #8DD88D 50%, #7DD87D 100%);
+  color: #0a1a16;
   box-shadow: none;
 }
 .btn-primary-gy:active{
+  color: #0a1a16;
   box-shadow: none;
 }
 
@@ -490,8 +525,25 @@ body{
 }
 
 .modal-header {
-  padding: 1.5rem 2rem 1rem 2rem;
-  border-bottom: 1px solid #e9ecef;
+  padding: 3rem 3rem 2rem 3rem;
+  border-bottom: none;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+}
+
+.modal-title {
+  flex: 1;
+  text-align: center;
 }
 
 .modal-body {
@@ -499,9 +551,13 @@ body{
 }
 
 .modal-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #020827;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  text-align: center;
 }
 
 /* Стили для плейсхолдеров */
@@ -659,6 +715,7 @@ section:not(.hero-hero){color:var(--text-dark)}
   border: 1px solid #1a4d3a;
   color: #ffffff;
   border-radius: 16px;
+  padding: 3rem 2.5rem !important;
 }
 
 /* Карточки шагов — тоже удвоенный padding */
@@ -772,28 +829,40 @@ footer .list-unstyled a:hover{color:#fff}
   background: #1a4d3a;
   border: 1px solid #2d6b4f;
   box-shadow: none;
-  color: #ffffff;
+  color: #ffffff !important;
   border-radius: 12px;
+  padding: 2rem 1.5rem !important;
 }
 #algo .step-card h3{ 
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 400;
 }
 #algo .step-card p{ 
-  color: #e8f5f3;
+  color: #ffffff !important;
 }
 #algo .step-card .step-head{
   background: #2d6b4f;
   border: 1px solid #3d7a5f;
-  color: #ffffff;
+  color: #ffffff !important;
   border-radius: 8px;
   font-weight: 500;
+}
+#algo .step-card * {
+  color: #ffffff !important;
 }
 
 /* Заголовок блока алгоритма */
 #algo h2 {
   color: #ffffff;
   font-weight: 400;
+}
+
+/* Все заголовки в блоке алгоритма */
+#algo h3,
+#algo h4,
+#algo h5,
+#algo h6 {
+  color: #ffffff !important;
 }
 
 /* Таблица плана партнерства */

@@ -77,7 +77,7 @@
           formError.classList.add('d-none');
           
           // Change modal title
-          modalTitle.textContent = 'Спасибо! Ваше сообщение успешно отправлено';
+          modalTitle.innerHTML = 'Спасибо! Ваше сообщение<br>успешно отправлено';
           
           // Reset form
           contactForm.reset();
