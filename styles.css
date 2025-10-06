@@ -1,5 +1,5 @@
 body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
-h1,h2,h3,h4,h5,h6{font-family:"Montserrat","Inter",sans-serif;font-weight:300;font-size:1.5rem;letter-spacing:0.02em;margin-bottom:1rem;}
+h1,h2,h3,h4,h5,h6{font-family:"Montserrat","Inter",sans-serif;font-weight:300;font-size:1.5rem;letter-spacing:0.02em;margin-bottom:1rem;color:#020827 !important;}
 
 /* Стандартные отступы для заголовков */
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
@@ -22,8 +22,8 @@ h6 { font-size: 1.1rem; font-weight: 300; }
   --light-2:#ffffff;
   --card-light:#ffffff;
 
-  --text-dark:#0e2d27;
-  --muted-200:#6a8a83; --muted-300:#7b9690; --muted-400:#8aa8a3; --muted-500:#a6b7b3;
+  --text-dark:#64697B;
+  --muted-200:#64697B; --muted-300:#64697B; --muted-400:#64697B; --muted-500:#64697B;
 
   /* новый основной цвет CTA */
   --cta:#9FE29E;
@@ -63,8 +63,8 @@ body{
 /* Навбар поверх hero: фиксированная «капсула» */
 .nav-glass{
   position: fixed;
-  top: 20px; left: 0; right: 0; z-index: 1040;
-  width: min(1200px, calc(100% - 60px));
+  top: 30px; left: 0; right: 0; z-index: 1040;
+  width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
   background: rgba(5, 25, 20, .85);
   backdrop-filter: saturate(180%) blur(20px);
@@ -82,9 +82,10 @@ body{
 .nav-glass .nav-link{ 
   color: rgba(255,255,255,.9)!important; 
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .nav-glass .nav-link:hover{ 
   color: #fff!important; 
@@ -92,14 +93,27 @@ body{
 }
 .nav-glass .navbar-brand {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #fff !important;
   text-decoration: none;
-  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .nav-glass .navbar-brand:hover {
   color: #9FE29E !important;
-  transform: scale(1.05);
+}
+
+/* Стили для бургер-меню */
+.nav-glass .navbar-toggler {
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 0.25rem 0.5rem;
+}
+
+.nav-glass .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(159, 226, 158, 0.25);
+}
+
+.nav-glass .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Убираем точки у навигационных ссылок */
@@ -109,7 +123,7 @@ body{
 
 /* Кнопки "Узнать подробнее" в стиле второй картинки */
 .btn-learn-more {
-  color: #5a9b8a;
+  color: #020827;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -119,7 +133,7 @@ body{
 }
 
 .btn-learn-more:hover {
-  color: #4a8b7a;
+  color: #020827;
   text-decoration: none;
   transform: translateX(2px);
 }
@@ -132,7 +146,7 @@ body{
 }
 
 .cta-dark h2 {
-  color: #ffffff;
+  color: #020827 !important;
   font-weight: 400;
 }
 
@@ -150,7 +164,7 @@ body{
 }
 
 .pagination-custom .page-link {
-  color: #6c757d;
+  color: #020827;
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 0.375rem;
@@ -159,13 +173,13 @@ body{
 }
 
 .pagination-custom .page-link:hover {
-  color: #495057;
+  color: #020827;
   background-color: #f8f9fa;
   border-color: #adb5bd;
 }
 
 .pagination-custom .page-item.active .page-link {
-  color: #0a1a16;
+  color: #020827;
   background: linear-gradient(135deg, #9FE29E 0%, #7DD87D 50%, #6BCF6B 100%);
   border-color: #6BCF6B;
 }
@@ -187,7 +201,7 @@ body{
 /* Стили для FAQ аккордеона */
 .accordion-button {
   background: #ffffff;
-  color: #0a1a16;
+  color: #020827;
   border: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -195,13 +209,13 @@ body{
 
 .accordion-button:hover {
   background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
-  color: #0a1a16;
+  color: #020827;
   border-color: #6BCF6B;
 }
 
 .accordion-button:not(.collapsed) {
   background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
-  color: #0a1a16;
+  color: #020827;
   box-shadow: none;
   border-color: #6BCF6B;
 }
@@ -244,7 +258,7 @@ body{
 
 /* Кнопки новостей в стиле третьей картинки */
 .btn-news-link {
-  color: #5C5C70;
+  color: #020827;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -254,7 +268,7 @@ body{
 }
 
 .btn-news-link:hover {
-  color: #4a4a5e;
+  color: #020827;
   text-decoration: none;
   transform: translateX(2px);
 }
@@ -327,7 +341,7 @@ body{
   justify-content: center;
   font-size: 12px;
   font-weight: bold;
-  color: #666;
+  color: #020827;
   transition: all 0.3s ease;
   margin: 0 auto;
 }
@@ -357,6 +371,7 @@ body{
   background: rgba(255,255,255,.08);
   color:#fff; border:1px solid rgba(255,255,255,.12);
   border-radius: 999px; padding:.6rem 1rem; font-weight:600;
+  white-space: nowrap;
 }
 
 /* CTA — только основной, цвет #9FE29E с градиентом */
@@ -365,35 +380,18 @@ body{
   color:#0a1a16; border:0; border-radius: 999px;
   padding:.6rem 1rem; font-weight:700;
   box-shadow: none;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 .btn-primary-gy:hover{
   background: linear-gradient(135deg, #A8E5A8 0%, #8DD88D 50%, #7DD87D 100%);
-  transform: translateY(-2px);
   box-shadow: none;
 }
 .btn-primary-gy:active{
-  transform: translateY(0);
   box-shadow: none;
 }
 
-/* Эффект блеска для кнопки */
-.btn-primary-gy::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.6s ease;
-}
-
-.btn-primary-gy:hover::before {
-  left: 100%;
-}
 
 /* HERO */
 .hero-hero{
@@ -409,25 +407,213 @@ body{
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit:cover;
-  opacity:.8; pointer-events:none; z-index:0;
+  opacity:.6; 
+  pointer-events:none; 
+  z-index:0;
+  filter: brightness(0.7) blur(1px) saturate(0.8);
 }
-.hero-hero > .container{ position:relative; z-index:1; }
+.hero-blur-overlay{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events:none; 
+  z-index:1;
+}
+.hero-hero > .container{ position:relative; z-index:2; }
 .hero-bg-shape{
   position:absolute; inset:0;
   background:radial-gradient(600px 420px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
-  pointer-events:none; z-index:1;
+  pointer-events:none; z-index:2;
 }
-@media (max-width: 992px){
+@media (max-width: 1200px){
   .nav-glass{ 
-    top: 16px; 
-    width: calc(100% - 40px); 
+    top: 20px; 
+    width: calc(100% - 60px); 
     border-radius: 28px;
   }
   .nav-glass .container {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .nav-glass .nav-link {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .nav-glass .navbar-brand {
+    font-size: 1rem;
+  }
   .hero-hero{ padding-top: 120px; }
+}
+
+@media (max-width: 992px){
+  .nav-glass{ 
+    top: 15px; 
+    width: calc(100% - 40px); 
+    border-radius: 24px;
+  }
+  .nav-glass .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .nav-glass .nav-link {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .nav-glass .navbar-brand {
+    font-size: 0.95rem;
+  }
+  .hero-hero{ padding-top: 120px; }
+}
+
+@media (max-width: 576px){
+  .nav-glass{ 
+    top: 15px; 
+    width: calc(100% - 40px); 
+    border-radius: 24px;
+  }
+  .nav-glass .nav-link {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .nav-glass .navbar-brand {
+    font-size: 0.95rem;
+  }
+}
+
+/* Стили для модального окна */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-body {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #020827;
+}
+
+/* Стили для плейсхолдеров */
+.modal-body input::placeholder,
+.modal-body textarea::placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+}
+
+.modal-body input::-webkit-input-placeholder,
+.modal-body textarea::-webkit-input-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+}
+
+.modal-body input::-moz-placeholder,
+.modal-body textarea::-moz-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+}
+
+.modal-body input:-ms-input-placeholder,
+.modal-body textarea:-ms-input-placeholder {
+  color: #DDDDDD;
+  opacity: 1;
+}
+
+/* Стили для select элемента */
+.modal-body select {
+  color: #020827;
+}
+
+.modal-body select option {
+  color: #020827;
+}
+
+.modal-body select:focus {
+  color: #020827;
+}
+
+/* Стили для кнопки в модальном окне */
+.modal .btn-primary-gy {
+  background: linear-gradient(135deg, #7BCF7B 0%, #6BCF6B 50%, #5ABF5A 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: none;
+}
+
+.modal .btn-primary-gy:hover {
+  background: linear-gradient(135deg, #8BD88B 0%, #7BCF7B 50%, #6BCF6B 100%);
+  color: #ffffff;
+}
+
+.modal .btn-primary-gy:active {
+  background: linear-gradient(135deg, #6BCF6B 0%, #5ABF5A 50%, #4AAF4A 100%);
+  color: #ffffff;
+}
+
+/* Стили для мобильного меню */
+@media (max-width: 1199px) {
+  .nav-glass .navbar-collapse {
+    background: rgba(5, 25, 20, .95);
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 0.5rem;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    width: auto;
+    min-width: 200px;
+  }
+  
+  .nav-glass .navbar-nav {
+    margin-bottom: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    font-size: 0.85rem;
+  }
+  
+  .nav-glass .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Адаптивные отступы для модального окна */
+@media (max-width: 576px) {
+  .modal-header {
+    padding: 1rem 1.5rem 0.75rem 1.5rem;
+  }
+  
+  .modal-body {
+    padding: 0.75rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.1rem;
+  }
 }
 
 /* Секции светлые */
@@ -440,7 +626,7 @@ section:not(.hero-hero){color:var(--text-dark)}
   background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
   border:1px solid var(--border-light);
   border-radius:1rem; color:var(--text-dark);
-  box-shadow: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .glass-xl{background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.8))}
 .glass-deep{
@@ -454,6 +640,7 @@ section:not(.hero-hero){color:var(--text-dark)}
 .step-card{
   background:#fff; border:1px solid var(--border-light);
   border-radius:.9rem; color:var(--text-dark);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 .step-head{
   display:inline-block; background:#f8f9fa; color:#495057;
@@ -532,7 +719,7 @@ ul li {
 
 ul li::before {
   content: "•";
-  color: var(--cta);
+  color: #020827;
   font-weight: bold;
   font-size: 1.2rem;
   position: absolute;
@@ -543,7 +730,7 @@ ul li::before {
 /* Стили для буллетов в стеклянных карточках */
 .glass ul li::before,
 .glass-xl ul li::before {
-  color: var(--primary);
+  color: #020827;
 }
 
 /* Визуальные заглушки (если решите не использовать изображения) */
