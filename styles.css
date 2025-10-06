@@ -565,6 +565,31 @@ body{
   color: #ffffff;
 }
 
+/* Стили для блоков статуса */
+.modal .alert {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.modal .alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.modal .alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
 /* Стили для мобильного меню */
 @media (max-width: 1199px) {
   .nav-glass .navbar-collapse {

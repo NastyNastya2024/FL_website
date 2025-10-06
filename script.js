@@ -43,8 +43,14 @@
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const submitButton = document.getElementById('submitBtn');
+      const formStatus = document.getElementById('formStatus');
+      const formError = document.getElementById('formError');
       const originalText = submitButton.textContent;
+      
+      // Hide previous messages
+      formStatus.classList.add('d-none');
+      formError.classList.add('d-none');
       
       // Show loading state
       submitButton.textContent = 'Отправка...';
@@ -62,24 +68,41 @@
         });
         
         if (response.ok) {
-          // Success
-          alert('Спасибо за обращение! Ваше сообщение отправлено.');
+          // Success - hide form and show success message
+          const modalTitle = document.getElementById('contactModalLabel');
+          const originalTitle = modalTitle.textContent;
           
-          // Close modal
-          const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
-          if (modal) {
-            modal.hide();
-          }
+          contactForm.style.display = 'none';
+          formStatus.classList.add('d-none');
+          formError.classList.add('d-none');
+          
+          // Change modal title
+          modalTitle.textContent = 'Спасибо! Ваше сообщение успешно отправлено';
           
           // Reset form
           contactForm.reset();
           charCount.textContent = '0';
           charCount.style.color = '#6c757d';
+          
+          // Close modal after 4 seconds
+          setTimeout(() => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            if (modal) {
+              modal.hide();
+            }
+            // Reset form display, hide success message, and restore title
+            contactForm.style.display = 'block';
+            formStatus.classList.add('d-none');
+            formError.classList.add('d-none');
+            modalTitle.textContent = originalTitle;
+          }, 4000);
         } else {
           throw new Error('Ошибка отправки');
         }
       } catch (error) {
-        alert('Произошла ошибка при отправке. Попробуйте еще раз.');
+        // Show error message
+        formError.classList.remove('d-none');
+        formStatus.classList.add('d-none');
         console.error('Form submission error:', error);
       } finally {
         // Reset button state

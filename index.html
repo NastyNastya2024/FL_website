@@ -449,8 +449,17 @@
             <input type="hidden" name="_to" value="anastkomarova@yandex.ru">
             <input type="hidden" name="_subject" value="Новое обращение с сайта DigiTrack">
             
+            <!-- Блок статуса отправки -->
+            <div id="formStatus" class="alert alert-success d-none" role="alert">
+              <strong>Спасибо!</strong> Ваше сообщение успешно отправлено.
+            </div>
+            
+            <div id="formError" class="alert alert-danger d-none" role="alert">
+              <strong>Ошибка!</strong> Произошла ошибка при отправке. Попробуйте еще раз.
+            </div>
+            
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary-gy">Отправить</button>
+              <button type="submit" class="btn btn-primary-gy" id="submitBtn">Отправить</button>
             </div>
           </form>
         </div>
