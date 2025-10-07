@@ -182,7 +182,40 @@ body{
   transform: translateX(2px);
 }
 
-/* Стили для блока партнерства в стиле изображения */
+/* Стили для кнопки "Узнать больше" в темном блоке */
+.cta-dark .btn-learn-more {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  font-family: "Montserrat", "Inter", sans-serif !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+}
+
+.cta-dark .btn-learn-more:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateX(2px) !important;
+}
+/* Стили для кнопки btn-primary-gy в темном блоке */
+.cta-dark .btn-primary-gy {
+  background: linear-gradient(to bottom, #A1FA85, #8FE570) !important;
+  color: #020827 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 0.6rem 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-family: "Montserrat", "Inter", sans-serif !important;
+}
+
+.cta-dark .btn-primary-gy:hover {
+  background: linear-gradient(to bottom, #B0FF99, #9FE570) !important;
+  color: #020827 !important;
+}
+
 .partnership-card {
   background: #013D3D;
   border-radius: 12px;
@@ -194,19 +227,33 @@ body{
   margin-bottom: 1.5rem;
 }
 
-.partnership-card img {
-  border: 2px solid #062B29 !important;
+.partnership-avatar-link {
+  text-decoration: none !important;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.partnership-avatar-link:hover {
+  transform: scale(1.05);
+}
+
+.partnership-avatar-link img {
+  transition: border-color 0.2s ease;
+}
+
+.partnership-avatar-link:hover img {
+  border-color: #A1FA85 !important;
 }
 
 .partnership-card p {
   color: #ffffff !important;
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   line-height: 1.5;
 }
 
 .partnership-card .small {
   color: #A1FA85 !important;
-  font-size: 0.8rem;
+  font-size: 0.96rem;
 }
 
 .partnership-link {
@@ -221,7 +268,7 @@ body{
 }
 
 .btn-primary-gy-light {
-  background: #A1FA85 !important;
+  background: linear-gradient(to bottom, #A1FA85, #8FE570) !important;
   color: #020827 !important;
   border: none !important;
   padding: 0.75rem 1.5rem !important;
@@ -232,7 +279,7 @@ body{
 }
 
 .btn-primary-gy-light:hover {
-  background: #B0FF99 !important;
+  background: linear-gradient(to bottom, #B0FF99, #9FE570) !important;
   color: #020827 !important;
 }
 
@@ -331,27 +378,29 @@ body{
 .accordion-button {
   background: #ffffff;
   color: #020827;
-  border: none;
+  border: none !important;
   font-weight: 500;
   transition: all 0.3s ease;
+  padding: 2rem 1.5rem;
+  font-size: 1.1rem;
 }
 
 .accordion-button:hover {
-  background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
+  background: linear-gradient(90deg, #C8F5E1 0%, #DCFBE1 100%);
   color: #020827;
-  border-color: #6BCF6B;
+  border: none !important;
 }
 
 .accordion-button:not(.collapsed) {
-  background: linear-gradient(135deg, #e8f5f3 0%, #d4f0e8 50%, #c8ebd8 100%);
+  background: linear-gradient(90deg, #C8F5E1 0%, #DCFBE1 100%);
   color: #020827;
   box-shadow: none;
-  border-color: #6BCF6B;
+  border: none !important;
 }
 
 .accordion-button:focus {
   box-shadow: 0 0 0 0.25rem rgba(107, 207, 107, 0.25);
-  border-color: #6BCF6B;
+  border: none !important;
 }
 
 .accordion-button::after {
@@ -362,20 +411,28 @@ body{
   border: none;
   margin-bottom: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .accordion-item:first-of-type {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .accordion-item:last-of-type {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-bottom: none;
 }
 
 .accordion-item:not(:first-of-type) {
   border-top: none;
+}
+
+.accordion-body {
+  padding: 2rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Стили для изумрудной плашки цитаты */
@@ -404,7 +461,26 @@ body{
 
 /* Светло-голубовато-зеленый фон для блока новостей */
 .news-section {
-  background-color: #e8f5f3;
+  position: relative !important;
+}
+
+.news-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: #e8f5f3 !important;
+  z-index: -1 !important;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+}
+
+.news-section .container {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 /* Стили для временной шкалы пилота на всю ширину */
@@ -505,7 +581,7 @@ body{
 
 /* CTA — только основной, цвет #A1FA85 с градиентом */
 .btn-primary-gy{
-  background: linear-gradient(135deg, #A1FA85 0%, #8FE570 50%, #7DD05A 100%);
+  background: linear-gradient(to bottom, #A1FA85, #8FE570);
   color:#0a1a16; border:0; border-radius: 999px;
   padding:.6rem 1rem; font-weight:500;
   box-shadow: none;
@@ -516,7 +592,7 @@ body{
   letter-spacing: -0.02em;
 }
 .btn-primary-gy:hover{
-  background: linear-gradient(135deg, #B0FBA0 0%, #9FE570 50%, #8DD05A 100%);
+  background: linear-gradient(to bottom, #B0FF99, #9FE570);
   color: #0a1a16;
   box-shadow: none;
 }
@@ -922,7 +998,7 @@ body{
 
 /* Стили для кнопки в модальном окне */
 .modal .btn-primary-gy {
-  background: linear-gradient(135deg, #7BCF7B 0%, #6BCF6B 50%, #5ABF5A 100%);
+  background: linear-gradient(to bottom, #7BCF7B, #6BCF6B);
   color: #ffffff;
   border: none;
   border-radius: 999px;
@@ -934,12 +1010,12 @@ body{
 }
 
 .modal .btn-primary-gy:hover {
-  background: linear-gradient(135deg, #8BD88B 0%, #7BCF7B 50%, #6BCF6B 100%);
+  background: linear-gradient(to bottom, #8BD88B, #7BCF7B);
   color: #ffffff;
 }
 
 .modal .btn-primary-gy:active {
-  background: linear-gradient(135deg, #6BCF6B 0%, #5ABF5A 50%, #4AAF4A 100%);
+  background: linear-gradient(to bottom, #6BCF6B, #5ABF5A);
   color: #ffffff;
 }
 
@@ -1248,8 +1324,14 @@ ul li::before {
 .grid-logos{grid-template-columns:repeat(3,1fr);gap:.5rem}
 
 /* Footer */
-footer{background:var(--deeper); color:#cfe3df; border-top:1px solid var(--ink-700)}
-footer .list-unstyled a{color:#cfe3df}
+footer{background:var(--deeper); color:#ffffff !important; border-top:1px solid var(--ink-700)}
+footer .list-unstyled a{color:#ffffff !important}
+footer ul li::before {
+  display: none !important;
+}
+footer .h5, footer p, footer .small, footer div {
+  color: #ffffff !important;
+}
 footer .list-unstyled a:hover{color:#fff}
 
 /* Карточки в блоке "Алгоритм вычисления" — темно-зеленый стиль */
