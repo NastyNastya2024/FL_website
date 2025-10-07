@@ -97,7 +97,7 @@
         <div class="row justify-content-center text-center">
           <div class="col-12 col-lg-9">
             <h1 class="display-5 fw-800 mb-3 text-white">Типы федеративного обучения</h1>
-            <p class="text-mute-200 mb-4">
+            <p class="text-white mb-4 fs-4">
               Горизонтальное и вертикальное федеративное обучение <br> для разных сценариев использования данных.
             </p>
             <div class="d-flex justify-content-center">
@@ -115,84 +115,136 @@
         <h2 class="h3 fw-700 mb-4">Два основных типа федеративного обучения</h2>
         <p class="text-mute-300 mb-5">Выбор типа зависит от структуры ваших данных и целей проекта</p>
 
-        <div class="row g-4 align-items-start">
-          <!-- Горизонтальное обучение -->
+        <div class="row g-4">
+          <!-- Левая колонка - Горизонтальное обучение -->
           <div class="col-12 col-lg-6">
-            <div class="glass pad-2x rounded-4 h-100">
+            <div class="glass pad-2x rounded-4 mb-4">
               <div class="media-slot rounded-4 mb-4">
                 <img class="img-slot" src="img/img6.png" alt="Горизонтальное обучение" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
               <h3 class="h5 mb-3">Горизонтальное федеративное обучение</h3>
               <p class="text-mute-300 mb-4">Данные разных пользователей, но с одинаковыми признаками</p>
+            </div>
+            
+            <div class="accordion" id="horizontalAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="horizontal1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#horizontalCollapse1" aria-expanded="false" aria-controls="horizontalCollapse1">
+                    Когда использовать
+                  </button>
+                </h2>
+                <div id="horizontalCollapse1" class="accordion-collapse collapse" aria-labelledby="horizontal1" data-bs-parent="#horizontalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>У вас есть данные о разных пользователях с одинаковой структурой</li>
+                      <li>Нужно увеличить объем обучающих данных</li>
+                      <li>Данные географически распределены</li>
+                      <li>Требуется соблюдение GDPR и других регуляций</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               
-              <div class="mb-4">
-                <h6 class="fw-600 mb-2">Когда использовать:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>У вас есть данные о разных пользователях с одинаковой структурой</li>
-                  <li>Нужно увеличить объем обучающих данных</li>
-                  <li>Данные географически распределены</li>
-                  <li>Требуется соблюдение GDPR и других регуляций</li>
-                </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="horizontal2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#horizontalCollapse2" aria-expanded="false" aria-controls="horizontalCollapse2">
+                    Примеры применения
+                  </button>
+                </h2>
+                <div id="horizontalCollapse2" class="accordion-collapse collapse" aria-labelledby="horizontal2" data-bs-parent="#horizontalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>Рекомендательные системы для разных регионов</li>
+                      <li>Модели распознавания речи от разных пользователей</li>
+                      <li>Системы обнаружения мошенничества в банках</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-
-              <div class="mb-4">
-                <h6 class="fw-600 mb-2">Примеры применения:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>Рекомендательные системы для разных регионов</li>
-                  <li>Модели распознавания речи от разных пользователей</li>
-                  <li>Системы обнаружения мошенничества в банках</li>
-                </ul>
-              </div>
-
-              <div class="mb-0">
-                <h6 class="fw-600 mb-2">Преимущества:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>Простота реализации</li>
-                  <li>Высокая эффективность</li>
-                  <li>Масштабируемость</li>
-                  <li>Сохранение приватности</li>
-                </ul>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="horizontal3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#horizontalCollapse3" aria-expanded="false" aria-controls="horizontalCollapse3">
+                    Преимущества
+                  </button>
+                </h2>
+                <div id="horizontalCollapse3" class="accordion-collapse collapse" aria-labelledby="horizontal3" data-bs-parent="#horizontalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>Простота реализации</li>
+                      <li>Высокая эффективность</li>
+                      <li>Масштабируемость</li>
+                      <li>Сохранение приватности</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Вертикальное обучение -->
+          <!-- Правая колонка - Вертикальное обучение -->
           <div class="col-12 col-lg-6">
-            <div class="glass pad-2x rounded-4 h-100">
+            <div class="glass pad-2x rounded-4 mb-4">
               <div class="media-slot rounded-4 mb-4">
                 <img class="img-slot" src="img/img7.png" alt="Вертикальное обучение" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
               <h3 class="h5 mb-3">Вертикальное федеративное обучение</h3>
-              <p class="text-mute-300 mb-4">Данные про одних и тех же пользователей, но с разными признаками</p>
+              <p class="text-mute-300 mb-4">Данные для тех же пользователей, но с разными признаками</p>
+            </div>
+            
+            <div class="accordion" id="verticalAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="vertical1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#verticalCollapse1" aria-expanded="false" aria-controls="verticalCollapse1">
+                    Когда использовать
+                  </button>
+                </h2>
+                <div id="verticalCollapse1" class="accordion-collapse collapse" aria-labelledby="vertical1" data-bs-parent="#verticalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>У вас есть данные о разных аспектах одних пользователей</li>
+                      <li>Нужно объединить разные типы данных</li>
+                      <li>Партнеры имеют разные роли в экосистеме</li>
+                      <li>Требуется создание комплексных моделей</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               
-              <div class="mb-4">
-                <h6 class="fw-600 mb-2">Когда использовать:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>У вас есть данные о разных аспектах одних пользователей</li>
-                  <li>Нужно объединить разные типы данных</li>
-                  <li>Партнеры имеют разные роли в экосистеме</li>
-                  <li>Требуется создание комплексных моделей</li>
-                </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="vertical2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#verticalCollapse2" aria-expanded="false" aria-controls="verticalCollapse2">
+                    Примеры применения
+                  </button>
+                </h2>
+                <div id="verticalCollapse2" class="accordion-collapse collapse" aria-labelledby="vertical2" data-bs-parent="#verticalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>Объединение данных банка и интернет-магазина</li>
+                      <li>Модели для умного города (транспорт + экология)</li>
+                      <li>Персонализированная медицина (анализы + симптомы)</li>
+                      <li>Финтех-решения (платежи + кредитная история)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-
-              <div class="mb-4">
-                <h6 class="fw-600 mb-2">Примеры применения:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>Объединение данных банка и интернет-магазина</li>
-                  <li>Модели для умного города (транспорт + экология)</li>
-                  <li>Персонализированная медицина (анализы + симптомы)</li>
-                  <li>Финтех-решения (платежи + кредитная история)</li>
-                </ul>
-              </div>
-
-              <div class="mb-0">
-                <h6 class="fw-600 mb-2">Преимущества:</h6>
-                <ul class="text-mute-300 small mb-0">
-                  <li>Богатые данные о пользователях</li>
-                  <li>Высокая точность моделей</li>
-                  <li>Уникальные инсайты</li>
-                  <li>Синергия между партнерами</li>
-                </ul>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="vertical3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#verticalCollapse3" aria-expanded="false" aria-controls="verticalCollapse3">
+                    Преимущества
+                  </button>
+                </h2>
+                <div id="verticalCollapse3" class="accordion-collapse collapse" aria-labelledby="vertical3" data-bs-parent="#verticalAccordion">
+                  <div class="accordion-body">
+                    <ul class="text-mute-300 small mb-0">
+                      <li>Богатые данные о пользователях</li>
+                      <li>Высокая точность моделей</li>
+                      <li>Уникальные инсайты</li>
+                      <li>Синергия между партнерами</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -235,18 +287,24 @@
     <!-- CTA -->
     <section id="cta" class="py-6">
       <div class="container">
-        <div class="glass-xl pad-2x rounded-4">
+        <div class="cta-dark pad-2x rounded-4">
           <div class="row g-4 align-items-center">
-            <div class="col-12 col-lg-8">
-              <h2 class="h4 fw-700 mb-2">Нужна помощь с выбором типа обучения?</h2>
-              <p class="text-mute-300 mb-0">Наши эксперты помогут определить оптимальный подход для вашего проекта</p>
+            <div class="col-12 col-lg-6">
+              <h2 class="h3 fw-700 mb-2 text-white">Нужна помощь с выбором типа обучения?</h2>
+              <p class="text-white mb-3">Наши эксперты помогут определить оптимальный подход для вашего проекта</p>
+              <a href="partnership.html" class="btn btn-primary-gy px-4 py-2">Связаться с нами</a>
             </div>
-            <div class="col-12 col-lg-4 text-lg-end">
-              <a href="partnership.html" class="btn btn-primary-gy">Связаться с нами</a>
+            <div class="col-12 col-lg-6">
+              <div class="partnership-card">
+                <div class="d-flex align-items-start">
+                  <img src="img/avatar-placeholder.png" alt="Expert" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                  <div>
+                    <p class="text-white mb-2">"Бесплатная консультация по выбору типа федеративного обучения"</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="thin-divider mt-4"></div>
-          <div class="small text-mute-400 mt-2">Бесплатная консультация по выбору типа федеративного обучения</div>
         </div>
       </div>
     </section>

@@ -1,6 +1,52 @@
 body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
 h1,h2,h3,h4,h5,h6{font-family:"Montserrat","Inter",sans-serif;font-weight:300;font-size:1.5rem;letter-spacing:0.02em;margin-bottom:1rem;color:#020827 !important;}
 
+/* PRELOADER */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #062B29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.preloader-content {
+  text-align: center;
+  color: white;
+}
+
+.preloader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #A1FA85;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.preloader-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Стандартные отступы для заголовков */
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
   margin-top: 0.5rem;
@@ -13,6 +59,14 @@ h3 { font-size: 1.75rem; font-weight: 300; }
 h4 { font-size: 1.5rem; font-weight: 300; }
 h5 { font-size: 1.25rem; font-weight: 300; }
 h6 { font-size: 1.1rem; font-weight: 300; }
+
+/* Одинаковая высота карточек с изображениями на странице типов обучения */
+#types .glass {
+  height: auto !important;
+  min-height: 280px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
 
 :root{
   --ink-900:#062B29; --ink-800:#013D3D; --ink-700:#013D3D;

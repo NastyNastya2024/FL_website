@@ -112,3 +112,72 @@
     });
   }
 })();
+
+// PRELOADER AND IMAGE OPTIMIZATION
+(() => {
+  const preloader = document.getElementById('preloader');
+  let imagesLoaded = 0;
+  let totalImages = 0;
+  
+  // Get all images on the page
+  const images = document.querySelectorAll('img');
+  totalImages = images.length;
+  
+  // If no images, hide preloader immediately
+  if (totalImages === 0) {
+    hidePreloader();
+    return;
+  }
+  
+  // Add loading attribute to images for lazy loading
+  images.forEach(img => {
+    // Skip if already has loading attribute
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+    
+    // Add error handling
+    img.addEventListener('error', () => {
+      imagesLoaded++;
+      checkAllImagesLoaded();
+    });
+    
+    // Add load event listener
+    img.addEventListener('load', () => {
+      imagesLoaded++;
+      checkAllImagesLoaded();
+    });
+    
+    // If image is already loaded (cached)
+    if (img.complete) {
+      imagesLoaded++;
+      checkAllImagesLoaded();
+    }
+  });
+  
+  // Check if all images are loaded
+  function checkAllImagesLoaded() {
+    if (imagesLoaded >= totalImages) {
+      // Add small delay for smooth transition
+      setTimeout(hidePreloader, 500);
+    }
+  }
+  
+  // Hide preloader function
+  function hidePreloader() {
+    if (preloader) {
+      preloader.classList.add('hidden');
+      // Remove from DOM after animation
+      setTimeout(() => {
+        preloader.remove();
+      }, 500);
+    }
+  }
+  
+  // Fallback: hide preloader after 5 seconds regardless
+  setTimeout(() => {
+    if (preloader && !preloader.classList.contains('hidden')) {
+      hidePreloader();
+    }
+  }, 5000);
+})();
