@@ -1332,7 +1332,10 @@ footer ul li::before {
 footer .h5, footer p, footer .small, footer div {
   color: #ffffff !important;
 }
-footer .list-unstyled a:hover{color:#fff}
+footer .list-unstyled a:hover{
+  color: #A1FA85 !important;
+  text-decoration: underline !important;
+}
 
 /* Карточки в блоке "Алгоритм вычисления" — темно-зеленый стиль */
 #algo .step-card{
