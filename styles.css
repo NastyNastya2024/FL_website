@@ -512,7 +512,7 @@ body{
 /* Стили для блока федеративного обучения */
 .federated-main-image {
   max-width: 100%;
-  max-height: 3000px;
+  max-height: 600px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -573,7 +573,7 @@ body{
 /* Адаптивные стили для федеративного блока */
 @media (max-width: 768px) {
   .federated-main-image {
-    max-height: 1600px;
+    max-height: 500px;
     margin-bottom: 2rem;
   }
   
@@ -590,7 +590,7 @@ body{
 
 @media (max-width: 576px) {
   .federated-main-image {
-    max-height: 1200px;
+    max-height: 400px;
     margin-bottom: 1.5rem;
   }
   
