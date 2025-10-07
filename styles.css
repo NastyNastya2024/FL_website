@@ -17,9 +17,24 @@ h6 { font-size: 1.1rem; font-weight: 300; }
 /* Одинаковая высота карточек с изображениями на странице типов обучения */
 #types .glass {
   height: auto !important;
-  min-height: 280px !important;
+  min-height: 400px !important;
   display: flex !important;
   flex-direction: column !important;
+}
+
+#types .media-slot {
+  height: 300px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 1rem !important;
+}
+
+#types .img-slot {
+  max-height: 250px !important;
+  max-width: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 :root{
