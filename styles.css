@@ -508,6 +508,103 @@ body{
     max-height: 50%;
   }
 }
+
+/* Стили для блока федеративного обучения */
+.federated-main-image {
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.federated-text-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  width: 300px;
+  height: 2rem;
+  pointer-events: none;
+}
+
+.federated-text-line {
+  font-size: 1.1rem;
+  color: #020827;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: typewriter-cycle 3s ease-in-out infinite;
+  animation-delay: calc(var(--line-index) * 3s);
+  white-space: nowrap;
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+}
+
+.federated-text-line:nth-child(1) { --line-index: 1; }
+.federated-text-line:nth-child(2) { --line-index: 2; }
+.federated-text-line:nth-child(3) { --line-index: 3; }
+.federated-text-line:nth-child(4) { --line-index: 4; }
+.federated-text-line:nth-child(5) { --line-index: 5; }
+.federated-text-line:nth-child(6) { --line-index: 6; }
+.federated-text-line:nth-child(7) { --line-index: 7; }
+.federated-text-line:nth-child(8) { --line-index: 8; }
+
+@keyframes typewriter-cycle {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  15% {
+    opacity: 1;
+    clip-path: inset(0 0% 0 0);
+  }
+  85% {
+    opacity: 1;
+    clip-path: inset(0 0% 0 0);
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* Адаптивные стили для федеративного блока */
+@media (max-width: 768px) {
+  .federated-main-image {
+    max-height: 400px;
+  }
+  
+  .federated-text-container {
+    top: 1rem;
+    left: 1rem;
+    width: 250px;
+    height: 1.5rem;
+  }
+  
+  .federated-text-line {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .federated-main-image {
+    max-height: 300px;
+  }
+  
+  .federated-text-container {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 200px;
+    height: 1.2rem;
+  }
+  
+  .federated-text-line {
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 1200px){
   .nav-glass{ 
     top: 20px; 
