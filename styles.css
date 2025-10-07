@@ -551,6 +551,8 @@ body{
   height: auto !important;
   object-fit: contain !important;
   transform: scale(1.33) !important;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Стили для плашек федеративного обучения */
@@ -564,7 +566,7 @@ body{
   padding-top: 2rem;
   padding-left: 3rem;
   margin-right: -2rem;
-  transform: translateX(-50px);
+  transform: translateX(-80px);
 }
 
 .federated-cards-right {
@@ -619,60 +621,88 @@ body{
   }
 }
 
-/* Адаптивные стили для федеративного блока */
-@media (max-width: 768px) {
-  .federated-main-image {
-    max-height: 750px !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
+/* Адаптивные стили для федеративного блока - скрытие плашек на всех размерах */
+@media (max-width: 1200px) {
   .federated-cards-left {
-    gap: 0.6rem !important;
-    height: 325px !important;
-    padding-top: 1.5rem !important;
-    padding-left: 2.5rem !important;
-    margin-right: -1.5rem !important;
-    transform: translateX(-40px) !important;
+    display: none !important;
   }
   
   .federated-cards-right {
-    gap: 0.6rem !important;
-    height: 325px !important;
-    padding-top: 1.5rem !important;
+    display: none !important;
   }
   
-  .federated-card {
-    font-size: 0.56rem !important;
-    padding: 0.8rem 0.6rem !important;
-    max-width: 120px !important;
+  .federated-main-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 80vh !important;
+    object-fit: contain !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .federated-cards-left {
+    display: none !important;
+  }
+  
+  .federated-cards-right {
+    display: none !important;
+  }
+  
+  .federated-main-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 70vh !important;
+    object-fit: contain !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .federated-main-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 60vh !important;
+    object-fit: contain !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .federated-cards-left {
+    display: none !important;
+  }
+  
+  .federated-cards-right {
+    display: none !important;
   }
 }
 
 @media (max-width: 576px) {
   .federated-main-image {
-    max-height: 600px !important;
-    margin-bottom: 1.125rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 50vh !important;
+    object-fit: contain !important;
+    transform: none !important;
+    display: block;
+    margin: 0 auto;
   }
   
   .federated-cards-left {
-    gap: 0.45rem !important;
-    height: 260px !important;
-    padding-top: 1rem !important;
-    padding-left: 2rem !important;
-    margin-right: -1rem !important;
-    transform: translateX(-30px) !important;
+    display: none !important;
   }
   
   .federated-cards-right {
-    gap: 0.45rem !important;
-    height: 260px !important;
-    padding-top: 1rem !important;
-  }
-  
-  .federated-card {
-    font-size: 0.525rem !important;
-    padding: 0.7rem 0.5rem !important;
-    max-width: 100px !important;
+    display: none !important;
   }
 }
 @media (max-width: 1200px){
@@ -955,23 +985,53 @@ section:not(.hero-hero){
 }
 .glass-xl{background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.8))}
 .glass-deep{
-  background: #0c2a24;
-  border: 1px solid #1a4d3a;
-  color: #ffffff;
+  background: linear-gradient(90deg, #C8F5E1 0%, #DCFBE1 100%);
+  border: none;
+  color: #020827;
   border-radius: 16px;
   padding: 3rem 2.5rem !important;
 }
 
+.glass-deep h2 {
+  color: #064E2C !important;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
 /* Карточки шагов — тоже удвоенный padding */
 .step-card{
-  background:#fff; border:1px solid var(--border-light);
-  border-radius:.9rem; color:var(--text-dark);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  background: #ffffff; 
+  border: none;
+  border-radius: 12px; 
+  color: #64697B;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem;
 }
 .step-head{
-  display:inline-block; background:#f8f9fa; color:#495057;
-  border:1px solid #dee2e6; border-radius:.6rem; padding:.2rem .5rem;
-  margin-bottom:.5rem; font-size:.8rem;
+  display:inline-block; 
+  background: #A1FA85; 
+  color: #064E2C;
+  border: none; 
+  border-radius: 8px; 
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 2rem; 
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.step-card h3 {
+  color: #020827 !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.step-card p {
+  color: #64697B !important;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* Слоты изображений */
@@ -1085,29 +1145,29 @@ footer .list-unstyled a:hover{color:#fff}
 
 /* Карточки в блоке "Алгоритм вычисления" — темно-зеленый стиль */
 #algo .step-card{
-  background: #1a4d3a;
-  border: 1px solid #2d6b4f;
-  box-shadow: none;
-  color: #ffffff !important;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  color: #64697B !important;
   border-radius: 12px;
-  padding: 2rem 1.5rem !important;
+  padding: 1.5rem !important;
 }
 #algo .step-card h3{ 
-  color: #ffffff !important;
-  font-weight: 400;
+  color: #020827 !important;
+  font-weight: 500;
 }
 #algo .step-card p{ 
-  color: #ffffff !important;
+  color: #64697B !important;
 }
 #algo .step-card .step-head{
-  background: #2d6b4f;
-  border: 1px solid #3d7a5f;
-  color: #ffffff !important;
+  background: #A1FA85;
+  border: none;
+  color: #064E2C !important;
   border-radius: 8px;
   font-weight: 500;
 }
 #algo .step-card * {
-  color: #ffffff !important;
+  color: inherit !important;
 }
 
 /* Заголовок блока алгоритма */
