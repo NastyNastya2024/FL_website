@@ -182,10 +182,64 @@ body{
   transform: translateX(2px);
 }
 
+/* Стили для блока партнерства в стиле изображения */
+.partnership-card {
+  background: #013D3D;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #062B29;
+}
+
+.partnership-card .d-flex {
+  margin-bottom: 1.5rem;
+}
+
+.partnership-card img {
+  border: 2px solid #062B29 !important;
+}
+
+.partnership-card p {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.partnership-card .small {
+  color: #A1FA85 !important;
+  font-size: 0.8rem;
+}
+
+.partnership-link {
+  color: #A1FA85 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.partnership-link:hover {
+  color: #B0FF99 !important;
+}
+
+.btn-primary-gy-light {
+  background: #A1FA85 !important;
+  color: #020827 !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+.btn-primary-gy-light:hover {
+  background: #B0FF99 !important;
+  color: #020827 !important;
+}
+
 /* Темно-зеленый CTA блок в стиле второй картинки */
 .cta-dark {
-  background: #0c2a24;
-  border: 1px solid #1a4d3a;
+  background: #062B29;
+  border: 1px solid #013D3D;
   color: #ffffff !important;
   padding: 4rem 3rem !important;
   margin: 0 -2rem;
@@ -993,7 +1047,7 @@ section:not(.hero-hero){
 }
 
 .glass-deep h2 {
-  color: #064E2C !important;
+  color: #5F7C7B !important;
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -1010,7 +1064,7 @@ section:not(.hero-hero){
 }
 .step-head{
   display:inline-block; 
-  background: #A1FA85; 
+  background: #B0FF99; 
   color: #064E2C;
   border: none; 
   border-radius: 8px; 
@@ -1093,14 +1147,69 @@ img[alt*="avatar"], img[alt*="CEO"] {
 
 /* Стили для изображений в секции типов обучения */
 #types .media-slot {
-  min-height: 60px;
-  max-height: 60px;
-  height: 60px;
+  min-height: 300px;
+  max-height: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#types .glass {
+  padding: 2rem 1.5rem !important;
+  min-height: 450px;
+  position: relative;
+  display: block !important;
+  text-align: left;
+}
+
+#types .media-slot {
+  min-height: 300px;
+  max-height: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+#types .glass h3 {
+  font-size: 1.05rem !important;
+  margin-bottom: 0.7rem !important;
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  display: inline-block;
+  margin-right: 1rem;
+  vertical-align: top;
+}
+
+#types .glass p.flex-grow-1 {
+  font-size: 0.77rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  display: inline-block;
+  margin-right: 1rem;
+  flex-grow: 0 !important;
+  text-align: left;
+  vertical-align: top;
+}
+
+#types .glass .btn-learn-more {
+  font-size: 0.77rem !important;
+  padding: 0.56rem 1.05rem !important;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  margin: 0;
 }
 
 #types .img-slot {
-  max-width: 50%;
-  max-height: 50px;
+  max-width: 100%;
+  max-height: 300px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1160,7 +1269,7 @@ footer .list-unstyled a:hover{color:#fff}
   color: #64697B !important;
 }
 #algo .step-card .step-head{
-  background: #A1FA85;
+  background: #B0FF99;
   border: none;
   color: #064E2C !important;
   border-radius: 8px;
