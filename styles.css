@@ -37,6 +37,14 @@ h6 { font-size: 1.1rem; font-weight: 300; }
   object-fit: contain !important;
 }
 
+/* Одинаковая ширина блоков на странице типов обучения - как у меню */
+#types .container,
+#choice .container,
+#cta .container {
+  max-width: var(--menu-width) !important;
+  margin: 0 auto !important;
+}
+
 :root{
   --ink-900:#062B29; --ink-800:#013D3D; --ink-700:#013D3D;
   --deep:#062B29; --deeper:#013D3D;
@@ -111,15 +119,19 @@ body{
   padding-bottom: 8px; 
   padding-left: 24px;
   padding-right: 24px;
-  display: flex;
+  display: flex !important;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between !important;
+  width: 100%;
+}
   gap: 0.33rem;
 }
 
 .nav-glass .navbar-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
   gap: 0.25rem;
   margin: 0;
 }
@@ -128,6 +140,8 @@ body{
   font-weight: 700;
   font-size: 1.4rem;
   color: #fff !important;
+  margin-right: auto;
+  flex-shrink: 0;
   text-decoration: none;
   white-space: nowrap;
   line-height: 1;
@@ -138,14 +152,16 @@ body{
 }
 
 .nav-glass .btn-primary-gy {
-  display: flex;
+  display: flex !important;
   align-items: center;
   height: auto;
   line-height: 1;
   font-size: 0.85rem;
   padding: 0.5rem 1.2rem;
+  margin-left: auto !important;
   font-stretch: condensed;
   letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
 
 .nav-glass .navbar-brand:hover {
@@ -643,6 +659,10 @@ body{
   pointer-events:none; 
   z-index:0;
   filter: brightness(0.7) blur(1px) saturate(0.8);
+  /* Оптимизация загрузки видео */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .hero-blur-overlay{
   position:absolute; inset:0;
@@ -1068,7 +1088,11 @@ body{
 }
 
 /* Стили для мобильного меню */
-@media (max-width: 1199px) {
+@media (max-width: 768px) {
+  .nav-glass {
+    transition: all 0.3s ease;
+  }
+  
   .nav-glass .navbar-collapse {
     background: rgba(5, 25, 20, .95);
     border-radius: 12px;
@@ -1078,18 +1102,34 @@ body{
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     width: auto;
     min-width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-glass .navbar-collapse.show {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .nav-glass .navbar-nav {
     margin-bottom: 0.5rem;
     flex-direction: column;
     align-items: flex-start;
+    transition: all 0.3s ease;
   }
   
   .nav-glass .nav-link {
     padding: 0.3rem 0;
     border-bottom: 1px solid rgba(255,255,255,.1);
     font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-glass .nav-link:hover {
+    background: rgba(255,255,255,.05);
+    border-radius: 4px;
+    padding-left: 0.5rem;
   }
   
   .nav-glass .nav-link:last-child {
@@ -1100,6 +1140,102 @@ body{
     width: auto;
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-glass .btn-primary-gy:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Промежуточные переходы за счет уменьшения расстояний */
+@media (max-width: 1400px) {
+  .nav-glass .navbar-nav {
+    gap: 0.2rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav-glass .navbar-nav {
+    gap: 0.15rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-glass .navbar-nav {
+    gap: 0.1rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-glass .navbar-nav {
+    gap: 0.05rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.25rem 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-glass .navbar-nav {
+    gap: 0.02rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.2rem 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .nav-glass .navbar-nav {
+    gap: 0.01rem;
+  }
+  
+  .nav-glass .nav-link {
+    padding: 0.15rem 0.2rem;
+    font-size: 0.7rem;
+  }
+  
+  .nav-glass .btn-primary-gy {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
   }
 }
 
