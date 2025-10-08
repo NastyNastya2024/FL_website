@@ -608,15 +608,75 @@ body{
 }
 
 @media (max-width: 992px) {
-  .timeline-header,
-  .timeline-step {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .timeline-container-full {
+    overflow-x: auto;
+    padding: 1rem;
   }
   
   .timeline-header {
-    padding-left: 0;
+    grid-template-columns: 150px repeat(6, 80px);
+    gap: 0.25rem;
+    padding-left: 150px;
+    min-width: 630px;
   }
+  
+  .timeline-step {
+    grid-template-columns: 150px repeat(6, 80px);
+    gap: 0.25rem;
+    padding: 0.75rem 0;
+    min-width: 630px;
+  }
+  
+  .step-name {
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+  }
+  
+  .month-label {
+    font-size: 0.8rem;
+  }
+  
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container-full {
+    padding: 0.5rem;
+  }
+  
+  .timeline-header {
+    grid-template-columns: 120px repeat(6, 60px);
+    gap: 0.2rem;
+    padding-left: 120px;
+    min-width: 480px;
+  }
+  
+  .timeline-step {
+    grid-template-columns: 120px repeat(6, 60px);
+    gap: 0.2rem;
+    padding: 0.5rem 0;
+    min-width: 480px;
+  }
+  
+  .step-name {
+    font-size: 0.75rem;
+    padding-right: 0.25rem;
+  }
+  
+  .month-label {
+    font-size: 0.75rem;
+  }
+  
+  .checkmark {
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+}
   
   .step-dots {
     justify-content: flex-start;
