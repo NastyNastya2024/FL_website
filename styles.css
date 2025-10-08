@@ -631,9 +631,9 @@ body{
 
 /* CTA — только основной, цвет #A1FA85 с градиентом */
 .btn-primary-gy{
-  background: linear-gradient(to bottom, #A1FA85, #8FE570);
+  background: linear-gradient(to bottom, #B0FF99, #9FE570);
   color:#0a1a16; border:0; border-radius: 999px;
-  padding:.6rem 1rem; font-weight:500;
+  padding:1rem 2rem; font-weight:500;
   box-shadow: none;
   position: relative;
   overflow: hidden;
@@ -642,7 +642,7 @@ body{
   letter-spacing: -0.02em;
 }
 .btn-primary-gy:hover{
-  background: linear-gradient(to bottom, #B0FF99, #9FE570);
+  background: linear-gradient(to bottom, #C4FFB3, #B0FF99);
   color: #0a1a16;
   box-shadow: none;
 }
@@ -659,7 +659,7 @@ body{
   min-height: 80vh;
   width: 100%;
   display:flex; align-items:center;
-  background: linear-gradient(180deg, #0f3a33, #0b2e28 60%, #0a231d);
+  background: var(--deeper);
   padding-top: 120px; /* под высоту бара */
   scroll-margin-top: 120px; /* отступ для якорных ссылок */
 }
@@ -667,7 +667,7 @@ body{
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit:cover;
-  opacity:1; 
+  opacity:0.8; 
   pointer-events:none; 
   z-index:0;
   filter: none;
@@ -675,6 +675,11 @@ body{
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* Специфичное правило для страницы партнеров */
+.partnership-page .hero-video {
+  opacity: 0.8;
 }
 .hero-blur-overlay{
   position:absolute; inset:0;
@@ -1106,7 +1111,7 @@ body{
   }
   
   .nav-glass .navbar-collapse {
-    background: rgba(5, 25, 20, .95);
+    background: #1A363A;
     border-radius: 12px;
     margin-top: 8px;
     padding: 0.5rem;
@@ -1125,34 +1130,43 @@ body{
   }
   
   .nav-glass .navbar-nav {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     transition: all 0.3s ease;
+    gap: 1rem;
   }
   
   .nav-glass .nav-link {
-    padding: 0.3rem 0;
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 1.2rem 0.6rem;
+    border: none;
+    border-radius: 8px;
     font-size: 0.85rem;
     transition: all 0.2s ease;
+    background: linear-gradient(to bottom, #013D3D, #062B29);
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
   
   .nav-glass .nav-link:hover {
-    background: rgba(255,255,255,.05);
-    border-radius: 4px;
-    padding-left: 0.5rem;
-  }
-  
-  .nav-glass .nav-link:last-child {
-    border-bottom: none;
+    background: linear-gradient(to bottom, #1A4A4A, #013D3D);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    transform: translateY(-1px);
   }
   
   .nav-glass .btn-primary-gy {
-    width: auto;
-    padding: 0.4rem 0.8rem;
+    width: 100%;
+    max-width: 360px;
+    padding: 1.2rem 0.6rem;
     font-size: 0.85rem;
+    margin: 0 auto;
     transition: all 0.2s ease;
+    display: block;
   }
   
   .nav-glass .btn-primary-gy:hover {
@@ -1364,7 +1378,7 @@ img[alt*="avatar"], img[alt*="CEO"] {
 
 /* Стили для изображений в hero секции */
 .hero-video {
-  border-radius: 16px;
+  border-radius: 0;
 }
 
 /* Дополнительные стили для изображений */
