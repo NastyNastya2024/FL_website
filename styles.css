@@ -1336,6 +1336,9 @@ body{
   
   #articleContent {
     padding: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem !important;
   }
   
   #articleContent h2 {
