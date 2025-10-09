@@ -780,16 +780,28 @@ body{
 
 /* Адаптивные стили для hero изображения */
 @media (max-width: 768px) {
+  .hero-image-overlay {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  
   .hero-overlay-img{
-    max-width: 80%;
-    max-height: 60%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 @media (max-width: 576px) {
+  .hero-image-overlay {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  
   .hero-overlay-img{
-    max-width: 70%;
-    max-height: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -1242,6 +1254,112 @@ body{
     transform: translateY(-1px);
     background: linear-gradient(135deg, #80CD7F 0%, #9FE29E 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Адаптивные стили для цитат */
+  .partnership-card .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .partnership-card .d-flex img {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  
+  .partnership-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .partnership-card .small {
+    font-size: 0.8rem;
+  }
+  
+  /* Уменьшение размера текстов блока "Как выбрать подходящий тип?" в мобильной версии */
+  #choice h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  #choice h4 {
+    font-size: 1rem !important;
+  }
+  
+  #choice ul {
+    font-size: 0.85rem !important;
+  }
+  
+  #choice .step-head {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Адаптивные стили для страницы блога */
+  #articles {
+    padding-top: 8rem !important;
+  }
+  
+  #articles .row {
+    min-height: auto !important;
+  }
+  
+  #articles .col-lg-4 {
+    margin-bottom: 2rem;
+  }
+  
+  #articles .col-lg-8 {
+    margin-bottom: 2rem;
+  }
+  
+  .article-list {
+    height: 67px !important;
+    margin-bottom: 1rem;
+  }
+  
+  .article-item {
+    padding: 1rem !important;
+  }
+  
+  .article-item img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .article-item h5 {
+    font-size: 0.8rem !important;
+  }
+  
+  .article-item p {
+    font-size: 0.75rem !important;
+  }
+  
+  #articleContent {
+    padding: 1rem !important;
+  }
+  
+  #articleContent h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  #articleContent p {
+    font-size: 0.9rem !important;
+  }
+  
+  #articleContent img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Адаптивные стили для блока "Последние статьи и новости" */
+  #news .d-flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem;
+  }
+  
+  #news .btn-news-link {
+    margin-top: 0.5rem;
   }
 }
 
