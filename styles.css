@@ -1171,14 +1171,14 @@ body{
   }
   
   .nav-glass .navbar-collapse {
-    background: #1A363A;
-    border-radius: 12px;
+    background: transparent;
+    border-radius: 0;
     margin-top: 8px;
-    padding: 0.5rem;
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    width: auto;
-    min-width: 200px;
+    padding: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    width: 100%;
+    min-width: auto;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
@@ -1190,15 +1190,17 @@ body{
   }
   
   .nav-glass .navbar-nav {
-    margin-bottom: 1rem;
-    flex-direction: column;
-    align-items: stretch;
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     transition: all 0.3s ease;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
   
   .nav-glass .nav-link {
-    padding: 1.2rem 0.6rem;
+    padding: 1.5rem 0.5rem;
     border: none;
     border-radius: 8px;
     font-size: 0.85rem;
@@ -1207,10 +1209,11 @@ body{
     color: #ffffff;
     text-align: center;
     display: block;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
+    width: auto;
+    max-width: none;
+    margin: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    white-space: nowrap;
   }
   
   .nav-glass .nav-link:hover {
@@ -1220,17 +1223,25 @@ body{
   }
   
   .nav-glass .btn-primary-gy {
-    width: 100%;
-    max-width: 360px;
-    padding: 1.2rem 0.6rem;
+    width: auto;
+    max-width: none;
+    padding: 1.5rem 0.5rem;
     font-size: 0.85rem;
-    margin: 0 auto;
+    margin: 0;
+    margin-left: 1.5rem;
     transition: all 0.2s ease;
     display: block;
+    background: linear-gradient(135deg, #9FE29E 0%, #80CD7F 100%);
+    color: white !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
   }
   
   .nav-glass .btn-primary-gy:hover {
     transform: translateY(-1px);
+    background: linear-gradient(135deg, #80CD7F 0%, #9FE29E 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
 }
 
