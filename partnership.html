@@ -310,7 +310,7 @@
                     <p class="small text-mute-200 mb-1">
                       Ваши данные начинают работать на вас: вы получаете долю прибыли от использования модели, доступ к её результатам и гарантированное техническое сопровождение.
                     </p>
-                    <div class="small text-mute-400">Рытов Павел — CTO</div>
+                    <div class="small text-mute-400">Рытов Павел — Генеральный директор</div>
                   </div>
                 </div>
               </div>
@@ -417,7 +417,12 @@
           </ul>
         </div>
       </div>
-      <div class="pt-3 small text-mute-500">© <span id="year"></span> DigiTrack</div>
+      <div class="pt-3 small text-mute-500">
+        © <span id="year"></span> ООО "ДТ" | 
+        <a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#privacyModal">Политика обработки данных</a> | 
+        <a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a> | 
+        <a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#legalModal">Правовая информация</a>
+      </div>
     </div>
   </footer>
 
@@ -463,6 +468,16 @@
               </div>
             </div>
             
+            <!-- Согласие на обработку персональных данных -->
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent" required>
+                <label class="form-check-label" for="privacyConsent">
+                  Я согласен на <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">обработку персональных данных</a>
+                </label>
+              </div>
+            </div>
+            
             <div class="d-grid">
               <button type="submit" class="btn btn-primary-gy" id="submitBtn">Отправить заявку</button>
             </div>
@@ -470,6 +485,144 @@
             <div id="formStatus" class="alert alert-success d-none mt-3"></div>
             <div id="formError" class="alert alert-danger d-none mt-3"></div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно политики конфиденциальности -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Политика конфиденциальности</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>1. Общие положения</h6>
+          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО «ДигиТрек».</p>
+          
+          <h6>2. Цели обработки персональных данных</h6>
+          <p>Персональные данные обрабатываются в следующих целях:</p>
+          <ul>
+            <li>Обработка заявок и обращений пользователей</li>
+            <li>Предоставление информации о продуктах и услугах компании</li>
+            <li>Связь с пользователями по вопросам сотрудничества</li>
+          </ul>
+          
+          <h6>3. Категории обрабатываемых персональных данных</h6>
+          <p>Мы обрабатываем следующие категории персональных данных:</p>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+            <li>Информация, содержащаяся в сообщениях пользователей</li>
+          </ul>
+          
+          <h6>4. Сроки обработки персональных данных</h6>
+          <p>Персональные данные обрабатываются в течение срока, необходимого для достижения целей обработки, но не более 3 лет с момента последнего взаимодействия с пользователем.</p>
+          
+          <h6>5. Меры по обеспечению безопасности персональных данных</h6>
+          <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
+          
+          <h6>6. Права субъекта персональных данных</h6>
+          <p>Вы имеете право:</p>
+          <ul>
+            <li>Получать информацию об обработке ваших персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
+            <li>Отзывать согласие на обработку персональных данных</li>
+            <li>Обращаться с жалобами в уполномоченный орган по защите прав субъектов персональных данных</li>
+          </ul>
+          
+          <h6>7. Контактная информация</h6>
+          <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по адресу: <a href="mailto:privacy@digitrack.com">privacy@digitrack.com</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно согласия на обработку данных -->
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consentModalLabel">Согласие на обработку персональных данных</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Настоящим я, субъект персональных данных, в соответствии с требованиями Федерального закона от 27.07.2006 №152-ФЗ «О персональных данных» даю свое согласие ООО "ДТ" на обработку моих персональных данных.</p>
+          
+          <h6>1. Перечень персональных данных, на обработку которых дается согласие:</h6>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+            <li>Информация, содержащаяся в сообщениях</li>
+          </ul>
+          
+          <h6>2. Цели обработки персональных данных:</h6>
+          <ul>
+            <li>Обработка заявок и обращений</li>
+            <li>Предоставление информации о продуктах и услугах</li>
+            <li>Связь по вопросам сотрудничества</li>
+            <li>Маркетинговые коммуникации</li>
+          </ul>
+          
+          <h6>3. Способы обработки персональных данных:</h6>
+          <p>Сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных.</p>
+          
+          <h6>4. Срок действия согласия:</h6>
+          <p>Согласие действует в течение 3 лет с момента его предоставления или до отзыва субъектом персональных данных.</p>
+          
+          <h6>5. Право отзыва согласия:</h6>
+          <p>Я понимаю, что имею право отозвать настоящее согласие в любое время путем направления письменного уведомления по адресу: privacy@digitrack.com</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно правовой информации -->
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legalModalLabel">Правовая информация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>ООО "ДТ"</h6>
+          <p><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "ДТ"</p>
+          <p><strong>Сокращенное наименование:</strong> ООО "ДТ"</p>
+          <p><strong>ИНН:</strong> [указать ИНН]</p>
+          <p><strong>КПП:</strong> [указать КПП]</p>
+          <p><strong>ОГРН:</strong> [указать ОГРН]</p>
+          <p><strong>Юридический адрес:</strong> [указать адрес]</p>
+          <p><strong>Почтовый адрес:</strong> [указать адрес]</p>
+          <p><strong>Телефон:</strong> [указать телефон]</p>
+          <p><strong>Email:</strong> info@digitrack.com</p>
+          
+          <h6>Руководство:</h6>
+          <p><strong>Генеральный директор:</strong> Рытов Павел Владимирович</p>
+          
+          <h6>Основные виды деятельности:</h6>
+          <ul>
+            <li>Разработка программного обеспечения</li>
+            <li>Консультирование по вопросам информационных технологий</li>
+            <li>Исследования и разработки в области естественных и технических наук</li>
+            <li>Предоставление услуг по обработке данных</li>
+          </ul>
+          
+          <h6>Правовая основа деятельности:</h6>
+          <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>

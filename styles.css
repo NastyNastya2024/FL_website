@@ -1714,6 +1714,17 @@ footer .list-unstyled a:hover{
   text-decoration: underline !important;
 }
 
+/* Стили для ссылок в футере */
+footer .link-fade {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+footer .link-fade:hover {
+  color: #A1FA85 !important;
+  text-decoration: underline !important;
+}
+
 /* Карточки в блоке "Алгоритм вычисления" — темно-зеленый стиль */
 #algo .step-card{
   background: #ffffff;
