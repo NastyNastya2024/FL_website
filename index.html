@@ -14,19 +14,19 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://digitrack.ru/"/>
+  <meta property="og:url" content="/"/>
   <meta property="og:title" content="DigiTrack — Федеративное обучение и конфиденциальные вычисления"/>
   <meta property="og:description" content="Безопасное обучение ML-моделей без передачи данных. Конфиденциальные вычисления для бизнеса."/>
-  <meta property="og:image" content="https://digitrack.ru/img/og-image.jpg"/>
+  <meta property="og:image" content="img/og-image.jpg"/>
   <meta property="og:site_name" content="DigiTrack"/>
   <meta property="og:locale" content="ru_RU"/>
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:url" content="https://digitrack.ru/"/>
+  <meta property="twitter:url" content="/"/>
   <meta property="twitter:title" content="DigiTrack — Федеративное обучение"/>
   <meta property="twitter:description" content="Безопасное обучение ML-моделей без передачи данных"/>
-  <meta property="twitter:image" content="https://digitrack.ru/img/og-image.jpg"/>
+  <meta property="twitter:image" content="img/og-image.jpg"/>
   
   <!-- Performance -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -44,8 +44,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "DigiTrack",
-    "url": "https://digitrack.ru",
-    "logo": "https://digitrack.ru/img/logo.png",
+    "url": "/",
+    "logo": "img/logo.png",
     "description": "DigiTrack — ведущая платформа федеративного обучения и конфиденциальных вычислений",
     "foundingDate": "2020",
     "address": {
@@ -450,7 +450,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="contactForm" action="https://formspree.io/f/movklbly" method="POST">
+          <form id="contactForm" action="/api/forms/contact" method="POST" onsubmit="return submitContactForm(event)">
             <div class="mb-3">
               <label for="contactEmail" class="form-label">Ваш почтовый адрес</label>
               <input type="email" class="form-control" id="contactEmail" name="email" placeholder="example@domain.com" required>
@@ -522,6 +522,37 @@
     </div>
   </div>
 
+  <script>
+  async function submitContactForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const payload = {
+      email: document.getElementById('contactEmail').value,
+      phone: document.getElementById('contactPhone').value,
+      subject: document.getElementById('contactSubject').value,
+      message: document.getElementById('contactMessage').value,
+      privacy_consent: document.getElementById('privacyConsent').checked,
+      marketing_consent: (document.getElementById('marketingConsent') || {checked:false}).checked,
+      form_version: 'v1.0'
+    };
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Ошибка отправки');
+      document.getElementById('formStatus').classList.remove('d-none');
+      document.getElementById('formError').classList.add('d-none');
+      form.reset();
+    } catch (err) {
+      document.getElementById('formError').classList.remove('d-none');
+      document.getElementById('formStatus').classList.add('d-none');
+    }
+    return false;
+  }
+  </script>
+
   <!-- FOOTER -->
   <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
     <div class="container">
@@ -565,7 +596,7 @@
         </div>
         <div class="modal-body">
           <h6>1. Общие положения</h6>
-          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО «ДигиТрек».</p>
+          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО "ДТ".</p>
           
           <h6>2. Цели обработки персональных данных</h6>
           <p>Персональные данные обрабатываются в следующих целях:</p>
@@ -619,9 +650,9 @@
         </div>
         <div class="modal-body">
           <h6>СОГЛАСИЕ</h6>
-          <p>на обработку персональных данных для посетителей сайтов ООО «ДигиТрек» (далее – «Согласие»)</p>
+          <p>на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
           
-          <p>Продолжая работу на сайте (https://digitrack.ru/), я выражаю свое согласие Обществу с ограниченной ответственностью «ДигиТрек», далее – Оператор, (юридический адрес: [указать адрес]) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: [указать адрес]) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
           
           <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
           
@@ -629,9 +660,9 @@
           
           <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
           
-          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО «ДигиТрек» письменного заявления об отзыве согласия.</p>
+          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
           
-          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО «ДигиТрек».</p>
+          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>

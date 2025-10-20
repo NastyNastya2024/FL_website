@@ -14,19 +14,19 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article"/>
-  <meta property="og:url" content="https://digitrack.ru/about.html"/>
+  <meta property="og:url" content="/about.html"/>
   <meta property="og:title" content="О компании DigiTrack — Лидер в области конфиденциальных вычислений"/>
   <meta property="og:description" content="Наша миссия, команда и ценности. Более 300+ клиентов из критичных отраслей"/>
-  <meta property="og:image" content="https://digitrack.ru/img/og-about.jpg"/>
+  <meta property="og:image" content="img/og-about.jpg"/>
   <meta property="og:site_name" content="DigiTrack"/>
   <meta property="og:locale" content="ru_RU"/>
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:url" content="https://digitrack.ru/about.html"/>
+  <meta property="twitter:url" content="/about.html"/>
   <meta property="twitter:title" content="О компании DigiTrack"/>
   <meta property="twitter:description" content="Лидер в области конфиденциальных вычислений и федеративного обучения"/>
-  <meta property="twitter:image" content="https://digitrack.ru/img/og-about.jpg"/>
+  <meta property="twitter:image" content="img/og-about.jpg"/>
   
   <!-- Performance -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -316,7 +316,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="contactForm" action="https://formspree.io/f/movklbly" method="POST">
+          <form id="contactForm" action="/api/forms/contact" method="POST" onsubmit="return submitContactForm(event)">
             <div class="mb-3">
               <label for="contactEmail" class="form-label">Ваш почтовый адрес</label>
               <input type="email" class="form-control" id="contactEmail" name="email" placeholder="example@domain.com" required>
@@ -388,6 +388,37 @@
     </div>
   </div>
 
+  <script>
+  async function submitContactForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const payload = {
+      email: document.getElementById('contactEmail').value,
+      phone: document.getElementById('contactPhone').value,
+      subject: document.getElementById('contactSubject').value,
+      message: document.getElementById('contactMessage').value,
+      privacy_consent: document.getElementById('privacyConsent').checked,
+      marketing_consent: (document.getElementById('marketingConsent') || {checked:false}).checked,
+      form_version: 'v1.0'
+    };
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Ошибка отправки');
+      document.getElementById('formStatus').classList.remove('d-none');
+      document.getElementById('formError').classList.add('d-none');
+      form.reset();
+    } catch (err) {
+      document.getElementById('formError').classList.remove('d-none');
+      document.getElementById('formStatus').classList.add('d-none');
+    }
+    return false;
+  }
+  </script>
+
   <!-- Модальное окно политики конфиденциальности -->
   <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -454,7 +485,7 @@
           <h6>СОГЛАСИЕ</h6>
           <p>на обработку персональных данных для посетителей сайтов ООО «ДигиТрек» (далее – «Согласие»)</p>
           
-          <p>Продолжая работу на сайте (https://digitrack.ru/), я выражаю свое согласие Обществу с ограниченной ответственностью «ДигиТрек», далее – Оператор, (юридический адрес: [указать адрес]) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: [указать адрес]) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
           
           <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
           
