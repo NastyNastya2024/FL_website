@@ -514,7 +514,7 @@
       form_version: 'v1.0'
     };
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('http://127.0.0.1:8000/api/forms/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
