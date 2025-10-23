@@ -190,11 +190,12 @@
               <div class="row g-4 align-items-center">
                 <!-- Левая колонка с плашками -->
                 <div class="col-12 col-lg-3">
+                  <h3 class="mb-1 text-start" style="color: #1A363A; font-size: 0.5rem;">Этап 1: Сверка данных</h3>
                   <div class="federated-cards-left">
-                    <div class="federated-card">Создание модели, объединяющей информацию обеих сторон</div>
-                    <div class="federated-card">Аудит операций и изоляция вычислений</div>
-                    <div class="federated-card">Гарантия неразглашения исходных данных организации</div>
-                    <div class="federated-card">Обучение совместной модели без консолидации данных</div>
+                    <div class="federated-card">1. Загрузка и хранение данных в изолированных средах</div>
+                    <div class="federated-card">2. Обезличивание и шифрование идентификаторов</div>
+                    <div class="federated-card">3. Безопасное сопоставление записей без раскрытия данных</div>
+                    <div class="federated-card">4. Выделение набора общих объектов для обучения</div>
                   </div>
                 </div>
                 
@@ -207,11 +208,12 @@
                 
                 <!-- Правая колонка с плашками -->
                 <div class="col-12 col-lg-3">
+                  <h3 class="mb-1 text-start" style="color: #1A363A; font-size: 0.5rem; margin-left: 5rem;">Этап 2: Совместное<br>обучение модели</h3>
                   <div class="federated-cards-right">
-                    <div class="federated-card">Агрегируются только градиенты/веса</div>
-                    <div class="federated-card">Шифрование в покое и при передаче</div>
-                    <div class="federated-card">Модель обучается у каждого участника отдельно</div>
-                    <div class="federated-card">Сырые данные остаются локально у владельцев</div>
+                    <div class="federated-card">5. Загрузка и хранение признаков по объектам</div>
+                    <div class="federated-card">6. Запуск процесса обучения координатором</div>
+                    <div class="federated-card">7. Безопасный обмен промежуточными вычислениями</div>
+                    <div class="federated-card">8. Формирование распределённой модели</div>
                   </div>
                 </div>
               </div>
@@ -226,35 +228,35 @@
       <div class="container">
         <div class="glass-deep pad-2x rounded-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="h4 m-0" style="color: #1A363A !important;">Алгоритм вычисления</h2>
+            <h2 class="h4 m-0" style="color: #1A363A !important;">Этапы вычисления</h2>
           </div>
           <div class="row g-2">
             <div class="col-12 col-lg-3">
               <div class="step-card pad-2x h-100">
-                <div class="step-head">Шаг 1</div>
-                <h3 class="h6 mb-2">Локальное обучение</h3>
-                <p class="small text-mute-300 m-0">Каждый участник обучает модель у себя, не выгружая данные.</p>
+                <div class="step-head">Этап 1</div>
+                <h3 class="h6 mb-4">Установка ПО</h3>
+                <p class="text-mute-300 m-0" style="font-size: 0.8rem;">• Договоренность о создании совместной модели<br>• Приобретение ПО и лицензий<br>• Назначение координатора</p>
               </div>
             </div>
             <div class="col-12 col-lg-3">
               <div class="step-card pad-2x h-100">
-                <div class="step-head">Шаг 2</div>
-                <h3 class="h6 mb-2">Передача обновлений</h3>
-                <p class="small text-mute-300 m-0">Отправляются веса/градиенты с применением приватности и шифрования.</p>
+                <div class="step-head">Этап 2</div>
+                <h3 class="h6 mb-4">Сверка данных</h3>
+                <p class="text-mute-300 m-0" style="font-size: 0.8rem;">• Загрузка данных в ПО<br>• Безопасное сопоставление записей<br>• Определение общих объектов</p>
               </div>
             </div>
             <div class="col-12 col-lg-3">
               <div class="step-card pad-2x h-100">
-                <div class="step-head">Шаг 3</div>
-                <h3 class="h6 mb-2">Агрегация на сервере</h3>
-                <p class="small text-mute-300 m-0">Сервер объединяет обновления и формирует глобальную модель.</p>
+                <div class="step-head">Этап 3</div>
+                <h3 class="h6 mb-4">Обучение модели</h3>
+                <p class="text-mute-300 m-0" style="font-size: 0.8rem;">• Загрузка признаков по общим объектам<br>• Локальные вычисления<br>• Передача векторов оптимизации в зашифрованном виде</p>
               </div>
             </div>
             <div class="col-12 col-lg-3">
               <div class="step-card pad-2x h-100">
-                <div class="step-head">Шаг 4</div>
-                <h3 class="h6 mb-2">Обновление участников</h3>
-                <p class="small text-mute-300 m-0">Участники получают улучшенную модель и повторяют цикл.</p>
+                <div class="step-head">Этап 4</div>
+                <h3 class="h6 mb-4">Исполнение модели</h3>
+                <p class="text-mute-300 m-0" style="font-size: 0.8rem;">• Объединение промежуточных результатов<br>• Получение итогового прогноза<br>• Формирование распределённой модели</p>
               </div>
             </div>
           </div>
@@ -266,7 +268,7 @@
     <section id="types" class="py-6 bg-section">
       <div class="container">
         <h2 class="h4 mb-1">Варианты федеративного обучения:</h2>
-        <p class="text-mute-300 mb-4">Есть два возможных варианта проведения обучения: горизонтальное и вертикальное</p>
+        <p class="text-mute-300 mb-4">Есть два возможных варианта проведения обучения</p>
 
         <div class="row g-3 align-items-start">
           <div class="col-12 col-lg-6">
@@ -299,11 +301,13 @@
         <div class="cta-dark pad-2x rounded-4">
           <div class="row g-4 align-items-center">
             <div class="col-12 col-lg-6">
-              <h2 class="h4 mb-2">Партнёрство с DigiTrack: <br>монетизируйте данные безопасно</h2>
-              <p class="text-mute-300 mb-3">Оставьте заявку — обсудим кейсы и пилотный проект.</p>
+              <h2 class="h4 mb-2">Получить программу<br>федеративного обучения</h2>
+              <p class="text-mute-300 mb-1">Установить программу федеративного обучения можно оставив заявку по форме ниже. Ознакомиться с инструкцией по эксплуатации можно скачав файл по ссылке ниже.</p>
+              <div class="mb-4">
+                <a href="img/ОКБ.pdf" class="btn btn-link text-white px-0 py-0">Гайд по установке и эксплуатации →</a>
+              </div>
               <div class="d-flex gap-2">
-                <a class="btn btn-primary-gy px-4 py-2" href="partnership.html">Стать партнером</a>
-                <a href="about.html" class="btn btn-link text-white px-4 py-2">О компании →</a>
+                <a class="btn btn-primary-gy text-center d-flex align-items-center justify-content-center px-3 py-1" href="partnership.html" style="min-width: 120px;">Оставить заявку</a>
               </div>
             </div>
             <div class="col-12 col-lg-6">
