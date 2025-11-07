@@ -48,6 +48,11 @@ h6 { font-size: 1.1rem; font-weight: 300; }
   font-size: 1.5rem !important;
 }
 
+/* Уменьшение размера заголовков слайдов (карточек) в секции ценностей */
+#values .glass h3 {
+  font-size: 1.1rem !important;
+}
+
 /* Одинаковая ширина блоков на странице типов обучения - как у меню */
 #types .container,
 #choice .container,
@@ -134,7 +139,6 @@ body{
   align-items: center;
   justify-content: space-between !important;
   width: 100%;
-}
   gap: 0.33rem;
 }
 
@@ -677,11 +681,11 @@ body{
     font-size: 0.65rem;
   }
 }
-  
-  .step-dots {
-    justify-content: flex-start;
-  }
+
+.step-dots {
+  justify-content: flex-start;
 }
+
 .nav-glass .btn-ghost{
   background: rgba(255,255,255,.08);
   color:#fff; border:1px solid rgba(255,255,255,.12);
