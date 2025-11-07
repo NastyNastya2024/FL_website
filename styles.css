@@ -755,6 +755,24 @@ body{
   z-index:1;
 }
 .hero-hero > .container{ position:relative; z-index:2; }
+
+/* Уменьшение размера заголовков в hero блоке */
+.hero-hero h1 {
+  font-size: 2.2rem !important;
+}
+
+@media (max-width: 992px) {
+  .hero-hero h1 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-hero h1 {
+    font-size: 1.5rem !important;
+  }
+}
+
 .hero-bg-shape{
   position:absolute; inset:0;
   background:radial-gradient(600px 420px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
