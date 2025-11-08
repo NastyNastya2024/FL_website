@@ -434,102 +434,12 @@
           <h5 class="modal-title" id="contactModalLabel">Стать партнером</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form id="contactForm" action="/api/forms/contact" method="POST" onsubmit="return submitContactForm(event)">
-            <input type="hidden" name="_to" value="partnership@digitrack.com">
-            <input type="hidden" name="_subject" value="Заявка на партнерство">
-            
-            <div class="mb-3">
-              <label for="email" class="form-label">Ваш почтовый адрес</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="phone" class="form-label">Номер телефона</label>
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="subject" class="form-label">Тема обращения</label>
-              <select class="form-select" id="subject" name="subject" required>
-                <option value="">Выберите тему</option>
-                <option value="Партнерство">Партнерство</option>
-                <option value="СМИ">СМИ</option>
-                <option value="Вакансии">Вакансии</option>
-                <option value="Другое">Другое</option>
-              </select>
-            </div>
-            
-            <div class="mb-3">
-              <label for="message" class="form-label">Сообщение</label>
-              <textarea class="form-control" id="message" name="message" rows="4" maxlength="1000" required></textarea>
-              <div class="form-text">
-                <span id="charCount">0</span>/1000 символов
-              </div>
-            </div>
-            
-            <!-- Согласие на обработку персональных данных -->
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent" required>
-                <label class="form-check-label" for="privacyConsent">
-                  Я согласен на <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">обработку персональных данных</a>
-                </label>
-              </div>
-            </div>
-            
-            <!-- Согласие на рекламную рассылку (необязательно) -->
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="marketingConsent" name="marketing_consent" value="yes">
-                <label class="form-check-label" for="marketingConsent">
-                  Я согласен на рекламную рассылку
-                </label>
-              </div>
-            </div>
-            
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary-gy" id="submitBtn">Отправить заявку</button>
-            </div>
-            
-            <div id="formStatus" class="alert alert-success d-none mt-3"></div>
-            <div id="formError" class="alert alert-danger d-none mt-3"></div>
-          </form>
+        <div class="modal-body text-center">
+          <p class="mb-0">Предложения по партнерству отправляйте на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-  async function submitContactForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const payload = {
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-      privacy_consent: document.getElementById('privacyConsent').checked,
-      marketing_consent: (document.getElementById('marketingConsent') || {checked:false}).checked,
-      form_version: 'v1.0'
-    };
-    try {
-      const res = await fetch('http://127.0.0.1:8000/api/forms/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Ошибка отправки');
-      document.getElementById('formStatus').classList.remove('d-none');
-      document.getElementById('formError').classList.add('d-none');
-      form.reset();
-    } catch (err) {
-      document.getElementById('formError').classList.remove('d-none');
-      document.getElementById('formStatus').classList.add('d-none');
-    }
-    return false;
-  }
-  </script>
 
   <!-- Модальное окно политики конфиденциальности -->
   <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">

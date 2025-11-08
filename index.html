@@ -104,10 +104,10 @@
           <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">О компании</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
-          </li>
         </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -116,7 +116,7 @@
     <!-- HERO -->
     <section id="hero" class="hero-hero py-6 position-relative overflow-hidden">
       <!-- фоновое видео поверх хедера -->
-      <video class="hero-video" src="img/hero2.mp4" autoplay muted loop playsinline></video>
+      <video class="hero-video" src="img/hero1.mp4" autoplay muted loop playsinline></video>
       <!-- слой блюра поверх видео -->
       <div class="hero-blur-overlay"></div>
       <!-- изображение img101 поверх видео -->
@@ -465,109 +465,12 @@
           <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form id="contactForm" action="/api/forms/contact" method="POST" onsubmit="return submitContactForm(event)">
-            <div class="mb-3">
-              <label for="contactEmail" class="form-label">Ваш почтовый адрес</label>
-              <input type="email" class="form-control" id="contactEmail" name="email" placeholder="example@domain.com" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="contactPhone" class="form-label">Номер телефона</label>
-              <input type="tel" class="form-control" id="contactPhone" name="phone" placeholder="+7 (999) 123-45-67" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="contactSubject" class="form-label">Тема обращения</label>
-              <select class="form-select" id="contactSubject" name="subject" required>
-                <option value="">Выберите тему</option>
-                <option value="Партнерство">Партнерство</option>
-                <option value="СМИ">СМИ</option>
-                <option value="Вакансии">Вакансии</option>
-                <option value="Другое">Другое</option>
-              </select>
-            </div>
-            
-            <div class="mb-3">
-              <label for="contactMessage" class="form-label">Сообщение</label>
-              <textarea class="form-control" id="contactMessage" name="message" rows="5" maxlength="1000" placeholder="Введите ваше сообщение..." required></textarea>
-              <div class="form-text">
-                <span id="charCount">0</span>/1000 символов
-              </div>
-            </div>
-            
-            <!-- Согласие на обработку персональных данных -->
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent" required>
-                <label class="form-check-label" for="privacyConsent">
-                  Я согласен на <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">обработку персональных данных</a>
-                </label>
-              </div>
-            </div>
-            
-            <!-- Согласие на рекламную рассылку (необязательно) -->
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="marketingConsent" name="marketing_consent" value="yes">
-                <label class="form-check-label" for="marketingConsent">
-                  Я согласен на рекламную рассылку
-                </label>
-              </div>
-            </div>
-            
-            <!-- Скрытое поле для указания получателя -->
-            <input type="hidden" name="_to" value="anastkomarova@yandex.ru">
-            <input type="hidden" name="_subject" value="Новое обращение с сайта DigiTrack">
-            
-            <!-- Блок статуса отправки -->
-            <div id="formStatus" class="alert alert-success d-none" role="alert">
-              <strong>Спасибо!</strong> Ваше сообщение успешно отправлено.
-            </div>
-            
-            <div id="formError" class="alert alert-danger d-none" role="alert">
-              <strong>Ошибка!</strong> Произошла ошибка при отправке. Попробуйте еще раз.
-            </div>
-            
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary-gy" id="submitBtn">Отправить</button>
-            </div>
-          </form>
+        <div class="modal-body text-center">
+          <p class="mb-0">Предложения по партнерству и запрос дополнительной информации про технологию отправляйте на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-  async function submitContactForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const payload = {
-      email: document.getElementById('contactEmail').value,
-      phone: document.getElementById('contactPhone').value,
-      subject: document.getElementById('contactSubject').value,
-      message: document.getElementById('contactMessage').value,
-      privacy_consent: document.getElementById('privacyConsent').checked,
-      marketing_consent: (document.getElementById('marketingConsent') || {checked:false}).checked,
-      form_version: 'v1.0'
-    };
-    try {
-      const res = await fetch('http://127.0.0.1:8000/api/forms/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Ошибка отправки');
-      document.getElementById('formStatus').classList.remove('d-none');
-      document.getElementById('formError').classList.add('d-none');
-      form.reset();
-    } catch (err) {
-      document.getElementById('formError').classList.remove('d-none');
-      document.getElementById('formStatus').classList.add('d-none');
-    }
-    return false;
-  }
-  </script>
 
   <!-- FOOTER -->
   <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
