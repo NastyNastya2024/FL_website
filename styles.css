@@ -1340,21 +1340,31 @@ body{
     border-radius: 8px;
     font-size: 0.85rem;
     transition: all 0.2s ease;
-    background: linear-gradient(to bottom, #013D3D, #062B29);
-    color: #ffffff;
+    background: #ffffff;
+    color: #020827 !important;
     text-align: center;
     display: block;
     width: auto;
     max-width: none;
     margin: 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    box-shadow: none;
     white-space: nowrap;
+    text-shadow: none !important;
+    -webkit-text-stroke: none !important;
+    outline: none !important;
+    font-weight: 500;
   }
   
   .nav-glass .nav-link:hover {
-    background: linear-gradient(to bottom, #1A4A4A, #013D3D);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    transform: translateY(-1px);
+    background: #f5f5f5;
+    box-shadow: none;
+    transform: none;
+    color: #020827 !important;
+  }
+  
+  .nav-glass .nav-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
   
   .nav-glass .btn-primary-gy {
