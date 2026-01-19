@@ -162,13 +162,16 @@ body{
   line-height: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-stretch: ultra-condensed;
   letter-spacing: -0.05em;
+  vertical-align: middle;
 }
 
 .nav-glass .btn-primary-gy {
   display: flex !important;
   align-items: center;
+  justify-content: center;
   height: auto;
   line-height: 1;
   font-size: 0.85rem;
@@ -177,6 +180,7 @@ body{
   font-stretch: condensed;
   letter-spacing: -0.02em;
   flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .nav-glass .navbar-brand:hover {
@@ -192,8 +196,10 @@ body{
   line-height: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-stretch: condensed;
   letter-spacing: -0.02em;
+  vertical-align: middle;
 }
 .nav-glass .nav-link:hover{ 
   color: #fff!important; 
