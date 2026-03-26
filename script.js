@@ -9,12 +9,70 @@
       const href = link.getAttribute('href') || '';
       const id = href.startsWith('#') ? href.slice(1) : '';
       const target = id ? document.getElementById(id) : null;
-      if (target) {
+      // Do not hijack Bootstrap modals via hash links
+      if (target && !target.classList.contains('modal')) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
+
+  // Deep-linkable Bootstrap modals via hash (e.g. /page.html#pricingModal)
+  const modalIds = ['pricingModal', 'legalModal', 'consentModal', 'privacyModal', 'contactModal'];
+  const modalById = new Map();
+  const ensureModal = (id) => {
+    if (!window.bootstrap || !window.bootstrap.Modal) return null;
+    if (modalById.has(id)) return modalById.get(id);
+    const el = document.getElementById(id);
+    if (!el) return null;
+    const instance = window.bootstrap.Modal.getOrCreateInstance(el);
+    modalById.set(id, instance);
+    return instance;
+  };
+
+  let lastNonModalHash = window.location.hash && !modalIds.includes(window.location.hash.slice(1))
+    ? window.location.hash
+    : '';
+
+  const openFromHash = () => {
+    const hash = window.location.hash || '';
+    const id = hash.startsWith('#') ? hash.slice(1) : '';
+    if (!id || !modalIds.includes(id)) return;
+    const instance = ensureModal(id);
+    if (instance) instance.show();
+  };
+
+  window.addEventListener('hashchange', () => {
+    const id = (window.location.hash || '').replace('#', '');
+    if (!modalIds.includes(id)) {
+      lastNonModalHash = window.location.hash || '';
+      return;
+    }
+    openFromHash();
+  });
+
+  // Keep URL hash in sync when modals open/close
+  for (const id of modalIds) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+
+    el.addEventListener('show.bs.modal', () => {
+      const current = window.location.hash || '';
+      const currentId = current.startsWith('#') ? current.slice(1) : '';
+      if (currentId && !modalIds.includes(currentId)) lastNonModalHash = current;
+      if (current !== `#${id}`) history.pushState(null, '', `#${id}`);
+    });
+
+    el.addEventListener('hidden.bs.modal', () => {
+      const current = window.location.hash || '';
+      if (current === `#${id}`) {
+        history.pushState(null, '', lastNonModalHash || window.location.pathname + window.location.search);
+      }
+    });
+  }
+
+  // Open modal if page loaded with hash
+  openFromHash();
 
   // Инверсия цвета навигации при скролле
   const nav = document.querySelector('.nav-glass');
