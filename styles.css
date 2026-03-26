@@ -213,6 +213,13 @@ body{
   box-shadow: 0 12px 40px -20px rgba(0,0,0,.2), inset 0 1px rgba(0,0,0,.05);
 }
 
+/* Light header on white pages (expert review) */
+.expert-review-page .nav-glass.nav-light{
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 18px 50px -28px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.8);
+}
+
 .nav-glass.nav-light .navbar-brand {
   color: #020827 !important;
 }
