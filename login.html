@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Авторизация</title>
+
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="theme-color" content="#9FE29E"/>
+  <meta name="msapplication-TileColor" content="#9FE29E"/>
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap&subset=latin,cyrillic" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css"/>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="bg-deep">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">DigiTrack</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#hero">Технология</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
+          <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
+          <li class="nav-item"><a class="nav-link" href="expert-review.html">Экспертам</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">О компании</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-6 bg-section" style="padding-top: 10rem;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-5">
+            <article class="glass pad-2x">
+              <h1 class="h4 fw-800 mb-2">Авторизация</h1>
+              <p class="text-mute-300 mb-4">Введите логин и пароль для входа.</p>
+
+              <form id="loginForm" autocomplete="on">
+                <div class="mb-3">
+                  <label for="login" class="form-label">Логин</label>
+                  <input id="login" name="login" type="text" class="form-control" required autocomplete="username">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Пароль</label>
+                  <input id="password" name="password" type="password" class="form-control" required autocomplete="current-password">
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary-gy">Войти</button>
+                </div>
+
+                <div id="loginMsg" class="small text-mute-400 mt-3" aria-live="polite"></div>
+              </form>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="h5 text-white mb-2">DigiTrack</div>
+          <p class="small text-mute-400 m-0">
+            Конфиденциальные вычисления и федеративное обучение для бизнеса.
+          </p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="index.html#hero">Технология</a></li>
+            <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
+            <li><a class="link-fade" href="blog.html">Блог</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
+            <li><a href="img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
+          </ul>
+          <div class="small text-mute-500 mt-4" style="margin-left: 23px;">
+            © <span id="year"></span> ООО "ДТ"
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
+            <li><a class="link-fade" href="about.html">О компании</a></li>
+            <li style="visibility: hidden;"><a class="link-fade" href="#">&nbsp;</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#legalModal">Правовая информация</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="mb-0">Отправляйте все предложения на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно согласия на обработку данных -->
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consentModalLabel">Согласие на обработку персональных данных</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Согласие на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
+          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовые» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянные» cookie).</p>
+          <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
+          <p>Согласие на обработку персональных данных («постоянные» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно стоимости продукта -->
+  <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricingModalLabel">Стоимость услуг</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Стоимость продукта «DigiTrack Confidential Computing» и оказываемых услуг/выполняемых работ ООО «ДТ», в том числе по разработке, адаптации и сопровождению программного обеспечения составляет от 1 000 000 рублей без НДС, окончательная стоимость будет определена индивидуально по Вашему запросу.</p>
+          <p>Для расчета коммерческого предложения просьба отправить Вашу заявку по адресу <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно правовой информации -->
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legalModalLabel">Правовая информация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>ООО "ДТ"</h6>
+          <p><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "ДИДЖИТРЕК"</p>
+          <p><strong>Сокращенное наименование:</strong> ООО "ДТ"</p>
+          <p><strong>ИНН:</strong> 9705200012</p>
+          <p><strong>КПП:</strong> 770501001</p>
+          <p><strong>ОГРН:</strong> 1237700339788</p>
+          <p><strong>Юридический адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Почтовый адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Email:</strong> <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+          <p><strong>Телефон:</strong> <a href="tel:+79857704512">+7 985 770-45-12</a></p>
+
+          <h6>Руководство:</h6>
+          <p>Генеральный директор Рытов Павел Александрович</p>
+
+          <h6>Основные виды деятельности:</h6>
+          <ul>
+            <li>Разработка программного обеспечения (62.01)</li>
+            <li>Консультирование по вопросам информационных технологий</li>
+            <li>Исследования и разработки в области естественных и технических наук</li>
+            <li>Предоставление услуг по обработке данных</li>
+          </ul>
+          <p>Коды видов деятельности в области информационных технологий - 1.01. и 2.01.</p>
+
+          <h6>Языки и средства программирования:</h6>
+          <p>ООО "ДТ" в рамках деятельности в области информационных технологий использует следующие языки и средства программирования: Golang, Python, .NET, C++</p>
+
+          <h6>Программное обеспечение:</h6>
+          <p>ООО "ДТ" является правообладателем исключительных прав на программу для ЭВМ: Средство интеллектуального анализа данных "DigiTrack Confidential Computing".</p>
+          <p>Способы предоставления прав использования программы для ЭВМ Средство интеллектуального анализа данных "DigiTrack Confidential Computing" определяются индивидуально.</p>
+
+          <h6>Правовая основа деятельности:</h6>
+          <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="./script.js" defer></script>
+  <script>
+    (function () {
+      const form = document.getElementById('loginForm');
+      const msg = document.getElementById('loginMsg');
+      if (!form || !msg) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        msg.textContent = 'Проверка учетных данных недоступна в статической версии сайта.';
+      });
+    })();
+  </script>
+</body>
+</html>
