@@ -2076,6 +2076,18 @@ footer .col-6.col-lg-3:first-child {
   }
 }
 
+/* Documents page: center text+download on mobile */
+@media (max-width: 576px) {
+  .documents-page .doc-card-content{
+    text-align: center;
+  }
+  .documents-page .doc-download-link{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Expert review page: force light "converted" header (desktop/top) */
 .expert-review-page .nav-glass.nav-light{
   background: rgba(255, 255, 255, 0.85) !important;
