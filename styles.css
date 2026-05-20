@@ -147,11 +147,12 @@ body{
   align-items: center;
   justify-content: center;
   flex: 1;
-  gap: 0.25rem;
+  gap: 0;
   margin: 0;
 }
 
 .nav-glass .navbar-brand {
+  font-family: "Montserrat", "Inter", sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   color: #fff !important;
@@ -163,8 +164,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-stretch: ultra-condensed;
-  letter-spacing: -0.05em;
+  font-stretch: condensed;
+  letter-spacing: -0.02em;
   vertical-align: middle;
 }
 
@@ -187,10 +188,11 @@ body{
   color: #9FE29E !important;
 }
 .nav-glass .nav-link{ 
+  font-family: "Montserrat", "Inter", sans-serif;
   color: rgba(255,255,255,.9)!important; 
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.4rem 0.8rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 0.35rem 0.45rem;
   border-radius: 8px;
   white-space: nowrap;
   line-height: 1;
@@ -1174,7 +1176,7 @@ body{
   }
   .nav-glass .nav-link {
     font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.4rem;
   }
   .nav-glass .navbar-brand {
     font-size: 1rem;
@@ -1201,7 +1203,7 @@ body{
   }
   .nav-glass .nav-link {
     font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.35rem;
   }
   .nav-glass .navbar-brand {
     font-size: 0.95rem;
@@ -1228,7 +1230,7 @@ body{
   }
   .nav-glass .nav-link {
     font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.35rem;
   }
   .nav-glass .navbar-brand {
     font-size: 0.95rem;
@@ -2347,11 +2349,15 @@ footer .col-6.col-lg-3:first-child {
   color:var(--ink-800);
   background:linear-gradient(135deg, #DAE8E8, #B4EFB3);
 }
-.home-page #cta .btn-outline-light{
-  border-color:rgba(255,255,255,.5);
+.home-page #cta .btn-outline-light,
+.cta-dark .btn-outline-light{
+  border-color:rgba(255,255,255,.6);
   color:#fff;
+  border-radius:999px;
 }
-.home-page #cta .btn-outline-light:hover{
-  background:rgba(255,255,255,.12);
+.home-page #cta .btn-outline-light:hover,
+.cta-dark .btn-outline-light:hover{
+  background:rgba(255,255,255,.15);
   color:#fff;
+  border-color:#fff;
 }

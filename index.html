@@ -3,14 +3,527 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>DigiTrack — О компании</title>
-
+  <title>DigiTrack</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Команда разработчиков ПО для федеративного обучения. Решения для финтеха, медицины и корпораций. Безопасная обработка данных без их передачи."/>
+  <meta name="keywords" content="разработчик ПО DigiTrack, разработка программного обеспечения, конфиденциальные вычисления, федеративное обучение, команда разработчиков"/>
+  <meta name="author" content="DigiTrack"/>
   <meta name="robots" content="index, follow"/>
-  <meta http-equiv="refresh" content="0; url=about.html"/>
-  <link rel="canonical" href="/about.html"/>
+  <meta name="language" content="ru"/>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="/index.html"/>
+  <meta property="og:title" content="DigiTrack"/>
+  <meta property="og:description" content="Команда разработчиков ПО для федеративного обучения. Решения для финтеха, медицины и корпораций. Безопасная обработка данных."/>
+  <meta property="og:image" content="img/og-about.jpg"/>
+  <meta property="og:site_name" content="DigiTrack"/>
+  <meta property="og:locale" content="ru_RU"/>
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="/index.html"/>
+  <meta property="twitter:title" content="DigiTrack"/>
+  <meta property="twitter:description" content="Команда разработчиков ПО для федеративного обучения. Решения для финтеха, медицины и корпораций. Безопасная обработка данных."/>
+  <meta property="twitter:image" content="img/og-about.jpg"/>
+  
+  <!-- Performance -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="theme-color" content="#9FE29E"/>
+  <meta name="msapplication-TileColor" content="#9FE29E"/>
+  
+  <!-- Preconnect for performance -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap&subset=latin,cyrillic" rel="stylesheet">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="./styles.css"/>
+  
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
 </head>
-<body>
-  <p>Если переход не сработал, откройте страницу вручную: <a href="about.html">О компании</a>.</p>
-  <script>location.replace('about.html');</script>
+<body class="bg-deep">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">DigiTrack</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="federated-learning.html#tech">Федеративное обучение</a></li>
+          <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
+          <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero-hero py-6 position-relative overflow-hidden">
+      <video class="hero-video" src="img/hero1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="hero-blur-overlay"></div>
+
+      <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-9">
+            <h1 class="display-5 fw-800 mb-3 text-white">DigiTrack</h1>
+            <p class="text-white mb-4" style="font-size: 1.5rem;">
+              Команда профессионалов в области <br> разработки программного обеспечения
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg-shape"></div>
+    </section>
+
+
+    <!-- ЦЕННОСТИ -->
+    <section id="values" class="py-6 bg-section">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-4">Три основных направления разработки</h2>
+        <div class="row g-3">
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h5 mb-2">Конфиденциальные вычисления</h3>
+              <p class="mb-3 text-mute-300">Разрабатываем программные решения для безопасной обработки данных без их разглашения, включая гомоморфное шифрование и безопасные многосторонние вычисления.</p>
+              <div class="media-slot rounded-3">
+                <img class="img-slot" src="img/img1.png" alt="Конфиденциальные вычисления" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h5 mb-2">Платформы машинного обучения</h3>
+              <p class="mb-3 text-mute-300">Создаем платформы машинного обучения с защитой данных, включая алгоритмы федеративного обучения и системы распределенного анализа.</p>
+              <div class="media-slot rounded-3">
+                <img class="img-slot" src="img/img2.png" alt="ML системы" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h5 mb-2">Обучение сложных ML моделей</h3>
+              <p class="mb-3 text-mute-300">Разрабатываем алгоритмы и платформы для обучения сложных машинного обучения моделей с сохранением конфиденциальности данных и высокой точности.</p>
+              <div class="media-slot rounded-3">
+                <img class="img-slot" src="img/img3.png" alt="Обучение сложных ML моделей" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОДУКТЫ -->
+    <section id="products" class="py-6 bg-section">
+      <div class="container">
+        <div class="products-panel">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+            <h2 class="h3 fw-800 m-0">Продукты</h2>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <a class="products-card" href="federated-learning.html">
+                <h3 class="h5 mb-2">Федеративное обучение</h3>
+                <p class="text-mute-300 mb-0 small">
+                  Обучение ML‑моделей на распределённых данных без передачи и разглашения персональной информации.
+                </p>
+                <div class="media-slot rounded-3 mt-3">
+                  <img class="img-slot" src="img/federated.png" alt="Федеративное обучение" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+                </div>
+                <div class="products-link mt-3">Узнать больше →</div>
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a class="products-card" href="data-platform.html">
+                <h3 class="h5 mb-2">Платформа данных</h3>
+                <p class="text-mute-300 mb-0 small">
+                  On‑premise платформа больших данных: Hadoop/Spark/Kafka/Airflow и промышленный масштаб без vendor lock‑in.
+                </p>
+                <div class="media-slot rounded-3 mt-3">
+                  <img class="img-slot" src="img/DataIcon.png" alt="Платформа данных" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+                </div>
+                <div class="products-link mt-3">Узнать больше →</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОМАНДА -->
+    <section id="team" class="py-6">
+      <div class="container">
+        <div class="cta-dark pad-2x rounded-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6">
+              <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Готовы разрабатывать ПО вместе с нами?</h2>
+              <p class="text-mute-300 mb-3">Присоединяйтесь к команде разработчиков, создающих программное обеспечение для приватного и эффективного мира данных</p>
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Стать разработчиком</button>
+                <button type="button" class="btn btn-outline-light px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="partnership-card">
+                <div class="d-flex align-items-start gap-3">
+                  <a href="index.html" class="partnership-avatar-link">
+                    <img alt="avatar" class="rounded-circle border border-ink-700" width="48" height="48" src="img/img8.png" loading="lazy"/>
+                  </a>
+                  <div>
+                    <p class="small text-mute-200 mb-1">
+                      ООО "ДТ" — это команда разработчиков, создающих мост между потребностью в данных и необходимостью их защиты. Мы разрабатываем программное обеспечение, где конфиденциальность и эффективность не должны быть взаимоисключающими.
+                    </p>
+                    <div class="small text-mute-400">Генеральный директор, Рытов Павел</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-6 bg-section">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-4">Часто задаваемые вопросы</h2>
+        <div class="accordion" id="faqAcc">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="f1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fa1" aria-expanded="false" aria-controls="fa1">
+                Какие услуги предоставляет компания?
+              </button>
+            </h2>
+            <div id="fa1" class="accordion-collapse collapse" aria-labelledby="f1" data-bs-parent="#faqAcc">
+              <div class="accordion-body">
+                Мы разрабатываем программное обеспечение для конфиденциальных вычислений: создаем защищенные алгоритмы машинного обучения, разрабатываем платформы для безопасного анализа данных, пишем программные решения для privacy-preserving технологий. Наша команда разработчиков создает полноценные программные продукты — от backend-систем до пользовательских интерфейсов. Также мы предоставляем техническую поддержку разработанного ПО, проводим аудит безопасности данных и обучаем команды работе с нашими программными решениями. Мы помогаем компаниям соответствовать требованиям 152-ФЗ «О персональных данных» через наши программные продукты.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="f2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fa2" aria-expanded="false" aria-controls="fa2">
+                Какие отрасли могут использовать ваши решения?
+              </button>
+            </h2>
+            <div id="fa2" class="accordion-collapse collapse" aria-labelledby="f2" data-bs-parent="#faqAcc">
+              <div class="accordion-body">
+                Наши решения критически важны для финансовой отрасли с высокими требованиями к конфиденциальности: fraud detection, кредитный скоринг, анализ транзакций, AML (противодействие отмыванию денег), риск-менеджмент. Особенно востребованы в сферах, где данные регулируются строгими требованиями защиты персональной информации и финансовой безопасности.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="f3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fa3" aria-expanded="false" aria-controls="fa3">
+                Кто входит в команду ООО "ДТ"?
+              </button>
+            </h2>
+            <div id="fa3" class="accordion-collapse collapse" aria-labelledby="f3" data-bs-parent="#faqAcc">
+              <div class="accordion-body">
+                Наша команда состоит из разработчиков программного обеспечения мирового уровня: PhD в области машинного обучения и криптографии, senior-разработчики систем безопасности, архитекторы программного обеспечения и специалисты по compliance. Многие из наших разработчиков имеют публикации в топ-конференциях по AI и privacy-preserving технологиям. Мы создаем не просто алгоритмы, а полноценные программные продукты с пользовательскими интерфейсами, API и технической документацией.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="f5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fa5" aria-expanded="false" aria-controls="fa5">
+                Чем занимается компания ООО "ДТ"?
+              </button>
+            </h2>
+            <div id="fa5" class="accordion-collapse collapse" aria-labelledby="f5" data-bs-parent="#faqAcc">
+              <div class="accordion-body">
+                ООО "ДТ" — это компания-разработчик программного обеспечения, специализирующаяся на создании инновационных решений для конфиденциальных вычислений. Мы разрабатываем собственные платформы и алгоритмы для федеративного обучения, системы защиты данных и программные продукты для безопасного машинного обучения. Наша команда создает полноценное программное обеспечение — от архитектуры и алгоритмов до пользовательских интерфейсов и API. Мы не просто консультируем, а именно разрабатываем готовые программные решения для бизнеса.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОСЛЕДНИЕ СТАТЬИ И НОВОСТИ -->
+    <section id="news" class="py-6 news-section">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h3 mb-0">Последние статьи и новости</h2>
+          <a href="blog.html" class="btn-news-link">Все статьи →</a>
+        </div>
+        <p class="text-mute-300 mb-5">Следите за нашими достижениями и обновлениями</p>
+        
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <div class="glass pad-2x h-100 d-flex flex-column">
+              <div class="news-image mb-3">
+                <img src="img/news1.jpeg" alt="Вертикальное федеративное обучение" class="img-fluid rounded-3">
+              </div>
+              <h3 class="h6 mb-1">Вертикальное федеративное обучение</h3>
+              <p class="text-mute-300 mb-3 flex-grow-1">Как объединить данные с одинаковыми пользователями, но разными признаками для создания более точных моделей машинного обучения</p>
+              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-4">
+            <div class="glass pad-2x h-100 d-flex flex-column">
+              <div class="news-image mb-3">
+                <img src="img/news2.jpeg" alt="Горизонтальное федеративное обучение" class="img-fluid rounded-3">
+              </div>
+              <h3 class="h6 mb-1">Горизонтальное федеративное обучение</h3>
+              <p class="text-mute-300 mb-3 flex-grow-1">Обучение моделей на распределенных данных с одинаковыми признаками, но разными пользователями для повышения обобщающей способности</p>
+              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-4">
+            <div class="glass pad-2x h-100 d-flex flex-column">
+              <div class="news-image mb-3">
+                <img src="img/news3.jpeg" alt="Будущее конфиденциальных вычислений" class="img-fluid rounded-3">
+              </div>
+              <h3 class="h6 mb-1">Будущее конфиденциальных вычислений</h3>
+              <p class="text-mute-300 mb-3 flex-grow-1">Тренды и перспективы развития технологий защиты данных в эпоху искусственного интеллекта и больших данных</p>
+              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="h5 text-white mb-2">DigiTrack</div>
+          <p class="small text-mute-400 m-0">
+            Конфиденциальные вычисления и федеративное обучение для бизнеса.
+          </p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="federated-learning.html#tech">Федеративное обучение</a></li>
+            <li><a class="link-fade" href="data-platform.html">Дата-платформа</a></li>
+            <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
+            <li><a class="link-fade" href="blog.html">Блог</a></li>
+            <li><a class="link-fade" href="expert-review.html">Экспертам</a></li>
+            <li><a class="link-fade" href="documents.html">Документы</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
+            <li><a href="img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
+          </ul>
+          <div class="small text-mute-500 mt-4" style="margin-left: 23px;">
+            © <span id="year"></span> ООО "ДТ"
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
+            <li><a class="link-fade" href="index.html">О компании</a></li>
+            <li style="visibility: hidden;"><a class="link-fade" href="#">&nbsp;</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#legalModal">Правовая информация</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="mb-0">Отправляйте все предложения на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно политики конфиденциальности -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Политика конфиденциальности</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>1. Общие положения</h6>
+          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО "ДТ".</p>
+          
+          <h6>2. Цели обработки персональных данных</h6>
+          <p>Персональные данные обрабатываются в следующих целях:</p>
+          <ul>
+            <li>Обработка заявок и обращений пользователей</li>
+            <li>Предоставление информации о продуктах и услугах компании</li>
+            <li>Связь с пользователями по вопросам сотрудничества</li>
+          </ul>
+          
+          <h6>3. Категории обрабатываемых персональных данных</h6>
+          <p>Мы обрабатываем следующие категории персональных данных:</p>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+            <li>Информация, содержащаяся в сообщениях пользователей</li>
+          </ul>
+          
+          <h6>4. Сроки обработки персональных данных</h6>
+          <p>Персональные данные обрабатываются в течение срока, необходимого для достижения целей обработки, но не более 3 лет с момента последнего взаимодействия с пользователем.</p>
+          
+          <h6>5. Меры по обеспечению безопасности персональных данных</h6>
+          <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
+          
+          <h6>6. Права субъекта персональных данных</h6>
+          <p>Вы имеете право:</p>
+          <ul>
+            <li>Получать информацию об обработке ваших персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
+            <li>Отзывать согласие на обработку персональных данных</li>
+            <li>Обращаться с жалобами в уполномоченный орган по защите прав субъектов персональных данных</li>
+          </ul>
+          
+          <h6>7. Контактная информация</h6>
+          <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по адресу: <a href="mailto:privacy@digitrack.com">privacy@digitrack.com</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно согласия на обработку данных -->
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consentModalLabel">Согласие на обработку персональных данных</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Согласие на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
+          
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          
+          <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
+          
+          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовых» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянных» cookie).</p>
+          
+          <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
+          
+          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          
+          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно стоимости продукта -->
+  <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricingModalLabel">Стоимость услуг</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Стоимость продукта «DigiTrack Confidential Computing» и оказываемых услуг/выполняемых работ ООО «ДТ», в том числе по разработке, адаптации и сопровождению программного обеспечения составляет от 1 000 000 рублей без НДС, окончательная стоимость будет определена индивидуально по Вашему запросу.</p>
+          
+          <p>Для расчета коммерческого предложения просьба отправить Вашу заявку по адресу <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно правовой информации -->
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legalModalLabel">Правовая информация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>ООО "ДТ"</h6>
+          <p><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "ДИДЖИТРЕК"</p>
+          <p><strong>Сокращенное наименование:</strong> ООО "ДТ"</p>
+          <p><strong>ИНН:</strong> 9705200012</p>
+          <p><strong>КПП:</strong> 770501001</p>
+          <p><strong>ОГРН:</strong> 1237700339788</p>
+          <p><strong>Юридический адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Почтовый адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Email:</strong> <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+          <p><strong>Телефон:</strong> <a href="tel:+79857704512">+7 985 770-45-12</a></p>
+          
+          <h6>Руководство:</h6>
+          <p>Генеральный директор Рытов Павел Александрович</p>
+          
+          <h6>Основные виды деятельности:</h6>
+          <ul>
+            <li>Разработка программного обеспечения (62.01)</li>
+            <li>Консультирование по вопросам информационных технологий</li>
+            <li>Исследования и разработки в области естественных и технических наук</li>
+            <li>Предоставление услуг по обработке данных</li>
+          </ul>
+          <p>Коды видов деятельности в области информационных технологий - 1.01. и 2.01.</p>
+          
+          <h6>Языки и средства программирования:</h6>
+          <p>ООО "ДТ" в рамках деятельности в области информационных технологий использует следующие языки и средства программирования: Golang, Python, .NET, C++</p>
+          
+          <h6>Программное обеспечение:</h6>
+          <p>ООО "ДТ" является правообладателем исключительных прав на программу для ЭВМ: Средство интеллектуального анализа данных "DigiTrack Confidential Computing".</p>
+          <p>Способы предоставления прав использования программы для ЭВМ Средство интеллектуального анализа данных "DigiTrack Confidential Computing" определяются индивидуально.</p>
+          
+          <h6>Правовая основа деятельности:</h6>
+          <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap bundle + App -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
