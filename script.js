@@ -227,4 +227,44 @@
     window.addEventListener('resize', update);
     update();
   }
+
+  // Lead modal: subject from trigger button, mailto with phone + email
+  const leadModalEl = document.getElementById('leadModal');
+  const leadForm = document.getElementById('leadForm');
+  const leadModalTitle = document.getElementById('leadModalLabel');
+  let leadSubject = 'Заявка с сайта DigiTrack';
+
+  document.querySelectorAll('[data-bs-target="#leadModal"][data-lead-subject]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      leadSubject = btn.getAttribute('data-lead-subject') || leadSubject;
+      if (leadModalTitle) leadModalTitle.textContent = leadSubject;
+    });
+  });
+
+  if (leadModalEl) {
+    leadModalEl.addEventListener('hidden.bs.modal', () => {
+      if (leadForm) leadForm.reset();
+      if (leadModalTitle) leadModalTitle.textContent = 'Оставьте контакты';
+      leadSubject = 'Заявка с сайта DigiTrack';
+    });
+  }
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!leadForm.checkValidity()) {
+        leadForm.reportValidity();
+        return;
+      }
+      const fd = new FormData(leadForm);
+      const body = [
+        `Тема: ${leadSubject}`,
+        `Email: ${fd.get('email')}`,
+        `Телефон: ${fd.get('phone')}`,
+      ].join('\n');
+      const modal = leadModalEl && window.bootstrap?.Modal?.getInstance(leadModalEl);
+      if (modal) modal.hide();
+      window.location.href = `mailto:info@digi-track.ru?subject=${encodeURIComponent(leadSubject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
 })();

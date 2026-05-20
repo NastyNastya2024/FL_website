@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Big Data Enterprise Platform — DigiTrack</title>
+  <title>Enterprise-платформа данных — DigiTrack</title>
 
-  <meta name="description" content="Big Data Enterprise Platform — зрелая on-premise платформа больших данных на базе Vanilla Hadoop и Astra Linux. Без vendor lock-in, Delta Lake, Spark, Kafka, Airflow."/>
+  <meta name="description" content="Enterprise-платформа данных без vendor lock-in. Vanilla Apache Hadoop, SRE-практики, коммерческая поддержка L3/L4 на Astra Linux. On-premise."/>
   <meta name="keywords" content="Big Data, Hadoop, data platform, Astra Linux, Spark, Delta Lake, on-premise, DigiTrack"/>
   <meta name="author" content="DigiTrack"/>
   <meta name="robots" content="index, follow"/>
@@ -13,15 +13,15 @@
 
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="/data-platform.html"/>
-  <meta property="og:title" content="Big Data Enterprise Platform"/>
-  <meta property="og:description" content="Собственная сборка Hadoop на базе Astra Linux. On-premise платформа больших данных без vendor lock-in."/>
+  <meta property="og:title" content="Enterprise-платформа данных"/>
+  <meta property="og:description" content="Enterprise-платформа данных без vendor lock-in. Vanilla Hadoop, SRE, поддержка L3/L4 на Astra Linux."/>
   <meta property="og:site_name" content="DigiTrack"/>
   <meta property="og:locale" content="ru_RU"/>
 
   <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:url" content="/data-platform.html"/>
-  <meta property="twitter:title" content="Big Data Enterprise Platform"/>
-  <meta property="twitter:description" content="On-premise платформа больших данных на базе Vanilla Hadoop и Astra Linux."/>
+  <meta property="twitter:title" content="Enterprise-платформа данных"/>
+  <meta property="twitter:description" content="Enterprise-платформа данных без vendor lock-in на базе Vanilla Hadoop и Astra Linux."/>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="theme-color" content="#9FE29E"/>
@@ -80,8 +80,8 @@
               Корпоративная платформа больших данных на базе Astra Linux<br>
               Полностью on‑premise. Без привязки к вендору. Собственная сборка Hadoop.
             </p>
-            <div class="d-flex justify-content-center">
-              <a href="#about" class="btn btn-primary-gy">Подробнее</a>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Расчёт ТСО (калькулятор)">Расчёт ТСО</button>
             </div>
           </div>
         </div>
@@ -89,39 +89,34 @@
       <div class="hero-bg-shape"></div>
     </section>
 
-    <section id="about" class="py-6 bg-section">
+    <section id="advantages" class="py-6 bg-section">
       <div class="container">
-        <h2 class="h3 fw-700 mb-4">О платформе</h2>
-        <p class="text-mute-300 mb-5">
-          Продукт представляет собой полный комплект для быстрого и воспроизводимого развёртывания: установочные бинарники, Ansible-роли для управления кластером, встроенные тесты совместимости компонентов и подробную документацию.
+        <h2 class="h3 fw-700 mb-3">Enterprise-платформа данных без vendor lock-in и переплат</h2>
+        <p class="text-mute-300 mb-4">
+          Мы взяли мощь чистого Apache Hadoop, усилили его SRE-практиками и добавили прозрачную коммерческую поддержку (L3/L4). Платформа доказала свою надёжность на петабайтных нагрузках. Никаких «чёрных ящиков» и платы за тестовые среды.
         </p>
         <div class="dp-features-wrap">
           <button class="dp-scroll-arrow dp-scroll-arrow--left" type="button" aria-label="Прокрутить влево" data-scroll-target="#dpFeatures">‹</button>
           <div id="dpFeatures" class="dp-features-scroll" data-scroll-arrows>
             <article class="dp-feature-card glass pad-2x">
               <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Операционная система</h3>
-              <p class="text-mute-300 mb-0 small">Астра Линукс Воронеж 1.8</p>
-            </article>
-            <article class="dp-feature-card glass pad-2x">
-              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Управление</h3>
-              <p class="text-mute-300 mb-0 small">Собственные роли Ansible (Infrastructure as Code)</p>
+              <h3 class="h6 mb-2">Истинная независимость (No Vendor Lock-in)</h3>
+              <p class="text-mute-300 mb-0 small">В основе — ванильные сборки Apache Hadoop. Мы не делаем проприетарных форков. Вы не привязаны к лицензионной политике вендора и полностью контролируете код.</p>
             </article>
             <article class="dp-feature-card glass pad-2x">
               <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Гибкость</h3>
-              <p class="text-mute-300 mb-0 small">Мультиверсионность: Spark 3.2 / 3.5, Java, Python</p>
-            </article>
-            <article class="dp-feature-card glass pad-2x">
-              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Безопасность</h3>
-              <p class="text-mute-300 mb-0 small">ALD PRO, HashiCorp Vault</p>
+              <h3 class="h6 mb-2">Мультиверсионность «из коробки»</h3>
+              <p class="text-mute-300 mb-0 small">Запускайте разные версии Spark (3.2.3 и 3.5.8), Python и Java на одном кластере одновременно. Data Science использует новейшие библиотеки, а legacy-процессы работают стабильно на старых версиях.</p>
             </article>
             <article class="dp-feature-card glass pad-2x">
               <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Хранение</h3>
-              <p class="text-mute-300 mb-0 small">Delta Lake (Parquet), Hive Metastore</p>
+              <h3 class="h6 mb-2">Infrastructure-as-Code (IaC)</h3>
+              <p class="text-mute-300 mb-0 small">Глубокая автоматизация на базе Ansible. Развёртывание платформы на «голом железе» или виртуалках без лишних прослоек (вроде K8s). Быстро, воспроизводимо, прозрачно.</p>
+            </article>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Гарантированная отказоустойчивость</h3>
+              <p class="text-mute-300 mb-0 small">Метаданные хранятся в PostgreSQL (Patroni) с автофейловером. Hive, NameNode и ResourceManager работают в режиме High Availability. «Мозг» кластера надёжно защищён от падений.</p>
             </article>
           </div>
           <button class="dp-scroll-arrow dp-scroll-arrow--right" type="button" aria-label="Прокрутить вправо" data-scroll-target="#dpFeatures">›</button>
@@ -132,55 +127,37 @@
     <section id="scale" class="py-6 bg-section">
       <div class="container">
         <div class="dp-mint-panel">
-          <h2 class="h3 fw-700 mb-4">Масштаб и статистика</h2>
-          <p class="text-mute-300 mb-3 dp-scale-intro">Промышленный кластер в эксплуатации. Более 100 источников (в т.ч. ClickHouse) для захвата изменений данных в реальном времени (CDC).</p>
+          <h2 class="h3 fw-700 mb-4">Battle-tested в промышленной эксплуатации</h2>
+          <p class="text-mute-300 mb-4 dp-scale-intro">Это не лабораторный стенд. Наша платформа — промышленная машина, которая ежедневно обслуживает более 500 критических пайплайнов (DAGs) в режиме 24/7.</p>
           <div class="row g-3 dp-stats">
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg">
               <div class="dp-stat glass pad-2x text-center h-100">
                 <div class="dp-stat-value">1 ПБ+</div>
-                <div class="dp-stat-label text-mute-300 small">Объём данных</div>
+                <div class="dp-stat-label text-mute-300 small">Объём сырых данных</div>
               </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg">
               <div class="dp-stat glass pad-2x text-center h-100">
                 <div class="dp-stat-value">40</div>
-                <div class="dp-stat-label text-mute-300 small">Data Nodes</div>
+                <div class="dp-stat-label text-mute-300 small">Data-нод (96 vCPU, 756 ГБ RAM)</div>
               </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="dp-stat glass pad-2x text-center h-100">
-                <div class="dp-stat-value">756 ГБ</div>
-                <div class="dp-stat-label text-mute-300 small">RAM / Node</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="dp-stat glass pad-2x text-center h-100">
-                <div class="dp-stat-value">96</div>
-                <div class="dp-stat-label text-mute-300 small">vCPU / Node</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="dp-stat glass pad-2x text-center h-100">
-                <div class="dp-stat-value">200 ГБ</div>
-                <div class="dp-stat-label text-mute-300 small">Прирост в день</div>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg">
               <div class="dp-stat glass pad-2x text-center h-100">
                 <div class="dp-stat-value">15 000+</div>
-                <div class="dp-stat-label text-mute-300 small">Streaming (msg/s)</div>
+                <div class="dp-stat-label text-mute-300 small">Сообщений в секунду (пик)</div>
               </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg">
               <div class="dp-stat glass pad-2x text-center h-100">
-                <div class="dp-stat-value">20 млн+</div>
-                <div class="dp-stat-label text-mute-300 small">Файлов</div>
+                <div class="dp-stat-value">200 ГБ+</div>
+                <div class="dp-stat-label text-mute-300 small">Ежедневный прирост данных</div>
               </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg">
               <div class="dp-stat glass pad-2x text-center h-100">
-                <div class="dp-stat-value">500+</div>
-                <div class="dp-stat-label text-mute-300 small">Airflow DAGs</div>
+                <div class="dp-stat-value">100+</div>
+                <div class="dp-stat-label text-mute-300 small">Источников данных (CDC Debezium)</div>
               </div>
             </div>
           </div>
@@ -240,33 +217,88 @@
 
     <section id="sre" class="py-6">
       <div class="container">
-        <h2 class="h3 fw-700 mb-4">Надёжность и SRE</h2>
-        <div class="row g-4">
+        <h2 class="h3 fw-700 mb-3">Умный SRE и защита от человеческого фактора</h2>
+        <p class="text-mute-300 mb-4">
+          Автоматизация рутинных операций, измеримая надёжность сервисов, проактивный мониторинг и снижение риска человеческого фактора. Мы зашили эту логику прямо в платформу — обновления и инциденты обрабатываются по заранее описанным сценариям, а не «вручную по ночам». Поэтому выход узла из строя или обновление компонентов больше не означают остановку сервиса.
+        </p>
+        <div class="row g-3">
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 mb-2">Rolling Restart без простоев</h3>
+              <p class="text-mute-300 small mb-0">Автоматический мягкий вывод узлов из работы (Drain), ожидание завершения задач, рестарт и Health-check перед возвратом в кластер.</p>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 mb-2">Встроенные Guardrails</h3>
+              <p class="text-mute-300 small mb-0">Автоматика не позволит администратору случайно перезагрузить критическое количество узлов одновременно.</p>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 mb-2">Матрица состояний</h3>
+              <p class="text-mute-300 small mb-0">Детектирование изменений в конфигурации и автоматическое применение соответствующих процедур рестарта для каждого компонента (YARN, HDFS, Zookeeper, Patroni).</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="licensing" class="py-6 bg-section">
+      <div class="container">
+        <div class="dp-mint-panel">
+          <h2 class="h3 fw-700 mb-3">Справедливое лицензирование. Вы платите только за Production</h2>
+          <p class="text-mute-300 mb-4">Мы сделали коммерческую модель прозрачной. Никаких скрытых платежей и переплат за служебную инфраструктуру.</p>
+          <button type="button" class="btn btn-primary-gy px-4 py-2 mb-4" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Запрос архитектуры">Запросить архитектуру</button>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Dev, Test и UAT — бесплатно</h3>
+                <p class="text-mute-300 small mb-0">Мы не берём деньги за среды разработки и тестирования. Экспериментируйте, проверяйте гипотезы и обучайте модели без оглядки на стоимость лицензий.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Управляющие узлы (Management) — бесплатно</h3>
+                <p class="text-mute-300 small mb-0">До 6 серверов управления (NameNode, ResourceManager, ZooKeeper, DB) на один кластер не тарифицируются. Вы платите только за полезную нагрузку — Data-узлы.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Гибкая модель тарификации</h3>
+                <p class="text-mute-300 small mb-0">Две модели на выбор: по размеру узлов (Node-based) или по пулу ресурсов (vCPU + Storage). Выбирайте ту, которая выгоднее для вашей архитектуры.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Включённая поддержка (L4)</h3>
+                <p class="text-mute-300 small mb-0">В базовую стоимость лицензии уже включена 4-я линия поддержки (выпуск патчей, исправление багов, доступ к roadmap). Опционально — SLA по L3 (решение инцидентов 8×5).</p>
+              </article>
+            </div>
+          </div>
+          <p class="text-mute-300 small mb-0 mt-4">
+            <button type="button" class="btn btn-link p-0 align-baseline" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Лицензионная политика">Лицензионную политику отправим по запросу</button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="py-6">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-3">Roadmap продукта (2026–2027)</h2>
+        <p class="text-mute-300 mb-4">Мы открыто делимся планами развития платформы:</p>
+        <div class="row g-3">
           <div class="col-12 col-lg-6">
             <article class="glass pad-2x h-100">
-              <div class="dp-sre-head mb-3">
-                <img class="dp-sre-icon" src="img/img1.png" alt="" aria-hidden="true" loading="lazy">
-                <h3 class="h6 mb-0">Автоматизация Rolling Restart</h3>
-              </div>
-              <ul class="text-mute-300 small mb-0">
-                <li><strong>YARN NM:</strong> Drain → Wait Containers → Restart → Health Check</li>
-                <li><strong>HDFS DN:</strong> Exclude → Maintenance Mode → Restart → Live</li>
-                <li><strong>HA Components:</strong> автофейловер ResourceManager и NameNode</li>
-                <li><strong>PostgreSQL Patroni:</strong> Reload / Switchover без простоя</li>
-              </ul>
+              <span class="dp-roadmap-badge">2026 · Q3–Q4</span>
+              <p class="text-mute-300 small mb-0">Завершение контура Enterprise-безопасности (внедрение Kerberos, Apache Knox, RBAC). Переход на универсальные CI/CD пайплайны.</p>
             </article>
           </div>
           <div class="col-12 col-lg-6">
             <article class="glass pad-2x h-100">
-              <div class="dp-sre-head mb-3">
-                <img class="dp-sre-icon" src="img/img3.png" alt="" aria-hidden="true" loading="lazy">
-                <h3 class="h6 mb-0">Мониторинг и контроль</h3>
-              </div>
-              <ul class="text-mute-300 small mb-0">
-                <li>Deep Health Checks (VIP, JMX, Ports, ZK Quorum)</li>
-                <li>Матрица рестартов (<code>restart_matrix</code>)</li>
-                <li>Guardrails: защита от падения N узлов</li>
-              </ul>
+              <span class="dp-roadmap-badge">2027 · Q1–Q2</span>
+              <p class="text-mute-300 small mb-2">Релиз собственного графического UI для управления кластером (ответ западным аналогам) и бесшовная интеграция с OpenMetadata, Data Quality и Greenplum.</p>
+              <p class="text-mute-300 small mb-0">Регистрация продукта в Реестре российского ПО.</p>
             </article>
           </div>
         </div>
@@ -278,11 +310,11 @@
         <div class="cta-dark pad-2x rounded-4">
           <div class="row g-4 align-items-center">
             <div class="col-12 col-lg-6">
-              <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Готовы разрабатывать ПО вместе с нами?</h2>
-              <p class="text-mute-300 mb-3">Присоединяйтесь к команде разработчиков, создающих программное обеспечение для приватного и эффективного мира данных</p>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
-                <a href="about.html" class="btn btn-link text-white px-4 py-2">О компании →</a>
+              <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Готовы к импортозамещению без потери контроля?</h2>
+              <p class="text-mute-300 mb-3">Оставьте заявку — наша техническая команда проведёт аудит инфраструктуры, покажет демо-стенд и расскажет, как мигрировать на открытый стек.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Заявка с сайта (импортозамещение)">Оставить заявку</button>
+                <button type="button" class="btn btn-link text-white px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
               </div>
             </div>
             <div class="col-12 col-lg-6">
@@ -345,6 +377,31 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="leadModalLabel">Оставьте контакты</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-mute-300 small text-center mb-3" id="leadModalHint">Мы свяжемся с вами и подготовим материалы по запросу.</p>
+          <form id="leadForm" class="dp-lead-form" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="leadEmail">Email</label>
+              <input type="email" class="form-control" id="leadEmail" name="email" required autocomplete="email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="leadPhone">Телефон</label>
+              <input type="tel" class="form-control" id="leadPhone" name="phone" required autocomplete="tel">
+            </div>
+            <button type="submit" class="btn btn-primary-gy w-100">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
