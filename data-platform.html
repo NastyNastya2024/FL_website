@@ -275,19 +275,50 @@
 
     <section id="cta" class="py-6">
       <div class="container">
-        <div class="cta-dark pad-2x rounded-4 dp-team-cta">
-          <h2 class="h4 mb-4 text-white">Команда Big Data Platform</h2>
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-4 col-lg-3">
-              <figure class="dp-team-cta-photo m-0">
-                <img class="img-fluid rounded-4" src="img/gudov.png" alt="Александр Гудов" width="280" height="280" loading="lazy">
-                <figcaption class="small text-mute-300 mt-2 mb-0">Александр Гудов, владелец Big Data Enterprise Platform</figcaption>
-              </figure>
+        <div class="cta-dark pad-2x rounded-4">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-12 col-lg-6">
+              <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Готовы разрабатывать ПО вместе с нами?</h2>
+              <p class="text-mute-300 mb-3">Присоединяйтесь к команде разработчиков, создающих программное обеспечение для приватного и эффективного мира данных</p>
+              <form class="contact-form" data-contact-form data-mail-subject="Заказ демо Big Data Enterprise Platform" novalidate>
+                <div class="row g-2">
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="demoName">Имя</label>
+                    <input type="text" class="form-control" id="demoName" name="name" required autocomplete="name">
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="demoEmail">Email</label>
+                    <input type="email" class="form-control" id="demoEmail" name="email" required autocomplete="email">
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="demoCompany">Компания</label>
+                    <input type="text" class="form-control" id="demoCompany" name="company" autocomplete="organization">
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="demoPhone">Телефон</label>
+                    <input type="tel" class="form-control" id="demoPhone" name="phone" autocomplete="tel">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="demoMessage">Сообщение</label>
+                    <textarea class="form-control" id="demoMessage" name="message" rows="3" placeholder="Кратко опишите задачу или сроки"></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary-gy px-4 py-2 mt-3">Заказать демо</button>
+              </form>
             </div>
-            <div class="col-12 col-md-8 col-lg-9">
-              <div class="dp-team-cta-quote text-lg-end">
-                <p class="text-mute-300 mb-3">Мы создали Big Data Enterprise Platform, потому что сами устали от vendor lock-in и закрытых сборок.</p>
-                <p class="text-mute-300 mb-0">Наше решение — это полностью открытый, управляемый стек на Astra Linux. Вы получаете бинарники, Ansible-роли для автоматического развертывания и управления кластером, тесты совместимости компонентов и документацию. Всё, чтобы запустить промышленный Data Lake без сюрпризов.</p>
+            <div class="col-12 col-lg-6">
+              <div class="partnership-card h-100">
+                <div class="d-flex align-items-start gap-3 mb-0">
+                  <span class="d-inline-block flex-shrink-0" aria-hidden="true">
+                    <img alt="Александр Гудов" class="rounded-circle border border-ink-700" width="56" height="56" src="img/gudov.png" loading="lazy" style="object-fit: cover;">
+                  </span>
+                  <div>
+                    <p class="small text-mute-200 mb-2">
+                      Мы создали Big Data Enterprise Platform, потому что сами устали от vendor lock-in и закрытых сборок. Наше решение — это полностью открытый, управляемый стек на Astra Linux. Вы получаете бинарники, Ansible-роли для автоматического развертывания и управления кластером, тесты совместимости компонентов и документацию. Всё, чтобы запустить промышленный Data Lake без сюрпризов.
+                    </p>
+                    <div class="small text-mute-400">Александр Гудов, владелец Big Data Enterprise Platform</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

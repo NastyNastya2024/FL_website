@@ -2262,36 +2262,33 @@ footer .col-6.col-lg-3:first-child {
   min-height: 36px;
 }
 
-/* Data platform: team CTA block */
-.data-platform-page .dp-team-cta{
-  text-align: left;
+/* CTA feedback form on dark panel */
+.cta-dark .contact-form .form-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
 }
-.data-platform-page .dp-team-cta-photo img{
-  width: 100%;
-  max-width: 220px;
-  object-fit: cover;
-  aspect-ratio: 1;
+.cta-dark .contact-form .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(161, 250, 133, 0.35);
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
 }
-.data-platform-page .dp-team-cta-quote p{
-  font-size: 1rem;
-  line-height: 1.55;
+.cta-dark .contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #A1FA85;
+  box-shadow: 0 0 0 0.15rem rgba(161, 250, 133, 0.25);
+  color: #ffffff !important;
 }
-@media (min-width: 768px){
-  .data-platform-page .dp-team-cta-photo img{
-    max-width: 200px;
-  }
+.cta-dark .contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1;
 }
-@media (max-width: 767px){
-  .data-platform-page .dp-team-cta-quote{
-    text-align: left !important;
-  }
-  .data-platform-page .dp-team-cta-photo{
-    text-align: center;
-  }
-  .data-platform-page .dp-team-cta-photo img{
-    margin-left: auto;
-    margin-right: auto;
-  }
+.cta-dark .contact-form textarea.form-control {
+  resize: vertical;
+  min-height: 4.5rem;
 }
 
 /* Federated learning page: darker emerald tint */
