@@ -68,10 +68,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto me-3">
-          <li class="nav-item"><a class="nav-link" href="index.html#tech">Технология</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="federated-learning.html#tech">Федеративное обучение</a></li>
+          <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
           <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
           <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">О компании</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
         </ul>
         <div class="d-flex gap-2">
@@ -83,14 +84,14 @@
 
   <main>
     <!-- HERO -->
-    <section id="hero" class="hero-hero hero-with-image position-relative overflow-hidden">
-      <!-- изображение Company.png на весь блок -->
-      <div class="hero-image-overlay hero-image-full hero-bg-image" style="background-image: url('img/Company.png');"></div>
+    <section id="hero" class="hero-hero py-6 position-relative overflow-hidden">
+      <video class="hero-video" src="img/hero1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="hero-blur-overlay"></div>
 
       <div class="container position-relative">
         <div class="row justify-content-center text-center">
           <div class="col-12 col-lg-9">
-            <h1 class="display-5 fw-800 mb-3 text-white">О компании</h1>
+            <h1 class="display-5 fw-800 mb-3 text-white">DigiTrack</h1>
             <p class="text-white mb-4" style="font-size: 1.5rem;">
               Команда профессионалов в области <br> разработки программного обеспечения
             </p>
@@ -132,6 +133,40 @@
                 <img class="img-slot" src="img/img3.png" alt="Обучение сложных ML моделей" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОДУКТЫ -->
+    <section id="products" class="py-6 bg-section">
+      <div class="container">
+        <div class="products-panel">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+            <h2 class="h3 fw-800 m-0">Продукты</h2>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <a class="products-card" href="federated-learning.html">
+                <h3 class="h5 mb-2">Федеративное обучение</h3>
+                <p class="text-mute-300 mb-0 small">
+                  Обучение ML‑моделей на распределённых данных без передачи и разглашения персональной информации.
+                </p>
+                <div class="media-slot rounded-3 mt-3">
+                  <img class="img-slot" src="img/federated.png" alt="Федеративное обучение" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
+                </div>
+                <div class="products-link mt-3">Узнать больше →</div>
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a class="products-card" href="data-platform.html">
+                <h3 class="h5 mb-2">Платформа данных</h3>
+                <p class="text-mute-300 mb-0 small">
+                  On‑premise платформа больших данных: Hadoop/Spark/Kafka/Airflow и промышленный масштаб без vendor lock‑in.
+                </p>
+                <div class="products-link mt-3">Узнать больше →</div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -286,7 +321,7 @@
         </div>
         <div class="col-6 col-lg-3">
           <ul class="list-unstyled small m-0">
-            <li><a class="link-fade" href="index.html#tech">Технология</a></li>
+            <li><a class="link-fade" href="federated-learning.html#tech">Федеративное обучение</a></li>
             <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
             <li><a class="link-fade" href="blog.html">Блог</a></li>
             <li><a class="link-fade" href="expert-review.html">Экспертам</a></li>

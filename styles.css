@@ -131,8 +131,8 @@ body{
   box-shadow: 0 12px 40px -20px rgba(0,0,0,.4), inset 0 1px rgba(255,255,255,.15);
 }
 .nav-glass .container{ 
-  padding-top: 8px; 
-  padding-bottom: 8px; 
+  padding-top: 15px; 
+  padding-bottom: 15px; 
   padding-left: 24px;
   padding-right: 24px;
   display: flex !important;
@@ -389,7 +389,8 @@ body{
   border: 1px solid #013D3D;
   color: #ffffff !important;
   padding: 4rem 3rem !important;
-  margin: 0 -2rem;
+  /* Не растягиваем блок шире контейнера */
+  margin: 0;
 }
 
 .cta-dark h2 {
@@ -533,6 +534,55 @@ body{
   padding: 2rem 1.5rem;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+/* Products panel (home/about) */
+.products-panel{
+  background: linear-gradient(180deg, rgba(200,245,225,.85), rgba(220,251,225,.95));
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 14px 34px -26px rgba(6,43,41,.28);
+}
+.products-card{
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 26px -20px rgba(0,0,0,.25);
+  border: 1px solid rgba(0,0,0,.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+  color: inherit;
+  height: 100%;
+}
+.products-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -28px rgba(0,0,0,.3);
+}
+.products-card-top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+}
+.products-pill{
+  display:inline-block;
+  padding: .25rem .6rem;
+  border-radius: 10px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #0a1a16;
+  background: #B0FF99;
+}
+.products-link{
+  display: inline-block;
+  font-weight: 500;
+  font-size: .9rem;
+  color: rgba(2, 8, 39, .65);
+  text-decoration: none;
+}
+.products-card:hover .products-link{
+  color: rgba(2, 8, 39, .8);
 }
 
 /* Стили для изумрудной плашки цитаты */
@@ -766,7 +816,8 @@ body{
 .hero-hero{
   position:relative;
   color:#fff;
-  min-height: 80vh;
+  /* Делаем hero чуть выше, вместо увеличения хедера */
+  min-height: calc(80vh + 60px);
   width: 100%;
   display:flex; align-items:center;
   background: var(--deeper);
@@ -1113,8 +1164,8 @@ body{
     border-radius: 28px;
   }
   .nav-glass .container {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
@@ -1140,8 +1191,8 @@ body{
     border-radius: 24px;
   }
   .nav-glass .container {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 16px;
     padding-right: 16px;
     display: flex;
@@ -1167,8 +1218,8 @@ body{
     border-radius: 24px;
   }
   .nav-glass .container {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     padding-left: 12px;
     padding-right: 12px;
     display: flex;
@@ -2103,4 +2154,225 @@ footer .col-6.col-lg-3:first-child {
 .expert-review-page .nav-glass.nav-light .nav-link:hover{
   color: #020827 !important;
   background: rgba(0,0,0,.05) !important;
+}
+
+/* Data platform page */
+.data-platform-page .hero-video{
+  opacity:.8;
+}
+.data-platform-page #hero .hero-blur-overlay{
+  /* Изумрудное затемнение поверх видео */
+  background: rgba(1, 61, 61, .38);
+}
+
+/* Data platform: features row + mobile horizontal scroll */
+.data-platform-page .dp-features-wrap{
+  position: relative;
+}
+.data-platform-page .dp-features-scroll{
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+.data-platform-page .dp-feature-card{
+  /* 5 карточек в один ряд без перекоса отступов */
+  flex: 1 1 0;
+  min-width: 190px;
+  min-height: 100%;
+  overflow: hidden;
+}
+.data-platform-page .dp-feature-card p{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+.data-platform-page .dp-feature-icon{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: .75rem;
+}
+.data-platform-page .dp-scroll-arrow{
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.85);
+  color: #020827;
+  box-shadow: 0 12px 30px -22px rgba(0,0,0,.35);
+  z-index: 3;
+}
+.data-platform-page .dp-scroll-arrow--left{ left: -10px; }
+.data-platform-page .dp-scroll-arrow--right{ right: -10px; }
+.data-platform-page .dp-scroll-arrow:disabled{
+  opacity: .35;
+}
+
+@media (max-width: 992px){
+  .data-platform-page .dp-features-scroll{
+    overflow-x: auto;
+    /* одинаковые отступы слева/справа + место под стрелки */
+    padding: .25rem 3.25rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .data-platform-page .dp-features-scroll::-webkit-scrollbar{ height: 0; }
+  .data-platform-page .dp-feature-card{
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+  .data-platform-page .dp-scroll-arrow{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .data-platform-page .dp-scroll-arrow--left{ left: 10px; }
+  .data-platform-page .dp-scroll-arrow--right{ right: 10px; }
+}
+
+/* Data platform: mint panel like "салатовый блок" */
+.data-platform-page .dp-mint-panel{
+  background: linear-gradient(180deg, rgba(200,245,225,.85), rgba(220,251,225,.95));
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 14px 34px -26px rgba(6,43,41,.28);
+}
+.data-platform-page .dp-scale-intro{
+  white-space: nowrap;
+}
+@media (max-width: 992px){
+  .data-platform-page .dp-scale-intro{
+    white-space: normal;
+    font-size: .95rem;
+  }
+}
+
+/* Data platform: SRE cards */
+.data-platform-page .dp-sre-icon{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.data-platform-page .dp-sre-head{
+  min-height: 36px;
+}
+
+/* Data platform: team CTA block */
+.data-platform-page .dp-team-cta{
+  text-align: left;
+}
+.data-platform-page .dp-team-cta-photo img{
+  width: 100%;
+  max-width: 220px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.data-platform-page .dp-team-cta-quote p{
+  font-size: 1rem;
+  line-height: 1.55;
+}
+@media (min-width: 768px){
+  .data-platform-page .dp-team-cta-photo img{
+    max-width: 200px;
+  }
+}
+@media (max-width: 767px){
+  .data-platform-page .dp-team-cta-quote{
+    text-align: left !important;
+  }
+  .data-platform-page .dp-team-cta-photo{
+    text-align: center;
+  }
+  .data-platform-page .dp-team-cta-photo img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Federated learning page: darker emerald tint */
+.federated-learning-page #hero .hero-blur-overlay{
+  background: rgba(1, 61, 61, .48);
+}
+.data-platform-page .dp-stat-value{
+  font-family:"Montserrat","Inter",sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--heading-text);
+  line-height:1.2;
+  margin-bottom:.35rem;
+}
+.data-platform-page .dp-roadmap-badge{
+  display:inline-block;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  background:var(--block-highlight);
+  padding:.25rem .65rem;
+  border-radius:999px;
+  margin-bottom:.75rem;
+}
+.data-platform-page #hero .btn-outline-light{
+  border-color:rgba(255,255,255,.6);
+  color:#fff;
+}
+.data-platform-page #hero .btn-outline-light:hover{
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  border-color:#fff;
+}
+
+/* Home page */
+.home-page .hero-with-image .hero-bg-image{
+  opacity:.45;
+  background-size:cover;
+  background-position:center top;
+}
+.home-page #hero .btn-outline-light{
+  border-color:rgba(255,255,255,.6);
+  color:#fff;
+}
+.home-page #hero .btn-outline-light:hover{
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  border-color:#fff;
+}
+.home-page .home-product-card{
+  border:1px solid var(--border-light);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.home-page .home-product-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px -24px rgba(6,43,41,.25);
+}
+.home-page .home-product-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:3rem;
+  height:3rem;
+  border-radius:.75rem;
+  font-family:"Montserrat",sans-serif;
+  font-weight:800;
+  font-size:.85rem;
+  letter-spacing:.04em;
+  color:var(--primary);
+  background:var(--block-highlight);
+}
+.home-page .home-product-icon--data{
+  color:var(--ink-800);
+  background:linear-gradient(135deg, #DAE8E8, #B4EFB3);
+}
+.home-page #cta .btn-outline-light{
+  border-color:rgba(255,255,255,.5);
+  color:#fff;
+}
+.home-page #cta .btn-outline-light:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
 }

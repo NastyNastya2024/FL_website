@@ -117,4 +117,114 @@
       updateNavColor();
     });
   }
+
+  // "Ping-pong" loop for all videos: forward -> backward -> forward...
+  // HTML5 video has no native reverse-loop, so we step currentTime back manually.
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const videos = Array.from(document.querySelectorAll('video'));
+    for (const video of videos) {
+      // allow opting out per-element if needed
+      if (video.hasAttribute('data-no-pingpong')) continue;
+
+      // We control the looping ourselves
+      video.loop = false;
+
+      let rafId = 0;
+      let reversing = false;
+
+      const cancelReverse = () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = 0;
+        reversing = false;
+      };
+
+      const playForward = async () => {
+        cancelReverse();
+        try {
+          await video.play();
+        } catch {
+          // autoplay may be blocked; ignore
+        }
+      };
+
+      const playReverse = () => {
+        cancelReverse();
+        reversing = true;
+
+        // ensure we start from the end
+        if (!Number.isFinite(video.currentTime) || video.currentTime <= 0) {
+          const d = video.duration;
+          if (Number.isFinite(d) && d > 0) video.currentTime = d;
+        }
+
+        let lastT = 0;
+        const step = (t) => {
+          if (!reversing) return;
+          if (!lastT) lastT = t;
+          const dt = (t - lastT) / 1000;
+          lastT = t;
+
+          const next = Math.max(0, video.currentTime - dt);
+          video.currentTime = next;
+
+          if (next <= 0.02) {
+            cancelReverse();
+            playForward();
+            return;
+          }
+
+          rafId = requestAnimationFrame(step);
+        };
+
+        // pause normal playback while reversing
+        video.pause();
+        rafId = requestAnimationFrame(step);
+      };
+
+      video.addEventListener('ended', () => {
+        // finished forward playback -> reverse
+        playReverse();
+      });
+
+      // If user pauses/plays manually, stop reverse stepping
+      video.addEventListener('play', cancelReverse);
+      video.addEventListener('pause', () => {
+        // if paused during reverse, stop stepping
+        if (reversing) cancelReverse();
+      });
+    }
+  }
+
+  // Horizontal scroll arrows for feature carousels
+  const arrowButtons = Array.from(document.querySelectorAll('button[data-scroll-target]'));
+  const setArrowState = (scroller, leftBtn, rightBtn) => {
+    if (!scroller) return;
+    const max = scroller.scrollWidth - scroller.clientWidth;
+    const x = scroller.scrollLeft;
+    if (leftBtn) leftBtn.disabled = x <= 1;
+    if (rightBtn) rightBtn.disabled = x >= max - 1;
+  };
+
+  for (const btn of arrowButtons) {
+    const sel = btn.getAttribute('data-scroll-target');
+    if (!sel) continue;
+    const scroller = document.querySelector(sel);
+    if (!scroller) continue;
+
+    const wrap = btn.closest('.dp-features-wrap') || document;
+    const leftBtn = wrap.querySelector('.dp-scroll-arrow--left');
+    const rightBtn = wrap.querySelector('.dp-scroll-arrow--right');
+
+    const dir = btn.classList.contains('dp-scroll-arrow--left') ? -1 : 1;
+    btn.addEventListener('click', () => {
+      const delta = Math.max(220, Math.floor(scroller.clientWidth * 0.8)) * dir;
+      scroller.scrollBy({ left: delta, behavior: 'smooth' });
+    });
+
+    const update = () => setArrowState(scroller, leftBtn, rightBtn);
+    scroller.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
 })();

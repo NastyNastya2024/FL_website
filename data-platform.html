@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Big Data Enterprise Platform — DigiTrack</title>
+
+  <meta name="description" content="Big Data Enterprise Platform — зрелая on-premise платформа больших данных на базе Vanilla Hadoop и Astra Linux. Без vendor lock-in, Delta Lake, Spark, Kafka, Airflow."/>
+  <meta name="keywords" content="Big Data, Hadoop, data platform, Astra Linux, Spark, Delta Lake, on-premise, DigiTrack"/>
+  <meta name="author" content="DigiTrack"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="language" content="ru"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="/data-platform.html"/>
+  <meta property="og:title" content="Big Data Enterprise Platform"/>
+  <meta property="og:description" content="Собственная сборка Hadoop на базе Astra Linux. On-premise платформа больших данных без vendor lock-in."/>
+  <meta property="og:site_name" content="DigiTrack"/>
+  <meta property="og:locale" content="ru_RU"/>
+
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="/data-platform.html"/>
+  <meta property="twitter:title" content="Big Data Enterprise Platform"/>
+  <meta property="twitter:description" content="On-premise платформа больших данных на базе Vanilla Hadoop и Astra Linux."/>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="theme-color" content="#9FE29E"/>
+  <meta name="msapplication-TileColor" content="#9FE29E"/>
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css"/>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="bg-deep data-platform-page">
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">DigiTrack</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="about.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="federated-learning.html">Федеративное обучение</a></li>
+          <li class="nav-item"><a class="nav-link active" href="data-platform.html">Дата-платформа</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
+          <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero-hero py-6 position-relative overflow-hidden">
+      <video class="hero-video" src="img/data-platform.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="hero-blur-overlay"></div>
+      <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+          <div class="col-12 col-lg-10">
+            <p class="text-white-50 small text-uppercase mb-2">On-Premise · Astra Linux</p>
+            <h1 class="display-5 fw-800 mb-3 text-white">Big Data Enterprise Platform</h1>
+            <p class="text-white mb-4" style="font-size: 1.25rem;">
+              Корпоративная платформа больших данных на базе Astra Linux<br>
+              Полностью on‑premise. Без привязки к вендору. Собственная сборка Hadoop.
+            </p>
+            <div class="d-flex justify-content-center">
+              <a href="#about" class="btn btn-primary-gy">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg-shape"></div>
+    </section>
+
+    <section id="about" class="py-6 bg-section">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-4">О платформе</h2>
+        <p class="text-mute-300 mb-5">
+          Продукт представляет собой полный комплект для быстрого и воспроизводимого развёртывания: установочные бинарники, Ansible-роли для управления кластером, встроенные тесты совместимости компонентов и подробную документацию.
+        </p>
+        <div class="dp-features-wrap">
+          <button class="dp-scroll-arrow dp-scroll-arrow--left" type="button" aria-label="Прокрутить влево" data-scroll-target="#dpFeatures">‹</button>
+          <div id="dpFeatures" class="dp-features-scroll" data-scroll-arrows>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Операционная система</h3>
+              <p class="text-mute-300 mb-0 small">Астра Линукс Воронеж 1.8</p>
+            </article>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Управление</h3>
+              <p class="text-mute-300 mb-0 small">Собственные роли Ansible (Infrastructure as Code)</p>
+            </article>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Гибкость</h3>
+              <p class="text-mute-300 mb-0 small">Мультиверсионность: Spark 3.2 / 3.5, Java, Python</p>
+            </article>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Безопасность</h3>
+              <p class="text-mute-300 mb-0 small">ALD PRO, HashiCorp Vault</p>
+            </article>
+            <article class="dp-feature-card glass pad-2x">
+              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Хранение</h3>
+              <p class="text-mute-300 mb-0 small">Delta Lake (Parquet), Hive Metastore</p>
+            </article>
+          </div>
+          <button class="dp-scroll-arrow dp-scroll-arrow--right" type="button" aria-label="Прокрутить вправо" data-scroll-target="#dpFeatures">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="scale" class="py-6 bg-section">
+      <div class="container">
+        <div class="dp-mint-panel">
+          <h2 class="h3 fw-700 mb-4">Масштаб и статистика</h2>
+          <p class="text-mute-300 mb-3 dp-scale-intro">Промышленный кластер в эксплуатации. Более 100 источников (в т.ч. ClickHouse) для захвата изменений данных в реальном времени (CDC).</p>
+          <div class="row g-3 dp-stats">
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">1 ПБ+</div>
+                <div class="dp-stat-label text-mute-300 small">Объём данных</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">40</div>
+                <div class="dp-stat-label text-mute-300 small">Data Nodes</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">756 ГБ</div>
+                <div class="dp-stat-label text-mute-300 small">RAM / Node</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">96</div>
+                <div class="dp-stat-label text-mute-300 small">vCPU / Node</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">200 ГБ</div>
+                <div class="dp-stat-label text-mute-300 small">Прирост в день</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">15 000+</div>
+                <div class="dp-stat-label text-mute-300 small">Streaming (msg/s)</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">20 млн+</div>
+                <div class="dp-stat-label text-mute-300 small">Файлов</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="dp-stat glass pad-2x text-center h-100">
+                <div class="dp-stat-value">500+</div>
+                <div class="dp-stat-label text-mute-300 small">Airflow DAGs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="py-6">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-4">Технологический стек</h2>
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 text-uppercase mb-3">Core &amp; Storage</h3>
+              <ul class="text-mute-300 small mb-0">
+                <li>Apache Hadoop 3.3.4 (Custom Build)</li>
+                <li>HDFS (Data Lake)</li>
+                <li>PostgreSQL + Patroni (Meta HA)</li>
+                <li>Delta Lake 2.x (Core)</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 text-uppercase mb-3">Compute</h3>
+              <ul class="text-mute-300 small mb-0">
+                <li>Spark 3.2.3 + 3.5.8 (Scala 2.12)</li>
+                <li>Hive 3.1.3 (HA)</li>
+                <li>Java 1.8.0 + 11 (jre gosjava)</li>
+                <li>Python 3.11 + 3.13</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 text-uppercase mb-3">Orchestration &amp; Streaming</h3>
+              <ul class="text-mute-300 small mb-0">
+                <li>Apache Airflow 2.8.0</li>
+                <li>Apache Kafka 2.8</li>
+                <li>CDC (Debezium Server)</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <h3 class="h6 text-uppercase mb-3">Tools &amp; Discovery</h3>
+              <ul class="text-mute-300 small mb-0">
+                <li>JupyterHub (Toree)</li>
+                <li>Kyuubi, dbt</li>
+                <li>Bitbucket, Bamboo, Nexus</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sre" class="py-6">
+      <div class="container">
+        <h2 class="h3 fw-700 mb-4">Надёжность и SRE</h2>
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <div class="dp-sre-head d-flex align-items-center gap-2 mb-3">
+                <img class="dp-sre-icon" src="img/img1.png" alt="" aria-hidden="true" loading="lazy">
+                <h3 class="h6 mb-0">Автоматизация Rolling Restart</h3>
+              </div>
+              <ul class="text-mute-300 small mb-0">
+                <li><strong>YARN NM:</strong> Drain → Wait Containers → Restart → Health Check</li>
+                <li><strong>HDFS DN:</strong> Exclude → Maintenance Mode → Restart → Live</li>
+                <li><strong>HA Components:</strong> автофейловер ResourceManager и NameNode</li>
+                <li><strong>PostgreSQL Patroni:</strong> Reload / Switchover без простоя</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6">
+            <article class="glass pad-2x h-100">
+              <div class="dp-sre-head d-flex align-items-center gap-2 mb-3">
+                <img class="dp-sre-icon" src="img/img3.png" alt="" aria-hidden="true" loading="lazy">
+                <h3 class="h6 mb-0">Мониторинг и контроль</h3>
+              </div>
+              <ul class="text-mute-300 small mb-0">
+                <li>Deep Health Checks (VIP, JMX, Ports, ZK Quorum)</li>
+                <li>Матрица рестартов (<code>restart_matrix</code>)</li>
+                <li>Guardrails: защита от падения N узлов</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-6">
+      <div class="container">
+        <div class="cta-dark pad-2x rounded-4 dp-team-cta">
+          <h2 class="h4 mb-4 text-white">Команда Big Data Platform</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-4 col-lg-3">
+              <figure class="dp-team-cta-photo m-0">
+                <img class="img-fluid rounded-4" src="img/gudov.png" alt="Александр Гудов" width="280" height="280" loading="lazy">
+                <figcaption class="small text-mute-300 mt-2 mb-0">Александр Гудов, владелец Big Data Enterprise Platform</figcaption>
+              </figure>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9">
+              <div class="dp-team-cta-quote text-lg-end">
+                <p class="text-mute-300 mb-3">Мы создали Big Data Enterprise Platform, потому что сами устали от vendor lock-in и закрытых сборок.</p>
+                <p class="text-mute-300 mb-0">Наше решение — это полностью открытый, управляемый стек на Astra Linux. Вы получаете бинарники, Ansible-роли для автоматического развертывания и управления кластером, тесты совместимости компонентов и документацию. Всё, чтобы запустить промышленный Data Lake без сюрпризов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="h5 text-white mb-2">DigiTrack</div>
+          <p class="small text-mute-400 m-0">
+            Конфиденциальные вычисления и федеративное обучение для бизнеса.
+          </p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="federated-learning.html#tech">Федеративное обучение</a></li>
+            <li><a class="link-fade" href="data-platform.html">Дата-платформа</a></li>
+            <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
+            <li><a class="link-fade" href="blog.html">Блог</a></li>
+            <li><a class="link-fade" href="expert-review.html">Экспертам</a></li>
+            <li><a class="link-fade" href="documents.html">Документы</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
+            <li><a href="img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
+          </ul>
+          <div class="small text-mute-500 mt-4" style="margin-left: 23px;">
+            © <span id="year"></span> ООО "ДТ"
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
+            <li><a class="link-fade" href="about.html">О компании</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#legalModal">Правовая информация</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="mb-0">Отправляйте все предложения на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consentModalLabel">Согласие на обработку персональных данных</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Согласие на обработку персональных данных для посетителей сайтов ООО «ДТ».</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricingModalLabel">Стоимость услуг</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Для расчёта коммерческого предложения отправьте заявку на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legalModalLabel">Правовая информация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ООО «ДТ»</strong> — Email: <a href="mailto:info@digi-track.ru">info@digi-track.ru</a>, тел.: <a href="tel:+79857704512">+7 985 770-45-12</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
