@@ -227,28 +227,4 @@
     window.addEventListener('resize', update);
     update();
   }
-
-  // Contact forms in CTA blocks → mailto
-  document.querySelectorAll('[data-contact-form]').forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      const fd = new FormData(form);
-      const lines = [
-        ['Имя', fd.get('name')],
-        ['Email', fd.get('email')],
-        ['Компания', fd.get('company')],
-        ['Телефон', fd.get('phone')],
-        ['Сообщение', fd.get('message')],
-      ]
-        .filter(([, v]) => v && String(v).trim())
-        .map(([k, v]) => `${k}: ${v}`);
-      const subject = form.getAttribute('data-mail-subject') || 'Заявка с сайта DigiTrack';
-      const body = lines.join('\n');
-      window.location.href = `mailto:info@digi-track.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  });
 })();
