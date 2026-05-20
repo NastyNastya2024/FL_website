@@ -224,19 +224,28 @@
         <div class="row g-3">
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h6 mb-2">Rolling Restart без простоев</h3>
+              <div class="dp-sre-head mb-3">
+                <img class="dp-sre-icon" src="img/img1.png" alt="" aria-hidden="true" loading="lazy">
+                <h3 class="h6 mb-0">Rolling Restart без простоев</h3>
+              </div>
               <p class="text-mute-300 small mb-0">Автоматический мягкий вывод узлов из работы (Drain), ожидание завершения задач, рестарт и Health-check перед возвратом в кластер.</p>
             </article>
           </div>
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h6 mb-2">Встроенные Guardrails</h3>
+              <div class="dp-sre-head mb-3">
+                <img class="dp-sre-icon" src="img/img2.png" alt="" aria-hidden="true" loading="lazy">
+                <h3 class="h6 mb-0">Встроенные Guardrails</h3>
+              </div>
               <p class="text-mute-300 small mb-0">Автоматика не позволит администратору случайно перезагрузить критическое количество узлов одновременно.</p>
             </article>
           </div>
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h6 mb-2">Матрица состояний</h3>
+              <div class="dp-sre-head mb-3">
+                <img class="dp-sre-icon" src="img/img3.png" alt="" aria-hidden="true" loading="lazy">
+                <h3 class="h6 mb-0">Матрица состояний</h3>
+              </div>
               <p class="text-mute-300 small mb-0">Детектирование изменений в конфигурации и автоматическое применение соответствующих процедур рестарта для каждого компонента (YARN, HDFS, Zookeeper, Patroni).</p>
             </article>
           </div>
@@ -249,7 +258,6 @@
         <div class="dp-mint-panel">
           <h2 class="h3 fw-700 mb-3">Справедливое лицензирование. Вы платите только за Production</h2>
           <p class="text-mute-300 mb-4">Мы сделали коммерческую модель прозрачной. Никаких скрытых платежей и переплат за служебную инфраструктуру.</p>
-          <button type="button" class="btn btn-primary-gy px-4 py-2 mb-4" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Запрос архитектуры">Запросить архитектуру</button>
           <div class="row g-3">
             <div class="col-12 col-md-6">
               <article class="glass pad-2x h-100">
@@ -276,9 +284,10 @@
               </article>
             </div>
           </div>
-          <p class="text-mute-300 small mb-0 mt-4">
-            <button type="button" class="btn btn-link p-0 align-baseline" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Лицензионная политика">Лицензионную политику отправим по запросу</button>
-          </p>
+          <div class="d-flex flex-wrap gap-2 mt-4 dp-licensing-actions">
+            <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Запрос архитектуры">Запросить архитектуру</button>
+            <button type="button" class="btn btn-outline-dark px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Лицензионная политика">Лицензионную политику отправим по запросу</button>
+          </div>
         </div>
       </div>
     </section>
