@@ -81,7 +81,7 @@
               Полностью on‑premise. Без привязки к вендору. Собственная сборка Hadoop.
             </p>
             <div class="d-flex flex-wrap justify-content-center gap-2">
-              <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Расчёт ТСО (калькулятор)">Расчёт ТСО</button>
+              <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Расчёт ТСО</button>
             </div>
           </div>
         </div>
@@ -285,8 +285,8 @@
             </div>
           </div>
           <div class="d-flex flex-wrap gap-2 mt-4 dp-licensing-actions">
-            <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Запрос архитектуры">Запросить архитектуру</button>
-            <button type="button" class="btn btn-outline-dark px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Лицензионная политика">Лицензионную политику отправим по запросу</button>
+            <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Запросить архитектуру</button>
+            <button type="button" class="btn btn-outline-dark px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Лицензионную политику отправим по запросу</button>
           </div>
         </div>
       </div>
@@ -322,7 +322,7 @@
               <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Готовы к импортозамещению без потери контроля?</h2>
               <p class="text-mute-300 mb-3">Оставьте заявку — наша техническая команда проведёт аудит инфраструктуры, покажет демо-стенд и расскажет, как мигрировать на открытый стек.</p>
               <div class="d-flex flex-wrap gap-2">
-                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#leadModal" data-lead-subject="Заявка с сайта (импортозамещение)">Оставить заявку</button>
+                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Оставить заявку</button>
                 <button type="button" class="btn btn-link text-white px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
               </div>
             </div>
@@ -386,31 +386,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h6 class="modal-title" id="leadModalLabel">Оставьте контакты</h6>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-mute-300 small text-center mb-3" id="leadModalHint">Мы свяжемся с вами и подготовим материалы по запросу.</p>
-          <form id="leadForm" class="dp-lead-form" novalidate>
-            <div class="mb-3">
-              <label class="form-label" for="leadEmail">Email</label>
-              <input type="email" class="form-control" id="leadEmail" name="email" required autocomplete="email">
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="leadPhone">Телефон</label>
-              <input type="tel" class="form-control" id="leadPhone" name="phone" required autocomplete="tel">
-            </div>
-            <button type="submit" class="btn btn-primary-gy w-100">Отправить</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
