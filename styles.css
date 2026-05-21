@@ -152,6 +152,53 @@ body{
   margin-left: auto;
   margin-right: 0.5rem !important;
 }
+
+/* Десктоп: пункты меню по центру шапки */
+@media (min-width: 992px) {
+  .nav-glass .container {
+    position: relative;
+  }
+
+  .nav-glass .navbar-brand {
+    margin-right: 0;
+    z-index: 2;
+  }
+
+  .nav-glass .navbar-collapse {
+    display: flex !important;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    position: static;
+  }
+
+  .nav-glass .navbar-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    justify-content: center;
+    width: max-content;
+    z-index: 1;
+    gap: 1.5rem;
+  }
+
+  .nav-glass .navbar-nav .nav-link {
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+  }
+
+  .nav-glass .navbar-collapse > .d-flex {
+    margin-left: auto;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .nav-glass .navbar-collapse .btn-primary-gy {
+    margin-left: 0 !important;
+  }
+}
 .nav-glass .navbar-nav .nav-item {
   margin: 0;
   padding: 0;
