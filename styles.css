@@ -2305,6 +2305,44 @@ footer .col-6.col-lg-3:first-child {
   border-color:#fff;
 }
 
+.data-platform-page #cta .dp-cta-title{
+  color:#fff !important;
+  font-size:1.5rem !important;
+  line-height:1.35;
+  overflow-wrap:break-word;
+  word-wrap:break-word;
+  hyphens:auto;
+}
+
+@media (max-width: 992px){
+  .data-platform-page #cta .container{
+    max-width:calc(100% - 1rem) !important;
+    padding-left:.5rem;
+    padding-right:.5rem;
+  }
+  .data-platform-page #cta .cta-dark{
+    padding:2rem 1.25rem !important;
+    overflow:visible;
+  }
+  .data-platform-page #cta .dp-cta-title{
+    font-size:1.15rem !important;
+    line-height:1.4;
+    margin-bottom:1rem !important;
+  }
+  .data-platform-page #cta .cta-dark > .row > .col-12:first-child p{
+    font-size:.9rem !important;
+    line-height:1.45;
+    margin-bottom:1.25rem !important;
+    overflow-wrap:break-word;
+    word-wrap:break-word;
+  }
+  .data-platform-page #cta .cta-dark .col-12,
+  .data-platform-page #cta .cta-dark .col-lg-6{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
 /* Home page */
 .home-page .hero-with-image .hero-bg-image{
   opacity:.45;
