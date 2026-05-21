@@ -1396,6 +1396,52 @@ body{
   border-left: 4px solid #dc3545;
 }
 
+/* Вертикальное меню в раскрытом navbar (ниже lg / 992px, как у Bootstrap) */
+@media (max-width: 991.98px) {
+  .nav-glass .navbar-collapse.show,
+  .nav-glass .navbar-collapse.collapsing {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .nav-glass .navbar-nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    flex-wrap: nowrap !important;
+    gap: 0.25rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .nav-glass .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .nav-glass .navbar-collapse .nav-link {
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    padding: 0.75rem 1rem !important;
+    margin: 0;
+  }
+
+  .nav-glass .navbar-collapse > .d-flex {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 0.5rem;
+  }
+
+  .nav-glass .navbar-collapse .btn-primary-gy {
+    width: 100%;
+    margin-left: 0 !important;
+    padding: 0.75rem 1rem !important;
+    text-align: center;
+  }
+}
+
 /* Стили для мобильного меню */
 @media (max-width: 768px) {
   .nav-glass {
@@ -1421,66 +1467,44 @@ body{
     transform: translateY(0);
   }
   
-  .nav-glass .navbar-nav {
-    margin-bottom: 0;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    transition: all 0.3s ease;
-    gap: 0;
-    flex-wrap: wrap;
-  }
-  
-  .nav-glass .nav-link {
-    padding: 0.5rem 0.2rem !important;
+  .nav-glass .navbar-collapse .nav-link {
     border: none;
     border-radius: 8px;
     font-size: 0.85rem;
     transition: all 0.2s ease;
     background: #ffffff;
     color: #020827 !important;
-    text-align: center;
     display: block;
-    width: auto;
-    max-width: none;
-    margin: 0;
     box-shadow: none;
-    white-space: nowrap;
     text-shadow: none !important;
     -webkit-text-stroke: none !important;
     outline: none !important;
     font-weight: 400 !important;
   }
   
-  .nav-glass .nav-link:hover {
+  .nav-glass .navbar-collapse .nav-link:hover {
     background: #f5f5f5;
     box-shadow: none;
     transform: none;
     color: #020827 !important;
   }
   
-  .nav-glass .nav-link:focus {
+  .nav-glass .navbar-collapse .nav-link:focus {
     outline: none !important;
     box-shadow: none !important;
   }
   
-  .nav-glass .btn-primary-gy {
-    width: auto;
-    max-width: none;
-    padding: 1.5rem 0.5rem;
-    font-size: 0.85rem;
-    margin: 0;
-    margin-left: 1.5rem;
+  .nav-glass .navbar-collapse .btn-primary-gy {
     transition: all 0.2s ease;
     display: block;
     background: linear-gradient(135deg, #9FE29E 0%, #80CD7F 100%);
     color: white !important;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
+    white-space: normal;
   }
   
-  .nav-glass .btn-primary-gy:hover {
+  .nav-glass .navbar-collapse .btn-primary-gy:hover {
     transform: translateY(-1px);
     background: linear-gradient(135deg, #80CD7F 0%, #9FE29E 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
