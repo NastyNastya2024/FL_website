@@ -66,7 +66,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto me-3">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link" href="federated-learning.html#tech">Федеративное обучение</a></li>
           <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
@@ -82,96 +82,84 @@
   </nav>
 
   <main>
-    <!-- СТАТЬИ -->
-    <section id="articles" class="py-6 bg-section" style="padding-top: 12rem !important;">
-      <div class="container-fluid">
-        <div class="row g-0" style="min-height: 80vh;">
-          <!-- Левая колонка - список статей -->
-          <div class="col-12 col-lg-4">
-            <div class="h-100 bg-white border-end border-ink-200">
-              <div class="p-3 border-bottom border-ink-200" style="padding-left: 0.5rem !important;">
-                <h2 class="h4 fw-700 mb-2" style="text-align: left;">
-                  Блог DigiTrack — федеративное обучение для бизнеса
-                </h2>
-                <div class="position-relative">
-                  <input type="text" class="form-control" id="searchArticles" placeholder="Поиск статей..." style="padding-left: 2.5rem; padding: 0.5rem 0.5rem 0.5rem 2.5rem;">
-                  <i class="fas fa-search position-absolute" style="left: 0.5rem; top: 50%; transform: translateY(-50%); color: #6B7280;"></i>
+    <section id="articles" class="py-6 blog-section news-section" style="padding-top: 12rem !important;">
+      <div class="container">
+        <div id="blog-list">
+          <h2 class="h3 fw-700 mb-2">Блог DigiTrack</h2>
+          <p class="text-mute-300 mb-4">Федеративное обучение, дата-платформа и инженерные практики — статьи для бизнеса и технарей</p>
+          <div class="mb-4" style="max-width: 24rem;">
+            <input type="search" class="form-control" id="searchArticles" placeholder="Поиск статей..." autocomplete="off">
+          </div>
+          <div class="row g-4" id="blog-cards">
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="вертикальное федеративное обучение пользователи признаки">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/news1.jpeg" alt="Вертикальное федеративное обучение" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: cover;">
                 </div>
-              </div>
-              
-              <div class="article-list" style="height: calc(100vh - 200px); overflow-y: auto; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
-                <!-- Статья 1 -->
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="1" onclick="showArticle(1)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/news1.jpeg" alt="Вертикальное федеративное обучение" class="rounded" style="width: 50px; height: 50px; object-fit: cover;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Вертикальное федеративное обучение</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Как объединить данные с одинаковыми пользователями...</p>
-                    </div>
-                  </div>
+                <h3 class="h6 mb-2">Вертикальное федеративное обучение</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Как объединить данные с одинаковыми пользователями, но разными признаками для создания более точных моделей машинного обучения</p>
+                <a href="blog.html?article=1" class="btn-news-link">Узнать больше →</a>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="горизонтальное федеративное обучение распределенные данные">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/news2.jpeg" alt="Горизонтальное федеративное обучение" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: cover;">
                 </div>
-                
-                <!-- Статья 2 -->
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="2" onclick="showArticle(2)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/news2.jpeg" alt="Горизонтальное федеративное обучение" class="rounded" style="width: 50px; height: 50px; object-fit: cover;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Горизонтальное федеративное обучение</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Обучение моделей на распределенных данных...</p>
-                    </div>
-                  </div>
+                <h3 class="h6 mb-2">Горизонтальное федеративное обучение</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Обучение моделей на распределённых данных с одинаковыми признаками, но разными пользователями для повышения обобщающей способности</p>
+                <a href="blog.html?article=2" class="btn-news-link">Узнать больше →</a>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="конфиденциальные вычисления будущее данные">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/news3.jpeg" alt="Будущее конфиденциальных вычислений" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: cover;">
                 </div>
-                
-                <!-- Статья 3 -->
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="3" onclick="showArticle(3)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/news3.jpeg" alt="Будущее конфиденциальных вычислений" class="rounded" style="width: 50px; height: 50px; object-fit: cover;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Будущее конфиденциальных вычислений</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Тренды и перспективы развития технологий...</p>
-                    </div>
-                  </div>
+                <h3 class="h6 mb-2">Будущее конфиденциальных вычислений</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Тренды и перспективы развития технологий защиты данных в эпоху искусственного интеллекта и больших данных</p>
+                <a href="blog.html?article=3" class="btn-news-link">Узнать больше →</a>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="rolling restart серверы кластер hadoop sre">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/img1.png" alt="Rolling Restart" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: contain; background: #f0f4f2;">
                 </div>
-
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="4" onclick="showArticle(4)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/img1.png" alt="Rolling Restart" class="rounded" style="width: 50px; height: 50px; object-fit: contain; background: #f0f4f2;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Как перезагрузить 40 серверов и чтобы никто не заметил</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Rolling Restart без простоев кластера...</p>
-                    </div>
-                  </div>
+                <h3 class="h6 mb-2">Как перезагрузить 40 серверов и чтобы никто не заметил</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Rolling Restart без простоев: матрица рестартов, Guardrails и готовые Ansible-роли в поставке</p>
+                <a href="blog.html?article=4" class="btn-news-link">Узнать больше →</a>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="мультиверсионность spark python java кластер">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/img2.png" alt="Мультиверсионность" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: contain; background: #f0f4f2;">
                 </div>
-
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="5" onclick="showArticle(5)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/img2.png" alt="Мультиверсионность" class="rounded" style="width: 50px; height: 50px; object-fit: contain; background: #f0f4f2;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Старые и новые версии софта на одном кластере</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Spark, Python и Java без конфликтов...</p>
-                    </div>
-                  </div>
+                <h3 class="h6 mb-2">Старые и новые версии софта на одном кластере</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Spark 3.2 и 3.5, Python 3.11 и 3.13 на одной платформе — JupyterHub, Kyuubi и общий Hive Metastore</p>
+                <a href="blog.html?article=5" class="btn-news-link">Узнать больше →</a>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 blog-card" data-search="hadoop astra linux реестр по российский">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-card-image mb-3">
+                  <img src="img/DataIcon.png" alt="Hadoop на Astra Linux" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: contain; background: #f0f4f2;">
                 </div>
-
-                <div class="article-item p-4 border-bottom border-ink-100 cursor-pointer" data-article="6" onclick="showArticle(6)" style="padding-bottom: 2rem;">
-                  <div class="d-flex align-items-start gap-2">
-                    <img src="img/DataIcon.png" alt="Hadoop на Astra Linux" class="rounded" style="width: 50px; height: 50px; object-fit: contain; background: #f0f4f2;">
-                    <div class="flex-grow-1">
-                      <h5 class="h6 mb-1 text-dark" style="font-size: 0.9rem;">Как мы случайно стали делать российский Hadoop</h5>
-                      <p class="small text-mute-400 mb-0" style="font-size: 0.8rem;">Сборка под Astra Linux и путь в реестр ПО...</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <h3 class="h6 mb-2">Как мы случайно стали делать российский Hadoop</h3>
+                <p class="text-mute-300 mb-3 flex-grow-1 small">Сборка Hadoop под Astra Linux, интеграция с ALD Pro, тесты и путь в реестр российского ПО</p>
+                <a href="blog.html?article=6" class="btn-news-link">Узнать больше →</a>
+              </article>
             </div>
           </div>
-          
-          <!-- Правая колонка - содержимое статьи -->
-          <div class="col-12 col-lg-8">
-            <div class="h-100 bg-white p-3" style="padding-top: 0.5rem !important; padding-left: 4rem !important;">
-              <div id="article-content">
+        </div>
+
+        <div id="blog-article-view" class="d-none">
+          <a href="blog.html" class="btn-news-link mb-4 d-inline-block">← Все статьи</a>
+          <article class="glass pad-2x">
+            <div id="article-content">
                 <!-- Статья 1 -->
-                <div id="article-1" class="article-content">
+                <div id="article-1" class="article-content d-none">
                   <img src="img/news1.jpeg" alt="Вертикальное федеративное обучение" class="img-fluid rounded-3 mb-5" style="width: 100%; height: 300px; object-fit: cover;">
                   <h1 class="h3 fw-700 mb-4">Вертикальное федеративное обучение</h1>
                   <div class="text-mute-400 mb-5">Экспертная статья</div>
@@ -241,9 +229,140 @@
                     <p class="mb-0">В ближайшие годы ожидается значительное улучшение производительности конфиденциальных вычислений, что сделает их доступными для широкого круга приложений. Это приведет к созданию новых бизнес-моделей и возможностей монетизации данных без риска нарушения приватности.</p>
                   </div>
                 </div>
-              </div>
+
+                <div id="article-4" class="article-content d-none">
+                  <img src="img/img1.png" alt="Rolling Restart" class="img-fluid rounded-3 mb-4" style="width: 100%; height: 300px; object-fit: contain; background: #f0f4f2;">
+                  <p class="small text-mute-400 mb-2">О том, как мы чиним кластер, не останавливая работу</p>
+                  <h1 class="h3 fw-700 mb-3">«Как перезагрузить 40 серверов и чтобы никто не заметил»</h1>
+                  <div class="text-mute-400 mb-4">Дата-платформа</div>
+                  <div class="article-text">
+                    <p class="mb-4">Представьте: у вас большой склад с данными. На нём работают десятки людей и программ. И вдруг нужно обновить или перезагрузить сразу все серверы. Если сделать это как попало — данные потеряются, отчёты сломаются, все будут ругаться.</p>
+                    <h4 class="h5 fw-600 mb-3">Что мы придумали</h4>
+                    <p class="mb-4">Мы научили платформу перезагружать серверы по одному, аккуратно, с проверками. Сначала сервер исключается из работы, завершает свои задачи, только потом перезагружается. И перед тем как запустить его снова — проверяем, всё ли в порядке.</p>
+                    <h4 class="h5 fw-600 mb-3">Почему это удобно</h4>
+                    <ul class="mb-4">
+                      <li>Вы не теряете данные.</li>
+                      <li>Отчёты и пайплайны продолжают работать.</li>
+                      <li>Вам не нужно сидеть ночью и перезагружать всё руками.</li>
+                    </ul>
+                    <h4 class="h5 fw-600 mb-3">Что вы получаете как клиент</h4>
+                    <p class="mb-4">Готовый, проверенный способ перезагружать кластер без простоев. Всё уже записано в Ansible-ролях и протестировано. Просто берёте и используете.</p>
+                    <h4 class="h5 fw-600 mb-3">Как это работает технически</h4>
+                    <p class="mb-3">Мы реализовали матрицу рестартов — для каждого типа сервера свой сценарий.</p>
+                    <p class="mb-2"><strong>Для HDFS DataNode (хранилище данных):</strong></p>
+                    <ul class="mb-3">
+                      <li><strong>Exclude</strong> — сервер исключается из списка активных через <code>dfs.hosts.exclude</code>. HDFS перестаёт отправлять на него новые блоки.</li>
+                      <li><strong>Maintenance Mode</strong> — режим обслуживания (<code>dfs.datanode.maintenance</code>). Оставшиеся реплики перераспределяются на другие узлы.</li>
+                      <li><strong>Restart</strong> — перезапуск DataNode через systemd.</li>
+                      <li><strong>Live</strong> — возврат в кластер после успешного health check.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Для YARN NodeManager (вычислительные задачи):</strong></p>
+                    <ul class="mb-3">
+                      <li><strong>Drain</strong> — на сервер перестают отправляться новые контейнеры.</li>
+                      <li><strong>Wait Containers</strong> — ожидание завершения текущих задач (таймаут в <code>restart_matrix.yml</code>).</li>
+                      <li><strong>Restart</strong> — перезапуск NodeManager.</li>
+                      <li><strong>Health Check</strong> — проверка через JMX-метрики и порты.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Guardrails — защита от падения:</strong></p>
+                    <ul class="mb-3">
+                      <li>Автоматический подсчёт живых реплик. Если после исключения узла количество падает ниже <code>dfs.namenode.replication.min</code> — рестарт блокируется.</li>
+                      <li>Глобальный счётчик узлов в maintenance. Нельзя перезагружать больше N узлов одновременно.</li>
+                      <li>Health check по JMX, ZK Quorum и VIP — не только ICMP.</li>
+                    </ul>
+                    <h4 class="h5 fw-600 mb-3">Где это лежит в поставке</h4>
+                    <ul class="mb-0">
+                      <li>Ansible-роли: <code>restart_hdfs_dn.yml</code>, <code>restart_yarn_nm.yml</code>, <code>restart_matrix.yml</code></li>
+                      <li>Тесты: <code>test_rolling_restart.py</code> — без потери данных и падения DAG-ов Airflow</li>
+                      <li>Документация: описание всех сценариев с примерами запуска</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="article-5" class="article-content d-none">
+                  <img src="img/img2.png" alt="Мультиверсионность" class="img-fluid rounded-3 mb-4" style="width: 100%; height: 300px; object-fit: contain; background: #f0f4f2;">
+                  <p class="small text-mute-400 mb-2">О том, как разные люди работают на одной платформе и не мешают друг другу</p>
+                  <h1 class="h3 fw-700 mb-3">«Почему у нас на одном кластере уживаются и старые, и новые версии софта»</h1>
+                  <div class="text-mute-400 mb-4">Дата-платформа</div>
+                  <div class="article-text">
+                    <p class="mb-4">Ситуация из жизни: у вас в компании есть аналитики, которым нужен самый новый Python и Spark, и продакшен-команда, которая боится что-то менять и сидит на старых версиях. И всем нужно работать с одними и теми же данными. Обычно это проблема: обновишь новое — сломаешь старое. Оставишь старое — аналитики будут страдать.</p>
+                    <h4 class="h5 fw-600 mb-3">Что мы сделали</h4>
+                    <p class="mb-4">Мы настроили платформу так, что на одном кластере можно запускать и старые, и новые версии одновременно. Это как в одном доме несколько отдельных квартир со своим входом: они не мешают друг другу, но пользуются общим «водопроводом» (данными).</p>
+                    <h4 class="h5 fw-600 mb-3">Что вы получаете</h4>
+                    <ul class="mb-4">
+                      <li><strong>Спокойствие:</strong> старые процессы работают как работали.</li>
+                      <li><strong>Свободу:</strong> аналитики пробуют новое, не дёргая продакшен.</li>
+                      <li><strong>Готовые настройки</strong> — вам не нужно думать, как это собрать.</li>
+                    </ul>
+                    <h4 class="h5 fw-600 mb-3">Как это работает технически</h4>
+                    <p class="mb-2"><strong>Изоляция через ядра Python и Java:</strong></p>
+                    <ul class="mb-3">
+                      <li>Python 3.11 и 3.13 — каждая версия в своём conda env, переключение через <code>update-alternatives</code> на Astra Linux.</li>
+                      <li>Java JRE 1.8 и 11 — через <code>JAVA_HOME</code> в запускаемых скриптах.</li>
+                    </ul>
+                    <p class="mb-2"><strong>JupyterHub + Toree:</strong></p>
+                    <p class="mb-3">Доступны ядра <code>PySpark_3.2_Python_3.11</code> и <code>PySpark_3.5_Python_3.13</code>. Toree передаёт в Spark-сессию нужные библиотеки и пути к Java.</p>
+                    <p class="mb-2"><strong>Kyuubi — единый шлюз:</strong></p>
+                    <pre class="bg-light p-3 rounded small mb-3"><code>spark.sql.catalog.my_catalog
+spark.pyspark.python = /opt/conda/envs/py311/bin/python</code></pre>
+                    <p class="mb-3">Kyuubi поднимает Spark-приложение с нужными версиями на YARN.</p>
+                    <p class="mb-2"><strong>Общий Hive Metastore:</strong></p>
+                    <p class="mb-4">Один HMS на PostgreSQL + Patroni. Все версии Spark и Hive работают через Thrift-протокол; совместимость на уровне схемы метаданных.</p>
+                    <h4 class="h5 fw-600 mb-3">Что входит в поставку</h4>
+                    <ul class="mb-0">
+                      <li>Ansible-роли: <code>install_multiversion_python.yml</code>, <code>setup_jupyter_kernels.yml</code>, <code>kyuubi_config.yml</code></li>
+                      <li>Тесты: <code>test_spark_3.2_py3.11.py</code> и <code>test_spark_3.5_py3.13.py</code></li>
+                      <li>Документация: как добавить новую версию, не трогая старые</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="article-6" class="article-content d-none">
+                  <img src="img/DataIcon.png" alt="Hadoop на Astra Linux" class="img-fluid rounded-3 mb-4" style="width: 100%; height: 300px; object-fit: contain; background: #f0f4f2;">
+                  <p class="small text-mute-400 mb-2">О том, зачем мы вообще собрали эту платформу под Astra Linux</p>
+                  <h1 class="h3 fw-700 mb-3">«Как мы случайно стали делать российский Hadoop и пошли в реестр ПО»</h1>
+                  <div class="text-mute-400 mb-4">Дата-платформа</div>
+                  <div class="article-text">
+                    <p class="mb-4">Честно: никто не хотел собирать Hadoop под Astra Linux с нуля. Мы надеялись взять готовое. Но оказалось, что готового нет. Всё, что есть, либо не работает, либо привязывает вас к одному вендору.</p>
+                    <h4 class="h5 fw-600 mb-3">Что мы сделали</h4>
+                    <p class="mb-4">Мы взяли обычный Hadoop, пересобрали его под Astra Linux, добавили безопасность через ALD Pro, написали инструкции и автоматические проверки — без этого кластер просто не взлетит.</p>
+                    <h4 class="h5 fw-600 mb-3">Что в итоге</h4>
+                    <p class="mb-4">Продукт работает на российской ОС, не привязан к конкретной компании, полностью под вашим контролем: всё on-premise, ничего не утекает в облако.</p>
+                    <h4 class="h5 fw-600 mb-3">Планы на будущее</h4>
+                    <p class="mb-4">Мы хотим, чтобы платформа попала в реестр российского ПО — тогда её смогут использовать государственные организации без страха и лишних проверок.</p>
+                    <h4 class="h5 fw-600 mb-3">Лично от меня (Александр Гудов)</h4>
+                    <p class="mb-4">Я не продаю вам «чёрный ящик». Вы получаете бинарники, понятные скрипты для установки, тесты и документацию. Сможете сами развернуть, обновить и понять, как всё работает.</p>
+                    <h4 class="h5 fw-600 mb-3">Как это работает технически</h4>
+                    <p class="mb-2"><strong>Сборка Hadoop под Astra Linux:</strong></p>
+                    <ul class="mb-3">
+                      <li>Apache Hadoop 3.3.4 — пересборка нативных библиотек (<code>libhadoop.so</code>) под glibc 2.28.</li>
+                      <li>Патчи для systemd вместо sysvinit.</li>
+                      <li>Java gosjava вместо OpenJDK-сборок Ubuntu.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Интеграция с ALD Pro:</strong></p>
+                    <ul class="mb-3">
+                      <li>Kerberos через ALD Pro: <code>auth_to_local</code>, keytab generation.</li>
+                      <li>ALD-прокси через sssd вместо стандартного LDAP.</li>
+                      <li>Авторизация HDFS и YARN через ALD-группы.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Ansible-роли под Astra:</strong></p>
+                    <p class="mb-3">Проверены на кластере из 40 узлов. Роль <code>bootstrap_astra.yml</code> готовит чистую Astra Linux к установке Hadoop.</p>
+                    <p class="mb-2"><strong>Тесты:</strong></p>
+                    <ul class="mb-3">
+                      <li><code>test_ald_integration.py</code> — пользователь из ALD в HDFS и Spark</li>
+                      <li><code>test_hdfs_replication.py</code> — репликация при выключении DataNode</li>
+                      <li><code>test_compatibility.py</code> — сценарии из документации на чистой Astra</li>
+                    </ul>
+                    <h4 class="h5 fw-600 mb-3">Что входит в поставку</h4>
+                    <ul class="mb-0">
+                      <li>Бинарники — deb/rpm: Hadoop, Spark, Hive, Kyuubi, JupyterHub</li>
+                      <li>Ansible — полный playbook с нуля</li>
+                      <li>Тесты — pytest после установки и обновлений</li>
+                      <li>Документация — от установки Astra до первого Spark-джоба</li>
+                    </ul>
+                  </div>
+                </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -460,96 +579,53 @@
     </div>
   </div>
 
-  <!-- Font Awesome for search icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Custom CSS for blog layout -->
-  <style>
-    .cursor-pointer {
-      cursor: pointer;
-    }
-    
-    .article-item:hover {
-      background-color: #f8f9fa;
-    }
-    
-    .article-item.active {
-      background: linear-gradient(135deg, #C8F5E1 0%, #DCFBE1 100%);
-      border-left: 3px solid #9FE29E;
-    }
-    
-    .article-list::-webkit-scrollbar {
-      width: 6px;
-    }
-    
-    .article-list::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    
-    .article-list::-webkit-scrollbar-thumb {
-      background: #c1c1c1;
-      border-radius: 3px;
-    }
-    
-    .article-list::-webkit-scrollbar-thumb:hover {
-      background: #a8a8a8;
-    }
-    
-    @media (max-width: 991px) {
-      .col-lg-4 {
-        margin-bottom: 2rem;
-      }
-      
-      .article-list {
-        height: 400px !important;
-      }
-    }
-  </style>
-
   <!-- Bootstrap bundle + App -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="./script.js" defer></script>
   
-  <!-- Blog functionality -->
   <script>
     function showArticle(articleId) {
-      // Hide all articles
-      document.querySelectorAll('.article-content').forEach(article => {
-        article.classList.add('d-none');
-      });
-      
-      // Remove active class from all items
-      document.querySelectorAll('.article-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Show selected article
-      document.getElementById('article-' + articleId).classList.remove('d-none');
-      
-      // Add active class to selected item
-      document.querySelector(`[data-article="${articleId}"]`).classList.add('active');
+      document.querySelectorAll('.article-content').forEach((el) => el.classList.add('d-none'));
+      const article = document.getElementById('article-' + articleId);
+      if (!article) return;
+      article.classList.remove('d-none');
+      document.getElementById('blog-list').classList.add('d-none');
+      document.getElementById('blog-article-view').classList.remove('d-none');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    
-    // Search functionality
-    document.getElementById('searchArticles').addEventListener('input', function(e) {
-      const searchTerm = e.target.value.toLowerCase();
-      const articles = document.querySelectorAll('.article-item');
-      
-      articles.forEach(article => {
-        const title = article.querySelector('h5').textContent.toLowerCase();
-        const description = article.querySelector('p').textContent.toLowerCase();
-        
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-          article.style.display = 'block';
-        } else {
-          article.style.display = 'none';
-        }
-      });
-    });
-    
-    // Show first article by default
+
+    function showBlogList() {
+      document.getElementById('blog-list').classList.remove('d-none');
+      document.getElementById('blog-article-view').classList.add('d-none');
+    }
+
+    function getInitialArticleId() {
+      const params = new URLSearchParams(window.location.search);
+      const fromQuery = parseInt(params.get('article'), 10);
+      if (fromQuery >= 1 && fromQuery <= 6) return fromQuery;
+      const hashMatch = window.location.hash.match(/^#article-(\d+)$/);
+      if (hashMatch) return parseInt(hashMatch[1], 10);
+      return null;
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-      showArticle(1);
+      const searchInput = document.getElementById('searchArticles');
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          const term = e.target.value.toLowerCase().trim();
+          document.querySelectorAll('.blog-card').forEach((card) => {
+            const text = (card.getAttribute('data-search') || '') + ' ' + card.textContent.toLowerCase();
+            card.classList.toggle('d-none', term && !text.includes(term));
+          });
+        });
+      }
+
+      const articleId = getInitialArticleId();
+      if (articleId) {
+        showArticle(articleId);
+      } else {
+        showBlogList();
+      }
     });
   </script>
 </body>

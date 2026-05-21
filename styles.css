@@ -145,10 +145,16 @@ body{
 .nav-glass .navbar-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  justify-content: flex-start;
+  flex: 0 1 auto;
   gap: 0;
   margin: 0;
+  margin-left: auto;
+  margin-right: 0.5rem !important;
+}
+.nav-glass .navbar-nav .nav-item {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-glass .navbar-brand {
@@ -188,24 +194,27 @@ body{
   color: #9FE29E !important;
 }
 .nav-glass .nav-link{ 
-  font-family: "Montserrat", "Inter", sans-serif;
+  font-family: "Inter", "Montserrat", sans-serif;
   color: rgba(255,255,255,.9)!important; 
-  font-weight: 400;
+  font-weight: 400 !important;
   font-size: 0.875rem;
-  padding: 0.35rem 0.45rem;
+  padding: 0.35rem 0.2rem !important;
   border-radius: 8px;
   white-space: nowrap;
-  line-height: 1;
+  line-height: 1.2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-stretch: condensed;
-  letter-spacing: -0.02em;
+  font-stretch: normal;
+  letter-spacing: 0;
   vertical-align: middle;
 }
 .nav-glass .nav-link:hover{ 
   color: #fff!important; 
   background: rgba(255,255,255,.08);
+}
+.nav-glass .nav-link.active {
+  font-weight: 400 !important;
 }
 
 /* Стили для темного текста на светлом фоне */
@@ -477,6 +486,14 @@ body{
   border-radius: 12px;
 }
 
+.news-image--contain {
+  background: #f0f4f2;
+}
+
+.news-image--contain img {
+  object-fit: contain;
+}
+
 /* Стили для FAQ аккордеона */
 .accordion-button {
   background: #ffffff;
@@ -633,6 +650,19 @@ body{
 .news-section .container {
   position: relative !important;
   z-index: 1 !important;
+}
+
+.blog-section .blog-card .glass {
+  height: 100%;
+}
+.blog-section #blog-article-view .article-content > img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.blog-section #blog-article-view .article-text code {
+  font-size: 0.875em;
 }
 
 /* Стили для временной шкалы пилота на всю ширину */
@@ -1397,12 +1427,12 @@ body{
     align-items: center;
     justify-content: flex-start;
     transition: all 0.3s ease;
-    gap: 1.5rem;
+    gap: 0;
     flex-wrap: wrap;
   }
   
   .nav-glass .nav-link {
-    padding: 1.5rem 0.5rem;
+    padding: 0.5rem 0.2rem !important;
     border: none;
     border-radius: 8px;
     font-size: 0.85rem;
@@ -1419,7 +1449,7 @@ body{
     text-shadow: none !important;
     -webkit-text-stroke: none !important;
     outline: none !important;
-    font-weight: 500;
+    font-weight: 400 !important;
   }
   
   .nav-glass .nav-link:hover {
@@ -1589,23 +1619,15 @@ body{
 
 /* Промежуточные переходы за счет уменьшения расстояний */
 @media (max-width: 1400px) {
-  .nav-glass .navbar-nav {
-    gap: 0.2rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.4rem 0.6rem;
+    padding: 0.35rem 0.18rem !important;
   }
 }
 
 @media (max-width: 1300px) {
-  .nav-glass .navbar-nav {
-    gap: 0.15rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.3rem 0.15rem !important;
+    font-size: 0.85rem;
   }
   
   .nav-glass .btn-primary-gy {
@@ -1615,13 +1637,9 @@ body{
 }
 
 @media (max-width: 1200px) {
-  .nav-glass .navbar-nav {
-    gap: 0.1rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.3rem 0.4rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.12rem !important;
+    font-size: 0.8rem;
   }
   
   .nav-glass .btn-primary-gy {
@@ -1631,13 +1649,9 @@ body{
 }
 
 @media (max-width: 1100px) {
-  .nav-glass .navbar-nav {
-    gap: 0.05rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.25rem 0.3rem;
-    font-size: 0.8rem;
+    padding: 0.25rem 0.1rem !important;
+    font-size: 0.78rem;
   }
   
   .nav-glass .btn-primary-gy {
@@ -1647,12 +1661,8 @@ body{
 }
 
 @media (max-width: 1000px) {
-  .nav-glass .navbar-nav {
-    gap: 0.02rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.2rem 0.25rem;
+    padding: 0.2rem 0.08rem !important;
     font-size: 0.75rem;
   }
   
@@ -1663,13 +1673,9 @@ body{
 }
 
 @media (max-width: 950px) {
-  .nav-glass .navbar-nav {
-    gap: 0.01rem;
-  }
-  
   .nav-glass .nav-link {
-    padding: 0.15rem 0.2rem;
-    font-size: 0.7rem;
+    padding: 0.2rem 0.06rem !important;
+    font-size: 0.72rem;
   }
   
   .nav-glass .btn-primary-gy {
@@ -2167,7 +2173,7 @@ footer .col-6.col-lg-3:first-child {
   background: rgba(1, 61, 61, .38);
 }
 
-/* Data platform: features row + mobile horizontal scroll */
+/* Data platform: features row; vertical stack on mobile */
 .data-platform-page .dp-features-wrap{
   position: relative;
 }
@@ -2216,24 +2222,19 @@ footer .col-6.col-lg-3:first-child {
 
 @media (max-width: 992px){
   .data-platform-page .dp-features-scroll{
-    overflow-x: auto;
-    /* одинаковые отступы слева/справа + место под стрелки */
-    padding: .25rem 3.25rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    overflow: visible;
+    padding: 0;
+    gap: 1rem;
   }
-  .data-platform-page .dp-features-scroll::-webkit-scrollbar{ height: 0; }
   .data-platform-page .dp-feature-card{
-    flex: 0 0 78%;
-    scroll-snap-align: start;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
   }
   .data-platform-page .dp-scroll-arrow{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: none !important;
   }
-  .data-platform-page .dp-scroll-arrow--left{ left: 10px; }
-  .data-platform-page .dp-scroll-arrow--right{ right: 10px; }
 }
 
 /* Data platform: mint panel like "салатовый блок" */
@@ -2260,21 +2261,17 @@ footer .col-6.col-lg-3:first-child {
   object-fit: contain;
   flex-shrink: 0;
 }
-.data-platform-page .dp-licensing-actions .btn-outline-dark{
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  color: var(--ink-800);
-  border-radius: 999px;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(6, 43, 41, 0.08);
+.data-platform-page .dp-blog-link{
+  color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.data-platform-page .dp-licensing-actions .btn-outline-dark:hover{
-  background: #ffffff;
-  color: var(--ink-800);
-  border-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(6, 43, 41, 0.12);
+.data-platform-page .dp-blog-link:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -24px rgba(6,43,41,.22);
 }
-
+.data-platform-page .dp-blog-link h3{
+  color: var(--heading-text);
+}
 /* Federated learning page: darker emerald tint */
 .federated-learning-page #hero .hero-blur-overlay{
   background: rgba(1, 61, 61, .48);
