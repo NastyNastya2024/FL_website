@@ -164,105 +164,6 @@
       </div>
     </section>
 
-    <section id="architecture" class="py-6">
-      <div class="container">
-        <p class="text-mute-400 small text-uppercase mb-2">Архитектура</p>
-        <h2 class="h3 fw-700 mb-4">Архитектура потоков данных</h2>
-
-        <div class="dp-arch-flow">
-          <article class="dp-arch-step">
-            <div class="dp-arch-step__head dp-arch-step__head--sources">Источники данных</div>
-            <ul class="dp-arch-step__list text-mute-300 small mb-0">
-              <li>100+ источников</li>
-              <li>ClickHouse, RDBMS</li>
-              <li>Kafka Topics</li>
-              <li>REST API / Files</li>
-            </ul>
-          </article>
-          <span class="dp-arch-arrow" aria-hidden="true">→</span>
-
-          <article class="dp-arch-step">
-            <div class="dp-arch-step__head dp-arch-step__head--capture">Захват данных</div>
-            <ul class="dp-arch-step__list text-mute-300 small mb-0">
-              <li>Debezium CDC</li>
-              <li>Kafka 2.8</li>
-              <li>Batch/Stream</li>
-              <li>15K+ msg/s</li>
-            </ul>
-          </article>
-          <span class="dp-arch-arrow" aria-hidden="true">→</span>
-
-          <article class="dp-arch-step">
-            <div class="dp-arch-step__head dp-arch-step__head--storage">Хранение (HDFS)</div>
-            <ul class="dp-arch-step__list text-mute-300 small mb-0">
-              <li>1 ПБ+ данных</li>
-              <li>Delta Lake 2.x</li>
-              <li>Parquet format</li>
-              <li>20 млн+ файлов</li>
-            </ul>
-          </article>
-          <span class="dp-arch-arrow" aria-hidden="true">→</span>
-
-          <article class="dp-arch-step">
-            <div class="dp-arch-step__head dp-arch-step__head--processing">Обработка</div>
-            <ul class="dp-arch-step__list text-mute-300 small mb-0">
-              <li>Spark 3.2.3/3.5.8</li>
-              <li>500+ DAG Airflow</li>
-              <li>Hive 3.1.3 HA</li>
-              <li>dbt трансформации</li>
-            </ul>
-          </article>
-          <span class="dp-arch-arrow" aria-hidden="true">→</span>
-
-          <article class="dp-arch-step">
-            <div class="dp-arch-step__head dp-arch-step__head--access">Доступ и анализ</div>
-            <ul class="dp-arch-step__list text-mute-300 small mb-0">
-              <li>Kyuubi JDBC/ODBC</li>
-              <li>JupyterHub+Toree</li>
-              <li>Superset BI <span class="dp-arch-roadmap">(Roadmap Q2 2027)</span></li>
-              <li>OpenMetadata <span class="dp-arch-roadmap">(Roadmap Q1 2027)</span></li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="dp-arch-mgmt">
-          <h3 class="dp-arch-mgmt__title h6 mb-3">Управление и безопасность</h3>
-          <div class="row g-3">
-            <div class="col-12 col-md-6 col-lg">
-              <div class="dp-arch-mgmt__item">
-                <strong class="small d-block mb-1">Ansible IaC</strong>
-                <p class="text-mute-300 small mb-0">Развёртывание и управление всеми компонентами</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg">
-              <div class="dp-arch-mgmt__item">
-                <strong class="small d-block mb-1">ALD PRO + Keycloak</strong>
-                <p class="text-mute-300 small mb-0">Аутентификация, авторизация, OIDC/SSO</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg">
-              <div class="dp-arch-mgmt__item">
-                <strong class="small d-block mb-1">Kerberos + RBAC + Knox</strong>
-                <p class="text-mute-300 small mb-0">В разработке — Q1 2027</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg">
-              <div class="dp-arch-mgmt__item">
-                <strong class="small d-block mb-1">Vault + Nexus</strong>
-                <p class="text-mute-300 small mb-0">Управление секретами и артефактами</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg">
-              <div class="dp-arch-mgmt__item">
-                <strong class="small d-block mb-1">Bamboo + Bitbucket</strong>
-                <p class="text-mute-300 small mb-0">CI/CD пайплайны</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="scale" class="py-6 bg-section">
       <div class="container">
         <div class="dp-mint-panel">
@@ -349,6 +250,105 @@
                 <li>Bitbucket, Bamboo, Nexus</li>
               </ul>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="py-6 bg-section">
+      <div class="container">
+        <p class="text-mute-400 small text-uppercase mb-2">Архитектура</p>
+        <h2 class="h3 fw-700 mb-4">Архитектура потоков данных</h2>
+
+        <div class="dp-arch-flow">
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head">Источники данных</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>100+ источников</li>
+              <li>ClickHouse, RDBMS</li>
+              <li>Kafka Topics</li>
+              <li>REST API / Files</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head">Захват данных</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Debezium CDC</li>
+              <li>Kafka 2.8</li>
+              <li>Batch/Stream</li>
+              <li>15K+ msg/s</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head">Хранение (HDFS)</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>1 ПБ+ данных</li>
+              <li>Delta Lake 2.x</li>
+              <li>Parquet format</li>
+              <li>20 млн+ файлов</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head">Обработка</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Spark 3.2.3/3.5.8</li>
+              <li>500+ DAG Airflow</li>
+              <li>Hive 3.1.3 HA</li>
+              <li>dbt трансформации</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head">Доступ и анализ</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Kyuubi JDBC/ODBC</li>
+              <li>JupyterHub+Toree</li>
+              <li>Superset BI <span class="dp-arch-roadmap">(Roadmap Q2 2027)</span></li>
+              <li>OpenMetadata <span class="dp-arch-roadmap">(Roadmap Q1 2027)</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="dp-arch-mgmt">
+          <h3 class="dp-arch-mgmt__title h6 mb-3">Управление и безопасность</h3>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Ansible IaC</strong>
+                <p class="text-mute-300 small mb-0">Развёртывание и управление всеми компонентами</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">ALD PRO + Keycloak</strong>
+                <p class="text-mute-300 small mb-0">Аутентификация, авторизация, OIDC/SSO</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Kerberos + RBAC + Knox</strong>
+                <p class="text-mute-300 small mb-0">В разработке — Q1 2027</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Vault + Nexus</strong>
+                <p class="text-mute-300 small mb-0">Управление секретами и артефактами</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Bamboo + Bitbucket</strong>
+                <p class="text-mute-300 small mb-0">CI/CD пайплайны</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

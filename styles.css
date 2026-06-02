@@ -2392,20 +2392,23 @@ footer .col-6.col-lg-3:first-child {
   text-align:center;
   color:#fff;
   line-height:1.3;
+  background:var(--primary);
 }
-.data-platform-page .dp-arch-step__head--sources{ background:#2a9d8f; }
-.data-platform-page .dp-arch-step__head--capture{ background:#52b788; }
-.data-platform-page .dp-arch-step__head--storage{ background:#95d5b2; color:var(--text-dark); }
-.data-platform-page .dp-arch-step__head--processing{ background:#f4d35e; color:var(--text-dark); }
-.data-platform-page .dp-arch-step__head--access{ background:#4a90d9; }
 .data-platform-page .dp-arch-step__list{
   list-style:none;
   padding:.85rem .75rem 1rem;
   margin:0;
 }
 .data-platform-page .dp-arch-step__list li{
+  position:static;
   padding:.2rem 0;
+  padding-left:0;
+  margin-bottom:0;
   line-height:1.4;
+}
+.data-platform-page .dp-arch-step__list li::before{
+  display:none;
+  content:none;
 }
 .data-platform-page .dp-arch-step__list li + li{
   border-top:1px solid rgba(0,0,0,.05);
