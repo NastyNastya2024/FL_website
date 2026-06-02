@@ -91,35 +91,174 @@
 
     <section id="advantages" class="py-6 bg-section">
       <div class="container">
-        <h2 class="h3 fw-700 mb-3">Enterprise-платформа данных без vendor lock-in и переплат</h2>
+        <p class="text-mute-400 small text-uppercase mb-2">Преимущества</p>
+        <h2 class="h3 fw-700 mb-3">Почему DigiTrack Big Data Platform?</h2>
         <p class="text-mute-300 mb-4">
           Мы взяли мощь чистого Apache Hadoop, усилили его SRE-практиками и добавили прозрачную коммерческую поддержку (L3/L4). Платформа доказала свою надёжность на петабайтных нагрузках. Никаких «чёрных ящиков» и платы за тестовые среды.
         </p>
-        <div class="dp-features-wrap">
-          <button class="dp-scroll-arrow dp-scroll-arrow--left" type="button" aria-label="Прокрутить влево" data-scroll-target="#dpFeatures">‹</button>
-          <div id="dpFeatures" class="dp-features-scroll" data-scroll-arrows>
-            <article class="dp-feature-card glass pad-2x">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
               <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Истинная независимость (No Vendor Lock-in)</h3>
-              <p class="text-mute-300 mb-0 small">В основе — ванильные сборки Apache Hadoop. Мы не делаем проприетарных форков. Вы не привязаны к лицензионной политике вендора и полностью контролируете код.</p>
-            </article>
-            <article class="dp-feature-card glass pad-2x">
-              <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Мультиверсионность «из коробки»</h3>
-              <p class="text-mute-300 mb-0 small">Запускайте разные версии Spark (3.2.3 и 3.5.8), Python и Java на одном кластере одновременно. Data Science использует новейшие библиотеки, а legacy-процессы работают стабильно на старых версиях.</p>
-            </article>
-            <article class="dp-feature-card glass pad-2x">
-              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Infrastructure-as-Code (IaC)</h3>
-              <p class="text-mute-300 mb-0 small">Глубокая автоматизация на базе Ansible. Развёртывание платформы на «голом железе» или виртуалках без лишних прослоек (вроде K8s). Быстро, воспроизводимо, прозрачно.</p>
-            </article>
-            <article class="dp-feature-card glass pad-2x">
-              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
-              <h3 class="h6 mb-2">Гарантированная отказоустойчивость</h3>
-              <p class="text-mute-300 mb-0 small">Метаданные хранятся в PostgreSQL (Patroni) с автофейловером. Hive, NameNode и ResourceManager работают в режиме High Availability. «Мозг» кластера надёжно защищён от падений.</p>
+              <h3 class="h6 mb-2">Нет vendor lock-in</h3>
+              <p class="text-mute-300 mb-0 small">Все компоненты — 100% open source. Никаких проприетарных зависимостей, скрытых лицензионных сборов и ограничений на использование.</p>
             </article>
           </div>
-          <button class="dp-scroll-arrow dp-scroll-arrow--right" type="button" aria-label="Прокрутить вправо" data-scroll-target="#dpFeatures">›</button>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Российская платформа</h3>
+              <p class="text-mute-300 mb-0 small">Работает на Астра Линукс Воронеж 1.8. Интеграция с ALD PRO. Планируется регистрация в Реестре российского ПО (Q1 2027).</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Производительность</h3>
+              <p class="text-mute-300 mb-0 small">Обработка 15&nbsp;000+ msg/s в стриминге. Spark с мультиверсионностью. Delta Lake для ACID-транзакций на HDFS.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Zero Downtime Operations</h3>
+              <p class="text-mute-300 mb-0 small">Автоматизированный rolling restart для всех компонентов. HA для HDFS, YARN, Hive Metastore, PostgreSQL Patroni.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Безопасность (в разработке)</h3>
+              <p class="text-mute-300 mb-0 small">Kerberos + RBAC + Knox (Q2 2027). OIDC через Keycloak для веб-интерфейсов. ALD PRO домен уже интегрирован.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">IaC &amp; Воспроизводимость</h3>
+              <p class="text-mute-300 mb-0 small">Ansible-роли для полного жизненного цикла. Развёртывание на VM без K8s.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-1.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Наблюдаемость</h3>
+              <p class="text-mute-300 mb-0 small">Deep health checks: JMX, VIP, ZK Quorum, порты.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-2.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Мультиверсионность</h3>
+              <p class="text-mute-300 mb-0 small">Spark 3.2.3 + 3.5.8, Python 3.10 + 3.13, Java 1.8 + 11 — параллельно. Изолированные среды без конфликтов.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="dp-feature-card glass pad-2x h-100">
+              <img class="dp-feature-icon" src="img/expert-icon-3.png" alt="" aria-hidden="true" loading="lazy">
+              <h3 class="h6 mb-2">Roadmap и развитие</h3>
+              <p class="text-mute-300 mb-0 small">CI/CD для компонентов, собственная система управления кластером, регистрация в Реестре РФ.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="py-6">
+      <div class="container">
+        <p class="text-mute-400 small text-uppercase mb-2">Архитектура</p>
+        <h2 class="h3 fw-700 mb-4">Архитектура потоков данных</h2>
+
+        <div class="dp-arch-flow">
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head dp-arch-step__head--sources">Источники данных</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>100+ источников</li>
+              <li>ClickHouse, RDBMS</li>
+              <li>Kafka Topics</li>
+              <li>REST API / Files</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head dp-arch-step__head--capture">Захват данных</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Debezium CDC</li>
+              <li>Kafka 2.8</li>
+              <li>Batch/Stream</li>
+              <li>15K+ msg/s</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head dp-arch-step__head--storage">Хранение (HDFS)</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>1 ПБ+ данных</li>
+              <li>Delta Lake 2.x</li>
+              <li>Parquet format</li>
+              <li>20 млн+ файлов</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head dp-arch-step__head--processing">Обработка</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Spark 3.2.3/3.5.8</li>
+              <li>500+ DAG Airflow</li>
+              <li>Hive 3.1.3 HA</li>
+              <li>dbt трансформации</li>
+            </ul>
+          </article>
+          <span class="dp-arch-arrow" aria-hidden="true">→</span>
+
+          <article class="dp-arch-step">
+            <div class="dp-arch-step__head dp-arch-step__head--access">Доступ и анализ</div>
+            <ul class="dp-arch-step__list text-mute-300 small mb-0">
+              <li>Kyuubi JDBC/ODBC</li>
+              <li>JupyterHub+Toree</li>
+              <li>Superset BI <span class="dp-arch-roadmap">(Roadmap Q2 2027)</span></li>
+              <li>OpenMetadata <span class="dp-arch-roadmap">(Roadmap Q1 2027)</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="dp-arch-mgmt">
+          <h3 class="dp-arch-mgmt__title h6 mb-3">Управление и безопасность</h3>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Ansible IaC</strong>
+                <p class="text-mute-300 small mb-0">Развёртывание и управление всеми компонентами</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">ALD PRO + Keycloak</strong>
+                <p class="text-mute-300 small mb-0">Аутентификация, авторизация, OIDC/SSO</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Kerberos + RBAC + Knox</strong>
+                <p class="text-mute-300 small mb-0">В разработке — Q1 2027</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Vault + Nexus</strong>
+                <p class="text-mute-300 small mb-0">Управление секретами и артефактами</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg">
+              <div class="dp-arch-mgmt__item">
+                <strong class="small d-block mb-1">Bamboo + Bitbucket</strong>
+                <p class="text-mute-300 small mb-0">CI/CD пайплайны</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -454,7 +593,19 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Согласие на обработку персональных данных для посетителей сайтов ООО «ДТ».</p>
+          <p>Согласие на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
+          
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          
+          <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
+          
+          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовых» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянных» cookie).</p>
+          
+          <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
+          
+          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          
+          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>

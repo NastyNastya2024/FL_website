@@ -2366,6 +2366,105 @@ footer .col-6.col-lg-3:first-child {
   border-radius:999px;
   margin-bottom:.75rem;
 }
+
+/* Data platform: architecture flow */
+.data-platform-page .dp-arch-flow{
+  display:flex;
+  align-items:stretch;
+  gap:.5rem;
+  margin-bottom:1.5rem;
+}
+.data-platform-page .dp-arch-step{
+  flex:1 1 0;
+  min-width:0;
+  background:var(--card-light);
+  border:1px solid var(--border-light);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 24px -18px rgba(6,43,41,.18);
+}
+.data-platform-page .dp-arch-step__head{
+  padding:.65rem .75rem;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  color:#fff;
+  line-height:1.3;
+}
+.data-platform-page .dp-arch-step__head--sources{ background:#2a9d8f; }
+.data-platform-page .dp-arch-step__head--capture{ background:#52b788; }
+.data-platform-page .dp-arch-step__head--storage{ background:#95d5b2; color:var(--text-dark); }
+.data-platform-page .dp-arch-step__head--processing{ background:#f4d35e; color:var(--text-dark); }
+.data-platform-page .dp-arch-step__head--access{ background:#4a90d9; }
+.data-platform-page .dp-arch-step__list{
+  list-style:none;
+  padding:.85rem .75rem 1rem;
+  margin:0;
+}
+.data-platform-page .dp-arch-step__list li{
+  padding:.2rem 0;
+  line-height:1.4;
+}
+.data-platform-page .dp-arch-step__list li + li{
+  border-top:1px solid rgba(0,0,0,.05);
+  margin-top:.15rem;
+  padding-top:.35rem;
+}
+.data-platform-page .dp-arch-roadmap{
+  color:var(--muted-400);
+  font-size:.85em;
+}
+.data-platform-page .dp-arch-arrow{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--primary);
+  opacity:.55;
+  padding:0 .1rem;
+}
+.data-platform-page .dp-arch-mgmt{
+  background:linear-gradient(180deg, rgba(1,61,61,.92), rgba(6,43,41,.96));
+  border:1px solid rgba(74,144,217,.45);
+  border-radius:14px;
+  padding:1.5rem 1.75rem;
+  color:#fff;
+}
+.data-platform-page .dp-arch-mgmt__title{
+  color:#fff !important;
+  font-weight:600 !important;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  font-size:.85rem !important;
+}
+.data-platform-page .dp-arch-mgmt__item strong{
+  color:#fff;
+  font-weight:600;
+}
+.data-platform-page .dp-arch-mgmt__item p{
+  opacity:.85;
+  color:rgba(255,255,255,.85) !important;
+}
+
+@media (max-width: 992px){
+  .data-platform-page .dp-arch-flow{
+    flex-direction:column;
+    gap:.75rem;
+  }
+  .data-platform-page .dp-arch-arrow{
+    justify-content:center;
+    transform:rotate(90deg);
+    padding:.15rem 0;
+  }
+  .data-platform-page .dp-arch-step{
+    flex:1 1 auto;
+    width:100%;
+  }
+}
+
 .data-platform-page #hero .btn-outline-light{
   border-color:rgba(255,255,255,.6);
   color:#fff;
