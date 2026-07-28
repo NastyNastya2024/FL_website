@@ -2569,3 +2569,49 @@ footer .col-6.col-lg-3:first-child {
   color:#fff;
   border-color:#fff;
 }
+
+.cookie-consent-banner{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:1080;
+  padding:16px 20px;
+  background:rgba(17,24,39,.96);
+  color:#fff;
+  box-shadow:0 -4px 24px rgba(0,0,0,.18);
+  backdrop-filter:blur(8px);
+}
+.cookie-consent-banner__inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.cookie-consent-banner__text{
+  font-size:14px;
+  line-height:1.5;
+  color:rgba(255,255,255,.92);
+}
+.cookie-consent-banner__link{
+  color:#9FE29E;
+  text-decoration:underline;
+}
+.cookie-consent-banner__link:hover{
+  color:#b8f0b7;
+}
+.cookie-consent-banner__btn{
+  flex-shrink:0;
+  white-space:nowrap;
+}
+@media (max-width:767.98px){
+  .cookie-consent-banner__inner{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .cookie-consent-banner__btn{
+    width:100%;
+  }
+}
