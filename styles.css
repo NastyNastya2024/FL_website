@@ -2675,9 +2675,9 @@ footer .col-6.col-lg-3:first-child {
   }
 
   .hero-hero {
-    min-height: auto;
-    padding-top: 104px !important;
-    padding-bottom: 3rem;
+    min-height: 78vh;
+    padding-top: 112px !important;
+    padding-bottom: 3.5rem;
   }
 
   .hero-hero > .container {
@@ -2747,8 +2747,9 @@ footer .col-6.col-lg-3:first-child {
   }
 
   .hero-hero {
-    padding-top: 96px !important;
-    padding-bottom: 2.5rem;
+    min-height: 82vh;
+    padding-top: 118px !important;
+    padding-bottom: 3.75rem;
   }
 
   .hero-hero h1 {
