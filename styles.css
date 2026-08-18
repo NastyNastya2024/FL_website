@@ -102,12 +102,8 @@ body{
 }
 
 /* helpers */
-.bg-deep{background:var(--deeper)}
 .bg-deeper{background:var(--deeper)}
 .bg-section{background:var(--light-1)}
-body.partnership-page{
-  background:#cfe6e1;
-}
 .text-mute-200{color:var(--muted-200)!important}
 .text-mute-300{color:var(--muted-300)!important}
 .text-mute-400{color:var(--muted-400)!important}
