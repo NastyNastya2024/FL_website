@@ -105,6 +105,9 @@ body{
 .bg-deep{background:var(--deeper)}
 .bg-deeper{background:var(--deeper)}
 .bg-section{background:var(--light-1)}
+body.partnership-page{
+  background:#cfe6e1;
+}
 .text-mute-200{color:var(--muted-200)!important}
 .text-mute-300{color:var(--muted-300)!important}
 .text-mute-400{color:var(--muted-400)!important}
@@ -2677,6 +2680,11 @@ footer .col-6.col-lg-3:first-child {
     padding-bottom: 3rem;
   }
 
+  .nav-glass {
+    top: 0;
+    border-radius: 0 0 24px 24px;
+  }
+
   .hero-hero {
     min-height: 78vh;
     padding-top: 112px !important;
@@ -2740,8 +2748,8 @@ footer .col-6.col-lg-3:first-child {
   }
 
   .nav-glass {
-    top: 10px;
-    border-radius: 20px;
+    top: 0;
+    border-radius: 0 0 20px 20px;
   }
 
   .nav-glass .container {
