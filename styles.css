@@ -102,6 +102,7 @@ body{
 }
 
 /* helpers */
+.bg-deep{background:var(--deeper)}
 .bg-deeper{background:var(--deeper)}
 .bg-section{background:var(--light-1)}
 .text-mute-200{color:var(--muted-200)!important}
