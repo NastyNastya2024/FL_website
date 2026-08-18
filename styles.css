@@ -120,14 +120,14 @@ body{
 
 .nav-glass{
   position: fixed;
-  top: 30px; left: 0; right: 0; z-index: 1040;
+  top: 0; left: 0; right: 0; z-index: 1040;
   width: var(--menu-width);
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(30px) saturate(200%);
   -webkit-backdrop-filter: blur(30px) saturate(200%);
   border: 1px solid rgba(255,255,255,.2);
-  border-radius: 32px;
+  border-radius: 0 0 32px 32px;
   box-shadow: 0 12px 40px -20px rgba(0,0,0,.4), inset 0 1px rgba(255,255,255,.15);
 }
 .nav-glass .container{ 
@@ -1293,8 +1293,8 @@ body{
     --menu-width: calc(100% - 60px);
   }
   .nav-glass{ 
-    top: 20px; 
-    border-radius: 28px;
+    top: 0; 
+    border-radius: 0 0 28px 28px;
   }
   .nav-glass .container {
     padding-top: 13px;
@@ -1320,8 +1320,8 @@ body{
     --menu-width: calc(100% - 40px);
   }
   .nav-glass{ 
-    top: 15px; 
-    border-radius: 24px;
+    top: 0; 
+    border-radius: 0 0 24px 24px;
   }
   .nav-glass .container {
     padding-top: 12px;
