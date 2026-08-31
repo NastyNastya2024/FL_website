@@ -284,7 +284,7 @@
           <div class="col-12">
             <article class="glass-xl pad-2x position-relative bdp-stack-diagram">
               <div class="row g-4 align-items-center">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-3 order-2 order-lg-1">
                   <h3 class="mb-2 text-start fl-tech-stage-title">Core &amp; Storage</h3>
                   <div class="bdp-stack-cards bdp-stack-cards--left">
                     <div class="federated-card">Apache Hadoop 3.3.4 (Custom Build)</div>
@@ -300,13 +300,13 @@
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
                   <div class="text-center">
                     <img src="img/bdp-on-premise-building.png" alt="Корпоративная Big Data-инфраструктура on-premise" class="bdp-stack-diagram-image" loading="lazy" width="960" height="720">
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-3 order-3 order-lg-3">
                   <h3 class="mb-2 text-start fl-tech-stage-title fl-tech-stage-title--right">Compute</h3>
                   <div class="bdp-stack-cards bdp-stack-cards--right">
                     <div class="federated-card">Spark 3.2.3 + 3.5.8 (Scala 2.12)</div>
@@ -530,17 +530,19 @@
     <section id="cta" class="py-6">
       <div class="container">
         <div class="cta-dark pad-2x rounded-4">
-          <div class="partnership-card mb-0">
-            <div class="d-flex align-items-start gap-3 mb-0">
-              <span class="d-inline-block flex-shrink-0" aria-hidden="true">
-                <img alt="Александр Гудов" class="rounded-circle border border-ink-700" width="72" height="72" src="img/gudov.png?v=2" loading="lazy" style="object-fit: cover; object-position: center top;">
-              </span>
-              <div>
-                <p class="small text-mute-200 mb-2 fst-italic">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <div class="partnership-card page-quote-card h-100 mb-0">
+                <p class="text-white mb-3">
                   «Мы создали Big Data Enterprise Platform, потому что сами устали от vendor lock-in и закрытых сборок. Наше решение — это полностью открытый, управляемый стек на Astra Linux. Вы получаете бинарники, Ansible-роли для автоматического развертывания и управления кластером, тесты совместимости компонентов и документацию. Всё, чтобы запустить промышленный Data Lake без сюрпризов.»
                 </p>
-                <div class="small text-mute-400">Александр Гудов, владелец Big Data Enterprise Platform</div>
+                <div class="small text-white mb-0">Александр Гудов, владелец Big Data Enterprise Platform</div>
               </div>
+            </div>
+            <div class="col-12 col-lg-5 text-center text-lg-end">
+              <a href="partnership.html#about" class="partnership-avatar-link page-quote-photo">
+                <img alt="Александр Гудов, владелец Big Data Enterprise Platform" class="team-avatar team-avatar-lg" width="300" height="300" src="img/gudov.png?v=2" loading="lazy"/>
+              </a>
             </div>
           </div>
         </div>
