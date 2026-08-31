@@ -134,7 +134,7 @@
       "@type": "WebPage",
       "@id": "https://digi-track.ru/data-platform.html#webpage",
       "url": "https://digi-track.ru/data-platform.html",
-      "name": "Big Data Platform on-premise — DigiTrack Enterprise",
+      "name": "Платформа данных on-premise",
       "description": "Enterprise-платформа данных: Hadoop, Spark, Kafka, Delta Lake on Astra Linux. 1 ПБ+ в prod, zero downtime.",
       "isPartOf": {
         "@id": "https://digi-track.ru/#website"
@@ -214,8 +214,8 @@
     {
       "@type": "Service",
       "@id": "https://digi-track.ru/data-platform.html#service",
-      "name": "Платформа данных",
-      "alternateName": ["DigiTrack Big Data Platform", "Enterprise Data Platform"],
+      "name": "Платформа данных on-premise",
+      "alternateName": ["DigiTrack Big Data Platform", "DigiTrack BDP", "Enterprise Data Platform"],
       "description": "On-premise платформа больших данных: Hadoop 3.3.4, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Zero downtime, без vendor lock-in.",
       "url": "https://digi-track.ru/data-platform.html",
       "serviceType": "Big Data Platform",
@@ -487,7 +487,7 @@
       "@id": "https://digi-track.ru/data-platform.html#breadcrumb",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"},
-        {"@type": "ListItem", "position": 2, "name": "Платформа данных", "item": "https://digi-track.ru/data-platform.html"}
+        {"@type": "ListItem", "position": 2, "name": "Платформа данных on-premise", "item": "https://digi-track.ru/data-platform.html"}
       ]
     },
     {
