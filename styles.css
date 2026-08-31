@@ -323,13 +323,7 @@ body{
   box-shadow: 0 12px 40px -20px rgba(0,0,0,.2), inset 0 1px rgba(0,0,0,.05);
 }
 
-/* Light header on white pages (expert review, sitemap) */
-.expert-review-page .nav-glass.nav-light,
-.site-map-page .nav-glass.nav-light {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 18px 50px -28px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.8);
-}
+/* Light header on white pages (expert review, sitemap) — see block below for !important overrides */
 
 
 .nav-glass.nav-light .navbar-brand {
@@ -3365,21 +3359,32 @@ footer .col-6.col-lg-3:first-child {
   }
 }
 
-/* Expert review page: force light "converted" header (desktop/top) */
-.expert-review-page .nav-glass.nav-light{
-  background: rgba(255, 255, 255, 0.85) !important;
+/* Expert review & site map: force light header (desktop/top) */
+.expert-review-page .nav-glass.nav-light,
+.site-map-page .nav-glass.nav-light {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border: 1px solid rgba(0,0,0,.08) !important;
   box-shadow: 0 18px 50px -28px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.85) !important;
 }
-.expert-review-page .nav-glass.nav-light .navbar-brand{
+.expert-review-page .nav-glass.nav-light .navbar-brand,
+.site-map-page .nav-glass.nav-light .navbar-brand {
   color: #020827 !important;
 }
-.expert-review-page .nav-glass.nav-light .nav-link{
+.expert-review-page .nav-glass.nav-light .nav-link,
+.site-map-page .nav-glass.nav-light .nav-link {
   color: #020827 !important;
 }
-.expert-review-page .nav-glass.nav-light .nav-link:hover{
+.expert-review-page .nav-glass.nav-light .nav-link:hover,
+.site-map-page .nav-glass.nav-light .nav-link:hover {
   color: #020827 !important;
   background: rgba(0,0,0,.05) !important;
+}
+.expert-review-page .nav-glass.nav-light .btn-primary-gy,
+.site-map-page .nav-glass.nav-light .btn-primary-gy {
+  background: #1a4d3a !important;
+  color: #ffffff !important;
 }
 
 /* Data platform page */
@@ -4135,8 +4140,17 @@ details.seo-details summary {
   margin-bottom: 0;
 }
 
+.vacancies-shell {
+  max-width: var(--menu-width) !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .vacancies-intro-text {
-  max-width: 44rem;
+  max-width: none;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.55;
@@ -4144,12 +4158,26 @@ details.seo-details summary {
   color: var(--muted-300, #6B7280) !important;
 }
 
+.vacancies-hero-banner {
+  margin: 0 auto;
+  padding-top: 1.25rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.vacancies-page-content {
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+}
+
 .vacancies-hero-visual {
+  position: relative;
   margin: 0;
   border-radius: 1rem;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
-  max-height: 22rem;
+  aspect-ratio: 32 / 9;
+  width: 100%;
+  background: var(--deeper);
 }
 
 .vacancies-hero-visual img {
@@ -4159,6 +4187,74 @@ details.seo-details summary {
   object-position: center;
   display: block;
   border-radius: 0 !important;
+}
+
+.vacancies-hero-visual .hero-video,
+.page-hero-visual .hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Site map page — same shell layout as vacancies, white header */
+.page-shell {
+  max-width: var(--menu-width) !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.page-hero-banner {
+  margin: 0 auto;
+  padding-top: 1.25rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.site-map-page-content {
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.page-hero-visual {
+  position: relative;
+  margin: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 32 / 9;
+  width: 100%;
+  background: var(--deeper);
+}
+
+.page-hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0 !important;
+}
+
+.site-map-intro-text {
+  max-width: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+  color: var(--muted-300, #6B7280) !important;
+}
+
+#vacancies .glass > .d-flex h3 {
+  font-size: clamp(1.375rem, 2.2vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 #vacancies .glass ul li::before {
