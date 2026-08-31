@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./styles.css?v=20260831ad"/>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -167,22 +167,24 @@
     }
   ]
 }</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://digi-track.ru/site-map.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"}, {"@type": "ListItem", "position": 2, "name": "Карта сайта", "item": "https://digi-track.ru/site-map.html"}]}</script>
 </head>
-<body class="bg-deep">
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass" aria-label="Primary">
+<body class="site-map-page">
+
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-glass nav-light" aria-label="Primary" style="background: rgba(255,255,255,.85); border: 1px solid rgba(0,0,0,.08); box-shadow: 0 18px 50px -28px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.85);">
     <div class="container">
-      <a class="navbar-brand fw-semibold" href="index.html">DigiTrack</a>
+      <a class="navbar-brand fw-semibold" href="index.html" style="color:#020827 !important;">DigiTrack</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="federated-learning.html#tech">Федеративное обучение</a></li>
-          <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
-          <li class="nav-item"><a class="nav-link" href="partnership.html#about">О компании</a></li>
-          <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" style="color:#020827 !important;">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="federated-learning.html#tech" style="color:#020827 !important;">Федеративное обучение</a></li>
+          <li class="nav-item"><a class="nav-link" href="data-platform.html" style="color:#020827 !important;">Дата-платформа</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html#about" style="color:#020827 !important;">О компании</a></li>
+          <li class="nav-item"><a class="nav-link" href="vacancies.html" style="color:#020827 !important;">Вакансии</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html" style="color:#020827 !important;">Блог</a></li>
         </ul>
         <div class="d-flex gap-2">
           <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
@@ -190,65 +192,80 @@
       </div>
     </div>
   </nav>
-  <main class="py-6 site-map-page" style="padding-top: 7rem !important;">
-    <div class="container">
-      <h1 class="h2 fw-700 mb-2">Карта сайта</h1>
-      <p class="snippet-answer mb-2">Полная структура сайта DigiTrack (ООО «ДТ»): продукты, услуги, материалы блога и служебные страницы.</p>
-      <p class="small mb-4"><a href="sitemap.xml">XML-карта для поисковых систем (sitemap.xml) →</a></p>
 
-      <div class="row g-4">
-        <div class="col-12 col-lg-6">
+  <main>
+    <section class="hero-hero py-4 position-relative overflow-hidden" style="min-height: auto; background: transparent; color: var(--text-dark);">
+      <div class="container position-relative">
+        <nav class="breadcrumb-nav breadcrumb-nav--in-header" aria-label="Хлебные крошки">
+          <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="index.html"><span itemprop="name">Главная</span></a>
+              <meta itemprop="position" content="1"/>
+            </li>
+            <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name">Карта сайта</span>
+              <meta itemprop="position" content="2"/>
+            </li>
+          </ol>
+        </nav>
+        <h1 class="h1 mb-2 mt-0">Карта сайта</h1>
+        <p class="text-mute-300 mb-2">Полная структура сайта DigiTrack (ООО «ДТ»): продукты, услуги, материалы блога и служебные страницы.</p>
+        <p class="small mb-0"><a class="site-map-meta-link" href="sitemap.xml">XML-карта для поисковых систем (sitemap.xml) →</a></p>
+      </div>
+    </section>
+
+    <section class="py-6 bg-section">
+      <div class="container">
+        <div class="site-map-sections">
           <section class="glass pad-2x site-map-section" id="products">
             <h2 class="h5 fw-700 mb-3">Продукты и услуги</h2>
-          <ul class="site-map-list">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="federated-learning.html">Федеративное обучение</a></li>
-            <li><a href="data-platform.html">Дата-платформа</a></li>
-            <li><a href="learning-types.html">VFL и HFL — типы федеративного обучения</a></li>
-            <li><a href="partnership.html">Партнёрство и о компании</a> — <a href="partnership.html#about">о нас</a>, <a href="partnership.html#faq">FAQ</a>, <a href="partnership.html#process">этапы</a>, <a href="partnership.html#contacts">контакты</a></li>
-            <li><a href="blog.html">Блог</a></li>
-          </ul>
+            <ul class="site-map-list">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="federated-learning.html">Федеративное обучение</a></li>
+              <li><a href="data-platform.html">Дата-платформа</a></li>
+              <li><a href="learning-types.html">VFL и HFL — типы федеративного обучения</a></li>
+              <li><a href="partnership.html">Партнёрство и о компании</a> — <a href="partnership.html#about">о нас</a>, <a href="partnership.html#faq">FAQ</a>, <a href="partnership.html#process">этапы</a>, <a href="partnership.html#contacts">контакты</a></li>
+              <li><a href="blog.html">Блог</a></li>
+            </ul>
           </section>
           <section class="glass pad-2x site-map-section" id="service">
             <h2 class="h5 fw-700 mb-3">Служебные разделы</h2>
-          <ul class="site-map-list">
-            <li><a href="vacancies.html">Вакансии</a></li>
-            <li><a href="documents.html">Документация на ПО</a></li>
-            <li><a href="expert-review.html">Экспертная оценка</a></li>
-          </ul>
+            <ul class="site-map-list">
+              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="documents.html">Документация на ПО</a></li>
+              <li><a href="expert-review.html">Экспертная оценка</a></li>
+            </ul>
           </section>
-        </div>
-        <div class="col-12 col-lg-6">
           <section class="glass pad-2x site-map-section" id="blog-fl">
             <h2 class="h5 fw-700 mb-3">Блог — федеративное обучение</h2>
-          <ul class="site-map-list">
-            <li><a href="blog/articles/fl-guide.html">Что такое федеративное обучение: принципы, применение, риски</a></li>
-            <li><a href="blog/articles/confidential-computing-152.html">Юридические барьеры 152-ФЗ, GDPR и архитектура безопасного AI на основе Confidential Computing и FL</a></li>
-            <li><a href="blog/articles/fate-flower-nvflare.html">FATE, Flower, NVFlare или Диджи Трек: какой фреймворк выбрать для федеративного обучения</a></li>
-            <li><a href="blog/articles/federated-xgboost-experiments.html">Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются</a></li>
-            <li><a href="blog/articles/fl-antifraud.html">Федеративное обучение для антифрода: как банкам совместно находить мошеннические схемы</a></li>
-            <li><a href="blog/articles/fl-sandbox-or-embeddings.html">Федеративное обучение, Sandbox или Эмбеддинги: архитектурный компромисс между правом и эффективностью</a></li>
-            <li><a href="blog/articles/homomorphic-encryption.html">Гомоморфное шифрование в машинном обучении: магия или инструмент?</a></li>
-            <li><a href="blog/articles/vfl-or-hfl.html">VFL или HFL: какой тип федеративного обучения подходит для финансового сектора</a></li>
-          </ul>
+            <ul class="site-map-list">
+              <li><a href="blog/articles/fl-guide.html">Что такое федеративное обучение: принципы, применение, риски</a></li>
+              <li><a href="blog/articles/confidential-computing-152.html">Юридические барьеры 152-ФЗ, GDPR и архитектура безопасного AI на основе Confidential Computing и FL</a></li>
+              <li><a href="blog/articles/fate-flower-nvflare.html">FATE, Flower, NVFlare или Диджи Трек: какой фреймворк выбрать для федеративного обучения</a></li>
+              <li><a href="blog/articles/federated-xgboost-experiments.html">Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются</a></li>
+              <li><a href="blog/articles/fl-antifraud.html">Федеративное обучение для антифрода: как банкам совместно находить мошеннические схемы</a></li>
+              <li><a href="blog/articles/fl-sandbox-or-embeddings.html">Федеративное обучение, Sandbox или Эмбеддинги: архитектурный компромисс между правом и эффективностью</a></li>
+              <li><a href="blog/articles/homomorphic-encryption.html">Гомоморфное шифрование в машинном обучении: магия или инструмент?</a></li>
+              <li><a href="blog/articles/vfl-or-hfl.html">VFL или HFL: какой тип федеративного обучения подходит для финансового сектора</a></li>
+            </ul>
           </section>
           <section class="glass pad-2x site-map-section" id="blog-bdp">
             <h2 class="h5 fw-700 mb-3">Блог — платформа данных</h2>
-          <ul class="site-map-list">
-            <li><a href="blog/articles/bdp-guide.html">Что такое Big Data Platform: принципы, архитектура, риски</a></li>
-            <li><a href="blog/articles/ai-ready-platform.html">AI-ready Data Platform: какая инфраструктура нужна для корпоративного AI</a></li>
-            <li><a href="blog/articles/choose-bdp-15.html">Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки</a></li>
-            <li><a href="blog/articles/ha-big-data-platform.html">Как построить отказоустойчивую Big Data-платформу без простоя</a></li>
-            <li><a href="blog/articles/opensource-enterprise.html">Open Source для Enterprise: почему открытый код становится вопросом цифрового суверенитета</a></li>
-            <li><a href="blog/articles/scale-to-federated.html">Как масштабировать Big Data-инфраструктуру от одного кластера до федеративной архитектуры</a></li>
-            <li><a href="blog/articles/tco-big-data.html">Как считать TCO Big Data-платформы: методика и формула</a></li>
-          </ul>
+            <ul class="site-map-list">
+              <li><a href="blog/articles/bdp-guide.html">Что такое Big Data Platform: принципы, архитектура, риски</a></li>
+              <li><a href="blog/articles/ai-ready-platform.html">AI-ready Data Platform: какая инфраструктура нужна для корпоративного AI</a></li>
+              <li><a href="blog/articles/choose-bdp-15.html">Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки</a></li>
+              <li><a href="blog/articles/ha-big-data-platform.html">Как построить отказоустойчивую Big Data-платформу без простоя</a></li>
+              <li><a href="blog/articles/opensource-enterprise.html">Open Source для Enterprise: почему открытый код становится вопросом цифрового суверенитета</a></li>
+              <li><a href="blog/articles/scale-to-federated.html">Как масштабировать Big Data-инфраструктуру от одного кластера до федеративной архитектуры</a></li>
+              <li><a href="blog/articles/tco-big-data.html">Как считать TCO Big Data-платформы: методика и формула</a></li>
+            </ul>
           </section>
         </div>
-      </div>
 
-      <p class="small mt-4 mb-0"><a href="index.html">На главную →</a> · <a href="partnership.html#contacts">Контакты →</a> · <a href="partnership.html#faq">Вопросы и ответы →</a></p>
-    </div>
+        <p class="small mt-4 mb-0 site-map-footer-links"><a href="index.html">На главную →</a> · <a href="partnership.html#contacts">Контакты →</a> · <a href="partnership.html#faq">Вопросы и ответы →</a></p>
+      </div>
+    </section>
   </main>
   <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
     <div class="container">
