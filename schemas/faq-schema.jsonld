@@ -1,0 +1,145 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://digi-track.ru/partnership.html#faqpage",
+  "url": "https://digi-track.ru/partnership.html#faq",
+  "inLanguage": "ru-RU",
+  "name": "Часто задаваемые вопросы о DigiTrack",
+  "description": "Ответы о федеративном обучении, платформе данных, партнёрстве, стоимости и внедрении on-premise.",
+  "isPartOf": {
+    "@id": "https://digi-track.ru/#website"
+  },
+  "about": {
+    "@id": "https://digi-track.ru/#organization"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".faq-question",
+      ".faq-answer",
+      ".faq-item"
+    ]
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q1",
+      "name": "Какие услуги предоставляет DigiTrack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a1",
+        "text": "DigiTrack (ООО «ДТ») разрабатывает ПО для конфиденциальных вычислений: платформу федеративного обучения DigiTrack Confidential Computing, Big Data Platform on-premise, внедрение и сопровождение. Также доступны аудит безопасности данных, обучение команд и техподдержка L3/L4."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q2",
+      "name": "Что такое федеративное обучение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a2",
+        "text": "Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных, что важно для банков и enterprise по 152-ФЗ."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q3",
+      "name": "Сколько стоит DigiTrack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a3",
+        "text": "Стоимость зависит от объёма данных, числа участников и конфигурации. Оставьте заявку на info@digi-track.ru — подготовим коммерческое предложение. Тарифы BDP: data-platform.html#licensing. Методика TCO: blog/articles/tco-big-data.html."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q4",
+      "name": "Где посмотреть тарифы и методику расчёта?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a4",
+        "text": "Тарифы Big Data Platform (Standard / Enterprise / Custom) — на data-platform.html#licensing. Методика и формула TCO — в blog/articles/tco-big-data.html. Для КП — заявка на info@digi-track.ru."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q5",
+      "name": "Какие сроки пилота федеративного обучения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a5",
+        "text": "Подготовка к пилоту после заявки занимает 1–2 недели. Полный цикл партнёрского пилота — около 6 месяцев: kick-off, инфраструктура, обучение модели и оценка результатов. Kick-off возможен через 2–4 недели при готовом дата-партнёре."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q6",
+      "name": "Как происходит процесс внедрения федеративного обучения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a6",
+        "text": "Внедрение включает четыре этапа: установка ПО и назначение координатора, сверка данных (PSI), совместное обучение модели с зашифрованным обменом градиентами, запуск и оценка модели в prod. Все этапы выполняются on-premise у каждого участника."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q7",
+      "name": "Какие технологии использует DigiTrack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a7",
+        "text": "Для FL: VFL, HFL, Federated XGBoost, гомоморфное шифрование, PSI. Для Big Data Platform: Hadoop, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Языки разработки: Python, Golang, C++, .NET. Стек — open source без vendor lock-in."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q8",
+      "name": "Предоставляете ли вы гарантию и техническую поддержку?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a8",
+        "text": "Да. Для Big Data Platform в лицензию включена поддержка L4: патчи, исправление багов, доступ к roadmap. Опционально — SLA по L3 (инциденты 8×5). Для FL-проектов предусмотрено сопровождение пилота и промышленной эксплуатации."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q9",
+      "name": "Как происходит оплата услуг DigiTrack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a9",
+        "text": "Условия оплаты фиксируются в договоре после согласования объёма работ. Коммерческое предложение высылается после заявки на info@digi-track.ru."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q10",
+      "name": "Почему данные не передаются при федеративном обучении?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a10",
+        "text": "Исходные записи остаются у владельца в его контуре — это требование 152-ФЗ и политик ИБ. За периметр идут только зашифрованные артефакты обучения: градиенты, веса, статистики сплитов. Так снижается риск утечки и нарушения банковской тайны."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q11",
+      "name": "Как происходит поддержка после запуска?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a11",
+        "text": "После запуска доступны линии поддержки L3/L4, обновления ПО и консультации по эксплуатации. Для BDP — rolling restart, мониторинг HA и патчи без простоя. Для FL — сопровождение координатора, обновление моделей и помощь дата-партнёрам."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://digi-track.ru/#faq-q12",
+      "name": "Как заказать услугу или стать партнёром?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "@id": "https://digi-track.ru/#faq-a12",
+        "text": "Отправьте заявку на info@digi-track.ru или позвоните +7 985 770-45-12. Укажите сценарий: пилот FL, внедрение Big Data Platform или партнёрство. Мы оценим данные, согласуем архитектуру и подготовим коммерческое предложение."
+      }
+    }
+  ]
+}

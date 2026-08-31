@@ -1,0 +1,85 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digi-track.ru/partnership.html#organization",
+      "name": "DigiTrack",
+      "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+      "url": "https://digi-track.ru/",
+      "logo": "https://digi-track.ru/img/DataIcon.png",
+      "email": "info@digi-track.ru",
+      "telephone": "+7-985-770-45-12",
+      "description": "Контакты DigiTrack: телефон, email, адрес офиса в Москве. Коммерческие предложения и консультации по федеративному обучению и Big Data Platform.",
+      "sameAs": [
+        "https://t.me/digitrack",
+        "https://vk.com/digitrack",
+        "https://www.youtube.com/@digitrack",
+        "https://www.linkedin.com/company/digitrack"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+7-985-770-45-12",
+          "email": "info@digi-track.ru",
+          "contactType": "customer service",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian", "English"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+7-985-770-45-12",
+          "email": "info@digi-track.ru",
+          "contactType": "sales",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian"]
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шлюзовая набережная, д. 8, стр. 1",
+        "addressLocality": "Москва",
+        "postalCode": "115114",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.7321,
+        "longitude": 37.6534
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".contact-phone",
+          ".contact-email",
+          ".contact-address",
+          ".contact-hours"
+        ]
+      }
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://digi-track.ru/partnership.html#webpage",
+      "url": "https://digi-track.ru/partnership.html#contacts",
+      "name": "Контакты DigiTrack",
+      "description": "Телефон, email, адрес и форма обратной связи DigiTrack.",
+      "inLanguage": "ru-RU",
+      "isPartOf": { "@id": "https://digi-track.ru/#website" },
+      "about": { "@id": "https://digi-track.ru/partnership.html#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/partnership.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Контакты", "item": "https://digi-track.ru/partnership.html#contacts" }
+      ]
+    }
+  ]
+}

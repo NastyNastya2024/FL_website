@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html#article",
+  "url": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+  "inLanguage": "ru-RU",
+  "headline": "Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки",
+  "alternativeHeadline": "15 критериев выбора enterprise-платформы данных",
+  "description": "15 критериев Big Data для enterprise: Open Source, Astra Linux, HA, Zero Downtime, Delta Lake, CDC, безопасность и TCO.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://digi-track.ru/img/blog/choose-bdp-15.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": {
+    "@type": "Organization",
+    "@id": "https://digi-track.ru/#author-team",
+    "name": "Команда DigiTrack",
+    "url": "https://digi-track.ru/",
+    "parentOrganization": {
+      "@id": "https://digi-track.ru/#organization"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://digi-track.ru/#organization",
+    "name": "DigiTrack",
+    "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+    "url": "https://digi-track.ru/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://digi-track.ru/img/DataIcon.png"
+    }
+  },
+  "datePublished": "2025-06-15",
+  "dateModified": "2026-08-01",
+  "articleSection": "Дата-платформа",
+  "keywords": [
+    "Big Data Platform",
+    "выбор платформы данных",
+    "enterprise",
+    "импортозамещение",
+    "Astra Linux",
+    "Delta Lake",
+    "Zero Downtime",
+    "TCO",
+    "on-premise"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Big Data Platform"
+    },
+    {
+      "@type": "Thing",
+      "name": "Выбор IT-решений для enterprise"
+    }
+  ],
+  "wordCount": 524,
+  "proficiencyLevel": "Expert",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "CTO, архитектор данных, ML-инженер, специалист по ИБ"
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://digi-track.ru/blog.html#blog",
+    "name": "Блог DigiTrack",
+    "url": "https://digi-track.ru/blog.html"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+    "url": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+    "name": "Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки — DigiTrack"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "article.article-main h1",
+      "article.article-main .lead",
+      "article.article-main .direct-answer",
+      "article.article-main .snippet-answer"
+    ]
+  }
+}

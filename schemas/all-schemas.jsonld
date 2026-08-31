@@ -1,0 +1,408 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "_comment": "Общая сущность издателя — используется в FAQ, Article и HowTo через @id",
+      "@type": "Organization",
+      "@id": "https://digi-track.ru/#organization",
+      "name": "DigiTrack",
+      "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+      "alternateName": ["ООО «ДТ»", "Диджи Трек", "DigiTrack Confidential Computing"],
+      "url": "https://digi-track.ru/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://digi-track.ru/#logo",
+        "url": "https://digi-track.ru/img/DataIcon.png",
+        "width": 512,
+        "height": 512
+      },
+      "email": "info@digi-track.ru",
+      "telephone": "+7-985-770-45-12",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шлюзовая набережная, д. 8, стр. 1",
+        "addressLocality": "Москва",
+        "postalCode": "115114",
+        "addressCountry": "RU"
+      }
+    },
+    {
+      "_comment": "Сайт digi-track.ru — контекст для FAQPage",
+      "@type": "WebSite",
+      "@id": "https://digi-track.ru/#website",
+      "url": "https://digi-track.ru/",
+      "name": "DigiTrack",
+      "publisher": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "_comment": "FAQPage: 10 вопросов об услугах, ценах, сроках, гарантии и поддержке",
+      "@type": "FAQPage",
+      "@id": "https://digi-track.ru/#faqpage",
+      "url": "https://digi-track.ru/index.html#faq",
+      "inLanguage": "ru-RU",
+      "name": "Часто задаваемые вопросы о DigiTrack",
+      "description": "Ответы об услугах, стоимости, сроках внедрения, гарантии и поддержке DigiTrack Confidential Computing и Big Data Platform.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "about": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "@id": "https://digi-track.ru/#faqpage-speakable",
+        "cssSelector": [
+          "#faq .accordion-button",
+          "#faq .accordion-body",
+          "#faq .snippet-answer",
+          ".geo-definition"
+        ]
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q1",
+          "name": "Какие услуги предоставляет DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a1",
+            "text": "DigiTrack (ООО «ДТ») разрабатывает ПО для конфиденциальных вычислений: платформу федеративного обучения DigiTrack Confidential Computing, Big Data Platform on-premise, внедрение и сопровождение. Также доступны аудит безопасности данных, обучение команд и техподдержка L3/L4."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q2",
+          "name": "Что такое федеративное обучение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a2",
+            "text": "Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных, что важно для банков и enterprise по 152-ФЗ."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q3",
+          "name": "Сколько стоит DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a3",
+            "text": "Стоимость зависит от объёма данных, числа участников и конфигурации. Оставьте заявку на info@digi-track.ru — подготовим коммерческое предложение. Тарифы BDP: data-platform.html#licensing. Методика TCO: blog/articles/tco-big-data.html."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q4",
+          "name": "Где посмотреть тарифы и методику расчёта?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a4",
+            "text": "Тарифы Big Data Platform (Standard / Enterprise / Custom) — на data-platform.html#licensing. Методика и формула TCO — в blog/articles/tco-big-data.html. Для КП — заявка на info@digi-track.ru."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q5",
+          "name": "Какие сроки пилота федеративного обучения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a5",
+            "text": "Подготовка к пилоту после заявки занимает 1–2 недели. Полный цикл партнёрского пилота — около 6 месяцев: kick-off, инфраструктура, обучение модели и оценка результатов. Kick-off возможен через 2–4 недели при готовом дата-партнёре."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q6",
+          "name": "Как происходит процесс внедрения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a6",
+            "text": "Внедрение включает четыре этапа: установка ПО и назначение координатора, сверка данных (PSI), совместное обучение модели с зашифрованным обменом градиентами, запуск и оценка модели в prod. Все этапы выполняются on-premise у каждого участника."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q7",
+          "name": "Какие технологии использует DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a6",
+            "text": "Да. Для Big Data Platform в лицензию включена поддержка L4: патчи, исправление багов, доступ к roadmap. Опционально — SLA по L3 (инциденты 8×5). Для FL-проектов предусмотрено сопровождение пилота и промышленной эксплуатации."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q7",
+          "name": "Как происходит оплата услуг DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a7",
+            "text": "Условия оплаты фиксируются в договоре после согласования объёма работ. Для ПО и внедрения — индивидуальный расчёт; для BDP — лицензия только за production-узлы. Счёт и коммерческое предложение высылаются после заявки на info@digi-track.ru."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q8",
+          "name": "Как происходит поддержка после запуска?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a8",
+            "text": "После запуска доступны линии поддержки L3/L4, обновления ПО и консультации по эксплуатации. Для BDP — rolling restart, мониторинг HA и патчи без простоя. Для FL — сопровождение координатора, обновление моделей и помощь дата-партнёрам."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q9",
+          "name": "Какие технологии использует DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a9",
+            "text": "Для FL: VFL, HFL, Federated XGBoost, гомоморфное шифрование, PSI. Для Big Data Platform: Hadoop, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Языки разработки: Python, Golang, C++, .NET. Стек — open source без vendor lock-in."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "https://digi-track.ru/#faq-q10",
+          "name": "Как заказать услугу или стать партнёром?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@id": "https://digi-track.ru/#faq-a10",
+            "text": "Отправьте заявку на info@digi-track.ru или позвоните +7 985 770-45-12. Укажите сценарий: пилот FL, внедрение Big Data Platform или партнёрство. Мы оценим данные, согласуем архитектуру и подготовим коммерческое предложение."
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "HowTo: пошаговая инструкция по заказу услуг DigiTrack (7 шагов)",
+      "@type": "HowTo",
+      "@id": "https://digi-track.ru/#howto-order",
+      "url": "https://digi-track.ru/partnership.html",
+      "inLanguage": "ru-RU",
+      "name": "Как заказать услуги DigiTrack?",
+      "description": "Пошаговая инструкция по заказу федеративного обучения, Big Data Platform или партнёрства с DigiTrack: от заявки до поддержки после запуска.",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://digi-track.ru/#howto-order-image",
+        "url": "https://digi-track.ru/img/DataIcon.png",
+        "width": 512,
+        "height": 512
+      },
+      "totalTime": "P6M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "@id": "https://digi-track.ru/#howto-order-cost",
+        "currency": "RUB",
+        "value": "1000000",
+        "description": "От 1 000 000 ₽ без НДС; окончательная стоимость определяется индивидуально"
+      },
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "@id": "https://digi-track.ru/#howto-supply-1",
+          "name": "Описание задачи и требований ИБ"
+        },
+        {
+          "@type": "HowToSupply",
+          "@id": "https://digi-track.ru/#howto-supply-2",
+          "name": "On-premise инфраструктура или план её выделения"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "@id": "https://digi-track.ru/#howto-tool-email",
+          "name": "Email info@digi-track.ru"
+        },
+        {
+          "@type": "HowToTool",
+          "@id": "https://digi-track.ru/#howto-tool-site",
+          "name": "Сайт digi-track.ru"
+        }
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "@id": "https://digi-track.ru/#howto-order-speakable",
+        "cssSelector": [
+          "#howto-order h2",
+          "#howto-order .howto-step-name",
+          "#howto-order .howto-step-text",
+          ".snippet-answer"
+        ]
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-1",
+          "position": 1,
+          "name": "Оставьте заявку на сайте",
+          "text": "Нажмите «Узнать больше» или «Стать партнёром» и отправьте запрос на info@digi-track.ru. Укажите продукт: DigiTrack Confidential Computing, Big Data Platform или партнёрство в FL.",
+          "url": "https://digi-track.ru/index.html#contactModal",
+          "image": "https://digi-track.ru/img/DataIcon.png",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Форма обратной связи на digi-track.ru"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-2",
+          "position": 2,
+          "name": "Проведите брифинг",
+          "text": "Обсудите с командой DigiTrack задачи, use case (скоринг, антифрод, платформа данных), требования 152-ФЗ и модель on-premise. Определите тип FL — VFL или HFL — при необходимости.",
+          "url": "https://digi-track.ru/partnership.html",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Онлайн- или очная встреча с экспертами DigiTrack"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-3",
+          "position": 3,
+          "name": "Получите коммерческое предложение",
+          "text": "DigiTrack подготовит расчёт стоимости и сроков: лицензия, внедрение, пилот FL (4–6 месяцев) или TCO Big Data Platform. Dev/Test-среды BDP — бесплатно.",
+          "url": "https://digi-track.ru/data-platform.html#licensing",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Коммерческое предложение (PDF/email)"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-4",
+          "position": 4,
+          "name": "Заключите договор",
+          "text": "Юридическое оформление с ООО «ДТ» (ИНН 9705200012): лицензия на ПО, условия партнёрства, SLA поддержки L3/L4 и требования информационной безопасности.",
+          "url": "https://digi-track.ru/documents.html",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Договор и документация на ПО"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-5",
+          "position": 5,
+          "name": "Начните разработку",
+          "text": "Развёртывание on-premise: установка DigiTrack Confidential Computing или Big Data Platform, сверка данных (PSI), настройка пайплайнов и обучение моделей по согласованному roadmap.",
+          "url": "https://digi-track.ru/federated-learning.html#algo",
+          "image": "https://digi-track.ru/img/federated.png",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Ansible-роли и инсталляционные пакеты DigiTrack"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-6",
+          "position": 6,
+          "name": "Примите результат",
+          "text": "Тестирование и приёмка: оценка качества модели (champion-challenger), проверка HA и zero downtime на BDP, подписание акта о вводе в промышленную эксплуатацию.",
+          "url": "https://digi-track.ru/federated-learning.html#faq",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Метрики качества ML и чек-лист приёмки"
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "@id": "https://digi-track.ru/#howto-order-step-7",
+          "position": 7,
+          "name": "Получите поддержку",
+          "text": "Послезапусковое обслуживание: линии L3/L4, патчи, консультации по эксплуатации, обновление моделей FL и сопровождение дата-партнёров. Контакт: info@digi-track.ru, +7 985 770-45-12.",
+          "url": "https://digi-track.ru/partnership.html#contacts",
+          "tool": {
+            "@type": "HowToTool",
+            "name": "Техническая поддержка DigiTrack L3/L4"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Article (BlogPosting): пример статьи блога о выборе IT-подрядчика / enterprise-платформы",
+      "@type": "BlogPosting",
+      "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html#article",
+      "url": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+      "inLanguage": "ru-RU",
+      "headline": "Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки",
+      "alternativeHeadline": "Критерии выбора IT-подрядчика и платформы данных для enterprise",
+      "description": "15 критериев Big Data для enterprise: Open Source, Astra Linux, HA, Zero Downtime, Delta Lake, CDC, безопасность и TCO.",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html#image",
+        "url": "https://digi-track.ru/img/blog/choose-bdp-15.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "@id": "https://digi-track.ru/#author-team",
+        "name": "Команда DigiTrack",
+        "url": "https://digi-track.ru/",
+        "parentOrganization": {
+          "@id": "https://digi-track.ru/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "datePublished": "2025-06-15",
+      "dateModified": "2026-08-01",
+      "articleSection": "Дата-платформа",
+      "keywords": [
+        "выбор IT-подрядчика",
+        "Big Data Platform",
+        "выбор платформы данных",
+        "enterprise",
+        "импортозамещение",
+        "Astra Linux",
+        "Delta Lake",
+        "Zero Downtime",
+        "TCO",
+        "on-premise"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "@id": "https://digi-track.ru/#topic-bdp",
+          "name": "Big Data Platform",
+          "description": "Корпоративная платформа данных для AI и аналитики on-premise"
+        },
+        {
+          "@type": "Thing",
+          "@id": "https://digi-track.ru/#topic-vendor-selection",
+          "name": "Выбор IT-подрядчика для enterprise",
+          "description": "Критерии оценки платформы данных и технологического партнёра для крупного предприятия"
+        }
+      ],
+      "wordCount": 524,
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://digi-track.ru/blog.html#blog",
+        "name": "Блог DigiTrack",
+        "url": "https://digi-track.ru/blog.html",
+        "publisher": {
+          "@id": "https://digi-track.ru/#organization"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+        "url": "https://digi-track.ru/blog/articles/choose-bdp-15.html",
+        "name": "Как выбрать Big Data Platform для крупного предприятия: 15 критериев оценки — DigiTrack"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "@id": "https://digi-track.ru/blog/articles/choose-bdp-15.html#speakable",
+        "cssSelector": [
+          "article.article-main h1",
+          "article.article-main .lead",
+          "article.article-main .direct-answer",
+          "article.article-main .snippet-answer"
+        ]
+      }
+    }
+  ]
+}

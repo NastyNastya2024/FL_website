@@ -1,0 +1,89 @@
+# robots.txt для digi-track.ru
+# DigiTrack — оптимизация Crawl Budget + анти-дубли
+# Структура: HTML в корне, статьи /blog/articles/, PDF в /docs/, медиа /img/
+
+User-agent: *
+
+# --- Разрешаем индексацию важных страниц ---
+Allow: /index.html
+Allow: /blog/articles/
+Allow: /federated-learning.html
+Allow: /data-platform.html
+Allow: /partnership.html
+Allow: /learning-types.html
+Allow: /about.html
+Allow: /blog.html
+Allow: /vacancies.html
+Allow: /site-map.html
+
+# --- Бывшие дубли (soft-redirect → about). Crawlable, чтобы бот увидел canonical ---
+Allow: /contacts.html
+Allow: /voprosy.html
+Allow: /kak-my-rabotaem.html
+
+# --- Служебные: noindex в HTML + не тратить crawl budget ---
+Disallow: /login.html
+Disallow: /documents.html
+Disallow: /expert-review.html
+Disallow: /docs/
+
+# --- Каталоги ресурсов и сборки ---
+Disallow: /img/
+Disallow: /scripts/
+Disallow: /public/
+Disallow: /public/schemas/
+Disallow: /seo/
+Disallow: /schemas/
+Disallow: /offer-success/
+Disallow: /.vscode/
+
+# --- Параметры пагинации, фильтров и UTM (технические дубли) ---
+Disallow: /*?page=
+Disallow: /*?p=
+Disallow: /*?filter=
+Disallow: /*?sort=
+Disallow: /*?order=
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*&page=
+Disallow: /*&p=
+Disallow: /*&filter=
+Disallow: /*&sort=
+Disallow: /*&order=
+
+# --- Статические ассеты (не HTML-контент) ---
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Яндекс: Clean-param (Crawl-delay не используем — не поддерживается с 2018)
+User-agent: Yandex
+Allow: /blog/articles/
+Allow: /about.html
+Allow: /contacts.html
+Allow: /voprosy.html
+Allow: /kak-my-rabotaem.html
+Disallow: /login.html
+Disallow: /documents.html
+Disallow: /expert-review.html
+Disallow: /docs/
+Disallow: /img/
+Disallow: /scripts/
+Disallow: /seo/
+Disallow: /schemas/
+Clean-param: page&p&filter&sort&order&q&utm_source&utm_medium&utm_campaign&ref /
+
+User-agent: Googlebot
+Allow: /blog/articles/
+Allow: /contacts.html
+Allow: /voprosy.html
+Allow: /kak-my-rabotaem.html
+Disallow: /login.html
+Disallow: /documents.html
+Disallow: /expert-review.html
+Disallow: /docs/
+Disallow: /img/
+Disallow: /scripts/
+Disallow: /seo/
+Disallow: /schemas/
+
+Sitemap: https://digi-track.ru/sitemap.xml

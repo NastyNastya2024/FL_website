@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digi-track.ru/partnership.html#organization",
+      "name": "DigiTrack",
+      "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+      "alternateName": ["ООО «ДТ»", "Диджи Трек"],
+      "url": "https://digi-track.ru/",
+      "description": "Разработка ПО для федеративного обучения и корпоративных платформ данных on-premise. Конфиденциальные вычисления для финтеха и enterprise.",
+      "foundingDate": "2023",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digi-track.ru/img/DataIcon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://digi-track.ru/img/DataIcon.png",
+      "email": "info@digi-track.ru",
+      "telephone": "+7-985-770-45-12",
+      "taxID": "9705200012",
+      "sameAs": [
+        "https://t.me/digitrack",
+        "https://vk.com/digitrack",
+        "https://www.youtube.com/@digitrack",
+        "https://www.linkedin.com/company/digitrack",
+        "https://twitter.com/digitrack"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-985-770-45-12",
+        "email": "info@digi-track.ru",
+        "contactType": "sales",
+        "areaServed": "RU",
+        "availableLanguage": ["Russian", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шлюзовая набережная, д. 8, стр. 1",
+        "addressLocality": "Москва",
+        "postalCode": "115114",
+        "addressCountry": "RU"
+      },
+      "knowsAbout": [
+        "Federated Learning",
+        "Confidential Computing",
+        "Big Data Platform",
+        "Homomorphic Encryption",
+        "MLOps"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/partnership.html#webpage",
+      "url": "https://digi-track.ru/partnership.html",
+      "name": "О компании DigiTrack",
+      "description": "Миссия, компетенции и команда DigiTrack — разработчика ПО для федеративного обучения и платформ данных on-premise.",
+      "inLanguage": "ru-RU",
+      "isPartOf": { "@id": "https://digi-track.ru/#website" },
+      "about": { "@id": "https://digi-track.ru/partnership.html#organization" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".about-mission",
+          ".about-stats",
+          ".about-why-us"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/partnership.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "О компании", "item": "https://digi-track.ru/partnership.html" }
+      ]
+    }
+  ]
+}

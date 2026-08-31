@@ -1,7 +1,9 @@
 (() => {
   const YM_COUNTER_ID = 103969668;
+  const GA_MEASUREMENT_ID = 'G-FL8MNDG3M8';
   const CONSENT_KEY = 'digitrack_cookie_consent';
   let metrikaLoaded = false;
+  let gaLoaded = false;
 
   const getCounterId = () => {
     const fromScript = Number(document.currentScript?.dataset?.counter);
@@ -12,7 +14,17 @@
     return YM_COUNTER_ID;
   };
 
+  const getGaId = () => {
+    const fromScript = document.currentScript?.dataset?.ga;
+    if (fromScript) return fromScript;
+    const meta = document.querySelector('meta[name="google-analytics-id"]');
+    const fromMeta = meta?.getAttribute('content');
+    if (fromMeta) return fromMeta;
+    return GA_MEASUREMENT_ID;
+  };
+
   const counterId = getCounterId();
+  const gaId = getGaId();
 
   const loadMetrika = () => {
     if (metrikaLoaded || !counterId) return;
@@ -47,13 +59,36 @@
     }
   };
 
+  const loadGoogleAnalytics = () => {
+    if (gaLoaded || !gaId) return;
+    gaLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', gaId);
+
+    if (document.getElementById('ga-gtag-loader')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ga-gtag-loader';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
+    document.head.appendChild(script);
+  };
+
+  const loadAnalytics = () => {
+    loadMetrika();
+    loadGoogleAnalytics();
+  };
+
   const hideBanner = () => {
     document.getElementById('cookieConsentBanner')?.remove();
   };
 
-  const openConsentModal = (event) => {
+  const openPolicyModal = (event) => {
     event.preventDefault();
-    const modalEl = document.getElementById('consentModal');
+    const modalEl = document.getElementById('privacyModal') || document.getElementById('consentModal');
     if (modalEl && window.bootstrap?.Modal) {
       window.bootstrap.Modal.getOrCreateInstance(modalEl).show();
     }
@@ -66,7 +101,7 @@
       // ignore storage errors
     }
     hideBanner();
-    loadMetrika();
+    loadAnalytics();
   };
 
   const showBanner = () => {
@@ -81,8 +116,10 @@
     banner.innerHTML = `
       <div class="cookie-consent-banner__inner">
         <p class="cookie-consent-banner__text mb-0">
-          Мы используем файлы cookie и сервис
+          Мы используем cookie и сервисы
           <a class="cookie-consent-banner__link" href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Яндекс.Метрика</a>
+          и
+          <a class="cookie-consent-banner__link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Analytics</a>
           для анализа посещаемости сайта.
           <a class="cookie-consent-banner__link" href="#" data-cookie-details>Подробнее</a>
         </p>
@@ -92,11 +129,11 @@
 
     document.body.appendChild(banner);
     banner.querySelector('[data-cookie-accept]')?.addEventListener('click', acceptCookies);
-    banner.querySelector('[data-cookie-details]')?.addEventListener('click', openConsentModal);
+    banner.querySelector('[data-cookie-details]')?.addEventListener('click', openPolicyModal);
   };
 
   const init = () => {
-    if (!counterId) return;
+    if (!counterId && !gaId) return;
 
     let consented = false;
     try {
@@ -106,7 +143,7 @@
     }
 
     if (consented) {
-      loadMetrika();
+      loadAnalytics();
     } else {
       showBanner();
     }

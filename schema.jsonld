@@ -1,0 +1,186 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digi-track.ru/#organization",
+      "name": "DigiTrack",
+      "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+      "alternateName": ["ООО «ДТ»", "Диджи Трек", "DigiTrack Confidential Computing"],
+      "url": "https://digi-track.ru/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://digi-track.ru/#logo",
+        "url": "https://digi-track.ru/img/DataIcon.png",
+        "contentUrl": "https://digi-track.ru/img/DataIcon.png",
+        "caption": "DigiTrack"
+      },
+      "image": "https://digi-track.ru/img/DataIcon.png",
+      "description": "Разработчик программного обеспечения для федеративного обучения, конфиденциальных вычислений и корпоративных платформ данных. Решения для финтеха, медицины и enterprise on-premise.",
+      "foundingDate": "2023",
+      "taxID": "9705200012",
+      "vatID": "770501001",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ОГРН",
+        "value": "1237700339788"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шлюзовая набережная, д. 8, стр. 1",
+        "addressLocality": "Москва",
+        "postalCode": "115114",
+        "addressCountry": "RU"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@digi-track.ru",
+          "telephone": "+7-985-770-45-12",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian", "English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "info@digi-track.ru",
+          "telephone": "+7-985-770-45-12",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian"]
+        }
+      ],
+      "email": "info@digi-track.ru",
+      "telephone": "+7-985-770-45-12",
+      "sameAs": [
+        "https://www.linkedin.com/company/digitrack",
+        "https://twitter.com/digitrack"
+      ],
+      "knowsAbout": [
+        "Federated Learning",
+        "Confidential Computing",
+        "Big Data Platform",
+        "Homomorphic Encryption",
+        "MLOps",
+        "DataOps"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Россия"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://digi-track.ru/#website",
+      "url": "https://digi-track.ru/",
+      "name": "DigiTrack",
+      "description": "Федеративное обучение, конфиденциальные вычисления и платформа данных для enterprise",
+      "inLanguage": "ru-RU",
+      "publisher": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://digi-track.ru/blog.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/federated-learning.html#service",
+      "name": "Федеративное обучение",
+      "alternateName": "DigiTrack Confidential Computing",
+      "description": "Обучение ML-моделей на распределённых данных без передачи и разглашения персональной информации. VFL, HFL, Federated XGBoost, on-premise.",
+      "url": "https://digi-track.ru/federated-learning.html",
+      "serviceType": "Federated Learning",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Финтех, банки, телеком, enterprise"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/data-platform.html#service",
+      "name": "Платформа данных",
+      "alternateName": "DigiTrack Big Data Platform",
+      "description": "On-premise платформа больших данных: Hadoop, Spark, Kafka, Airflow, Delta Lake и промышленный MLOps/DataOps без vendor lock-in.",
+      "url": "https://digi-track.ru/data-platform.html",
+      "serviceType": "Big Data Platform",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Крупные предприятия, CTO, CDO"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/#service-confidential-computing",
+      "name": "Конфиденциальные вычисления",
+      "description": "Разработка решений для безопасной обработки данных без их разглашения: гомоморфное шифрование, secure multi-party computation, confidential computing.",
+      "url": "https://digi-track.ru/federated-learning.html#tech",
+      "serviceType": "Confidential Computing",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/#service-ml-platforms",
+      "name": "Платформы машинного обучения",
+      "description": "Создание платформ машинного обучения с защитой данных: алгоритмы федеративного обучения, распределённый анализ, промышленный AI on-premise.",
+      "url": "https://digi-track.ru/index.html#products",
+      "serviceType": "Machine Learning Platform Development",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/partnership.html#service",
+      "name": "Партнёрство и внедрение",
+      "description": "Интеграция федеративного обучения и платформы данных в инфраструктуру заказчика, пилоты, сопровождение и обучение команд.",
+      "url": "https://digi-track.ru/partnership.html",
+      "serviceType": "IT Consulting and Implementation",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/#breadcrumb-services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://digi-track.ru/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Услуги",
+          "item": "https://digi-track.ru/index.html#products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Контакты",
+          "item": "https://digi-track.ru/index.html#contactModal"
+        }
+      ]
+    }
+  ]
+}

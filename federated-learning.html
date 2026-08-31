@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <meta name="google-analytics-id" content="G-FL8MNDG3M8"/>
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Федеративное обучение для бизнеса</title>
+  <title>DigiTrack FL: федеративное обучение для банков — пилот 2 нед</title>
+  <link rel="canonical" href="https://digi-track.ru/federated-learning.html"/>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Федеративное обучение для бизнеса. Безопасная обработка данных без их передачи. Решения для финтеха, медицины и корпораций. Оставьте заявку на внедрение."/>
+  <meta name="description" content="VFL, HFL и Federated XGBoost on-premise по 152-ФЗ: данные не покидают периметр, пилот за 1–2 недели. Оставьте заявку на КП — info@digi-track.ru"/>
   <meta name="keywords" content="федеративное обучение, конфиденциальные вычисления, машинное обучение, приватность данных, ML, AI, DigiTrack"/>
   <meta name="author" content="DigiTrack"/>
   <meta name="robots" content="index, follow"/>
@@ -14,18 +17,18 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="/federated-learning.html"/>
-  <meta property="og:title" content="Федеративное обучение для бизнеса"/>
-  <meta property="og:description" content="Федеративное обучение для бизнеса. Безопасная обработка данных без их передачи. Решения для финтеха, медицины и корпораций."/>
+  <meta property="og:url" content="https://digi-track.ru/federated-learning.html"/>
+  <meta property="og:title" content="DigiTrack FL: федеративное обучение для банков — пилот 2 нед"/>
+  <meta property="og:description" content="VFL, HFL и Federated XGBoost on-premise по 152-ФЗ: данные не покидают периметр, пилот за 1–2 недели. Оставьте заявку на КП — info@digi-track.ru"/>
   <meta property="og:image" content="img/og-image.jpg"/>
   <meta property="og:site_name" content="DigiTrack"/>
   <meta property="og:locale" content="ru_RU"/>
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:url" content="/federated-learning.html"/>
-  <meta property="twitter:title" content="Федеративное обучение для бизнеса"/>
-  <meta property="twitter:description" content="Федеративное обучение для бизнеса. Безопасная обработка данных без их передачи. Решения для финтеха, медицины и корпораций."/>
+  <meta property="twitter:url" content="https://digi-track.ru/federated-learning.html"/>
+  <meta property="twitter:title" content="DigiTrack FL: федеративное обучение для банков — пилот 2 нед"/>
+  <meta property="twitter:description" content="VFL, HFL и Federated XGBoost on-premise по 152-ФЗ: данные не покидают периметр, пилот за 1–2 недели. Оставьте заявку на КП — info@digi-track.ru"/>
   <meta property="twitter:image" content="img/og-image.jpg"/>
   
   <!-- Performance -->
@@ -38,48 +41,17 @@
   <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
   <link rel="dns-prefetch" href="//mc.yandex.ru"/>
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DigiTrack",
-    "url": "/federated-learning.html",
-    "logo": "img/logo.png",
-    "description": "DigiTrack — ведущая платформа федеративного обучения и конфиденциальных вычислений",
-    "foundingDate": "2020",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "RU"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@digitrack.ru"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/digitrack",
-      "https://twitter.com/digitrack"
-    ],
-    "offers": {
-      "@type": "Offer",
-      "name": "Федеративное обучение",
-      "description": "Безопасное обучение ML-моделей без передачи персональных данных"
-    }
-  }
-  </script>
-
+  <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./styles.css?v=20260831d"/>
   
   <!-- Favicon and Icons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -88,6 +60,73 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   
+  <script type="application/ld+json" src="/seo/schema-updated.jsonld"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://digi-track.ru/federated-learning.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как подключиться к федеративному обучению?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Оставьте заявку — мы оценим источник данных, согласуем модель участия и подготовим пилот в течение 1–2 недель."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Передаются ли сырые данные участников?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Обучение происходит локально, передаются только обновления модели с применением шифрования и приватности."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие требования к объёму данных для партнёрства?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нужны либо ортогональные признаки, либо большое пересечение по ID пользователей. Совместимость оцениваем на этапе заявки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как обеспечивается безопасность данных?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Гомоморфное шифрование, MPC и федеративное обучение on-premise. Решения проходят криптоаудит и соответствуют 152-ФЗ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит федеративное обучение?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стоимость индивидуальна — от 1 млн ₽ без НДС. Пакеты: Пилот (FL + PSI, 2 участника, 4–6 мес.), Enterprise (лицензия + L4, 12+ мес.), Партнёрство (revenue share). КП: info@digi-track.ru."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Готовы ли вы к федеративному обучению?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чек-лист: определён тип FL (VFL/HFL); есть партнёр с комплементарными признаками; выделена on-premise инфраструктура; согласованы условия 152-ФЗ; определены метрики успеха (AUC, Gini)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие сроки пилота?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Подготовка 1–2 недели. Kick-off через 2–4 недели при готовом дата-партнёре. Полный цикл партнёрского пилота — около 6 месяцев."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://digi-track.ru/federated-learning.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"}, {"@type": "ListItem", "position": 2, "name": "Федеративное обучение", "item": "https://digi-track.ru/federated-learning.html"}]}</script>
 </head>
 <body class="bg-deep federated-learning-page">
 
@@ -103,12 +142,12 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link active" href="federated-learning.html">Федеративное обучение</a></li>
           <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
-          <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html#about">О компании</a></li>
           <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
         </ul>
         <div class="d-flex gap-2">
-          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
         </div>
       </div>
     </div>
@@ -123,15 +162,26 @@
       <div class="hero-blur-overlay"></div>
 
       <div class="container position-relative">
-        <div class="row justify-content-center text-center">
+        
+        <nav class="breadcrumb-nav breadcrumb-nav--in-header" aria-label="Хлебные крошки">
+          <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="index.html"><span itemprop="name">Главная</span></a>
+          <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Федеративное обучение</span>
+          <meta itemprop="position" content="2"/>
+        </li>
+      </ol>
+        </nav>
+<div class="row justify-content-center text-center">
           <div class="col-12 col-lg-9">
-            <h1 class="h1 mb-2 text-white">Федеративное обучение для бизнеса</h1>
-            <p class="text-white mb-3 fs-6">
-              Метод конфиденциальных вычислений для обучения ML‑моделей без передачи и разглашения персональных данных. Продукт федеративного обучения — <strong>DigiTrack Confidential Computing</strong>.
-            </p>
+            <h1 class="h1 mb-2 text-white">Платформа федеративного обучения</h1>
+            <p class="text-white mb-3 fs-6 geo-definition">DigiTrack Confidential Computing — платформа для федеративного обучения ML-моделей на данных нескольких организаций без передачи ПДн.</p>
             <div class="d-flex justify-content-center">
               <!-- оставлена только одна основная кнопка -->
-              <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+              <button type="button" class="btn btn-fl-hero-glass px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
             </div>
           </div>
         </div>
@@ -142,12 +192,12 @@
     <!-- ОБСТОЯТЕЛЬСТВА/ПРОБЛЕМЫ -->
     <section id="obstacles" class="py-6 bg-section">
       <div class="container">
-        <h2 class="h3 mb-4">Препятствия для совместного ИИ‑обучения</h2>
+        <h2 class="h3 mb-2">Почему совместное обучение ИИ часто невозможно?</h2>
         <div class="row g-3">
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h5 mb-2">Данные под замком</h3>
-              <p class="mb-3 text-mute-300">Регуляторные барьеры, риск утечки и юридические ограничения мешают делиться сырыми данными с партнёрами. </p>
+              <h3 class="h5 mb-2">Данные остаются «под замком»</h3>
+              <p class="mb-3 text-mute-300">152-ФЗ, банковская тайна и изоляция данных не дают собрать общий Data Lake — каждый участник упирается в потолок качества модели.</p>
               <div class="media-slot rounded-3">
                 <img class="img-slot" src="img/img1.png" alt="Виджет" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
@@ -155,8 +205,8 @@
           </div>
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h5 mb-2">Ограниченность данных</h3>
-              <p class="mb-3 text-mute-300">У каждого участника не хватает объёма данных. Модели переобучаются и не масштабируются.</p>
+              <h3 class="h5 mb-2">Одному участнику не хватает данных</h3>
+              <p class="mb-3 text-mute-300">У каждого участника ограниченный объём данных — модели переобучаются и не масштабируются на полный рынок.</p>
               <div class="media-slot rounded-3">
                 <img class="img-slot" src="img/img2.png" alt="График" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
@@ -164,8 +214,8 @@
           </div>
           <div class="col-12 col-lg-4">
             <article class="glass pad-2x h-100">
-              <h3 class="h5 mb-2">Потерянная ценность</h3>
-              <p class="mb-3 text-mute-300">Упущенные инсайты и упущенная выручка. Совместные модели повышают точность и дают ROI для всех сторон.</p>
+              <h3 class="h5 mb-2">Бизнес теряет ценность без партнёрских данных</h3>
+              <p class="mb-3 text-mute-300">Без партнёрских данных бизнес упускает инсайты и выручку; совместные модели повышают точность и дают ROI для всех сторон.</p>
               <div class="media-slot rounded-3">
                 <img class="img-slot" src="img/img3.png" alt="Статистика" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
@@ -178,16 +228,16 @@
     <!-- ТЕХНОЛОГИЯ -->
     <section id="tech" class="py-6">
       <div class="container">
-        <h2 class="h3 mb-1">Технология федеративного обучения <br> - универсальное решение проблем</h2>
+        <h2 class="h3 mb-1">Что такое федеративное обучение?</h2>
+        
         <p class="text-mute-300 mb-4">Техника машинного обучения, при которой данные из разных источников используются для обучения моделей, при этом данные остаются на стороне их владельцев. Наша платформа <strong>DigiTrack Confidential Computing</strong> реализует эту технологию для бизнеса.</p>
 
         <div class="row g-3">
           <div class="col-12">
             <article class="glass-xl pad-2x position-relative">
               <div class="row g-4 align-items-center">
-                <!-- Левая колонка с плашками -->
                 <div class="col-12 col-lg-3">
-                  <h3 class="mb-1 text-start" style="color: #1A363A; font-size: 0.5rem;">Этап 1: Сверка данных</h3>
+                  <h3 class="mb-1 text-start fl-tech-stage-title">Этап 1: Сверка данных</h3>
                   <div class="federated-cards-left">
                     <div class="federated-card">1. Загрузка и хранение данных в изолированных средах</div>
                     <div class="federated-card">2. Обезличивание и шифрование идентификаторов</div>
@@ -195,17 +245,15 @@
                     <div class="federated-card">4. Выделение набора общих объектов для обучения</div>
                   </div>
                 </div>
-                
-                <!-- Центральная картинка -->
+
                 <div class="col-12 col-lg-6">
                   <div class="text-center">
-                    <img src="img/federated.png" alt="Федеративное обучение" class="federated-main-image" loading="lazy">
+                    <img src="img/federated-network-diagram.png" alt="Схема обмена зашифрованными параметрами модели в федеративном обучении" class="federated-main-image federated-network-diagram" loading="lazy">
                   </div>
                 </div>
-                
-                <!-- Правая колонка с плашками -->
+
                 <div class="col-12 col-lg-3">
-                  <h3 class="mb-1 text-start" style="color: #1A363A; font-size: 0.5rem; margin-left: 5rem;">Этап 2: Совместное<br>обучение модели</h3>
+                  <h3 class="mb-1 text-start fl-tech-stage-title fl-tech-stage-title--right">Этап 2: Совместное<br>обучение модели</h3>
                   <div class="federated-cards-right">
                     <div class="federated-card">5. Загрузка и хранение признаков по объектам</div>
                     <div class="federated-card">6. Запуск процесса обучения координатором</div>
@@ -225,7 +273,7 @@
       <div class="container">
         <div class="glass-deep pad-2x rounded-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="h4 m-0" style="color: #1A363A !important;">Этапы вычисления</h2>
+            <h2 class="h4 m-0" style="color: #1A363A !important;">Какие этапы внедрения федеративного обучения?</h2>
           </div>
           <div class="row g-2">
             <div class="col-12 col-lg-3">
@@ -264,8 +312,9 @@
     <!-- ТИПЫ ОБУЧЕНИЯ -->
     <section id="types" class="py-6 bg-section">
       <div class="container">
-        <h2 class="h4 mb-1">Варианты федеративного обучения:</h2>
-        <p class="text-mute-300 mb-4">Есть два возможных варианта проведения обучения</p>
+        <h2 class="h4 mb-1">Какой тип федеративного обучения выбрать — VFL или HFL?</h2>
+        <p class="snippet-answer">HFL — одинаковые признаки, разные клиенты. VFL — общие клиенты, разные признаки; основной режим для скоринга и антифрода.</p>
+        <p class="small text-mute-300 mb-4"><a href="learning-types.html">Типы FL →</a> · <a href="blog/articles/vfl-or-hfl.html">VFL или HFL — подробнее →</a></p>
 
         <div class="row g-3 align-items-start">
           <div class="col-12 col-lg-6">
@@ -273,7 +322,7 @@
               <div class="media-slot rounded-4 mb-3">
                 <img class="img-slot" src="img/img6.png" alt="Паттерн" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
-              <h3 class="h6 mb-1">Данные разных пользователей</h3>
+              <h3 class="h6 mb-1">Что такое HFL (горизонтальный FL)?</h3>
               <p class="small text-mute-300 mb-3 flex-grow-1">Данные разных пользователей, но с одинаковыми признаками.</p>
             </div>
           </div>
@@ -282,7 +331,7 @@
               <div class="media-slot rounded-4 mb-3">
                 <img class="img-slot" src="img/img7.png" alt="Логотипы" loading="lazy" onerror="this.outerHTML='<div class=&quot;img-fallback&quot;>здесь должна быть картинка</div>'">
               </div>
-              <h3 class="h6 mb-1">Данные одних пользователей</h3>
+              <h3 class="h6 mb-1">Что такое VFL (вертикальный FL)?</h3>
               <p class="small text-mute-300 mb-3 flex-grow-1">Данные про одних и тех же пользователей, но с разными признаками.</p>
             </div>
           </div>
@@ -290,32 +339,51 @@
       </div>
     </section>
 
-    <!-- ПАРТНЁРСТВО / ОТЗЫВ -->
-    <section id="partners" class="py-6">
+    <!-- ЦИТАТА -->
+    <section id="team" class="py-6">
       <div class="container">
-        <div class="cta-dark pad-2x rounded-4">
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-lg-6">
-              <h2 class="h4 mb-2">Получить программу<br>федеративного обучения</h2>
-              <p class="text-mute-300 mb-1">Установить программу федеративного обучения <strong>DigiTrack Confidential Computing</strong> можно оставив заявку по форме ниже.</p>
-              <div class="d-flex gap-2">
-                <a class="btn btn-primary-gy text-center d-flex align-items-center justify-content-center px-3 py-1" href="partnership.html" style="min-width: 120px;">Оставить заявку</a>
-              </div>
+        <div class="home-team-quote cta-dark pad-2x rounded-4">
+          <div class="home-team-quote-inner">
+            <div class="home-team-quote-col home-team-quote-col-brand">
+              <div class="home-team-quote-brand">DigiTrack</div>
+              <p class="home-team-quote-tagline mb-0">Confidential Computing</p>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="partnership-card" style="padding: 2rem 1.5rem;">
-                <div class="d-flex align-items-start gap-3">
-                  <a href="index.html" class="partnership-avatar-link">
-                    <img alt="avatar" class="rounded-circle border border-ink-700" width="48" height="48" src="img/img8.png" loading="lazy"/>
-                  </a>
-                  <div>
-                    <p class="small text-mute-200 mb-3">
-                      Ваши данные начинают работать на вас: вы получаете долю прибыли от использования модели, доступ к её результатам и гарантированное техническое сопровождение.
-                    </p>
-                    <div class="small text-mute-400">Генеральный директор, Рытов Павел</div>
-                  </div>
-                </div>
-              </div>
+            <div class="home-team-quote-col home-team-quote-col-quote">
+              <blockquote class="home-team-quote-text mb-0">
+                «Ваши данные начинают работать на вас: вы получаете долю прибыли от использования модели, доступ к её результатам и гарантированное техническое сопровождение.»
+              </blockquote>
+              <div class="home-team-quote-role">Генеральный директор, Рытов Павел</div>
+            </div>
+            <div class="home-team-quote-col home-team-quote-col-photo">
+              <a href="partnership.html" class="partnership-avatar-link home-team-quote-photo">
+                <img alt="Павел Рытов, генеральный директор DigiTrack" class="team-avatar team-avatar-lg" width="300" height="300" src="img/img8.png?v=3" loading="lazy"/>
+              </a>
+            </div>
+            <div class="home-team-quote-actions">
+              <a href="partnership.html" class="btn home-team-quote-btn home-team-quote-btn-glass">Узнать больше о компании</a>
+              <button type="button" class="btn home-team-quote-btn home-team-quote-btn-glass" data-bs-toggle="modal" data-bs-target="#contactModal">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СОТРУДНИЧЕСТВО -->
+    <section id="cooperation" class="py-6 bg-section">
+      <div class="container">
+        <div class="home-cooperation cta-dark pad-2x rounded-4">
+          <div class="home-cooperation-inner">
+            <div class="home-cooperation-content">
+              <h2 class="h4 mb-3" style="color: #ffffff !important; font-size: 1.5rem !important;">Как начать работать с DigiTrack?</h2>
+              <ol class="text-mute-300 small mb-0 home-cooperation-steps">
+                <li>Оставьте заявку на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a> или через форму на сайте</li>
+                <li>Согласуем сценарий: пилот FL или партнёрство с DigiTrack Confidential Computing</li>
+                <li>Оценим данные и архитектуру (1–2 недели)</li>
+                <li>Договор и развёртывание on-premise</li>
+              </ol>
+            </div>
+            <div class="home-cooperation-visual" aria-hidden="true">
+              <img src="img/cooperation-abstract.png" alt="" loading="lazy" width="640" height="360">
             </div>
           </div>
         </div>
@@ -323,7 +391,7 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-3 bg-section">
+    <section id="faq" class="py-6 bg-section">
       <div class="container">
         <h2 class="h4 mb-3">Часто задаваемые вопросы</h2>
         <div class="accordion" id="faqAcc">
@@ -397,11 +465,76 @@
             </h2>
             <div id="fa5" class="accordion-collapse collapse" aria-labelledby="f5" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Конфиденциальные вычисления позволяют получать ценную аналитику и инсайты из данных, не нарушая приватность. Это открывает возможности для межкорпоративного сотрудничества, совместных исследований, монетизации данных без риска утечек. Компании могут использовать данные конкурентов или партнеров для улучшения своих моделей, соблюдая при этом все требования по защите персональных данных и коммерческой тайны.
+                <p class="snippet-answer mb-2">Аналитика без нарушения приватности и 152-ФЗ.</p>
+                <p class="mb-0">Конфиденциальные вычисления позволяют получать ценную аналитику и инсайты из данных, не нарушая приватность. Это открывает возможности для межкорпоративного сотрудничества, совместных исследований, монетизации данных без риска утечек. Компании могут использовать данные конкурентов или партнеров для улучшения своих моделей, соблюдая при этом все требования по защите персональных данных и коммерческой тайны.
               </div>
             </div>
           </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header" id="f6">
+              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa6" aria-expanded="false" aria-controls="fa6">
+                Сколько стоит федеративное обучение?
+              </button>
+            </h2>
+            <div id="fa6" class="accordion-collapse collapse" aria-labelledby="f6" data-bs-parent="#faqAcc">
+              <div class="accordion-body faq-answer">
+                <p class="snippet-answer mb-3">Стоимость индивидуальна — от 1 млн ₽ без НДС. КП: info@digi-track.ru.</p>
+                <div class="seo-table-wrap">
+                  <table class="seo-table">
+                    <thead><tr><th>Пакет</th><th>Состав</th><th>Срок</th></tr></thead>
+                    <tbody>
+                      <tr><td>Пилот</td><td>FL + PSI, 2 участника</td><td>4–6 мес.</td></tr>
+                      <tr><td>Enterprise</td><td>Лицензия + L4</td><td>12+ мес.</td></tr>
+                      <tr><td>Партнёрство</td><td>Revenue share</td><td>ongoing</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header" id="f7">
+              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa7" aria-expanded="false" aria-controls="fa7">
+                Готовы ли вы к федеративному обучению?
+              </button>
+            </h2>
+            <div id="fa7" class="accordion-collapse collapse" aria-labelledby="f7" data-bs-parent="#faqAcc">
+              <div class="accordion-body faq-answer">
+                <ul class="seo-checklist mb-0">
+                  <li>Определён тип FL (VFL/HFL)</li>
+                  <li>Есть партнёр с комплементарными признаками</li>
+                  <li>Выделена on-premise инфраструктура</li>
+                  <li>Согласованы условия 152-ФЗ</li>
+                  <li>Определены метрики успеха (AUC, Gini)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header" id="f8">
+              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa8" aria-expanded="false" aria-controls="fa8">
+                Где получить документацию на ПО?
+              </button>
+            </h2>
+            <div id="fa8" class="accordion-collapse collapse" aria-labelledby="f8" data-bs-parent="#faqAcc">
+              <div class="accordion-body faq-answer"><p class="snippet-answer mb-0"><a href="documents.html">Документы DigiTrack Confidential Computing →</a></p></div>
+            </div>
+          </div>
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header" id="f9">
+              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa9" aria-expanded="false" aria-controls="fa9">
+                Когда лучше начать пилот?
+              </button>
+            </h2>
+            <div id="fa9" class="accordion-collapse collapse" aria-labelledby="f9" data-bs-parent="#faqAcc">
+              <div class="accordion-body faq-answer"><p class="geo-timing mb-0">При готовом дата-партнёре — kick-off через 2–4 недели. <a href="partnership.html">Партнёрство →</a></p></div>
+            </div>
+          </div>
         </div>
+        <p class="small mt-3 mb-0"><a href="partnership.html#faq">Подробные ответы о FL, ценах и сроках →</a> · <a href="partnership.html#process">Этапы внедрения →</a> · <a href="learning-types.html">VFL или HFL →</a></p>
       </div>
     </section>
 
@@ -409,50 +542,52 @@
     <section id="news" class="py-6 news-section" style="margin-top: 8rem;">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-2">
-          <h2 class="h3 mb-0">Последние статьи и новости</h2>
+          <h2 class="h3 mb-0">Какие материалы читать по теме FL?</h2>
           <a href="blog.html" class="btn-news-link">Все статьи →</a>
         </div>
         <p class="text-mute-300 mb-5" style="color: #1A363A !important;">Следите за нашими достижениями и обновлениями</p>
         
         <div class="row g-4">
           <div class="col-12 col-lg-4">
-            <div class="glass pad-2x h-100 d-flex flex-column">
-              <div class="news-image mb-3">
-                <img src="img/news1.jpeg" alt="Вертикальное федеративное обучение" class="img-fluid rounded-3" loading="lazy">
-              </div>
-              <h3 class="h6 mb-1">Вертикальное федеративное обучение</h3>
-              <p class="text-mute-300 mb-3 flex-grow-1">Как объединить данные с одинаковыми пользователями, но разными признаками для создания более точных моделей машинного обучения</p>
-              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
-            </div>
+            <a href="blog/articles/vfl-or-hfl.html" class="blog-card-link d-block h-100 text-decoration-none">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-grid-card-media mb-3">
+                  <img src="img/blog/vfl-or-hfl.png" alt="" loading="lazy" width="640" height="360">
+                </div>
+                <h3 class="h6 mb-2 text-dark">VFL или HFL: какой тип федеративного обучения подходит для финансового сектора</h3>
+                <p class="text-mute-300 mb-0 flex-grow-1 small">В федеративном обучении данные режутся по строкам или по столбцам — от этого зависит архитектура HFL или VFL, криптография и канал обмена. <span class="blog-card-more">Узнать подробнее →</span></p>
+              </article>
+            </a>
           </div>
-          
+
           <div class="col-12 col-lg-4">
-            <div class="glass pad-2x h-100 d-flex flex-column">
-              <div class="news-image mb-3">
-                <img src="img/news2.jpeg" alt="Горизонтальное федеративное обучение" class="img-fluid rounded-3" loading="lazy">
-              </div>
-              <h3 class="h6 mb-1">Горизонтальное федеративное обучение</h3>
-              <p class="text-mute-300 mb-3 flex-grow-1">Обучение моделей на распределенных данных с одинаковыми признаками, но разными пользователями для повышения обобщающей способности</p>
-              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
-            </div>
+            <a href="blog/articles/fl-guide.html" class="blog-card-link d-block h-100 text-decoration-none">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-grid-card-media mb-3">
+                  <img src="img/blog/fl-guide.png" alt="" loading="lazy" width="640" height="360">
+                </div>
+                <h3 class="h6 mb-2 text-dark">Федеративное обучение: как обучать модели на распределённых данных</h3>
+                <p class="text-mute-300 mb-0 flex-grow-1 small">Каждая организация изолирует свои данные внутри контура, и легальный вывод массивов за периметр — задача, граничащая с невозможностью. <span class="blog-card-more">Узнать подробнее →</span></p>
+              </article>
+            </a>
           </div>
-          
+
           <div class="col-12 col-lg-4">
-            <div class="glass pad-2x h-100 d-flex flex-column">
-              <div class="news-image mb-3">
-                <img src="img/news3.jpeg" alt="Будущее конфиденциальных вычислений" class="img-fluid rounded-3" loading="lazy">
-              </div>
-              <h3 class="h6 mb-1">Будущее конфиденциальных вычислений</h3>
-              <p class="text-mute-300 mb-3 flex-grow-1">Тренды и перспективы развития технологий защиты данных в эпоху искусственного интеллекта и больших данных</p>
-              <a href="blog.html" class="btn-news-link">Узнать больше →</a>
-            </div>
+            <a href="blog/articles/confidential-computing-152.html" class="blog-card-link d-block h-100 text-decoration-none">
+              <article class="glass pad-2x h-100 d-flex flex-column">
+                <div class="blog-grid-card-media mb-3">
+                  <img src="img/blog/confidential-computing-152.png" alt="" loading="lazy" width="640" height="360">
+                </div>
+                <h3 class="h6 mb-2 text-dark">152-ФЗ, GDPR и архитектура безопасного AI на основе Confidential Computing и FL</h3>
+                <p class="text-mute-300 mb-0 flex-grow-1 small">Регулятор смотрит, где обрабатываются персональные данные и можно ли доказать, что исходные сведения не покидали контур. <span class="blog-card-more">Узнать подробнее →</span></p>
+              </article>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Модальное окно обратной связи -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -468,21 +603,27 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+
+<footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
     <div class="container">
       <div class="row g-4">
-        <div class="col-12 col-lg-6">
-          <div class="h5 text-white mb-2">DigiTrack</div>
+        <div class="col-12 col-lg-4">
+          <div class="h5 text-white mb-2"><a class="link-fade text-white text-decoration-none" href="index.html">DigiTrack</a></div>
           <p class="small text-mute-400 m-0">
-            Конфиденциальные вычисления и федеративное обучение для бизнеса.
+            Конфиденциальные вычисления: федеративное обучение и платформа данных для бизнеса.
           </p>
+          <div class="small text-mute-500 mt-4">
+            © <span id="year"></span> ООО «ДТ»
+          </div>
+          
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-4">
           <ul class="list-unstyled small m-0">
-            <li><a class="link-fade" href="federated-learning.html">Федеративное обучение</a></li>
+            <li><a class="link-fade" href="federated-learning.html#tech">Федеративное обучение</a></li>
             <li><a class="link-fade" href="data-platform.html">Дата-платформа</a></li>
             <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
             <li><a class="link-fade" href="blog.html">Блог</a></li>
+            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
             <li><a class="link-fade" href="expert-review.html">Экспертам</a></li>
             <li><a class="link-fade" href="documents.html">Документы</a></li>
           </ul>
@@ -490,15 +631,12 @@
             <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
             <li><a href="img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
           </ul>
-          <div class="small text-mute-500 mt-4" style="margin-left: 23px;">
-            © <span id="year"></span> ООО "ДТ"
-          </div>
+
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-4">
           <ul class="list-unstyled small m-0">
-            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
-            <li><a class="link-fade" href="index.html">О компании</a></li>
-            <li style="visibility: hidden;"><a class="link-fade" href="#">&nbsp;</a></li>
+            <li><a class="link-fade" href="partnership.html">О компании</a></li>
+            <li><a class="link-fade" href="site-map.html">Карта сайта</a></li>
           </ul>
           <ul class="list-unstyled small m-0 mt-4 text-mute-500">
             <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
@@ -518,10 +656,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h6>1. Общие положения</h6>
+          <p class="legal-section-title">1. Общие положения</p>
           <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО "ДТ".</p>
           
-          <h6>2. Цели обработки персональных данных</h6>
+          <p class="legal-section-title">2. Цели обработки персональных данных</p>
           <p>Персональные данные обрабатываются в следующих целях:</p>
           <ul>
             <li>Обработка заявок и обращений пользователей</li>
@@ -529,7 +667,7 @@
             <li>Связь с пользователями по вопросам сотрудничества</li>
           </ul>
           
-          <h6>3. Категории обрабатываемых персональных данных</h6>
+          <p class="legal-section-title">3. Категории обрабатываемых персональных данных</p>
           <p>Мы обрабатываем следующие категории персональных данных:</p>
           <ul>
             <li>Фамилия, имя, отчество</li>
@@ -538,13 +676,13 @@
             <li>Информация, содержащаяся в сообщениях пользователей</li>
           </ul>
           
-          <h6>4. Сроки обработки персональных данных</h6>
+          <p class="legal-section-title">4. Сроки обработки персональных данных</p>
           <p>Персональные данные обрабатываются в течение срока, необходимого для достижения целей обработки, но не более 3 лет с момента последнего взаимодействия с пользователем.</p>
           
-          <h6>5. Меры по обеспечению безопасности персональных данных</h6>
+          <p class="legal-section-title">5. Меры по обеспечению безопасности персональных данных</p>
           <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
           
-          <h6>6. Права субъекта персональных данных</h6>
+          <p class="legal-section-title">6. Права субъекта персональных данных</p>
           <p>Вы имеете право:</p>
           <ul>
             <li>Получать информацию об обработке ваших персональных данных</li>
@@ -553,7 +691,7 @@
             <li>Обращаться с жалобами в уполномоченный орган по защите прав субъектов персональных данных</li>
           </ul>
           
-          <h6>7. Контактная информация</h6>
+          <p class="legal-section-title">7. Контактная информация</p>
           <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по адресу: <a href="mailto:privacy@digitrack.com">privacy@digitrack.com</a></p>
         </div>
         <div class="modal-footer">
@@ -622,7 +760,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h6>ООО "ДТ"</h6>
+          <p class="legal-section-title">ООО "ДТ"</p>
           <p><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "ДИДЖИТРЕК"</p>
           <p><strong>Сокращенное наименование:</strong> ООО "ДТ"</p>
           <p><strong>ИНН:</strong> 9705200012</p>
@@ -633,10 +771,10 @@
           <p><strong>Email:</strong> <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
           <p><strong>Телефон:</strong> <a href="tel:+79857704512">+7 985 770-45-12</a></p>
           
-          <h6>Руководство:</h6>
+          <p class="legal-section-title">Руководство:</p>
           <p>Генеральный директор Рытов Павел Александрович</p>
           
-          <h6>Основные виды деятельности:</h6>
+          <p class="legal-section-title">Основные виды деятельности:</p>
           <ul>
             <li>Разработка программного обеспечения (62.01)</li>
             <li>Консультирование по вопросам информационных технологий</li>
@@ -645,14 +783,14 @@
           </ul>
           <p>Коды видов деятельности в области информационных технологий - 1.01. и 2.01.</p>
           
-          <h6>Языки и средства программирования:</h6>
+          <p class="legal-section-title">Языки и средства программирования:</p>
           <p>ООО "ДТ" в рамках деятельности в области информационных технологий использует следующие языки и средства программирования: Golang, Python, .NET, C++</p>
           
-          <h6>Программное обеспечение:</h6>
+          <p class="legal-section-title">Программное обеспечение:</p>
           <p>ООО "ДТ" является правообладателем исключительных прав на программу для ЭВМ: Средство интеллектуального анализа данных "DigiTrack Confidential Computing".</p>
           <p>Способы предоставления прав использования программы для ЭВМ Средство интеллектуального анализа данных "DigiTrack Confidential Computing" определяются индивидуально.</p>
           
-          <h6>Правовая основа деятельности:</h6>
+          <p class="legal-section-title">Правовая основа деятельности:</p>
           <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
         </div>
         <div class="modal-footer">
@@ -664,7 +802,7 @@
 
   <!-- Bootstrap bundle + App -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="./metrika.js" defer></script>
+  <script src="./metrika.js" defer data-ga="G-FL8MNDG3M8"></script>
   <script src="./script.js" defer></script>
 </body>
 </html>

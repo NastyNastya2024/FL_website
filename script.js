@@ -227,4 +227,21 @@
     window.addEventListener('resize', update);
     update();
   }
+
+  const companyNavToggle = document.querySelector('.company-page-nav-toggle');
+  const companyNav = document.getElementById('companyPageNavList');
+  if (companyNavToggle && companyNav) {
+    companyNavToggle.addEventListener('click', () => {
+      const open = companyNav.classList.toggle('is-open');
+      companyNavToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    companyNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 991.98px)').matches) {
+          companyNav.classList.remove('is-open');
+          companyNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
 })();

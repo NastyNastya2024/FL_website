@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <meta name="google-analytics-id" content="G-FL8MNDG3M8"/>
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Документы</title>
+  <meta name="description" content="Служебный вход к документации DigiTrack Confidential Computing. Пароль по запросу на info@digi-track.ru — доступ после согласования NDA с заказчиком."/>
+  <title>Вход в документацию DigiTrack FL — Confidential Computing</title>
 
   <meta name="robots" content="noindex, nofollow"/>
+  <link rel="canonical" href="https://digi-track.ru/login.html"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="theme-color" content="#9FE29E"/>
   <meta name="msapplication-TileColor" content="#9FE29E"/>
@@ -14,12 +18,13 @@
   <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
   <link rel="dns-prefetch" href="//mc.yandex.ru"/>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css"/>
 
@@ -28,6 +33,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://digi-track.ru/login.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"}, {"@type": "ListItem", "position": 2, "name": "Вход", "item": "https://digi-track.ru/login.html"}]}</script>
 </head>
 <body class="bg-deep">
 
@@ -43,12 +49,12 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link" href="federated-learning.html#hero">Федеративное обучение</a></li>
           <li class="nav-item"><a class="nav-link" href="data-platform.html">Дата-платформа</a></li>
-          <li class="nav-item"><a class="nav-link" href="partnership.html">Партнёрство</a></li>
+          <li class="nav-item"><a class="nav-link" href="partnership.html#about">О компании</a></li>
           <li class="nav-item"><a class="nav-link" href="vacancies.html">Вакансии</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
         </ul>
         <div class="d-flex gap-2">
-          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Узнать больше</button>
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
         </div>
       </div>
     </div>
@@ -57,9 +63,22 @@
   <main>
     <section class="py-6 bg-section" style="padding-top: 10rem;">
       <div class="container">
-        <div class="row justify-content-center">
+        
+        <nav class="breadcrumb-nav breadcrumb-nav--in-header" aria-label="Хлебные крошки">
+          <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="index.html"><span itemprop="name">Главная</span></a>
+          <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Вход</span>
+          <meta itemprop="position" content="2"/>
+        </li>
+      </ol>
+        </nav>
+<div class="row justify-content-center">
           <div class="col-12 col-lg-8 text-center mb-4">
-            <h1 class="h2 fw-800 mb-2">Документы</h1>
+            <h1 class="h2 fw-800 mb-2">Вход в документацию</h1>
             <p class="text-mute-300 m-0">Для скачивания документов потребуется пароль. Ключ для скачивания вышлем отдельно.</p>
           </div>
 
@@ -113,21 +132,26 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+              <footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
     <div class="container">
       <div class="row g-4">
-        <div class="col-12 col-lg-6">
-          <div class="h5 text-white mb-2">DigiTrack</div>
+        <div class="col-12 col-lg-4">
+          <div class="h5 text-white mb-2"><a class="link-fade text-white text-decoration-none" href="index.html">DigiTrack</a></div>
           <p class="small text-mute-400 m-0">
-            Конфиденциальные вычисления и федеративное обучение для бизнеса.
+            Конфиденциальные вычисления: федеративное обучение и платформа данных для бизнеса.
           </p>
+          <div class="small text-mute-500 mt-4">
+            © <span id="year"></span> ООО «ДТ»
+          </div>
+          
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-4">
           <ul class="list-unstyled small m-0">
-            <li><a class="link-fade" href="federated-learning.html#hero">Федеративное обучение</a></li>
+            <li><a class="link-fade" href="federated-learning.html#tech">Федеративное обучение</a></li>
             <li><a class="link-fade" href="data-platform.html">Дата-платформа</a></li>
             <li><a class="link-fade" href="partnership.html">Партнёрство</a></li>
             <li><a class="link-fade" href="blog.html">Блог</a></li>
+            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
             <li><a class="link-fade" href="expert-review.html">Экспертам</a></li>
             <li><a class="link-fade" href="documents.html">Документы</a></li>
           </ul>
@@ -135,15 +159,12 @@
             <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
             <li><a href="img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
           </ul>
-          <div class="small text-mute-500 mt-4" style="margin-left: 23px;">
-            © <span id="year"></span> ООО "ДТ"
-          </div>
+
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-4">
           <ul class="list-unstyled small m-0">
-            <li><a class="link-fade" href="vacancies.html">Вакансии</a></li>
-            <li><a class="link-fade" href="index.html">О компании</a></li>
-            <li style="visibility: hidden;"><a class="link-fade" href="#">&nbsp;</a></li>
+            <li><a class="link-fade" href="partnership.html">О компании</a></li>
+            <li><a class="link-fade" href="site-map.html">Карта сайта</a></li>
           </ul>
           <ul class="list-unstyled small m-0 mt-4 text-mute-500">
             <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
@@ -154,16 +175,55 @@
     </div>
   </footer>
 
-  <!-- CONTACT MODAL -->
-  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <!-- Модальное окно политики конфиденциальности -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
+          <h5 class="modal-title" id="privacyModalLabel">Политика конфиденциальности</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body text-center">
-          <p class="mb-0">Отправляйте все предложения на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        <div class="modal-body">
+          <p class="legal-section-title">1. Общие положения</p>
+          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО "ДТ".</p>
+          
+          <p class="legal-section-title">2. Цели обработки персональных данных</p>
+          <p>Персональные данные обрабатываются в следующих целях:</p>
+          <ul>
+            <li>Обработка заявок и обращений пользователей</li>
+            <li>Предоставление информации о продуктах и услугах компании</li>
+            <li>Связь с пользователями по вопросам сотрудничества</li>
+          </ul>
+          
+          <p class="legal-section-title">3. Категории обрабатываемых персональных данных</p>
+          <p>Мы обрабатываем следующие категории персональных данных:</p>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+            <li>Информация, содержащаяся в сообщениях пользователей</li>
+          </ul>
+          
+          <p class="legal-section-title">4. Сроки обработки персональных данных</p>
+          <p>Персональные данные обрабатываются в течение срока, необходимого для достижения целей обработки, но не более 3 лет с момента последнего взаимодействия с пользователем.</p>
+          
+          <p class="legal-section-title">5. Меры по обеспечению безопасности персональных данных</p>
+          <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
+          
+          <p class="legal-section-title">6. Права субъекта персональных данных</p>
+          <p>Вы имеете право:</p>
+          <ul>
+            <li>Получать информацию об обработке ваших персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
+            <li>Отзывать согласие на обработку персональных данных</li>
+            <li>Обращаться с жалобами в уполномоченный орган по защите прав субъектов персональных данных</li>
+          </ul>
+          
+          <p class="legal-section-title">7. Контактная информация</p>
+          <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по адресу: <a href="mailto:privacy@digitrack.com">privacy@digitrack.com</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
@@ -179,11 +239,17 @@
         </div>
         <div class="modal-body">
           <p>Согласие на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
+          
           <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          
           <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
-          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовые» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянные» cookie).</p>
+          
+          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовых» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянных» cookie).</p>
+          
           <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
-          <p>Согласие на обработку персональных данных («постоянные» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          
+          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          
           <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
         </div>
         <div class="modal-footer">
@@ -203,6 +269,7 @@
         </div>
         <div class="modal-body">
           <p>Стоимость продукта «DigiTrack Confidential Computing» и оказываемых услуг/выполняемых работ ООО «ДТ», в том числе по разработке, адаптации и сопровождению программного обеспечения составляет от 1 000 000 рублей без НДС, окончательная стоимость будет определена индивидуально по Вашему запросу.</p>
+          
           <p>Для расчета коммерческого предложения просьба отправить Вашу заявку по адресу <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
         </div>
         <div class="modal-footer">
@@ -231,10 +298,10 @@
           <p><strong>Почтовый адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
           <p><strong>Email:</strong> <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
           <p><strong>Телефон:</strong> <a href="tel:+79857704512">+7 985 770-45-12</a></p>
-
+          
           <h6>Руководство:</h6>
           <p>Генеральный директор Рытов Павел Александрович</p>
-
+          
           <h6>Основные виды деятельности:</h6>
           <ul>
             <li>Разработка программного обеспечения (62.01)</li>
@@ -243,14 +310,14 @@
             <li>Предоставление услуг по обработке данных</li>
           </ul>
           <p>Коды видов деятельности в области информационных технологий - 1.01. и 2.01.</p>
-
+          
           <h6>Языки и средства программирования:</h6>
           <p>ООО "ДТ" в рамках деятельности в области информационных технологий использует следующие языки и средства программирования: Golang, Python, .NET, C++</p>
-
+          
           <h6>Программное обеспечение:</h6>
           <p>ООО "ДТ" является правообладателем исключительных прав на программу для ЭВМ: Средство интеллектуального анализа данных "DigiTrack Confidential Computing".</p>
           <p>Способы предоставления прав использования программы для ЭВМ Средство интеллектуального анализа данных "DigiTrack Confidential Computing" определяются индивидуально.</p>
-
+          
           <h6>Правовая основа деятельности:</h6>
           <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
         </div>
@@ -261,8 +328,9 @@
     </div>
   </div>
 
+  <!-- Bootstrap bundle + App -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="./metrika.js" defer></script>
+  <script src="./metrika.js" defer data-ga="G-FL8MNDG3M8"></script>
   <script src="./script.js" defer></script>
 </body>
 </html>

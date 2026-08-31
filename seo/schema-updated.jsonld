@@ -1,0 +1,502 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digi-track.ru/#organization",
+      "name": "DigiTrack",
+      "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+      "alternateName": ["ООО «ДТ»", "Диджи Трек", "DigiTrack Confidential Computing"],
+      "url": "https://digi-track.ru/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://digi-track.ru/#logo",
+        "url": "https://digi-track.ru/img/DataIcon.png",
+        "contentUrl": "https://digi-track.ru/img/DataIcon.png",
+        "caption": "DigiTrack"
+      },
+      "image": "https://digi-track.ru/img/DataIcon.png",
+      "description": "Разработчик ПО для федеративного обучения, конфиденциальных вычислений и корпоративных платформ данных on-premise. Решения для финтеха, банков и enterprise.",
+      "foundingDate": "2023",
+      "taxID": "9705200012",
+      "vatID": "770501001",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ОГРН",
+        "value": "1237700339788"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шлюзовая набережная, д. 8, стр. 1",
+        "addressLocality": "Москва",
+        "postalCode": "115114",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.7321,
+        "longitude": 37.6534
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@digi-track.ru",
+          "telephone": "+7-985-770-45-12",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian", "English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "info@digi-track.ru",
+          "telephone": "+7-985-770-45-12",
+          "areaServed": "RU",
+          "availableLanguage": ["Russian"]
+        }
+      ],
+      "email": "info@digi-track.ru",
+      "telephone": "+7-985-770-45-12",
+      "sameAs": [
+        "https://www.linkedin.com/company/digitrack",
+        "https://twitter.com/digitrack"
+      ],
+      "knowsAbout": [
+        "Federated Learning",
+        "Vertical Federated Learning",
+        "Horizontal Federated Learning",
+        "Confidential Computing",
+        "Big Data Platform",
+        "Homomorphic Encryption",
+        "152-FZ compliance",
+        "MLOps",
+        "DataOps",
+        "Apache Hadoop",
+        "Apache Spark"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Россия"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://digi-track.ru/#website",
+      "url": "https://digi-track.ru/",
+      "name": "DigiTrack",
+      "description": "Федеративное обучение, конфиденциальные вычисления и платформа данных для enterprise",
+      "inLanguage": "ru-RU",
+      "publisher": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://digi-track.ru/blog.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/index.html#webpage",
+      "url": "https://digi-track.ru/index.html",
+      "name": "DigiTrack — федеративное обучение и платформа данных on-premise",
+      "description": "Разработчик ПО для федеративного обучения и Big Data Platform без vendor lock-in. VFL, HFL, Hadoop/Spark on Astra Linux.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "about": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "inLanguage": "ru-RU",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["#hero .hero-lead", "#products", "#faq"]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/federated-learning.html#webpage",
+      "url": "https://digi-track.ru/federated-learning.html",
+      "name": "Федеративное обучение для бизнеса — DigiTrack Confidential Computing",
+      "description": "VFL, HFL, Federated XGBoost on-premise. Обучение ML без передачи персональных данных. Пилот за 1–2 недели.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "about": {
+        "@id": "https://digi-track.ru/federated-learning.html#service"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/data-platform.html#webpage",
+      "url": "https://digi-track.ru/data-platform.html",
+      "name": "Big Data Platform on-premise — DigiTrack Enterprise",
+      "description": "Enterprise-платформа данных: Hadoop, Spark, Kafka, Delta Lake on Astra Linux. 1 ПБ+ в prod, zero downtime.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "about": {
+        "@id": "https://digi-track.ru/data-platform.html#service"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/partnership.html#webpage",
+      "url": "https://digi-track.ru/partnership.html",
+      "name": "Партнёрство в федеративном обучении — DigiTrack",
+      "description": "Монетизация данных через FL без передачи ПДн. Пилот 6 месяцев, revenue share.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digi-track.ru/blog.html#webpage",
+      "url": "https://digi-track.ru/blog.html",
+      "name": "Блог DigiTrack — федеративное обучение и платформа данных",
+      "description": "Экспертные статьи о федеративном обучении, VFL/HFL, Big Data и 152-ФЗ.",
+      "isPartOf": {
+        "@id": "https://digi-track.ru/#website"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/federated-learning.html#service",
+      "name": "Федеративное обучение",
+      "alternateName": ["DigiTrack Confidential Computing", "Federated Learning Platform"],
+      "description": "Обучение ML-моделей на распределённых данных без передачи ПДн. VFL, HFL, Federated XGBoost, гомоморфное шифрование, on-premise.",
+      "url": "https://digi-track.ru/federated-learning.html",
+      "serviceType": "Federated Learning",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Финтех, банки, телеком, enterprise"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://digi-track.ru/federated-learning.html",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "description": "Индивидуальный расчёт. Пилот от 4–6 месяцев. Запрос КП: info@digi-track.ru"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Пакеты федеративного обучения",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Пилот FL",
+            "description": "FL + PSI, 2 участника, 1 модель, 4–6 месяцев"
+          },
+          {
+            "@type": "Offer",
+            "name": "Enterprise FL",
+            "description": "Лицензия + L4 поддержка, неограниченные модели"
+          },
+          {
+            "@type": "Offer",
+            "name": "Партнёрство",
+            "description": "Монетизация данных, revenue share"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/data-platform.html#service",
+      "name": "Платформа данных",
+      "alternateName": ["DigiTrack Big Data Platform", "Enterprise Data Platform"],
+      "description": "On-premise платформа больших данных: Hadoop 3.3.4, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Zero downtime, без vendor lock-in.",
+      "url": "https://digi-track.ru/data-platform.html",
+      "serviceType": "Big Data Platform",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "CTO, CDO, крупные предприятия"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://digi-track.ru/data-platform.html",
+        "priceCurrency": "RUB",
+        "availability": "https://schema.org/InStock",
+        "description": "Dev/Test/UAT бесплатно. Production — по Data Nodes или vCPU+Storage. TCO: info@digi-track.ru"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/#service-confidential-computing",
+      "name": "Конфиденциальные вычисления",
+      "description": "Гомоморфное шифрование, secure multi-party computation, privacy-preserving ML on-premise.",
+      "url": "https://digi-track.ru/federated-learning.html#tech",
+      "serviceType": "Confidential Computing",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://digi-track.ru/partnership.html#service",
+      "name": "Партнёрство и внедрение",
+      "description": "Дата-партнёрство в FL: пилот 6 месяцев, монетизация данных, on-premise безопасность.",
+      "url": "https://digi-track.ru/partnership.html",
+      "serviceType": "IT Consulting and Implementation",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "areaServed": "RU"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://digi-track.ru/federated-learning.html#software",
+      "name": "DigiTrack Confidential Computing",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Astra Linux, Linux",
+      "description": "ПО для федеративного обучения: VFL, HFL, Federated XGBoost с гомоморфным шифрованием.",
+      "url": "https://digi-track.ru/federated-learning.html",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://digi-track.ru/documents.html",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://digi-track.ru/data-platform.html#software",
+      "name": "DigiTrack Big Data Platform",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Astra Linux Воронеж 1.8",
+      "description": "Enterprise Big Data Platform: Hadoop, Spark, Kafka, Airflow, Delta Lake on-premise.",
+      "url": "https://digi-track.ru/data-platform.html",
+      "provider": {
+        "@id": "https://digi-track.ru/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://digi-track.ru/#faq-global",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое федеративное обучение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Передаются ли сырые данные участников федеративного обучения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Обучение происходит локально у каждого участника. Передаются только обновления модели с применением гомоморфного шифрования и дифференциальной приватности."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем VFL отличается от HFL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HFL (горизонтальный) — одинаковые признаки, разные объекты (например, несколько банков). VFL (вертикальный) — общие клиенты, разные признаки. VFL — основной режим для партнёрского скоринга и антифрода."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит DigiTrack Big Data Platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Среды Dev, Test и UAT — бесплатно. Управляющие узлы (до 6) — бесплатно. Production тарифицируется по Data Nodes или пулу vCPU+Storage. Поддержка L4 включена. Расчёт TCO: info@digi-track.ru."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как подключиться к федеративному обучению DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оставьте заявку на info@digi-track.ru. Мы оценим источник данных, согласуем модель участия и подготовим пилот в течение 1–2 недель."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где получить коммерческое предложение DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Отправьте заявку на info@digi-track.ru или позвоните +7 985 770-45-12. Юридический адрес: Москва, Шлюзовая набережная, д. 8, стр. 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Когда лучше начать пилот федеративного обучения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оптимально при наличии дата-партнёра с комплементарными признаками и готовности выделить on-premise сервер. Kick-off — через 2–4 недели после заявки, полный пилот — 6 месяцев."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие услуги предоставляет DigiTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Разработка ПО для конфиденциальных вычислений: платформы федеративного обучения, Big Data Platform on-premise, аудит безопасности данных, обучение команд и техподдержка L3/L4."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как происходит монетизация данных в партнёрстве?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Дата-партнёр получает долю от дохода федеративной модели. Выплаты ежемесячно на основе метрик качества и объёма данных. Данные остаются on-premise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Соответствует ли федеративное обучение 152-ФЗ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При корректной архитектуре FL исходные персональные данные не передаются третьим лицам — за периметр идут только зашифрованные артефакты обучения. Это снижает юридические риски по сравнению с централизацией Data Lake."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://digi-track.ru/federated-learning.html#howto-connect",
+      "name": "Как подключить федеративное обучение DigiTrack",
+      "description": "Пошаговое подключение к DigiTrack Confidential Computing on-premise.",
+      "totalTime": "P6M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Оставить заявку",
+          "text": "Напишите на info@digi-track.ru или используйте форму на сайте.",
+          "url": "https://digi-track.ru/index.html#contactModal"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Определить тип FL",
+          "text": "Выберите VFL (общие клиенты, разные признаки) или HFL (одинаковые признаки, разные клиенты).",
+          "url": "https://digi-track.ru/learning-types.html"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Выделить инфраструктуру",
+          "text": "Подготовьте on-premise сервер под установку DigiTrack Confidential Computing."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Сверка данных (PSI)",
+          "text": "Безопасное сопоставление записей без раскрытия исходных данных."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Обучение и оценка",
+          "text": "Совместное обучение модели, champion-challenger, масштабирование в prod."
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://digi-track.ru/data-platform.html#howto-tco",
+      "name": "Как запросить расчёт TCO Big Data Platform",
+      "description": "Получение коммерческого предложения на DigiTrack Big Data Platform.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Опишите нагрузку",
+          "text": "Укажите объём данных, число источников, требования к HA и streaming."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Выберите модель лицензирования",
+          "text": "Node-based (по Data Nodes) или Resource-based (vCPU + Storage)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Отправьте заявку",
+          "text": "Email: info@digi-track.ru. Укажите «Расчёт TCO Big Data Platform».",
+          "url": "https://digi-track.ru/data-platform.html#licensing"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://digi-track.ru/blog.html#article-list",
+      "name": "Статьи блога DigiTrack",
+      "numberOfItems": 15,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Федеративное обучение: обзор", "url": "https://digi-track.ru/blog/articles/fl-guide.html"},
+        {"@type": "ListItem", "position": 2, "name": "152-ФЗ и Confidential Computing", "url": "https://digi-track.ru/blog/articles/confidential-computing-152.html"},
+        {"@type": "ListItem", "position": 3, "name": "VFL или HFL", "url": "https://digi-track.ru/blog/articles/vfl-or-hfl.html"},
+        {"@type": "ListItem", "position": 4, "name": "Big Data Platform: инфраструктура для AI", "url": "https://digi-track.ru/blog/articles/bdp-guide.html"},
+        {"@type": "ListItem", "position": 5, "name": "TCO Big Data-инфраструктуры", "url": "https://digi-track.ru/blog/articles/tco-big-data.html"},
+        {"@type": "ListItem", "position": 6, "name": "15 критериев выбора BDP", "url": "https://digi-track.ru/blog/articles/choose-bdp-15.html"},
+        {"@type": "ListItem", "position": 7, "name": "Federated XGBoost vs Эмбеддинги", "url": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html"},
+        {"@type": "ListItem", "position": 8, "name": "Антифрод для банков", "url": "https://digi-track.ru/blog/articles/fl-antifraud.html"},
+        {"@type": "ListItem", "position": 9, "name": "FATE, Flower, NVFlare", "url": "https://digi-track.ru/blog/articles/fate-flower-nvflare.html"},
+        {"@type": "ListItem", "position": 10, "name": "FL vs Sandbox vs Эмбеддинги", "url": "https://digi-track.ru/blog/articles/fl-sandbox-or-embeddings.html"},
+        {"@type": "ListItem", "position": 11, "name": "Гомоморфное шифрование в ML", "url": "https://digi-track.ru/blog/articles/homomorphic-encryption.html"},
+        {"@type": "ListItem", "position": 12, "name": "AI-ready Data Platform", "url": "https://digi-track.ru/blog/articles/ai-ready-platform.html"},
+        {"@type": "ListItem", "position": 13, "name": "Отказоустойчивая BDP", "url": "https://digi-track.ru/blog/articles/ha-big-data-platform.html"},
+        {"@type": "ListItem", "position": 14, "name": "Open Source для Enterprise", "url": "https://digi-track.ru/blog/articles/opensource-enterprise.html"},
+        {"@type": "ListItem", "position": 15, "name": "Масштабирование до федеративной архитектуры", "url": "https://digi-track.ru/blog/articles/scale-to-federated.html"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/#breadcrumb-home",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://digi-track.ru/index.html#products"},
+        {"@type": "ListItem", "position": 3, "name": "Контакты", "item": "https://digi-track.ru/index.html#contactModal"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/federated-learning.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Федеративное обучение", "item": "https://digi-track.ru/federated-learning.html"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/data-platform.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Платформа данных", "item": "https://digi-track.ru/data-platform.html"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/blog.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://digi-track.ru/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://digi-track.ru/blog.html"}
+      ]
+    }
+  ]
+}

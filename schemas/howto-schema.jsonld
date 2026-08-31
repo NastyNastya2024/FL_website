@@ -1,0 +1,138 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://digi-track.ru/partnership.html#howto-order",
+  "url": "https://digi-track.ru/partnership.html#process",
+  "inLanguage": "ru-RU",
+  "name": "Как заказать услуги DigiTrack?",
+  "description": "Пошаговая инструкция по заказу федеративного обучения, Big Data Platform или партнёрства с DigiTrack: от заявки до поддержки после запуска.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://digi-track.ru/img/DataIcon.png",
+    "width": 512,
+    "height": 512
+  },
+  "totalTime": "P6M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "RUB",
+    "value": "1000000",
+    "description": "От 1 000 000 ₽ без НДС; окончательная стоимость определяется индивидуально"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Описание задачи и требований ИБ"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "On-premise инфраструктура или план её выделения"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Email info@digi-track.ru"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Сайт digi-track.ru"
+    }
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".howto-step",
+      ".howto-step-name",
+      ".howto-step-text"
+    ]
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-1",
+      "position": 1,
+      "name": "Оставьте заявку на сайте",
+      "text": "Нажмите «Узнать больше» или «Стать партнёром» и отправьте запрос на info@digi-track.ru. Укажите продукт: DigiTrack Confidential Computing, Big Data Platform или партнёрство в FL.",
+      "url": "https://digi-track.ru/index.html#contactModal",
+      "image": "https://digi-track.ru/img/DataIcon.png",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Форма обратной связи на digi-track.ru"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-2",
+      "position": 2,
+      "name": "Проведите брифинг",
+      "text": "Обсудите с командой DigiTrack задачи, use case (скоринг, антифрод, платформа данных), требования 152-ФЗ и модель on-premise. Определите тип FL — VFL или HFL — при необходимости.",
+      "url": "https://digi-track.ru/partnership.html",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Онлайн- или очная встреча с экспертами DigiTrack"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-3",
+      "position": 3,
+      "name": "Получите коммерческое предложение",
+      "text": "DigiTrack подготовит расчёт стоимости и сроков: лицензия, внедрение, пилот FL (4–6 месяцев) или TCO Big Data Platform. Dev/Test-среды BDP — бесплатно.",
+      "url": "https://digi-track.ru/data-platform.html#licensing",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Коммерческое предложение (PDF/email)"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-4",
+      "position": 4,
+      "name": "Заключите договор",
+      "text": "Юридическое оформление с ООО «ДТ» (ИНН 9705200012): лицензия на ПО, условия партнёрства, SLA поддержки L3/L4 и требования информационной безопасности.",
+      "url": "https://digi-track.ru/documents.html",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Договор и документация на ПО"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-5",
+      "position": 5,
+      "name": "Начните разработку",
+      "text": "Развёртывание on-premise: установка DigiTrack Confidential Computing или Big Data Platform, сверка данных (PSI), настройка пайплайнов и обучение моделей по согласованному roadmap.",
+      "url": "https://digi-track.ru/federated-learning.html#algo",
+      "image": "https://digi-track.ru/img/federated.png",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Ansible-роли и инсталляционные пакеты DigiTrack"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-6",
+      "position": 6,
+      "name": "Примите результат",
+      "text": "Тестирование и приёмка: оценка качества модели (champion-challenger), проверка HA и zero downtime на BDP, подписание акта о вводе в промышленную эксплуатацию.",
+      "url": "https://digi-track.ru/federated-learning.html#faq",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Метрики качества ML и чек-лист приёмки"
+      }
+    },
+    {
+      "@type": "HowToStep",
+      "@id": "https://digi-track.ru/#howto-order-step-7",
+      "position": 7,
+      "name": "Получите поддержку",
+      "text": "Послезапусковое обслуживание: линии L3/L4, патчи, консультации по эксплуатации, обновление моделей FL и сопровождение дата-партнёров. Контакт: info@digi-track.ru, +7 985 770-45-12.",
+      "url": "https://digi-track.ru/partnership.html#contacts",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Техническая поддержка DigiTrack L3/L4"
+      }
+    }
+  ]
+}

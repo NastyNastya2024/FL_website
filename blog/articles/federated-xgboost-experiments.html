@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+
+  <meta name="google-analytics-id" content="G-FL8MNDG3M8"/>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Federated XGBoost vs эмбеддинги: что безопаснее [2026]</title>
+  <meta name="description" content="Эмбеддинги можно инвертировать — Federated XGBoost считает сплиты без исходных записей. Как поднять качество скоринга на партнёрских данных без утечки."/>
+  <meta name="author" content="DigiTrack"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://digi-track.ru/blog/articles/federated-xgboost-experiments.html"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">  <!-- Schema.org: TechArticle -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html#article",
+      "url": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html",
+      "inLanguage": "ru-RU",
+      "headline": "Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются",
+      "alternativeHeadline": "почему бустинг побеждает, а векторы — рассекречиваются",
+      "description": "Практическое руководство для Data Scientist: как поднять качество скоринга на партнёрских данных, не рискуя утечкой. Эмбеддинги инвертируются; Federated XGBoost",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://digi-track.ru/img/blog/federated-xgboost-experiments.png",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Organization",
+        "@id": "https://digi-track.ru/#author-team",
+        "name": "Команда DigiTrack",
+        "url": "https://digi-track.ru/",
+        "parentOrganization": {
+          "@id": "https://digi-track.ru/#organization"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://digi-track.ru/#organization",
+        "name": "DigiTrack",
+        "legalName": "Общество с ограниченной ответственностью «ДИДЖИТРЕК»",
+        "url": "https://digi-track.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digi-track.ru/img/DataIcon.png"
+        }
+      },
+      "datePublished": "2025-06-15",
+      "dateModified": "2026-08-01",
+      "articleSection": "Федеративное обучение",
+      "keywords": [
+        "Федеративное обучение",
+        "federated",
+        "xgboost",
+        "vs",
+        "эмбеддинги:",
+        "почему",
+        "бустинг",
+        "побеждает,",
+        "а",
+        "векторы",
+        "—",
+        "рассекречиваются"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Федеративное обучение"
+        },
+        {
+          "@type": "Thing",
+          "name": "Federated XGBoost vs Эмбеддинги"
+        }
+      ],
+      "wordCount": 1390,
+      "proficiencyLevel": "Expert",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "CTO, архитектор данных, ML-инженер, специалист по ИБ"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://digi-track.ru/blog.html#blog",
+        "name": "Блог DigiTrack",
+        "url": "https://digi-track.ru/blog.html"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html",
+        "url": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html",
+        "name": "Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются — DigiTrack"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "article.article-main h1",
+          "article.article-main .lead",
+          "article.article-main .direct-answer",
+          "article.article-main .snippet-answer"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://digi-track.ru/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://digi-track.ru/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются",
+          "item": "https://digi-track.ru/blog/articles/federated-xgboost-experiments.html"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="bg-deep">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="../../index.html">DigiTrack</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../federated-learning.html">Федеративное обучение</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../data-platform.html">Дата-платформа</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../partnership.html#about">О компании</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../vacancies.html">Вакансии</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../blog.html">Блог</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb-nav breadcrumb-nav--under-nav" aria-label="Хлебные крошки">
+        <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="../../index.html"><span itemprop="name">Главная</span></a>
+          <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="../../blog.html"><span itemprop="name">Блог</span></a>
+          <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются</span>
+          <meta itemprop="position" content="3"/>
+        </li>
+      </ol>
+      </nav>
+    </div>
+  </div>
+  <main>
+  <section class="py-6 blog-section blog-article-page">
+    <div class="container article-container">
+      <article class="article-main" itemscope itemtype="https://schema.org/Article">
+        <meta itemprop="headline" content="Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются"/>
+        <meta itemprop="inLanguage" content="ru-RU"/>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="DigiTrack"/></span>
+        <h1 class="h3 fw-700 mb-3" itemprop="name">Federated XGBoost vs Эмбеддинги: почему бустинг побеждает, а векторы — рассекречиваются</h1>
+        <p class="lead direct-answer snippet-answer text-mute-300 mb-4">Практическое руководство для Data Scientist: как поднять качество скоринга на партнёрских данных, не рискуя утечкой. Эмбеддинги инвертируются; Federated XGBoost считает сплиты, не отдавая исходные записи.</p>
+        <div class="article-text" itemprop="articleBody">
+      
+      <h2 id="как-устроена-введение">Как устроена введение?</h2><p class="direct-answer"><strong>Краткий ответ:</strong> Вариант А; Вариант Б; Вариант В.</p><p>Представьте: скоринговая модель уже работает неплохо — AUC 0.70–0.75. У партнёра (телеком, страховая, платёжный агрегатор) есть признаки, которые могли бы поднять качество. Данные нельзя передать: 152-ФЗ, коммерческая тайна, регулятор. Что вы делаете?</p>
+
+<ul><li>Вариант А. Выгрузить агрегаты по клиентам партнёра и скормить как фичи. Работает плохо: модель теряет индивидуальные закономерности.</li><li>Вариант Б. Сгенерировать эмбеддинги из внешних данных и использовать их как признаки. Дорого, сложно, для обучения энкодера снова нужен доступ к данным.</li><li>Вариант В. Внедрить Federated XGBoost и получить прирост AUC без передачи сырых записей.</li></ul>
+<p>Ниже — почему эмбеддинги дают ложную безопасность (с рецензируемыми работами и прямыми ссылками), как федеративный бустинг даёт прирост и почему «Дижитрек» (Диджи Трек, DigiTrack) — рабочий промышленный контур для финансового сектора. Развилка sandbox / эмбеддинги / FL — в статье <a href="fl-sandbox-or-embeddings.html">«Федеративное обучение, Sandbox или Эмбеддинги: архитектурный компромисс между правом и эффективностью»</a>.</p>
+<h2 id="почему-эмбеддинги-это-не-защита">Почему эмбеддинги — это не защита?</h2><p class="direct-answer"><strong>Краткий ответ:</strong> Эмбеддинги — плотные векторные представления — выглядят как бессмысленный набор чисел.</p><p>Многие DS-команды полагают, что передача вектора вместо сырых данных закрывает конфиденциальность. Это опасное заблуждение.</p>
+
+<p>Эмбеддинги содержат почти всю информацию исходных данных. Современные методы инверсии восстанавливают оригинал с высокой точностью. Для скоринга это означает: отдали вектор — отдали почти столько же, сколько сырой профиль.</p>
+<h3 id="ключевые-исследования-по-инверсии-эмбеддингов">Ключевые исследования по инверсии эмбеддингов?</h3>
+<div class="md-table"><table><thead><tr><th>Работа</th><th>Метод</th><th>Результат</th></tr></thead><tbody><tr><td><a href="https://aclanthology.org/2023.emnlp-main.765/">Morris et al., EMNLP 2023</a></td><td>Vec2Text</td><td>Точное восстановление 92% входов длиной 32 токена, BLEU 97.3; извлечение полных имён из клинических заметок</td></tr><tr><td><a href="https://aclanthology.org/2023.findings-acl.881/">Li et al., ACL Findings 2023</a></td><td>GEIA</td><td>Генеративная инверсия целых предложений и именованных сущностей по sentence embedding</td></tr><tr><td><a href="https://aclanthology.org/2024.acl-long.230/">Huang et al., ACL 2024</a></td><td>Transferable Inversion</td><td>Атака без запросов к модели-жертве; на клинических данных атрибуты (возраст, пол, диагноз) — 80–99%</td></tr><tr><td><a href="https://aclanthology.org/2025.acl-long.1185/">Chen et al., ACL 2025</a></td><td>ALGEN</td><td>Few-shot: оптимум уже на ~1000 примерах; атака переносится между доменами и языками</td></tr><tr><td><a href="https://aclanthology.org/2024.emnlp-main.126/">Lin et al., EMNLP 2024</a></td><td>EDNN</td><td>100% восстановление исходного текста из обфусцированных эмбеддингов</td></tr><tr><td><a href="https://arxiv.org/abs/2608.18610">Wang et al., arXiv 2026</a></td><td>DAEI</td><td>Обход гауссовского шума: прирост BLEU ~154% относительно обычной generative inversion</td></tr><tr><td>Zhang et al., CVPR 2026</td><td>VENOM</td><td>Кража bottom-модели в split learning / VFL по геометрии промежуточных эмбеддингов</td></tr><tr><td><a href="https://dl.acm.org/doi/10.1145/3705328.3748155">Seputis et al., RecSys 2025</a></td><td>воспроизведение Vec2Text</td><td>Подтверждение результатов Morris et al.; квантование и шум смягчают риск, но не снимают его</td></tr></tbody></table></div>
+<p>Ключевой вывод: шум, обфускация и квантование не дают надёжной гарантии. Защиты вроде <a href="https://doi.org/10.1609/aaai.v40i42.40876">Eguard (Liu et al., AAAI 2026)</a> и <a href="https://arxiv.org/abs/2602.07090">SPARSE (Tsai et al., ICLR 2026)</a> ещё не стандарт партнёрского скоринга. Пока вектор уехал к партнёру, вы отдаёте объект, который наука умеет инвертировать.</p>
+<h3 id="что-это-означает-для-скоринга">Что это означает для скоринга?</h3>
+<p>Если вы передаёте эмбеддинги партнёру, «честный, но любопытный» участник или злоумышленник может восстановить персональные данные, извлечь финансовые признаки и нарушить банковскую тайну и 152-ФЗ. Передача эмбеддингов — не безопасный обмен. Это иллюзия защиты. Правовая рамка — в статье «152‑ФЗ и федеративное обучение: как законно использовать данные партнёров для AI, не нарушая закон».</p>
+<h2 id="как-устроена-federated-xgboost">Как устроена federated xgboost?</h2><p class="direct-answer"><strong>Краткий ответ:</strong> Пошаговый разбор — в статье «Федеративное обучение: Federated XGBoost — бустинг без передачи исходных данных».</p><p>Классический distributed XGBoost решает масштаб, не доверие. Почему пайплайн ломается на партнёрских данных — в статье «Почему классический XGBoost не работает в распределённой среде: ограничения централизованного обучения на партнёрских данных».</p>
+
+<p>В вертикальном сценарии (разные признаки, общие клиенты) работает SecureBoost (Cheng et al.): активная сторона шифрует градиенты и гессианы, пассивные стороны считают зашифрованные гистограммы, активная сторона выбирает сплит. Если сплит у пассивной стороны, ей уходит только ID узла и порог — значения признаков не раскрываются. Шифрование не вносит потерь точности относительно централизованного XGBoost.</p>
+<h2 id="эксперименты-и-метрики">Эксперименты и метрики?</h2>
+<div class="md-table"><table><thead><tr><th>Эксперимент</th><th>Метрика</th><th>Результат</th></tr></thead><tbody><tr><td>Кредитный скоринг, VFL</td><td>AUC</td><td>0.804 (+0.063 к локальной модели)</td></tr><tr><td>Горизонтальный FL + XGBoost</td><td>AUC</td><td>95.5% (+10 п.п. к традиционным методам)</td></tr><tr><td>SecureBoost vs базовая модель</td><td>Accuracy</td><td>+7–10% (обнаружение мошенничества)</td></tr><tr><td>FedXHDP с дифференциальной приватностью</td><td>Accuracy</td><td>75.61% vs 75.67% без защиты: потеря <0.1% при DP</td></tr></tbody></table></div>
+<h3 id="сравнение-с-эмбеддингами">Сравнение с эмбеддингами?</h3><p class="direct-answer"><strong>Краткий ответ:</strong> Как считать аплифт для комитета — в статье «Как федеративное обучение повышает аплифт модели на партнёрских данных: кейсы, цифры и сравнение с эмбеддингами».</p>
+<div class="md-table"><table><thead><tr><th>Критерий</th><th>Эмбеддинги</th><th>Federated XGBoost</th></tr></thead><tbody><tr><td>Безопасность</td><td>Инвертируются</td><td>Данные не покидают владельца</td></tr><tr><td>Точность</td><td>Потеря информации при сжатии</td><td>Lossless относительно централизованного бустинга</td></tr><tr><td>Интерпретируемость</td><td>Чёрный ящик координат</td><td>Важность признаков и сплиты</td></tr><tr><td>152-ФЗ</td><td>Риск восстановления ПДн</td><td>Исходные записи не передаются</td></tr><tr><td>Что едет по сети</td><td>Векторы</td><td>Зашифрованные градиенты и ID сплитов</td></tr><tr><td>Внедрение</td><td>Нужен энкодер партнёра</td><td>Готовый протокол (SecureBoost)</td></tr></tbody></table></div>
+<p>Для табличных данных в скоринге Federated XGBoost превосходит эмбеддинги по точности, безопасности и интерпретируемости.</p>
+<h2 id="дижитрек-россиискии-проваидер-федеративного-обучения">Дижитрек: российский провайдер федеративного обучения?</h2><p class="direct-answer"><strong>Краткий ответ:</strong> «Дижитрек» (Диджи Трек, DigiTrack) — провайдер промышленных решений по федеративному обучению для российского рынка: Federated XGBoost и другие FL-методы с опорой на 152-ФЗ и требования ЦБ.</p>
+
+<ul><li>промышленная реализация SecureBoost под высокие нагрузки;</li><li>производительность выше зарубежных FATE и NVFlare за счёт адаптации под российские процессоры и сетевые протоколы;</li><li>Astra Linux, Alt Linux, PostgreSQL Pro, Greenplum;</li><li>механизмы шифрования и анонимизации под локальный комплаенс;</li><li>техподдержка на русском;</li><li>готовые сценарии: кредитный скоринг, AML, страховой андеррайтинг.</li></ul>
+<p>Как начать: пилот с одним стратегическим партнёром (ориентир — от 10 000 общих клиентов после PSI); настройка PSI; обучение SecureBoost с мониторингом метрик на валидации активной стороны; сравнение AUC с локальной моделью — ожидаемый прирост 5–15%. Сравнение фреймворков — в статье <a href="fate-flower-nvflare.html">«FATE, Flower, NVFlare или Диджи Трек: какой фреймворк выбрать для федеративного обучения»</a>.</p>
+<h2 id="выводы-для-data-scientist">Выводы для Data Scientist?</h2>
+<p>Federated XGBoost — не компромисс «точность vs безопасность». Вы получаете ту же точность, что при централизованном обучении, с контролем над данными. Эмбеддинги легко инвертируются (это показано в работах ниже), требуют отдельной инфраструктуры энкодера, хуже объясняются и в случае утечки бьют по 152-ФЗ.</p>
+<p>Что делать сейчас:</p>
+<ol><li>Оцените overlap с партнёром. Если больше 10 000 общих клиентов — Federated XGBoost даст измеримый эффект.</li><li>Запустите POC на «Дижитрек» без долгой разработки своего протокола.</li><li>Если энкодер партнёра уже есть — поставьте A/B: эмбеддинги vs Federated XGBoost по AUC и калибровке. С большой вероятностью победит бустинг.</li></ol>
+<p>Главный принцип: данные не двигаются — двигается модель.</p>
+<h2 id="список-научных-работ-инверсия-эмбеддингов-и-защита">Список научных работ (инверсия эмбеддингов и защита)?</h2>
+<ol><li><a href="https://aclanthology.org/2023.emnlp-main.765/">Morris, Kuleshov, Shmatikov, Rush. Text Embeddings Reveal (Almost) As Much As Text. EMNLP 2023</a>. DOI: <a href="https://doi.org/10.18653/v1/2023.emnlp-main.765">10.18653/v1/2023.emnlp-main.765</a>.</li><li><a href="https://aclanthology.org/2023.findings-acl.881/">Li, Xu, Song. Sentence Embedding Leaks More Information than You Expect (GEIA). Findings of ACL 2023</a>. DOI: <a href="https://doi.org/10.18653/v1/2023.findings-acl.881">10.18653/v1/2023.findings-acl.881</a>.</li><li><a href="https://aclanthology.org/2024.acl-long.230/">Huang, Tsai, Hsiao, Lin, Lin. Transferable Embedding Inversion Attack. ACL 2024</a>. DOI: <a href="https://doi.org/10.18653/v1/2024.acl-long.230">10.18653/v1/2024.acl-long.230</a>.</li><li><a href="https://aclanthology.org/2025.acl-long.1185/">Chen, Xu, Bjerva. ALGEN: Few-shot Inversion Attacks on Textual Embeddings. ACL 2025</a>. DOI: <a href="https://doi.org/10.18653/v1/2025.acl-long.1185">10.18653/v1/2025.acl-long.1185</a>.</li><li><a href="https://aclanthology.org/2024.emnlp-main.126/">Lin et al. An Inversion Attack Against Obfuscated Embedding Matrix (EDNN). EMNLP 2024</a>. DOI: <a href="https://doi.org/10.18653/v1/2024.emnlp-main.126">10.18653/v1/2024.emnlp-main.126</a>.</li><li><a href="https://arxiv.org/abs/2608.18610">Wang et al. Denoising-Aware Inversion (DAEI). arXiv:2608.18610, 2026</a>.</li><li>Zhang, Shi, Zhang, Wang, Zhang, Li. Stealing Split Learning Bottom Models by Recovering Embedding Geometry (VENOM). CVPR 2026.</li><li><a href="https://dl.acm.org/doi/10.1145/3705328.3748155">Seputis, Li, Langerak, Mihailov. Rethinking the Privacy of Text Embeddings. RecSys 2025</a>. DOI: <a href="https://doi.org/10.1145/3705328.3748155">10.1145/3705328.3748155</a>.</li><li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40876">Liu, Yao, Lin, Wu, Qin, Ren. Eguard. AAAI 2026</a>. DOI: <a href="https://doi.org/10.1609/aaai.v40i42.40876">10.1609/aaai.v40i42.40876</a>.</li><li><a href="https://arxiv.org/abs/2602.07090">Tsai, Hsiao, Chen, Lin. Concept-Aware Privacy Mechanisms (SPARSE). ICLR 2026</a>.</li><li><a href="https://arxiv.org/abs/1901.08755">Cheng, Liu, Chen, Yang. SecureBoost: A Lossless Federated Learning Framework. arXiv:1901.08755</a>.</li></ol>
+<p>Статья опирается на открытые публикации ACL, EMNLP, RecSys, CVPR, AAAI, ICLR и arXiv и на практику внедрения федеративного обучения в финансовом секторе.</p>
+      
+      <div class="article-meta-footer mt-4 pt-3 border-top">
+        <p class="article-product-inline small mb-3"><strong>Продукт:</strong> <a href="../../federated-learning.html">DigiTrack Confidential Computing</a> · <a href="../../learning-types.html">типы FL (VFL/HFL)</a> · <a href="../../partnership.html">партнёрство</a></p>
+        <p class="article-keywords small text-mute-400 mb-4"><strong>По теме:</strong> Federated XGBoost, SecureBoost, XGBoost, эмбеддинги, градиентный бустинг, федеративное обучение, VFL, сравнение с эмбеддингами</p>
+      </div>
+      <h2 id="читать-далее">Читать далее?</h2><p class="direct-answer"><strong>Краткий ответ:</strong> Ключевые варианты: Федеративное обучение: как обучать модели на распределённых данных, Федеративное обучение: Federated XGBoost, Почему классический XGBoost не работает в распределённой среде: ограничения централизованного обучения на партнёрских данных, Федеративное обучение, Sandbox или Эмбеддинги: архитектурный компромисс между правом и эффективностью.</p><ul><li><a href="fl-guide.html">Федеративное обучение: как обучать модели на распределённых данных</a></li><li>Федеративное обучение: Federated XGBoost — бустинг без передачи исходных данных</li><li>Почему классический XGBoost не работает в распределённой среде: ограничения централизованного обучения на партнёрских данных</li><li><a href="fl-sandbox-or-embeddings.html">Федеративное обучение, Sandbox или Эмбеддинги: архитектурный компромисс между правом и эффективностью</a></li><li><a href="fate-flower-nvflare.html">FATE, Flower, NVFlare или Диджи Трек: какой фреймворк выбрать для федеративного обучения</a></li><li>152‑ФЗ и федеративное обучение: как законно использовать данные партнёров для AI, не нарушая закон</li><li>Как повысить точность скоринговой модели на партнёрских данных</li><li>Как федеративное обучение повышает аплифт модели на партнёрских данных: кейсы, цифры и сравнение с эмбеддингами</li></ul></section></div>
+        <div class="article-footer-link"><a href="fl-guide.html" class="btn-news-link">Федеративное обучение: как обучать модели на распределённых данных</a></div>
+
+        <aside class="article-product-cta" id="product">
+          <p class="mb-2"><strong>Продукт DigiTrack:</strong> <a href="../../federated-learning.html">DigiTrack Confidential Computing</a> — федеративное обучение on-premise без передачи ПДн.</p>
+          <p class="mb-0 small"><a href="../../federated-learning.html">Федеративное обучение →</a> · <a href="../../learning-types.html">VFL и HFL →</a> · <a href="../../data-platform.html">Дата-платформа →</a> · <a href="../../partnership.html">Партнёрство →</a></p>
+        </aside>
+
+        <p class="small mt-3 mb-0 seo-related-links"><a href="../../federated-learning.html">Федеративное обучение →</a> · <a href="../../learning-types.html">VFL и HFL →</a> · <a href="../../data-platform.html">Дата-платформа →</a> · <a href="../../partnership.html#contacts">Контакты →</a></p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="py-5 bg-deeper text-mute-300 border-top border-ink-700">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <div class="h5 text-white mb-2"><a class="link-fade text-white text-decoration-none" href="../../index.html">DigiTrack</a></div>
+          <p class="small text-mute-400 m-0">
+            Конфиденциальные вычисления: федеративное обучение и платформа данных для бизнеса.
+          </p>
+          <div class="small text-mute-500 mt-4">
+            © <span id="year"></span> ООО «ДТ»
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="../../federated-learning.html#tech">Федеративное обучение</a></li>
+            <li><a class="link-fade" href="../../data-platform.html">Дата-платформа</a></li>
+            <li><a class="link-fade" href="../../partnership.html">Партнёрство</a></li>
+            <li><a class="link-fade" href="../../blog.html">Блог</a></li>
+            <li><a class="link-fade" href="../../vacancies.html">Вакансии</a></li>
+            <li><a class="link-fade" href="../../expert-review.html">Экспертам</a></li>
+            <li><a class="link-fade" href="../../documents.html">Документы</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#pricingModal" class="link-fade" data-bs-toggle="modal" data-bs-target="#pricingModal">Стоимость услуг</a></li>
+            <li><a href="../../img/pdf1.pdf" class="link-fade" target="_blank">Политика обработки данных</a></li>
+          </ul>
+
+        </div>
+        <div class="col-6 col-lg-4">
+          <ul class="list-unstyled small m-0">
+            <li><a class="link-fade" href="../../partnership.html">О компании</a></li>
+            <li><a class="link-fade" href="../../site-map.html">Карта сайта</a></li>
+          </ul>
+          <ul class="list-unstyled small m-0 mt-4 text-mute-500">
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#consentModal">Согласие на обработку данных</a></li>
+            <li><a href="#" class="link-fade" data-bs-toggle="modal" data-bs-target="#legalModal">Правовая информация</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модальное окно политики конфиденциальности -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Политика конфиденциальности</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="legal-section-title">1. Общие положения</p>
+          <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ООО "ДТ".</p>
+          
+          <p class="legal-section-title">2. Цели обработки персональных данных</p>
+          <p>Персональные данные обрабатываются в следующих целях:</p>
+          <ul>
+            <li>Обработка заявок и обращений пользователей</li>
+            <li>Предоставление информации о продуктах и услугах компании</li>
+            <li>Связь с пользователями по вопросам сотрудничества</li>
+          </ul>
+          
+          <p class="legal-section-title">3. Категории обрабатываемых персональных данных</p>
+          <p>Мы обрабатываем следующие категории персональных данных:</p>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты</li>
+            <li>Номер телефона</li>
+            <li>Информация, содержащаяся в сообщениях пользователей</li>
+          </ul>
+          
+          <p class="legal-section-title">4. Сроки обработки персональных данных</p>
+          <p>Персональные данные обрабатываются в течение срока, необходимого для достижения целей обработки, но не более 3 лет с момента последнего взаимодействия с пользователем.</p>
+          
+          <p class="legal-section-title">5. Меры по обеспечению безопасности персональных данных</p>
+          <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
+          
+          <p class="legal-section-title">6. Права субъекта персональных данных</p>
+          <p>Вы имеете право:</p>
+          <ul>
+            <li>Получать информацию об обработке ваших персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
+            <li>Отзывать согласие на обработку персональных данных</li>
+            <li>Обращаться с жалобами в уполномоченный орган по защите прав субъектов персональных данных</li>
+          </ul>
+          
+          <p class="legal-section-title">7. Контактная информация</p>
+          <p>По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться по адресу: <a href="mailto:privacy@digitrack.com">privacy@digitrack.com</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно согласия на обработку данных -->
+  <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consentModalLabel">Согласие на обработку персональных данных</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Согласие на обработку персональных данных для посетителей сайтов ООО "ДТ" (далее – «Согласие»)</p>
+          
+          <p>Продолжая работу на сайте, я выражаю свое согласие Обществу с ограниченной ответственностью "ДТ", далее – Оператор, (юридический адрес: 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1) на автоматизированную обработку, предусмотренную Федеральным законом от 27.07.2006 г. №152-ФЗ «О персональных данных», моих персональных данных («сеансовые» и «постоянные» cookie, сведения о действиях посетителя на сайте, сведения об оборудовании посетителя (модель телефона, расширение экрана, информация об IP-адресе и системных характеристиках устройств, геопозиция, дата и время сессии)), в т.ч. с использованием метрической программы Яндекс.Метрика, с совершением следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, блокирование, удаление, уничтожение, передача (предоставление, доступ) партнеру Оператора (Обществу с ограниченной ответственностью «Яндекс», г. Москва, ул. Льва Толстого, д. 16), предоставляющему сервис по указанной метрической программе.</p>
+          
+          <p>Обработка персональных данных осуществляется с целью персонализации сервисов и повышения удобства пользования веб-сайтом.</p>
+          
+          <p>Настоящее согласие действует с момента его предоставления и в течение всего периода использования сайта (в случае использования «сеансовых» cookie) или прекращает свое действие по истечении 1 года с момента последнего предоставления посетителем (в случае использования «постоянных» cookie).</p>
+          
+          <p>В случае отказа от обработки персональных данных метрической программой («сеансовые» cookie) я проинформирован о необходимости прекратить использование сайта или отключить файлы cookie в настройках браузера.</p>
+          
+          <p>Согласие на обработку персональных данных («постоянных» cookie) может быть отозвано мною путем направления Оператору письменного заявления об этом. Днем отзыва считается день, следующий за днем получения ООО "ДТ" письменного заявления об отзыве согласия.</p>
+          
+          <p>Подробная информация об условиях и принципах обработки персональных данных отражена в Политике в отношении обработки персональных данных в ООО "ДТ".</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="contactModalLabel">Будем рады вашим вопросам<br>и предложениям</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="mb-0">Отправляйте все предложения на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="../../metrika.js" defer data-ga="G-FL8MNDG3M8"></script>
+<script src="../../script.js" defer></script>
+  <!-- Модальное окно стоимости продукта -->
+  <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricingModalLabel">Стоимость услуг</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Стоимость продукта «DigiTrack Confidential Computing» и оказываемых услуг/выполняемых работ ООО «ДТ», в том числе по разработке, адаптации и сопровождению программного обеспечения составляет от 1 000 000 рублей без НДС, окончательная стоимость будет определена индивидуально по Вашему запросу.</p>
+          
+          <p>Для расчета коммерческого предложения просьба отправить Вашу заявку по адресу <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно правовой информации -->
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legalModalLabel">Правовая информация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>ООО "ДТ"</h6>
+          <p><strong>Полное наименование:</strong> Общество с ограниченной ответственностью "ДИДЖИТРЕК"</p>
+          <p><strong>Сокращенное наименование:</strong> ООО "ДТ"</p>
+          <p><strong>ИНН:</strong> 9705200012</p>
+          <p><strong>КПП:</strong> 770501001</p>
+          <p><strong>ОГРН:</strong> 1237700339788</p>
+          <p><strong>Юридический адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Почтовый адрес:</strong> 115114 г. Москва, вн.тер.г. Муниципальный округ Замоскворечье, Шлюзовая набережная, д.8, стр. 1</p>
+          <p><strong>Email:</strong> <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></p>
+          <p><strong>Телефон:</strong> <a href="tel:+79857704512">+7 985 770-45-12</a></p>
+          
+          <h6>Руководство:</h6>
+          <p>Генеральный директор Рытов Павел Александрович</p>
+          
+          <h6>Основные виды деятельности:</h6>
+          <ul>
+            <li>Разработка программного обеспечения (62.01)</li>
+            <li>Консультирование по вопросам информационных технологий</li>
+            <li>Исследования и разработки в области естественных и технических наук</li>
+            <li>Предоставление услуг по обработке данных</li>
+          </ul>
+          <p>Коды видов деятельности в области информационных технологий - 1.01. и 2.01.</p>
+          
+          <h6>Языки и средства программирования:</h6>
+          <p>ООО "ДТ" в рамках деятельности в области информационных технологий использует следующие языки и средства программирования: Golang, Python, .NET, C++</p>
+          
+          <h6>Программное обеспечение:</h6>
+          <p>ООО "ДТ" является правообладателем исключительных прав на программу для ЭВМ: Средство интеллектуального анализа данных "DigiTrack Confidential Computing".</p>
+          <p>Способы предоставления прав использования программы для ЭВМ Средство интеллектуального анализа данных "DigiTrack Confidential Computing" определяются индивидуально.</p>
+          
+          <h6>Правовая основа деятельности:</h6>
+          <p>Деятельность ООО "ДТ" осуществляется в соответствии с законодательством Российской Федерации, включая Гражданский кодекс РФ, Федеральный закон "Об обществах с ограниченной ответственностью", Федеральный закон "О персональных данных" и иные нормативные правовые акты.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
