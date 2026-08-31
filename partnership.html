@@ -55,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="./styles.css?v=20260831g"/>
+  <link rel="stylesheet" href="./styles.css?v=20260831u"/>
   
   <!-- Favicon and Icons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -159,7 +159,7 @@
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q1",
-          "name": "Какие услуги предоставляет DigiTrack?",
+          "name": "Какие продукты и услуги предлагает DigiTrack?",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a1",
@@ -173,106 +173,56 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a2",
-            "text": "Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных, что важно для банков и enterprise по 152-ФЗ."
+            "text": "Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных."
           }
         },
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q3",
-          "name": "Сколько стоит DigiTrack?",
+          "name": "Какие требования к данным для партнёрства?",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a3",
-            "text": "Стоимость зависит от объёма данных, числа участников и конфигурации. Оставьте заявку на info@digi-track.ru — подготовим коммерческое предложение. Тарифы BDP: data-platform.html#licensing. Методика TCO: blog/articles/tco-big-data.html."
+            "text": "В зависимости от типа обучения нужны либо ортогональные признаки, либо большое пересечение по ID пользователей. Мы оцениваем совместимость ваших данных с существующими моделями федеративного обучения."
           }
         },
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q4",
-          "name": "Где посмотреть тарифы и методику расчёта?",
+          "name": "Как обеспечивается безопасность данных?",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a4",
-            "text": "Тарифы Big Data Platform (Standard / Enterprise / Custom) — на data-platform.html#licensing. Методика и формула TCO — в blog/articles/tco-big-data.html. Для КП — заявка на info@digi-track.ru."
+            "text": "Данные остаются on-premise у владельца. За периметр передаются только зашифрованные артефакты обучения — градиенты, веса, статистики сплитов. Используются дифференциальная приватность, гомоморфное шифрование и аудит ИБ."
           }
         },
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q5",
-          "name": "Какие сроки пилота федеративного обучения?",
+          "name": "Как происходит монетизация для дата-партнёров?",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a5",
-            "text": "Подготовка к пилоту после заявки занимает 1–2 недели. Полный цикл партнёрского пилота — около 6 месяцев: kick-off, инфраструктура, обучение модели и оценка результатов. Kick-off возможен через 2–4 недели при готовом дата-партнёре."
+            "text": "Дата-партнёр получает долю от дохода, который генерирует федеративная модель. Распределение — ежемесячно на основе метрик качества и объёма данных."
           }
         },
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q6",
-          "name": "Как происходит процесс внедрения федеративного обучения?",
+          "name": "Сколько стоит и какие сроки пилота?",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://digi-track.ru/#faq-a6",
-            "text": "Внедрение включает четыре этапа: установка ПО и назначение координатора, сверка данных (PSI), совместное обучение модели с зашифрованным обменом градиентами, запуск и оценка модели в prod. Все этапы выполняются on-premise у каждого участника."
+            "text": "Стоимость зависит от объёма данных, числа участников и конфигурации — коммерческое предложение после заявки. Подготовка к пилоту — 1–2 недели, полный цикл партнёрского пилота — около 6 месяцев."
           }
         },
         {
           "@type": "Question",
           "@id": "https://digi-track.ru/#faq-q7",
-          "name": "Какие технологии использует DigiTrack?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a7",
-            "text": "Для FL: VFL, HFL, Federated XGBoost, гомоморфное шифрование, PSI. Для Big Data Platform: Hadoop, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Языки разработки: Python, Golang, C++, .NET. Стек — open source без vendor lock-in."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://digi-track.ru/#faq-q8",
-          "name": "Предоставляете ли вы гарантию и техническую поддержку?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a8",
-            "text": "Да. Для Big Data Platform в лицензию включена поддержка L4: патчи, исправление багов, доступ к roadmap. Опционально — SLA по L3 (инциденты 8×5). Для FL-проектов предусмотрено сопровождение пилота и промышленной эксплуатации."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://digi-track.ru/#faq-q9",
-          "name": "Как происходит оплата услуг DigiTrack?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a9",
-            "text": "Условия оплаты фиксируются в договоре после согласования объёма работ. Коммерческое предложение высылается после заявки на info@digi-track.ru."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://digi-track.ru/#faq-q10",
-          "name": "Почему данные не передаются при федеративном обучении?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a10",
-            "text": "Исходные записи остаются у владельца в его контуре — это требование 152-ФЗ и политик ИБ. За периметр идут только зашифрованные артефакты обучения: градиенты, веса, статистики сплитов. Так снижается риск утечки и нарушения банковской тайны."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://digi-track.ru/#faq-q11",
-          "name": "Как происходит поддержка после запуска?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a11",
-            "text": "После запуска доступны линии поддержки L3/L4, обновления ПО и консультации по эксплуатации. Для BDP — rolling restart, мониторинг HA и патчи без простоя. Для FL — сопровождение координатора, обновление моделей и помощь дата-партнёрам."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://digi-track.ru/#faq-q12",
           "name": "Как заказать услугу или стать партнёром?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "@id": "https://digi-track.ru/#faq-a12",
+            "@id": "https://digi-track.ru/#faq-a7",
             "text": "Отправьте заявку на info@digi-track.ru или позвоните +7 985 770-45-12. Укажите сценарий: пилот FL, внедрение Big Data Platform или партнёрство. Мы оценим данные, согласуем архитектуру и подготовим коммерческое предложение."
           }
         }
@@ -490,7 +440,6 @@
               <li><a href="#about">О компании</a></li>
               <li><a href="#partners-types">Партнёрство</a></li>
               <li><a href="#process">Как мы работаем</a></li>
-              <li><a href="#faq-partnership">FAQ партнёров</a></li>
               <li><a href="#faq">Вопросы и ответы</a></li>
               <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -506,7 +455,7 @@
         </div>
 
         <div class="mb-4" id="competencies">
-          <div class="about-competencies-block cta-dark rounded-4">
+          <div class="about-competencies-block rounded-4">
             <div class="about-competencies-head">
               <div class="about-competencies-head-main">
                 <p class="about-competencies-eyebrow mb-2">Экспертиза</p>
@@ -542,10 +491,10 @@
         </div>
 
         <div class="mb-4 about-why-us" id="why-us">
-          <div class="about-why-us-block cta-dark rounded-4">
+          <div class="about-why-us-block rounded-4">
             <div class="about-why-us-layout">
               <div class="about-why-us-head">
-                <p class="about-why-us-eyebrow mb-2">Аргументы</p>
+                <p class="about-why-us-eyebrow mb-2">Преимущества</p>
                 <h2 class="about-why-us-title mb-3">Почему выбирают нас</h2>
                 <p class="about-why-us-lead mb-0">Пять причин работать с DigiTrack как с технологическим партнёром — от продукта до сопровождения в контуре заказчика.</p>
               </div>
@@ -557,12 +506,12 @@
                 </li>
                 <li class="about-why-us-item">
                   <span class="about-why-us-dot" aria-hidden="true"></span>
-                  <h3 class="about-why-us-item-title">On‑premise и 152‑ФЗ</h3>
+                  <h3 class="about-why-us-item-title">В контуре заказчика</h3>
                   <p class="about-why-us-item-text mb-0">Данные остаются у владельца, стек разворачивается в контуре заказчика.</p>
                 </li>
                 <li class="about-why-us-item">
                   <span class="about-why-us-dot" aria-hidden="true"></span>
-                  <h3 class="about-why-us-item-title">Open source без vendor lock‑in</h3>
+                  <h3 class="about-why-us-item-title">Открытый код без привязки к поставщику</h3>
                   <p class="about-why-us-item-text mb-0">Hadoop, Spark, Kafka; лицензия только за production‑узлы BDP.</p>
                 </li>
                 <li class="about-why-us-item">
@@ -581,26 +530,60 @@
         </div>
 
         <div class="mb-4" id="team">
-          <h2 class="h4 fw-600 mb-3">Наша команда</h2>
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-4 text-center">
-              <img src="img/gudov.png?v=2" alt="Команда DigiTrack — эксперты по ML и платформам данных" class="rounded-3 about-team-photo" width="280" height="280" loading="lazy"/>
+          <div class="about-team-block cta-dark rounded-4">
+            <div class="about-team-head">
+              <div class="about-team-head-main">
+                <h2 class="about-team-title mb-3">Наша команда</h2>
+                <p class="about-team-lead mb-0">Разработчики с опытом в ML, криптографии и корпоративных data-платформах: PhD и senior-инженеры, архитекторы ПО и специалисты по compliance. Создаём продукты — от алгоритмов и API до документации и интерфейсов.</p>
+              </div>
+              <a href="vacancies.html" class="btn btn-primary-gy about-team-cta">Вакансии</a>
             </div>
-            <div class="col-12 col-md-8">
-              <p class="mb-2">В DigiTrack работают разработчики с опытом в машинном обучении, криптографии и построении корпоративных data-платформ: PhD и senior-инженеры, архитекторы ПО и специалисты по compliance.</p>
-              <p class="mb-0">Мы создаём полноценные продукты — от алгоритмов и API до документации и пользовательских интерфейсов. <a href="blog.html">Экспертные материалы в блоге →</a> · <a href="#partners-types">Партнёрство →</a></p>
+            <div class="about-team-grid">
+              <article class="about-team-card">
+                <p class="about-team-card-role mb-0">Генеральный директор</p>
+                <div class="about-team-card-photo-wrap">
+                  <img src="img/img8.png?v=3" alt="Павел Рытов" class="about-team-card-photo" width="120" height="120" loading="lazy"/>
+                </div>
+                <h3 class="about-team-card-name">Рытов Павел</h3>
+                <ul class="about-team-card-list mb-0">
+                  <li>Стратегия продуктов FL и confidential computing</li>
+                  <li>Партнёрства с банками и enterprise</li>
+                  <li>Развитие команды и roadmap</li>
+                </ul>
+                <a href="partnership.html#about" class="about-team-card-link">О компании →</a>
+              </article>
+              <article class="about-team-card">
+                <p class="about-team-card-role mb-0">Big Data Platform</p>
+                <div class="about-team-card-photo-wrap">
+                  <img src="img/gudov.png?v=2" alt="Александр Гудов" class="about-team-card-photo" width="120" height="120" loading="lazy"/>
+                </div>
+                <h3 class="about-team-card-name">Александр Гудов</h3>
+                <ul class="about-team-card-list mb-0">
+                  <li>Платформа данных on-premise</li>
+                  <li>Hadoop, Spark, Kafka, Delta Lake</li>
+                  <li>Промышленные внедрения до 1 ПБ+</li>
+                </ul>
+                <a href="data-platform.html" class="about-team-card-link">Платформа данных →</a>
+              </article>
             </div>
           </div>
         </div>
 
-        <div class="glass pad-2x" id="join">
-          <h2 class="h4 fw-600 mb-3">Присоединяйтесь к нам</h2>
-          <p class="mb-3">Ищем ML-инженеров, backend- и platform-разработчиков, специалистов по информационной безопасности.</p>
-          <p class="mb-0">
-            <a href="vacancies.html" class="btn btn-primary-gy me-2 mb-2">Открытые вакансии</a>
-            <a href="#partners-types" class="btn btn-outline-light mb-2">Стать партнёром</a>
-            <a href="#contacts" class="btn btn-outline-light mb-2">Связаться с нами</a>
-          </p>
+        <div class="about-join-block cta-dark pad-2x rounded-4 mb-4" id="join">
+          <div class="about-join-inner home-cooperation-inner">
+            <div class="about-join-content home-cooperation-content">
+              <p class="about-team-eyebrow mb-2">Карьера</p>
+              <h2 class="about-team-title mb-3">Присоединяйтесь к нам</h2>
+              <p class="about-team-lead mb-4">Ищем ML-инженеров, backend- и platform-разработчиков, специалистов по информационной безопасности.</p>
+              <div class="about-join-actions">
+                <a href="vacancies.html" class="btn btn-primary-gy">Открытые вакансии</a>
+                <a href="#contacts" class="btn btn-outline-light">Связаться с нами</a>
+              </div>
+            </div>
+            <div class="about-join-visual home-cooperation-visual" aria-hidden="true">
+              <img src="img/career-abstract.png" alt="" loading="lazy" width="640" height="360">
+            </div>
+          </div>
         </div>
       </section>
 
@@ -608,9 +591,7 @@
     <section id="partners-types" class="py-6 bg-section">
       <div class="container">
         <h2 class="h3 fw-700 mb-2">Кто может стать партнёром DigiTrack?</h2>
-        <p class="snippet-answer">Банки, финтех, телеком и организации с Big Data — монетизация данных через FL без их передачи.</p>
-        <p class="small mb-4"><a href="federated-learning.html#tech">Технология FL →</a> · <a href="documents.html">Документация ПО →</a></p>
-        <p class="text-mute-300 mb-5">Мы открыты для сотрудничества с различными типами организаций</p>
+        <p class="snippet-answer mb-5">Мы открыты для сотрудничества с различными типами организаций — банки, финтех, телеком и компании с Big Data. Монетизация данных через FL без их передачи.</p>
         
         <div class="row g-4">
           <div class="col-12 col-lg-6">
@@ -679,30 +660,19 @@
     <!-- CTA -->
     <section id="cta" class="py-6">
       <div class="container">
-        <div class="cta-dark pad-2x rounded-4">
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-lg-6">
-              <h2 class="h4 mb-2" style="color: #ffffff !important; font-size: 1.5rem !important;">Как подать заявку на партнёрство?</h2>
-              <p class="text-mute-300 mb-3">Оставьте заявку — обсудим детали сотрудничества и составим индивидуальный план</p>
-              <div class="d-flex gap-2">
-                <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Подать заявку</button>
-                <a href="#about" class="btn btn-link text-white px-4 py-2">О компании →</a>
-              </div>
+        <div class="home-cooperation cta-dark pad-2x rounded-4">
+          <div class="home-cooperation-inner">
+            <div class="home-cooperation-content">
+              <h2 class="h4 mb-3" style="color: #ffffff !important; font-size: 1.5rem !important;">Как начать сотрудничество с DigiTrack?</h2>
+              <ol class="text-mute-300 small mb-0 home-cooperation-steps">
+                <li>Заявка на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a></li>
+                <li>Согласование сценария: пилот FL, BDP или партнёрство</li>
+                <li>Оценка данных и архитектуры (1–2 недели для FL)</li>
+                <li>Договор и развёртывание в контуре заказчика</li>
+              </ol>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="partnership-card">
-                <div class="d-flex align-items-start gap-3">
-                  <a href="index.html" class="partnership-avatar-link">
-                    <img alt="Павел Рытов, генеральный директор DigiTrack" class="team-avatar border border-ink-700" width="48" height="48" src="img/img8.png?v=3" loading="lazy"/>
-                  </a>
-                  <div>
-                    <p class="small text-mute-200 mb-1">
-                      Ваши данные начинают работать на вас: вы получаете долю прибыли от использования модели, доступ к её результатам и гарантированное техническое сопровождение.
-                    </p>
-                    <div class="small text-mute-400">Генеральный директор, Рытов Павел</div>
-                  </div>
-                </div>
-              </div>
+            <div class="home-cooperation-visual" aria-hidden="true">
+              <img src="img/cooperation-abstract.png" alt="" loading="lazy" width="640" height="360">
             </div>
           </div>
         </div>
@@ -730,9 +700,7 @@
 
 <section id="process" class="mb-5">
         <div id="howto-order">
-          <h2 class="h2 fw-700 mb-2">Как мы работаем</h2>
-          <p class="snippet-answer">Пошаговый процесс заказа федеративного обучения, Big Data Platform или партнёрства с DigiTrack — от заявки до поддержки после запуска.</p>
-          <p class="geo-timing mb-4">Ориентировочный срок полного цикла — 6 месяцев. Стоимость и тарифы — после заявки (<a href="#faq">FAQ</a>, <a href="data-platform.html#licensing">тарифы BDP</a>).</p>
+          <h2 class="h2 fw-700 mb-4">Как мы работаем</h2>
           <h3 class="h4 mb-3">Этапы работы</h3>
           <article class="glass pad-2x mb-3 howto-step" id="howto-step-1">
             <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">1</span>Оставьте заявку на сайте</h3>
@@ -776,94 +744,14 @@
 
       <hr class="border-ink-700 my-5"/>
 
-<section id="faq-partnership" class="mb-5">
-      <div class="container">
-        <h2 class="h3 fw-700 mb-2">Вопросы о партнёрстве</h2>
-<p class="snippet-answer mb-4">Требования к данным, монетизация, безопасность и сроки пилота.</p>
-        <div class="accordion" id="faqPartnershipAcc">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf1">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa1" aria-expanded="false" aria-controls="pfa1">
-                Какие требования к объему данных для партнерства?
-              </button>
-            </h2>
-            <div id="pfa1" class="accordion-collapse collapse" aria-labelledby="pf1" data-bs-parent="#faqPartnershipAcc">
-              <div class="accordion-body">
-                В зависимости от типа обучения должны быть либо ортогональные признаки, либо большое пересечение по ID пользователей. Мы оцениваем совместимость ваших данных с существующими моделями федеративного обучения.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf2">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa2" aria-expanded="false" aria-controls="pfa2">
-                Как обеспечивается безопасность данных партнеров?
-              </button>
-            </h2>
-            <div id="pfa2" class="accordion-collapse collapse" aria-labelledby="pf2" data-bs-parent="#faqPartnershipAcc">
-              <div class="accordion-body">
-                Ваши данные остаются на ваших серверах. Передаются только обновления модели с применением дифференциальной приватности и гомоморфного шифрования. Мы используем многоуровневую систему защиты и регулярно проходим аудиты безопасности.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf3">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa3" aria-expanded="false" aria-controls="pfa3">
-                Как происходит монетизация данных?
-              </button>
-            </h2>
-            <div id="pfa3" class="accordion-collapse collapse" aria-labelledby="pf3" data-bs-parent="#faqPartnershipAcc">
-              <div class="accordion-body">
-                Вы получаете долю от дохода, генерируемого федеративной моделью. Доходы распределяются ежемесячно на основе метрик качества и объема данных.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf4">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa4" aria-expanded="false" aria-controls="pfa4">
-                Можно ли выйти из партнерства?
-              </button>
-            </h2>
-            <div id="pfa4" class="accordion-collapse collapse" aria-labelledby="pf4" data-bs-parent="#faqPartnershipAcc">
-              <div class="accordion-body">
-                Да, вы можете выйти из партнерства с уведомлением за 30 дней. Ваши данные будут удалены из федеративной модели, но вы сохраните доступ к результатам, полученным до момента выхода.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf5">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa5" aria-expanded="false" aria-controls="pfa5">
-                Какая техническая поддержка предоставляется?
-              </button>
-            </h2>
-            <div id="pfa5" class="accordion-collapse collapse" aria-labelledby="pf5" data-bs-parent="#faqPartnershipAcc">
-              <div class="accordion-body">
-                Мы предоставляем круглосуточную техническую поддержку, обучение вашей команды, документацию и регулярные консультации. Также доступен выделенный менеджер проекта для решения всех вопросов сотрудничества.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa6">Сколько длится пилот?</button></h2>
-            <div id="pfa6" class="accordion-collapse collapse" data-bs-parent="#faqPartnershipAcc"><div class="accordion-body"><p class="geo-timing mb-0">6 месяцев (M1–M6). <a href="federated-learning.html#pilot-timeline">Timeline пилота →</a></p></div></div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="pf7"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pfa7">Где подать заявку?</button></h2>
-            <div id="pfa7" class="accordion-collapse collapse" data-bs-parent="#faqPartnershipAcc"><div class="accordion-body"><p class="snippet-answer mb-0"><a href="mailto:info@digi-track.ru">info@digi-track.ru</a> · <a href="partnership.html#contacts">Контакты →</a></p></div></div>
-          </div>        </div>
-        <p class="small mt-3 mb-0"><a href="partnership.html#process">Этапы партнёрского пилота →</a> · <a href="partnership.html#faq">Вопросы о стоимости и поддержке →</a></p>
-      </div>
-    </section>
-
-      <hr class="border-ink-700 my-5"/>
-
 <section id="faq" class="mb-5">
-        <h2 class="h2 fw-700 mb-2">Вопросы и ответы о DigiTrack</h2>
-        <p class="snippet-answer geo-definition mb-4">Ответы об услугах, стоимости, сроках внедрения, гарантии и поддержке федеративного обучения и платформы данных.</p>
+        <h2 class="h2 fw-700 mb-2">Вопросы и ответы</h2>
+        <p class="snippet-answer geo-definition mb-4">Ключевые вопросы о продуктах, партнёрстве, безопасности данных, стоимости и сроках.</p>
         <div class="accordion" id="faqAcc">
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f1">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa1" aria-expanded="false" aria-controls="fa1">
-                Какие услуги предоставляет DigiTrack?
+                Какие продукты и услуги предлагает DigiTrack?
               </button>
             </h2>
             <div id="fa1" class="accordion-collapse collapse" aria-labelledby="f1" data-bs-parent="#faqAcc">
@@ -877,107 +765,57 @@
               </button>
             </h2>
             <div id="fa2" class="accordion-collapse collapse" aria-labelledby="f2" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных, что важно для банков и enterprise по 152-ФЗ.</div>
+              <div class="accordion-body snippet-answer faq-answer">Федеративное обучение — метод ML, при котором данные остаются у владельца, а за периметр передаются только зашифрованные веса и градиенты. Модель обучается on-premise без передачи персональных данных.</div>
             </div>
           </div>
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f3">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa3" aria-expanded="false" aria-controls="fa3">
-                Сколько стоит DigiTrack?
+                Какие требования к данным для партнёрства?
               </button>
             </h2>
             <div id="fa3" class="accordion-collapse collapse" aria-labelledby="f3" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Стоимость зависит от объёма данных, числа участников и конфигурации. Оставьте заявку — мы пришлём коммерческое предложение. <a href="partnership.html#contacts">Контакты →</a> · <a href="data-platform.html#licensing">Тарифы BDP →</a> · <a href="blog/articles/tco-big-data.html">Методика TCO →</a></div>
+              <div class="accordion-body snippet-answer faq-answer">В зависимости от типа обучения нужны либо ортогональные признаки, либо большое пересечение по ID пользователей. Мы оцениваем совместимость ваших данных с существующими моделями федеративного обучения.</div>
             </div>
           </div>
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f4">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa4" aria-expanded="false" aria-controls="fa4">
-                Где посмотреть тарифы и методику расчёта?
+                Как обеспечивается безопасность данных?
               </button>
             </h2>
             <div id="fa4" class="accordion-collapse collapse" aria-labelledby="f4" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Тарифы Big Data Platform (Standard / Enterprise / Custom) — на <a href="data-platform.html#licensing">странице продукта</a>. Формула и переменные TCO — в <a href="blog/articles/tco-big-data.html">статье о расчёте</a>.</div>
+              <div class="accordion-body snippet-answer faq-answer">Данные остаются on-premise у владельца. За периметр передаются только зашифрованные артефакты обучения — градиенты, веса, статистики сплитов. Используются дифференциальная приватность, гомоморфное шифрование и аудит ИБ.</div>
             </div>
           </div>
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f5">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa5" aria-expanded="false" aria-controls="fa5">
-                Какие сроки пилота федеративного обучения?
+                Как происходит монетизация для дата-партнёров?
               </button>
             </h2>
             <div id="fa5" class="accordion-collapse collapse" aria-labelledby="f5" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Подготовка к пилоту после заявки занимает 1–2 недели. Полный цикл партнёрского пилота — около 6 месяцев: kick-off, инфраструктура, обучение модели и оценка результатов. Kick-off возможен через 2–4 недели при готовом дата-партнёре.</div>
+              <div class="accordion-body snippet-answer faq-answer">Дата-партнёр получает долю от дохода, который генерирует федеративная модель. Распределение — ежемесячно на основе метрик качества и объёма данных.</div>
             </div>
           </div>
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f6">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa6" aria-expanded="false" aria-controls="fa6">
-                Как происходит процесс внедрения федеративного обучения?
+                Сколько стоит и какие сроки пилота?
               </button>
             </h2>
             <div id="fa6" class="accordion-collapse collapse" aria-labelledby="f6" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Внедрение включает четыре этапа: установка ПО и назначение координатора, сверка данных (PSI), совместное обучение модели с зашифрованным обменом градиентами, запуск и оценка модели в prod. Все этапы выполняются on-premise у каждого участника.</div>
+              <div class="accordion-body snippet-answer faq-answer">Стоимость зависит от объёма данных, числа участников и конфигурации — коммерческое предложение после заявки. <a href="data-platform.html#licensing">Тарифы BDP →</a> · <a href="blog/articles/tco-big-data.html">Методика TCO →</a>. Подготовка к пилоту — 1–2 недели, полный цикл партнёрского пилота — около 6 месяцев. <a href="federated-learning.html#pilot-timeline">Timeline пилота →</a></div>
             </div>
           </div>
           <div class="accordion-item faq-item">
             <h2 class="accordion-header" id="f7">
               <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa7" aria-expanded="false" aria-controls="fa7">
-                Какие технологии использует DigiTrack?
-              </button>
-            </h2>
-            <div id="fa7" class="accordion-collapse collapse" aria-labelledby="f7" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Для FL: VFL, HFL, Federated XGBoost, гомоморфное шифрование, PSI. Для Big Data Platform: Hadoop, Spark, Kafka, Airflow, Delta Lake на Astra Linux. Языки разработки: Python, Golang, C++, .NET. Стек — open source без vendor lock-in.</div>
-            </div>
-          </div>
-          <div class="accordion-item faq-item">
-            <h2 class="accordion-header" id="f8">
-              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa8" aria-expanded="false" aria-controls="fa8">
-                Предоставляете ли вы гарантию и техническую поддержку?
-              </button>
-            </h2>
-            <div id="fa8" class="accordion-collapse collapse" aria-labelledby="f8" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Да. Для Big Data Platform в лицензию включена поддержка L4: патчи, исправление багов, доступ к roadmap. Опционально — SLA по L3 (инциденты 8×5). Для FL-проектов предусмотрено сопровождение пилота и промышленной эксплуатации.</div>
-            </div>
-          </div>
-          <div class="accordion-item faq-item">
-            <h2 class="accordion-header" id="f9">
-              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa9" aria-expanded="false" aria-controls="fa9">
-                Как происходит оплата услуг DigiTrack?
-              </button>
-            </h2>
-            <div id="fa9" class="accordion-collapse collapse" aria-labelledby="f9" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Условия оплаты фиксируются в договоре после согласования объёма работ. Коммерческое предложение высылается после заявки на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a>.</div>
-            </div>
-          </div>
-          <div class="accordion-item faq-item">
-            <h2 class="accordion-header" id="f10">
-              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa10" aria-expanded="false" aria-controls="fa10">
-                Почему данные не передаются при федеративном обучении?
-              </button>
-            </h2>
-            <div id="fa10" class="accordion-collapse collapse" aria-labelledby="f10" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Исходные записи остаются у владельца в его контуре — это требование 152-ФЗ и политик ИБ. За периметр идут только зашифрованные артефакты обучения: градиенты, веса, статистики сплитов. Так снижается риск утечки и нарушения банковской тайны.</div>
-            </div>
-          </div>
-          <div class="accordion-item faq-item">
-            <h2 class="accordion-header" id="f11">
-              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa11" aria-expanded="false" aria-controls="fa11">
-                Как происходит поддержка после запуска?
-              </button>
-            </h2>
-            <div id="fa11" class="accordion-collapse collapse" aria-labelledby="f11" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">После запуска доступны линии поддержки L3/L4, обновления ПО и консультации по эксплуатации. Для BDP — rolling restart, мониторинг HA и патчи без простоя. Для FL — сопровождение координатора, обновление моделей и помощь дата-партнёрам.</div>
-            </div>
-          </div>
-          <div class="accordion-item faq-item">
-            <h2 class="accordion-header" id="f12">
-              <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#fa12" aria-expanded="false" aria-controls="fa12">
                 Как заказать услугу или стать партнёром?
               </button>
             </h2>
-            <div id="fa12" class="accordion-collapse collapse" aria-labelledby="f12" data-bs-parent="#faqAcc">
-              <div class="accordion-body snippet-answer faq-answer">Отправьте заявку на info@digi-track.ru или позвоните +7 985 770-45-12. Укажите сценарий: пилот FL, внедрение Big Data Platform или партнёрство. Мы оценим данные, согласуем архитектуру и подготовим коммерческое предложение.</div>
+            <div id="fa7" class="accordion-collapse collapse" aria-labelledby="f7" data-bs-parent="#faqAcc">
+              <div class="accordion-body snippet-answer faq-answer">Отправьте заявку на <a href="mailto:info@digi-track.ru">info@digi-track.ru</a> или позвоните +7 985 770-45-12. Укажите сценарий: пилот FL, внедрение Big Data Platform или партнёрство. Мы оценим данные, согласуем архитектуру и подготовим коммерческое предложение. <a href="#contacts">Контакты →</a></div>
             </div>
           </div>
         </div>
@@ -1032,21 +870,11 @@
             </div>
             <div class="col-12 col-lg-6">
               <div class="contact-map rounded-3 overflow-hidden">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.653400%2C55.732100&z=16&pt=37.653400%2C55.732100,pm2rdm" width="100%" height="360" frameborder="0" allowfullscreen="true" title="Офис DigiTrack на Яндекс.Картах" loading="lazy"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.647950%2C55.730750&z=16&pt=37.647567%2C55.730492%2Cpm2rdm" width="100%" height="360" frameborder="0" allowfullscreen="true" title="Офис DigiTrack — Шлюзовая набережная, 8с1" loading="lazy"></iframe>
               </div>
-              <p class="small mt-2 mb-0"><a href="https://yandex.ru/maps/?pt=37.6534,55.7321&z=16&l=map" target="_blank" rel="noopener noreferrer">Открыть на Яндекс.Картах →</a></p>
+              <p class="small mt-2 mb-0"><a href="https://yandex.ru/maps/?ll=37.647950%2C55.730750&z=16&pt=37.647567%2C55.730492&l=map" target="_blank" rel="noopener noreferrer">Открыть на Яндекс.Картах →</a></p>
             </div>
           </div>
-        </div>
-
-        <div class="mb-5" id="social">
-          <h3 class="h4 fw-600 mb-3">Мы в соцсетях</h3>
-          <ul class="list-inline contact-social mb-0">
-            <li class="list-inline-item me-3"><a href="https://t.me/digitrack" rel="noopener noreferrer" target="_blank">Telegram</a></li>
-            <li class="list-inline-item me-3"><a href="https://vk.com/digitrack" rel="noopener noreferrer" target="_blank">VK</a></li>
-            <li class="list-inline-item me-3"><a href="https://www.youtube.com/@digitrack" rel="noopener noreferrer" target="_blank">YouTube</a></li>
-            <li class="list-inline-item"><a href="https://www.linkedin.com/company/digitrack" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
-          </ul>
         </div>
       </section>
 
