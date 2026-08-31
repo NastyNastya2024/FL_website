@@ -55,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="./styles.css?v=20260831u"/>
+  <link rel="stylesheet" href="./styles.css?v=20260831v"/>
   
   <!-- Favicon and Icons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -119,7 +119,7 @@
       "@id": "https://digi-track.ru/partnership.html#webpage",
       "url": "https://digi-track.ru/partnership.html",
       "name": "Партнёрство и о компании DigiTrack",
-      "description": "Партнёрство в FL, о компании, FAQ, этапы работы и контакты DigiTrack.",
+      "description": "Партнёрство в FL, о компании, FAQ и контакты DigiTrack.",
       "inLanguage": "ru-RU",
       "about": {
         "@id": "https://digi-track.ru/partnership.html#organization"
@@ -127,9 +127,6 @@
       "hasPart": [
         {
           "@id": "https://digi-track.ru/partnership.html#faqpage"
-        },
-        {
-          "@id": "https://digi-track.ru/partnership.html#howto-order"
         }
       ]
     },
@@ -227,144 +224,6 @@
           }
         }
       ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "@id": "https://digi-track.ru/partnership.html#howto-order",
-      "url": "https://digi-track.ru/partnership.html#process",
-      "inLanguage": "ru-RU",
-      "name": "Как заказать услуги DigiTrack?",
-      "description": "Пошаговая инструкция по заказу федеративного обучения, Big Data Platform или партнёрства с DigiTrack: от заявки до поддержки после запуска.",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://digi-track.ru/img/DataIcon.png",
-        "width": 512,
-        "height": 512
-      },
-      "totalTime": "P6M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "RUB",
-        "value": "1000000",
-        "description": "От 1 000 000 ₽ без НДС; окончательная стоимость определяется индивидуально"
-      },
-      "supply": [
-        {
-          "@type": "HowToSupply",
-          "name": "Описание задачи и требований ИБ"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "On-premise инфраструктура или план её выделения"
-        }
-      ],
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "Email info@digi-track.ru"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Сайт digi-track.ru"
-        }
-      ],
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [
-          ".howto-step",
-          ".howto-step-name",
-          ".howto-step-text"
-        ]
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-1",
-          "position": 1,
-          "name": "Оставьте заявку на сайте",
-          "text": "Нажмите «Узнать больше» или «Стать партнёром» и отправьте запрос на info@digi-track.ru. Укажите продукт: DigiTrack Confidential Computing, Big Data Platform или партнёрство в FL.",
-          "url": "https://digi-track.ru/index.html#contactModal",
-          "image": "https://digi-track.ru/img/DataIcon.png",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Форма обратной связи на digi-track.ru"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-2",
-          "position": 2,
-          "name": "Проведите брифинг",
-          "text": "Обсудите с командой DigiTrack задачи, use case (скоринг, антифрод, платформа данных), требования 152-ФЗ и модель on-premise. Определите тип FL — VFL или HFL — при необходимости.",
-          "url": "https://digi-track.ru/partnership.html",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Онлайн- или очная встреча с экспертами DigiTrack"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-3",
-          "position": 3,
-          "name": "Получите коммерческое предложение",
-          "text": "DigiTrack подготовит расчёт стоимости и сроков: лицензия, внедрение, пилот FL (4–6 месяцев) или TCO Big Data Platform. Dev/Test-среды BDP — бесплатно.",
-          "url": "https://digi-track.ru/data-platform.html#licensing",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Коммерческое предложение (PDF/email)"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-4",
-          "position": 4,
-          "name": "Заключите договор",
-          "text": "Юридическое оформление с ООО «ДТ» (ИНН 9705200012): лицензия на ПО, условия партнёрства, SLA поддержки L3/L4 и требования информационной безопасности.",
-          "url": "https://digi-track.ru/documents.html",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Договор и документация на ПО"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-5",
-          "position": 5,
-          "name": "Начните разработку",
-          "text": "Развёртывание on-premise: установка DigiTrack Confidential Computing или Big Data Platform, сверка данных (PSI), настройка пайплайнов и обучение моделей по согласованному roadmap.",
-          "url": "https://digi-track.ru/federated-learning.html#algo",
-          "image": "https://digi-track.ru/img/federated.png",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Ansible-роли и инсталляционные пакеты DigiTrack"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-6",
-          "position": 6,
-          "name": "Примите результат",
-          "text": "Тестирование и приёмка: оценка качества модели (champion-challenger), проверка HA и zero downtime на BDP, подписание акта о вводе в промышленную эксплуатацию.",
-          "url": "https://digi-track.ru/federated-learning.html#faq",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Метрики качества ML и чек-лист приёмки"
-          }
-        },
-        {
-          "@type": "HowToStep",
-          "@id": "https://digi-track.ru/#howto-order-step-7",
-          "position": 7,
-          "name": "Получите поддержку",
-          "text": "Послезапусковое обслуживание: линии L3/L4, патчи, консультации по эксплуатации, обновление моделей FL и сопровождение дата-партнёров. Контакт: info@digi-track.ru, +7 985 770-45-12.",
-          "url": "https://digi-track.ru/partnership.html#contacts",
-          "tool": {
-            "@type": "HowToTool",
-            "name": "Техническая поддержка DigiTrack L3/L4"
-          }
-        }
-      ]
     }
   ]
 }</script>
@@ -439,7 +298,6 @@
             <ul class="company-page-nav-list list-unstyled mb-0">
               <li><a href="#about">О компании</a></li>
               <li><a href="#partners-types">Партнёрство</a></li>
-              <li><a href="#process">Как мы работаем</a></li>
               <li><a href="#faq">Вопросы и ответы</a></li>
               <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -536,7 +394,6 @@
                 <h2 class="about-team-title mb-3">Наша команда</h2>
                 <p class="about-team-lead mb-0">Разработчики с опытом в ML, криптографии и корпоративных data-платформах: PhD и senior-инженеры, архитекторы ПО и специалисты по compliance. Создаём продукты — от алгоритмов и API до документации и интерфейсов.</p>
               </div>
-              <a href="vacancies.html" class="btn btn-primary-gy about-team-cta">Вакансии</a>
             </div>
             <div class="about-team-grid">
               <article class="about-team-card">
@@ -679,69 +536,6 @@
       </div>
     </section>
 
-    <section id="readiness-checklist" class="py-6">
-      <div class="container">
-        <h2 class="h3 fw-700 mb-2">Готов ли ваш бизнес к партнёрству с DigiTrack?</h2>
-        <p class="snippet-answer">Чек-лист для CTO/CDO перед пилотом федеративного обучения или внедрением платформы данных.</p>
-        <details class="seo-details" open>
-          <summary>Чек-лист готовности</summary>
-          <ul class="seo-checklist mt-3">
-            <li>Есть on-premise инфраструктура или план её выделения</li>
-            <li>Определён use case: скоринг, антифрод или платформа данных</li>
-            <li>Согласованы требования ИБ и 152-ФЗ</li>
-            <li>Есть дата-партнёр (FL) или объём данных &gt;100 ГБ (BDP)</li>
-            <li>Назначен владелец проекта (CTO/CDO/CRO)</li>
-          </ul>
-        </details>
-      </div>
-    </section>
-
-      <hr class="border-ink-700 my-5"/>
-
-<section id="process" class="mb-5">
-        <div id="howto-order">
-          <h2 class="h2 fw-700 mb-4">Как мы работаем</h2>
-          <h3 class="h4 mb-3">Этапы работы</h3>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-1">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">1</span>Оставьте заявку на сайте</h3>
-            <p class="howto-step-text mb-2">Нажмите «Узнать больше» или «Стать партнёром» и отправьте запрос на info@digi-track.ru. Укажите продукт: DigiTrack Confidential Computing, Big Data Platform или партнёрство в FL.</p>
-            <p class="small mb-0"><a href="#process">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-2">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">2</span>Проведите брифинг</h3>
-            <p class="howto-step-text mb-2">Обсудите с командой DigiTrack задачи, use case (скоринг, антифрод, платформа данных), требования 152-ФЗ и модель on-premise. Определите тип FL — VFL или HFL — при необходимости.</p>
-            <p class="small mb-0"><a href="#partners-types">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-3">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">3</span>Получите коммерческое предложение</h3>
-            <p class="howto-step-text mb-2">DigiTrack подготовит расчёт стоимости и сроков: лицензия, внедрение, пилот FL (4–6 месяцев) или TCO Big Data Platform. Dev/Test-среды BDP — бесплатно.</p>
-            <p class="small mb-0"><a href="data-platform.html#licensing">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-4">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">4</span>Заключите договор</h3>
-            <p class="howto-step-text mb-2">Юридическое оформление с ООО «ДТ» (ИНН 9705200012): лицензия на ПО, условия партнёрства, SLA поддержки L3/L4 и требования информационной безопасности.</p>
-            <p class="small mb-0"><a href="documents.html">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-5">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">5</span>Начните разработку</h3>
-            <p class="howto-step-text mb-2">Развёртывание on-premise: установка DigiTrack Confidential Computing или Big Data Platform, сверка данных (PSI), настройка пайплайнов и обучение моделей по согласованному roadmap.</p>
-            <p class="small mb-0"><a href="federated-learning.html#algo">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-6">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">6</span>Примите результат</h3>
-            <p class="howto-step-text mb-2">Тестирование и приёмка: оценка качества модели (champion-challenger), проверка HA и zero downtime на BDP, подписание акта о вводе в промышленную эксплуатацию.</p>
-            <p class="small mb-0"><a href="federated-learning.html#faq">Подробнее →</a></p>
-          </article>
-          <article class="glass pad-2x mb-3 howto-step" id="howto-step-7">
-            <h3 class="h5 howto-step-name"><span class="badge bg-success me-2">7</span>Получите поддержку</h3>
-            <p class="howto-step-text mb-2">Послезапусковое обслуживание: линии L3/L4, патчи, консультации по эксплуатации, обновление моделей FL и сопровождение дата-партнёров. Контакт: info@digi-track.ru, +7 985 770-45-12.</p>
-            <p class="small mb-0"><a href="partnership.html#contacts">Подробнее →</a></p>
-          </article>
-          <p class="mt-4"><button type="button" class="btn btn-primary-gy" data-bs-toggle="modal" data-bs-target="#contactModal">Оставить заявку</button></p>
-          <p class="small mt-3 mb-0">Подробнее о сроках и стоимости — в <a href="#faq">разделе вопросов и ответов</a>. Материалы по продуктам — в <a href="blog.html">блоге</a>.</p>
-        </div>
-      </section>
-
       <hr class="border-ink-700 my-5"/>
 
 <section id="faq" class="mb-5">
@@ -819,7 +613,7 @@
             </div>
           </div>
         </div>
-        <p class="small mt-4 mb-0">Не нашли ответ? Смотрите <a href="#process">этапы работы</a>, <a href="#partners-types">партнёрство</a> или <a href="#contacts">напишите нам</a>.</p>
+        <p class="small mt-4 mb-0">Не нашли ответ? Смотрите <a href="#cta">как начать сотрудничество</a>, <a href="#partners-types">партнёрство</a> или <a href="#contacts">напишите нам</a>.</p>
       </section>
 
       <hr class="border-ink-700 my-5"/>

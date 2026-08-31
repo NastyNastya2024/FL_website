@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=20260831e"/>
+  <link rel="stylesheet" href="./styles.css?v=20260831w"/>
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -59,7 +59,7 @@
       "name": "Сколько стоит DigiTrack Big Data Platform?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard — от 600 000 ₽/год, Enterprise — от 1 500 000 ₽/год, Custom — индивидуально. Dev/Test и management nodes бесплатно."
+        "text": "Dev/Test/UAT и management nodes — бесплатно. Production тарифицируется по Data Nodes или пулу vCPU + Storage. L4 включена в лицензию."
       }
     },
     {
@@ -471,45 +471,36 @@
     <section id="licensing" class="py-6 bg-section">
       <div class="container">
         <div class="dp-mint-panel">
-          <h2 class="h3 fw-700 mb-2">Тарифы DigiTrack Big Data Platform</h2>
-          <p class="snippet-answer mb-3">Dev/Test/UAT и management nodes — бесплатно. Production — по тарифу ниже. Методика полного TCO — в <a href="blog/articles/tco-big-data.html">статье о расчёте</a>.</p>
-          <p class="text-mute-300 mb-4">Три лицензионные модели: выберите по масштабу prod-кластера. Цены «от» — ориентир; итог зависит от числа Data Nodes и SLA.</p>
+          <h2 class="h3 fw-700 mb-2">Справедливое лицензирование</h2>
+          <p class="snippet-answer">Вы платите только за Production — Dev/Test/UAT и management nodes бесплатно.</p>
+          <p class="text-mute-300 mb-4">Мы сделали коммерческую модель прозрачной. Никаких скрытых платежей и переплат за служебную инфраструктуру.</p>
           <div class="row g-3">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-md-6">
               <article class="glass pad-2x h-100">
-                <h3 class="h6 mb-2">Standard</h3>
-                <p class="h5 fw-700 mb-2">от 600 000 ₽<span class="small fw-normal text-mute-400">/год без НДС</span></p>
-                <p class="text-mute-300 small mb-0">Pilot и mid-size prod: до 10 Data Nodes, L4 поддержка, Ansible-развёртывание. Dev/Test/UAT и до 6 management nodes — бесплатно.</p>
+                <h3 class="h6 mb-2">Dev, Test и UAT — бесплатно</h3>
+                <p class="text-mute-300 small mb-0">Мы не берём деньги за среды разработки и тестирования. Экспериментируйте, проверяйте гипотезы и обучайте модели без оглядки на стоимость лицензий.</p>
               </article>
             </div>
-            <div class="col-12 col-lg-4">
-              <article class="glass pad-2x h-100 border border-primary-gy">
-                <h3 class="h6 mb-2">Enterprise</h3>
-                <p class="h5 fw-700 mb-2">от 1 500 000 ₽<span class="small fw-normal text-mute-400">/год без НДС</span></p>
-                <p class="text-mute-300 small mb-0">Production 1 ПБ+, HA / zero downtime, L4 + опционально L3 (8×5). Тарификация: Data Nodes или пул vCPU + Storage.</p>
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Управляющие узлы (Management) — бесплатно</h3>
+                <p class="text-mute-300 small mb-0">До 6 серверов управления (NameNode, ResourceManager, ZooKeeper, DB) на один кластер не тарифицируются. Вы платите только за полезную нагрузку — Data-узлы.</p>
               </article>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-md-6">
               <article class="glass pad-2x h-100">
-                <h3 class="h6 mb-2">Custom</h3>
-                <p class="h5 fw-700 mb-2">индивидуально</p>
-                <p class="text-mute-300 small mb-0">Мульти-кластер, федерация, нестандартный SLA и внедрение под тендер. Расчёт после аудита архитектуры.</p>
+                <h3 class="h6 mb-2">Гибкая модель тарификации</h3>
+                <p class="text-mute-300 small mb-0">Две модели на выбор: по размеру узлов (Node-based) или по пулу ресурсов (vCPU + Storage). Выбирайте ту, которая выгоднее для вашей архитектуры.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="glass pad-2x h-100">
+                <h3 class="h6 mb-2">Включённая поддержка (L4)</h3>
+                <p class="text-mute-300 small mb-0">В базовую стоимость лицензии уже включена 4-я линия поддержки (выпуск патчей, исправление багов, доступ к roadmap). Опционально — SLA по L3 (решение инцидентов 8×5).</p>
               </article>
             </div>
           </div>
 
-          <div class="seo-table-wrap mt-4">
-            <table class="seo-table">
-              <thead><tr><th>Что входит во все тарифы</th><th>Условие</th></tr></thead>
-              <tbody>
-                <tr><td>Dev / Test / UAT</td><td>Бесплатно</td></tr>
-                <tr><td>Management nodes (до 6 на кластер)</td><td>Бесплатно</td></tr>
-                <tr><td>Open-source стек (Hadoop, Spark, Kafka, Delta Lake)</td><td>Без роялти за компонент</td></tr>
-                <tr><td>Поддержка L4 (патчи, roadmap)</td><td>Включена в лицензию</td></tr>
-              </tbody>
-            </table>
-            <p class="small mb-0 mt-3"><a href="blog/articles/tco-big-data.html">Методика расчёта TCO →</a> · <a href="blog/articles/choose-bdp-15.html">15 критериев выбора →</a> · <a href="partnership.html#faq">Запросить КП →</a></p>
-          </div>
           <div class="d-flex flex-wrap gap-2 mt-4 dp-licensing-actions justify-content-center justify-content-md-start">
             <button type="button" class="btn btn-primary-gy px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">Запросить коммерческое предложение</button>
           </div>
@@ -555,7 +546,7 @@
               <div class="partnership-card h-100">
                 <div class="d-flex align-items-start gap-3 mb-0">
                   <span class="d-inline-block flex-shrink-0" aria-hidden="true">
-                    <img alt="Александр Гудов" class="rounded-circle border border-ink-700" width="56" height="56" src="img/gudov.png?v=2" loading="lazy" style="object-fit: cover;">
+                    <img alt="Александр Гудов" class="rounded-circle border border-ink-700" width="56" height="56" src="img/gudov-suit.png" loading="lazy" style="object-fit: cover; object-position: center top;">
                   </span>
                   <div>
                     <p class="small text-mute-200 mb-2 fst-italic">

@@ -3648,6 +3648,10 @@ footer .col-6.col-lg-3:first-child {
   hyphens:auto;
 }
 
+.data-platform-page #cta .btn {
+  border-radius: 0.5rem !important;
+}
+
 @media (max-width: 992px){
   .data-platform-page #cta .container{
     max-width:calc(100% - 1rem) !important;
@@ -3981,10 +3985,16 @@ footer .col-6.col-lg-3:first-child {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-readable, #020827);
-  margin-bottom: 1rem;
-  padding-left: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
   border-left: 3px solid var(--accent-readable, #047857);
   max-width: 70ch;
+}
+
+:is(h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5, .h6) + .snippet-answer,
+:is(h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5, .h6) + .geo-definition {
+  margin-top: 1rem;
 }
 
 /* Без декоративной линии в шапках страниц (hero, lead под H1) */
@@ -3998,10 +4008,18 @@ footer .col-6.col-lg-3:first-child {
 .blog-article-page .article-text .direct-answer,
 .blog-article-page .article-text .geo-timing,
 .company-hub #about > .snippet-answer,
-.company-hub #about > .geo-definition {
+.company-hub #about > .geo-definition,
+.accordion-body.snippet-answer,
+.accordion-body.faq-answer {
   border-left: none;
   padding-left: 0;
   max-width: none;
+  margin-top: 0;
+}
+
+.accordion-body.snippet-answer,
+.accordion-body.faq-answer {
+  margin-bottom: 0;
 }
 
 .hero-hero .snippet-answer,
