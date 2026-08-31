@@ -4144,6 +4144,23 @@ details.seo-details summary {
   color: var(--muted-300, #6B7280) !important;
 }
 
+.vacancies-hero-visual {
+  margin: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-height: 22rem;
+}
+
+.vacancies-hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0 !important;
+}
+
 #vacancies .glass ul li::before {
   content: none;
 }
