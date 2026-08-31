@@ -3786,6 +3786,7 @@ footer .col-6.col-lg-3:first-child {
 .cookie-consent-banner__btn{
   flex-shrink:0;
   white-space:nowrap;
+  border-radius: 0 !important;
 }
 @media (max-width:767.98px){
   .cookie-consent-banner__inner{
