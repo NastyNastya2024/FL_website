@@ -19,7 +19,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=2026083115"/>
+  <link rel="stylesheet" href="./styles.css?v=2026083116"/>
+  <style>
+    /* Site map — critical layout (cache-safe) */
+    .site-map-page .nav-glass.nav-light {
+      background: #ffffff !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    #site-map.blog-hub-page {
+      padding-top: 0;
+    }
+    #site-map .vacancies-hero-banner {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    #site-map .vacancies-hero-visual {
+      position: relative;
+      aspect-ratio: 32 / 9;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: var(--deeper, #020827);
+    }
+    #site-map .vacancies-hero-visual .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+  </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -174,7 +204,7 @@
 </head>
 <body class="site-map-page bg-deep">
 
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-glass nav-light" aria-label="Primary" style="background:#ffffff; border:1px solid rgba(0,0,0,.08); box-shadow:0 18px 50px -28px rgba(0,0,0,.35);">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-glass nav-light" aria-label="Primary" style="background:#ffffff !important; border:1px solid rgba(0,0,0,.08); box-shadow:0 18px 50px -28px rgba(0,0,0,.35);">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="index.html" style="color:#020827 !important;">DigiTrack</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Переключить меню">
@@ -215,15 +245,15 @@
 
   <main>
     <section id="site-map" class="blog-hub-page">
-      <div class="page-shell page-hero-banner">
-        <figure class="page-hero-visual mb-0" aria-hidden="true">
+      <div class="vacancies-shell vacancies-hero-banner">
+        <figure class="vacancies-hero-visual mb-0" aria-hidden="true">
           <video class="hero-video" src="img/frame-hero-animated.mp4" autoplay muted loop playsinline preload="metadata"></video>
         </figure>
       </div>
-      <div class="page-shell site-map-page-content">
-        <h1 class="blog-hub-title mb-3">Карта сайта</h1>
-        <p class="site-map-intro-text mb-2">Полная структура сайта DigiTrack (ООО «ДТ»): продукты, услуги, материалы блога и служебные страницы.</p>
-        <p class="site-map-intro-text mb-5"><a class="site-map-meta-link" href="sitemap.xml">XML-карта для поисковых систем (sitemap.xml) →</a></p>
+      <div class="vacancies-shell vacancies-page-content">
+        <h1 class="blog-hub-title mb-4">Карта сайта</h1>
+        <p class="vacancies-intro-text mb-2">Полная структура сайта DigiTrack (ООО «ДТ»): продукты, услуги, материалы блога и служебные страницы.</p>
+        <p class="vacancies-intro-text mb-5"><a class="site-map-meta-link" href="sitemap.xml">XML-карта для поисковых систем (sitemap.xml) →</a></p>
 
         <div class="site-map-sections">
           <section class="glass pad-2x site-map-section" id="products">

@@ -4158,6 +4158,10 @@ details.seo-details summary {
   color: var(--muted-300, #6B7280) !important;
 }
 
+#site-map.blog-hub-page {
+  padding-top: 0;
+}
+
 .vacancies-hero-banner {
   margin: 0 auto;
   padding-top: 1.25rem;
