@@ -23,8 +23,9 @@
     return `${d} ${MONTHS_RU[m - 1]} ${y}`;
   }
 
-  function articleUrl(slug) {
-    return `blog/articles/${slug}.html`;
+  function articleUrl(article) {
+    if (article.href) return article.href;
+    return `blog/articles/${article.slug}.html`;
   }
 
   function normalizeImage(src, slug) {
@@ -47,7 +48,7 @@
     }
     listEl.innerHTML = items.map((article) => `
       <div class="col-12 col-md-6 col-lg-4">
-        <a href="${articleUrl(article.slug)}" class="blog-grid-card d-block h-100 text-decoration-none" data-hub="${article.hub}" data-search="${(article.search || '').replace(/"/g, '&quot;')}">
+        <a href="${articleUrl(article)}" class="blog-grid-card d-block h-100 text-decoration-none" data-hub="${article.hub}" data-search="${(article.search || '').replace(/"/g, '&quot;')}">
           <div class="blog-grid-card-media">
             <img src="${normalizeImage(article.image, article.slug)}" alt="" loading="lazy" width="640" height="360"/>
           </div>
