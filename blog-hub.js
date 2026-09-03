@@ -28,10 +28,29 @@
     return `blog/articles/${article.slug}.html`;
   }
 
+  const WIDE = {
+    'fl-guide': 1024,
+    'bdp-guide': 1024,
+    'confidential-computing-152': 1280,
+    'vfl-or-hfl': 1280,
+  };
+
   function normalizeImage(src, slug) {
     if (src && src.startsWith('img/blog/')) return src;
     if (slug) return `img/blog/${slug}.png`;
     return (src || 'img/blog/fl-guide.png').replace(/^\.\.\/\.\.\/img\//, 'img/');
+  }
+
+  function pictureHtml(src) {
+    const base = src.replace(/\.(png|jpe?g)$/i, '');
+    const name = base.split('/').pop();
+    const wide = WIDE[name] || 1280;
+    const sizes = '(min-width: 992px) 360px, 92vw';
+    return `<picture>
+          <source type="image/avif" srcset="${base}-640.avif 640w, ${base}-${wide}.avif ${wide}w" sizes="${sizes}">
+          <source type="image/webp" srcset="${base}-640.webp 640w, ${base}-${wide}.webp ${wide}w" sizes="${sizes}">
+          <img src="${src}" alt="" loading="lazy" decoding="async" width="640" height="360"/>
+        </picture>`;
   }
 
   function matchesFilter(article) {
@@ -50,7 +69,7 @@
       <div class="col-12 col-md-6 col-lg-4">
         <a href="${articleUrl(article)}" class="blog-grid-card d-block h-100 text-decoration-none" data-hub="${article.hub}" data-search="${(article.search || '').replace(/"/g, '&quot;')}">
           <div class="blog-grid-card-media">
-            <img src="${normalizeImage(article.image, article.slug)}" alt="" loading="lazy" width="640" height="360"/>
+            ${pictureHtml(normalizeImage(article.image, article.slug))}
           </div>
           <div class="blog-grid-card-body">
             <span class="blog-article-tag">${article.category || HUB_LABELS[article.hub] || 'DigiTrack'}</span>

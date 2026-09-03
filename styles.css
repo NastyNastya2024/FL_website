@@ -4458,6 +4458,12 @@ details.seo-details summary {
   margin-bottom: 1rem;
 }
 
+.blog-grid-card-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .blog-grid-card-media img {
   width: 100%;
   height: 100%;
